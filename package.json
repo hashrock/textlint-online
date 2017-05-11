@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:js": "browserify -t vueify ${npm_package_config_src_js} > ${npm_package_config_dist_js}",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:js": "browserify -t vueify ${npm_package_config_src_js} -o ${npm_package_config_dist_js}",
+    "watch:js": "watchify -t vueify ${npm_package_config_src_js} -o ${npm_package_config_dist_js}",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run watch:js"
   },
   "author": "",
   "license": "ISC",
