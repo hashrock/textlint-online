@@ -1,13 +1,26 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n  html, body{\n    height: 100%;\n    margin: 0;\n    padding: 0;\n  }\n  html{\n    font-size: 16px;\n  }\n  \n  main{\n    height: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n  }\n  \n  textarea{\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    margin: 0;\n    background: #333;\n    color: white;\n    padding: 10px;\n  }\n  \n  aside{\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n  }\n  \n  .outputs__item{\n    border-bottom: 1px solid gray;\n  }\n  \n  .outputs__item__line{\n    font-size: 0.8rem;\n    color: gray;\n  }\n")
+var __vueify_style__ = require("vueify-insert-css").insert("\n  html,\n  body {\n    height: 100%;\n    margin: 0;\n    padding: 0;\n  }\n  \n  html {\n    font-size: 16px;\n  }\n  \n  main {\n    height: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n  }\n  \n  textarea {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    margin: 0;\n    background: #333;\n    color: white;\n    padding: 10px;\n  }\n  \n  aside {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n  }\n  \n  .outputs__item {\n    border-bottom: 1px solid gray;\n  }\n  \n  .outputs__item__line {\n    font-size: 0.8rem;\n    color: gray;\n  }\n")
 "use strict";
 
 var textlint = require("textlint").textlint;
 textlint.setupRules({
   "no-todo": require("textlint-rule-no-todo"),
   "max-ten": require("textlint-rule-max-ten"),
+  //    "no-doubled-conjunctive-particle-ga": require("textlint-rule-no-doubled-conjunctive-particle-ga"),
+  "no-mix-dearu-desumasu": require("textlint-rule-no-mix-dearu-desumasu"),
+  "no-nfd": require("textlint-rule-no-nfd"),
+  //    "no-double-negative-ja": require("textlint-rule-no-double-negative-ja"),
+  //    "no-doubled-joshi": require("textlint-rule-no-doubled-joshi"),
+  "sentence-length": require("textlint-rule-sentence-length"),
   "spellcheck-tech-word": require("textlint-rule-spellcheck-tech-word"),
-  "no-mix-dearu-desumasu": require("textlint-rule-no-mix-dearu-desumasu")
+  "date-weekday-mismatch": require("textlint-rule-date-weekday-mismatch"),
+  //    "ja-no-weak-phrase": require("textlint-rule-ja-no-weak-phrase"),
+  //    "ja-no-redundant-expression": require("textlint-rule-ja-no-redundant-expression"),
+  "no-mixed-zenkaku-and-hankaku-alphabet": require("textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet"),
+  //    "no-dropping-the-ra": require("textlint-rule-no-dropping-the-ra"),
+  //    "no-doubled-conjunction": require("textlint-rule-no-doubled-conjunction"),
+  "ja-no-mixed-period": require("textlint-rule-ja-no-mixed-period"),
+  "ja-unnatural-alphabet": require("textlint-rule-ja-unnatural-alphabet")
 });
 
 module.exports = {
@@ -30,14 +43,14 @@ module.exports = {
     this.lint();
   }
 };
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <main>\n    <textarea v-model=\"input\" @keyup=\"lint\"></textarea>\n    <aside class=\"outputs__list\">\n      <div class=\"outputs__item\" v-for=\"output in outputs\">\n        <span class=\"outputs__item__line\">\n          {{output.line}}:{{output.column}}\n        </span>\n         {{output.message}}\n      </div>\n    </aside>\n\n  </main>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <main>\n    <textarea v-model=\"input\" @keyup=\"lint\"></textarea>\n    <aside class=\"outputs__list\">\n      <div class=\"outputs__item\" v-for=\"output in outputs\">\n        <span class=\"outputs__item__line\">\n          {{output.line}}:{{output.column}}\n        </span> {{output.message}}\n      </div>\n    </aside>\n\n  </main>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/iwai/node/idea/textlint-online/app.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n  html, body{\n    height: 100%;\n    margin: 0;\n    padding: 0;\n  }\n  html{\n    font-size: 16px;\n  }\n  \n  main{\n    height: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n  }\n  \n  textarea{\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    margin: 0;\n    background: #333;\n    color: white;\n    padding: 10px;\n  }\n  \n  aside{\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n  }\n  \n  .outputs__item{\n    border-bottom: 1px solid gray;\n  }\n  \n  .outputs__item__line{\n    font-size: 0.8rem;\n    color: gray;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n  html,\n  body {\n    height: 100%;\n    margin: 0;\n    padding: 0;\n  }\n  \n  html {\n    font-size: 16px;\n  }\n  \n  main {\n    height: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n  }\n  \n  textarea {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    margin: 0;\n    background: #333;\n    color: white;\n    padding: 10px;\n  }\n  \n  aside {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n  }\n  \n  .outputs__item {\n    border-bottom: 1px solid gray;\n  }\n  \n  .outputs__item__line {\n    font-size: 0.8rem;\n    color: gray;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -46,10 +59,10 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"textlint":249,"textlint-rule-max-ten":216,"textlint-rule-no-mix-dearu-desumasu":217,"textlint-rule-no-todo":218,"textlint-rule-spellcheck-tech-word":219,"vue":304,"vue-hot-reload-api":303,"vueify-insert-css":305}],2:[function(require,module,exports){
+},{"textlint":370,"textlint-rule-date-weekday-mismatch":319,"textlint-rule-ja-no-mixed-period":323,"textlint-rule-ja-unnatural-alphabet":327,"textlint-rule-max-ten":328,"textlint-rule-no-mix-dearu-desumasu":329,"textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet":330,"textlint-rule-no-nfd":334,"textlint-rule-no-todo":335,"textlint-rule-sentence-length":336,"textlint-rule-spellcheck-tech-word":340,"vue":426,"vue-hot-reload-api":425,"vueify-insert-css":427}],2:[function(require,module,exports){
 var Vue = require('vue')
 var app = new Vue(require('./app.vue')).$mount('body')
-},{"./app.vue":1,"vue":304}],3:[function(require,module,exports){
+},{"./app.vue":1,"vue":426}],3:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 // This RegExp are based of https://github.com/recruit-tech/redpen/blob/master/redpen-core/src/main/java/cc/redpen/validator/sentence/JapaneseStyleValidator.java
@@ -219,6 +232,91 @@ if ('Set' in global) {
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],6:[function(require,module,exports){
 'use strict';
+
+var ES = require('es-abstract/es6');
+
+module.exports = function find(predicate) {
+	var list = ES.ToObject(this);
+	var length = ES.ToInteger(ES.ToLength(list.length));
+	if (!ES.IsCallable(predicate)) {
+		throw new TypeError('Array#find: predicate must be a function');
+	}
+	if (length === 0) {
+		return undefined;
+	}
+	var thisArg = arguments[1];
+	for (var i = 0, value; i < length; i++) {
+		value = list[i];
+		if (ES.Call(predicate, thisArg, [value, i, list])) {
+			return value;
+		}
+	}
+	return undefined;
+};
+
+},{"es-abstract/es6":117}],7:[function(require,module,exports){
+'use strict';
+
+var define = require('define-properties');
+var ES = require('es-abstract/es6');
+
+var implementation = require('./implementation');
+var getPolyfill = require('./polyfill');
+var shim = require('./shim');
+
+var slice = Array.prototype.slice;
+
+var polyfill = getPolyfill();
+
+var boundFindShim = function find(array, predicate) { // eslint-disable-line no-unused-vars
+	ES.RequireObjectCoercible(array);
+	var args = slice.call(arguments, 1);
+	return polyfill.apply(array, args);
+};
+
+define(boundFindShim, {
+	getPolyfill: getPolyfill,
+	implementation: implementation,
+	shim: shim
+});
+
+module.exports = boundFindShim;
+
+},{"./implementation":6,"./polyfill":8,"./shim":9,"define-properties":111,"es-abstract/es6":117}],8:[function(require,module,exports){
+'use strict';
+
+module.exports = function getPolyfill() {
+	// Detect if an implementation exists
+	// Detect early implementations which skipped holes in sparse arrays
+  // eslint-disable-next-line no-sparse-arrays
+	var implemented = Array.prototype.find && [, 1].find(function () {
+		return true;
+	}) !== 1;
+
+  // eslint-disable-next-line global-require
+	return implemented ? Array.prototype.find : require('./implementation');
+};
+
+},{"./implementation":6}],9:[function(require,module,exports){
+'use strict';
+
+var define = require('define-properties');
+var getPolyfill = require('./polyfill');
+
+module.exports = function shimArrayPrototypeFind() {
+	var polyfill = getPolyfill();
+
+	define(Array.prototype, { find: polyfill }, {
+		find: function () {
+			return Array.prototype.find !== polyfill;
+		}
+	});
+
+	return polyfill;
+};
+
+},{"./polyfill":8,"define-properties":111}],10:[function(require,module,exports){
+'use strict';
 module.exports = function (val) {
 	if (val === null || val === undefined) {
 		return [];
@@ -227,7 +325,7 @@ module.exports = function (val) {
 	return Array.isArray(val) ? val : [val];
 };
 
-},{}],7:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -721,7 +819,7 @@ var objectKeys = Object.keys || function (obj) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"util/":299}],8:[function(require,module,exports){
+},{"util/":421}],12:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2015 Titus Wormer
@@ -757,7 +855,7 @@ function bail(err) {
   }
 }
 
-},{}],9:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 module.exports = balanced;
 function balanced(a, b, str) {
   if (a instanceof RegExp) a = maybeMatch(a, str);
@@ -817,7 +915,7 @@ function range(a, b, str) {
   return result;
 }
 
-},{}],10:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -933,7 +1031,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],11:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 (function (process,global){
 /* @preserve
  * The MIT License (MIT)
@@ -6555,7 +6653,7 @@ module.exports = ret;
 },{"./es5":13}]},{},[4])(4)
 });                    ;if (typeof window !== 'undefined' && window !== null) {                               window.P = window.Promise;                                                     } else if (typeof self !== 'undefined' && self !== null) {                             self.P = self.Promise;                                                         }
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":159}],12:[function(require,module,exports){
+},{"_process":259}],16:[function(require,module,exports){
 "use strict";
 
 /*
@@ -6639,7 +6737,7 @@ exports.lowerBound = lowerBound;
 exports.upperBound = upperBound;
 exports.binarySearch = binarySearch;
 
-},{}],13:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 var concatMap = require('concat-map');
 var balanced = require('balanced-match');
 
@@ -6842,11 +6940,11 @@ function expand(str, isTop) {
 }
 
 
-},{"balanced-match":9,"concat-map":29}],14:[function(require,module,exports){
+},{"balanced-match":13,"concat-map":101}],18:[function(require,module,exports){
 
-},{}],15:[function(require,module,exports){
-arguments[4][14][0].apply(exports,arguments)
-},{"dup":14}],16:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
+arguments[4][18][0].apply(exports,arguments)
+},{"dup":18}],20:[function(require,module,exports){
 /*!
  * The buffer module from node.js, for the browser.
  *
@@ -8554,7 +8652,7 @@ function numberIsNaN (obj) {
   return obj !== obj // eslint-disable-line no-self-compare
 }
 
-},{"base64-js":10,"ieee754":63}],17:[function(require,module,exports){
+},{"base64-js":14,"ieee754":151}],21:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -8568,7 +8666,7 @@ module.exports = Object.keys(process.binding('natives')).filter(function (el) {
 }).sort();
 
 }).call(this,require('_process'))
-},{"_process":159}],18:[function(require,module,exports){
+},{"_process":259}],22:[function(require,module,exports){
 'use strict';
 var callsites = require('callsites');
 
@@ -8576,7 +8674,7 @@ module.exports = function () {
 	return callsites()[2].getFileName();
 };
 
-},{"callsites":19}],19:[function(require,module,exports){
+},{"callsites":23}],23:[function(require,module,exports){
 'use strict';
 module.exports = function () {
 	var _ = Error.prepareStackTrace;
@@ -8586,7 +8684,7 @@ module.exports = function () {
 	return stack;
 };
 
-},{}],20:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8670,7 +8768,7 @@ var AsyncEmitter = function (_EventEmitter) {
 
 exports.default = AsyncEmitter;
 module.exports = exports['default'];
-},{"bluebird":11,"events":41}],21:[function(require,module,exports){
+},{"bluebird":15,"events":128}],25:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2015 Titus Wormer
@@ -8718,7 +8816,7 @@ function ccount(value, character) {
   return count;
 }
 
-},{}],22:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 module.exports={
   "nbsp": " ",
   "iexcl": "¡",
@@ -8974,7 +9072,7 @@ module.exports={
   "euro": "€"
 }
 
-},{}],23:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 module.exports={
   "AElig": "Æ",
   "AMP": "&",
@@ -9084,7 +9182,7 @@ module.exports={
   "yuml": "ÿ"
 }
 
-},{}],24:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 module.exports={
   "AEli": "Æ",
   "AElig": "Æ",
@@ -11310,7 +11408,7 @@ module.exports={
   "zwnj": "‌"
 }
 
-},{}],25:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 module.exports={
   "0": "�",
   "128": "€",
@@ -11342,7 +11440,7 @@ module.exports={
   "159": "Ÿ"
 }
 
-},{}],26:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 var charenc = {
   // UTF-8 encoding
   utf8: {
@@ -11377,7 +11475,7116 @@ var charenc = {
 
 module.exports = charenc;
 
-},{}],27:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
+// MIT © 2017 azu
+"use strict";
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var find = require("array.prototype.find");
+var endWith = require("end-with");
+var emojiRegExp = require("emoji-regex")();
+var exceptionMarkRegExp = /[!?！？\)）」』]/;
+
+/**
+ * Check ends with period.
+ * @param {string} lineText
+ * @param {string[]} periodMarks
+ * @param {boolean} allowExceptionMark often used at end.
+ * @param {boolean} allowEmoji
+ * @returns {{valid: boolean, periodMark: string, index: number}}
+ *
+ * `index` is index value of last character.
+ * If last character is a parts of periodMarks, `index` is the position of periodMark.
+ * If last character is not a parts of periodMarks, `index` is the position of the last character.
+ * If last character is white space, `index` is the position of starting of white space on the end.
+ */
+var checkEndsWithPeriod = function checkEndsWithPeriod(lineText) {
+    var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+        _ref$periodMarks = _ref.periodMarks,
+        periodMarks = _ref$periodMarks === undefined ? ["。", "."] : _ref$periodMarks,
+        _ref$allowExceptionMa = _ref.allowExceptionMark,
+        allowExceptionMark = _ref$allowExceptionMa === undefined ? true : _ref$allowExceptionMa,
+        _ref$allowEmoji = _ref.allowEmoji,
+        allowEmoji = _ref$allowEmoji === undefined ? false : _ref$allowEmoji;
+
+    // サロゲートペアを考慮した文字列長・文字アクセス
+    var characters = [].concat(_toConsumableArray(lineText));
+    var lastCharacterIndex = characters.length - 1;
+    var periodMark = characters[lastCharacterIndex];
+    if (/\s/.test(periodMark)) {
+        var _lineText$match = lineText.match(/\s+$/),
+            _lineText$match2 = _slicedToArray(_lineText$match, 1),
+            whiteSpaces = _lineText$match2[0];
+
+        return {
+            valid: false,
+            periodMark: whiteSpaces,
+            index: lastCharacterIndex - (whiteSpaces.length - 1)
+        };
+    }
+    // allo exclamation mark and serif symbol
+    if (allowExceptionMark && exceptionMarkRegExp.test(periodMark)) {
+        return {
+            valid: true,
+            periodMark: periodMark,
+            index: lastCharacterIndex
+        };
+    }
+    // allow emoji
+    if (allowEmoji && emojiRegExp.test(periodMark)) {
+        return {
+            valid: true,
+            periodMark: periodMark,
+            index: lastCharacterIndex
+        };
+    }
+    /**
+     * @type {string|undefined}
+     */
+    var matchMark = find(periodMarks, function (mark) {
+        return endWith(lineText, mark);
+    });
+    if (matchMark) {
+        return {
+            valid: true,
+            periodMark: matchMark,
+            index: lineText.length - matchMark.length
+        };
+    }
+    return {
+        valid: false,
+        periodMark: periodMark,
+        index: lastCharacterIndex
+    };
+};
+module.exports = checkEndsWithPeriod;
+
+},{"array.prototype.find":7,"emoji-regex":113,"end-with":114}],32:[function(require,module,exports){
+
+var options = exports.options = require('./options');
+
+exports.parser = require('./parsers/parser');
+exports.refiner = require('./refiners/refiner');
+
+exports.Parser = exports.parser.Parser;
+exports.Refiner = exports.refiner.Refiner;
+exports.Filter = exports.refiner.Filter;
+
+exports.ParsedResult = require('./result').ParsedResult;
+exports.ParsedComponents = require('./result').ParsedComponents;
+
+var Chrono = function(option) {
+
+    option = option || exports.options.casualOption();
+
+    this.option = option;
+    this.parsers = new Object(option.parsers);
+    this.refiners = new Object(option.refiners);
+};
+
+
+Chrono.prototype.parse = function(text, refDate, opt) {
+
+    refDate = refDate || new Date();
+    opt = opt || {};
+
+    var allResults = [];
+
+    this.parsers.forEach(function (parser) {
+        var results = parser.execute(text, refDate, opt);
+        allResults = allResults.concat(results);
+    });
+
+    allResults.sort(function(a, b) {
+        return a.index - b.index;
+    });
+
+    this.refiners.forEach(function (refiner) {
+        allResults = refiner.refine(text, allResults, opt);
+    });
+    
+    return allResults;
+};
+
+
+Chrono.prototype.parseDate = function(text, refDate, opt) {
+    var results = this.parse(text, refDate, opt);
+    if (results.length > 0) {
+        return results[0].start.date();
+    }
+    return null;
+};
+
+exports.Chrono = Chrono;
+exports.strict = new Chrono( options.strictOption() );
+exports.casual = new Chrono( options.casualOption() );
+
+exports.en = new Chrono( options.mergeOptions([
+    options.en.casual, options.commonPostProcessing]));
+
+exports.de = new Chrono( options.mergeOptions([
+    options.de.casual, options.en, options.commonPostProcessing]));
+
+exports.es = new Chrono( options.mergeOptions([
+    options.es.casual, options.en, options.commonPostProcessing]));
+
+exports.fr = new Chrono( options.mergeOptions([
+    options.fr.casual, options.en, options.commonPostProcessing]));
+
+exports.ja = new Chrono( options.mergeOptions([ 
+    options.ja.casual, options.en, options.commonPostProcessing]));
+
+
+exports.parse = function () {
+    return exports.casual.parse.apply(exports.casual, arguments);
+};
+
+exports.parseDate = function () {
+    return exports.casual.parseDate.apply(exports.casual, arguments);
+};
+
+
+
+
+
+},{"./options":33,"./parsers/parser":77,"./refiners/refiner":91,"./result":92}],33:[function(require,module,exports){
+var parser = require('./parsers/parser');
+var refiner = require('./refiners/refiner');
+
+
+exports.mergeOptions = function(options) {
+
+    var addedTypes = {};
+    var mergedOption = {
+        parsers: [],
+        refiners: []
+    };
+
+    options.forEach(function (option) {
+
+        if (option.call) {
+            option = option.call();
+        }
+
+        if (option.parsers) {
+            option.parsers.forEach(function (p) {
+                if (!addedTypes[p.constructor]) {
+                    mergedOption.parsers.push(p);
+                    addedTypes[p.constructor] = true;
+                }
+            });
+        }
+
+        if (option.refiners) {
+            option.refiners.forEach(function (r) {
+                if (!addedTypes[r.constructor]) {
+                    mergedOption.refiners.push(r);
+                    addedTypes[r.constructor] = true;
+                }
+            });
+        }
+    });
+
+    return mergedOption;
+};
+
+
+exports.commonPostProcessing = function() {
+    return {
+        refiners: [
+            // These should be after all other refiners
+            new refiner.ExtractTimezoneOffsetRefiner(),
+            new refiner.ExtractTimezoneAbbrRefiner(),
+            new refiner.UnlikelyFormatFilter()
+        ]
+    }
+};
+
+
+// -------------------------------------------------------------
+
+exports.strictOption = function () {
+    return exports.mergeOptions([
+        exports.en(true),
+
+        exports.de(true),
+        exports.es(true),
+        exports.fr(true),
+        exports.ja(true),
+        exports.zh,
+        exports.commonPostProcessing
+    ]);
+};
+
+exports.casualOption = function () {
+    return exports.mergeOptions([
+        exports.en.casual,
+
+        exports.de(true),
+        exports.es.casual,
+        exports.fr.casual,
+        exports.ja.casual,
+        exports.zh,
+        exports.commonPostProcessing
+    ]);
+};
+
+// -------------------------------------------------------------
+
+exports.de = function(strictMode) {
+    return {
+        parsers: [
+            new parser.DEDeadlineFormatParser(strictMode),
+            new parser.DEMonthNameLittleEndianParser(strictMode),
+            new parser.DEMonthNameParser(strictMode),
+            new parser.DESlashDateFormatParser(strictMode),
+            new parser.DETimeAgoFormatParser(strictMode),
+            new parser.DETimeExpressionParser(strictMode)
+        ],
+        refiners: [
+            new refiner.OverlapRemovalRefiner(),
+            new refiner.ForwardDateRefiner(),
+            new refiner.DEMergeDateTimeRefiner(),
+            new refiner.DEMergeDateRangeRefiner()
+        ]
+    }
+};
+
+exports.de.casual = function() {
+    var option = exports.de(false);
+    option.parsers.unshift(new parser.DECasualDateParser());
+    option.parsers.unshift(new parser.DEWeekdayParser());
+    return option;
+};
+
+
+
+// -------------------------------------------------------------
+
+
+exports.en = function(strictMode) {
+    return {
+        parsers: [
+            new parser.ENISOFormatParser(strictMode),
+            new parser.ENDeadlineFormatParser(strictMode),
+            new parser.ENMonthNameLittleEndianParser(strictMode),
+            new parser.ENMonthNameMiddleEndianParser(strictMode),
+            new parser.ENMonthNameParser(strictMode),
+            new parser.ENSlashDateFormatParser(strictMode),
+            new parser.ENSlashDateFormatStartWithYearParser(strictMode),
+            new parser.ENSlashMonthFormatParser(strictMode),
+            new parser.ENTimeAgoFormatParser(strictMode),
+            new parser.ENTimeExpressionParser(strictMode)
+        ],
+        refiners: [
+            new refiner.OverlapRemovalRefiner(),
+            new refiner.ForwardDateRefiner(),
+
+            // English
+            new refiner.ENMergeDateTimeRefiner(),
+            new refiner.ENMergeDateRangeRefiner(),
+            new refiner.ENPrioritizeSpecificDateRefiner()
+        ]
+    }
+};
+
+exports.en.casual = function() {
+    var option = exports.en(false);
+
+    // EN
+    option.parsers.unshift(new parser.ENCasualDateParser());
+    option.parsers.unshift(new parser.ENCasualTimeParser());
+    option.parsers.unshift(new parser.ENWeekdayParser());
+    option.parsers.unshift(new parser.ENRelativeDateFormatParser());
+    return option;
+};
+
+// -------------------------------------------------------------
+
+exports.ja = function() {
+    return {
+        parsers: [
+            new parser.JPStandardParser()
+        ],
+        refiners: [
+            new refiner.OverlapRemovalRefiner(),
+            new refiner.ForwardDateRefiner(),
+            new refiner.JPMergeDateRangeRefiner()
+        ]
+    }
+};
+
+exports.ja.casual = function() {
+    var option = exports.ja();
+    option.parsers.unshift(new parser.JPCasualDateParser());
+    return option;
+};
+
+
+// -------------------------------------------------------------
+
+
+exports.es = function(strictMode) {
+    return {
+        parsers: [
+            new parser.ESTimeAgoFormatParser(strictMode),
+            new parser.ESDeadlineFormatParser(strictMode),
+            new parser.ESTimeExpressionParser(strictMode),
+            new parser.ESMonthNameLittleEndianParser(strictMode),
+            new parser.ESSlashDateFormatParser(strictMode)
+        ],
+        refiners: [
+            new refiner.OverlapRemovalRefiner(),
+            new refiner.ForwardDateRefiner()
+        ]
+    }
+};
+
+exports.es.casual = function() {
+    var option = exports.es(false);
+    option.parsers.unshift(new parser.ESCasualDateParser());
+    option.parsers.unshift(new parser.ESWeekdayParser());
+    return option;
+};
+
+
+// -------------------------------------------------------------
+
+exports.fr = function(strictMode) {
+    return {
+        parsers: [
+            new parser.FRDeadlineFormatParser(strictMode),
+            new parser.FRMonthNameLittleEndianParser(strictMode),
+            new parser.FRSlashDateFormatParser(strictMode),
+            new parser.FRTimeAgoFormatParser(strictMode),
+            new parser.FRTimeExpressionParser(strictMode)
+        ],
+        refiners: [
+            new refiner.OverlapRemovalRefiner(),
+            new refiner.ForwardDateRefiner(),
+            new refiner.FRMergeDateRangeRefiner(),
+            new refiner.FRMergeDateTimeRefiner()
+        ]
+    }
+};
+
+exports.fr.casual = function() {
+    var option = exports.fr(false);
+    option.parsers.unshift(new parser.FRCasualDateParser());
+    option.parsers.unshift(new parser.FRWeekdayParser());
+    return option;
+};
+
+
+// -------------------------------------------------------------
+
+exports.zh = function() {
+    return {
+        parsers: [
+            new parser.ZHHantDateParser(),
+            new parser.ZHHantWeekdayParser(),
+            new parser.ZHHantTimeExpressionParser(),
+            new parser.ZHHantCasualDateParser(),
+            new parser.ZHHantDeadlineFormatParser()
+        ],
+        refiners: [
+            new refiner.OverlapRemovalRefiner(),
+            new refiner.ForwardDateRefiner()
+        ]
+    }
+};
+},{"./parsers/parser":77,"./refiners/refiner":91}],34:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = new RegExp(
+    '(\\W|^)(' +
+        'jetzt|' +
+        '(?:heute|diesen)\\s*(morgen|vormittag|mittag|nachmittag|abend)|' +
+        '(?:heute|diese)\\s*nacht|' +
+        'heute|' +
+        '(?:(?:ü|ue)ber)?morgen(?:\\s*(morgen|vormittag|mittag|nachmittag|abend|nacht))?|' +
+        '(?:vor)?gestern(?:\\s*(morgen|vormittag|mittag|nachmittag|abend|nacht))?|' +
+        'letzte\\s*nacht' +
+    ')(?=\\W|$)', 'i');
+
+exports.Parser = function DECasualDateParser() {
+
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; }
+
+    this.extract = function(text, ref, match, opt) {
+        var text = match[0].substr(match[1].length);
+        var index = match.index + match[1].length;
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref,
+        });
+
+        var refMoment = moment(ref);
+        var startMoment = refMoment.clone();
+        var lowerText = text.toLowerCase();
+
+        if (/(?:heute|diese)\s*nacht/.test(lowerText)) {
+            // Normally means this coming midnight
+            result.start.imply('hour', 22);
+            result.start.imply('meridiem', 1);
+        } else if (/^(?:ü|ue)bermorgen/.test(lowerText)) {
+            startMoment.add(refMoment.hour() > 1 ? 2 : 1, 'day');
+        } else if (/^morgen/.test(lowerText)) {
+            // Check not "Tomorrow" on late night
+            if (refMoment.hour() > 1) {
+                startMoment.add(1, 'day');
+            }
+        } else if (/^gestern/.test(lowerText)) {
+            startMoment.add(-1, 'day');
+        } else if (/^vorgestern/.test(lowerText)) {
+            startMoment.add(-2, 'day');
+        } else if (/letzte\s*nacht/.test(lowerText)) {
+            result.start.imply('hour', 0);
+            if (refMoment.hour() > 6) {
+                startMoment.add(-1, 'day');
+            }
+        } else if (lowerText === 'jetzt') {
+          result.start.imply('hour', refMoment.hour());
+          result.start.imply('minute', refMoment.minute());
+          result.start.imply('second', refMoment.second());
+          result.start.imply('millisecond', refMoment.millisecond());
+        }
+
+        var secondMatch = match[3] || match[4] || match[5];
+        if (secondMatch) {
+            switch (secondMatch.toLowerCase()) {
+                case 'morgen':
+                    result.start.imply('hour', 6);
+                    break;
+                case 'vormittag':
+                    result.start.imply('hour', 9);
+                    break;
+                case 'mittag':
+                    result.start.imply('hour', 12);
+                    break;
+                case 'nachmittag':
+                    result.start.imply('hour', 15);
+                    result.start.imply('meridiem', 1);
+                    break;
+                case 'abend':
+                    result.start.imply('hour', 18);
+                    result.start.imply('meridiem', 1);
+                    break;
+                case 'nacht':
+                    result.start.imply('hour', 0);
+                    break;
+            }
+        }
+
+        result.start.assign('day', startMoment.date())
+        result.start.assign('month', startMoment.month() + 1)
+        result.start.assign('year', startMoment.year())
+        result.tags['DECasualDateParser'] = true;
+        return result;
+    }
+}
+
+},{"../../result":92,"../parser":77,"moment":223}],35:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var util  = require('../../utils/DE');
+
+var PATTERN = new RegExp('(\\W|^)' +
+    '(in|nach)\\s*' +
+    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|einigen|eine[rm]\\s*halben|eine[rm])\\s*' +
+    '(sekunden?|min(?:ute)?n?|stunden?|tag(?:en)?|wochen?|monat(?:en)?|jahr(?:en)?)\\s*' +
+    '(?=\\W|$)', 'i'
+);
+
+var STRICT_PATTERN = new RegExp('(\\W|^)' +
+    '(in|nach)\\s*' +
+    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|eine(?:r|m)?)\\s*' +
+    '(sekunden?|minuten?|stunden?|tag(?:en)?)\\s*' +
+    '(?=\\W|$)', 'i'
+);
+
+exports.Parser = function DEDeadlineFormatParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() {
+        return this.isStrictMode()? STRICT_PATTERN : PATTERN;
+    };
+
+    this.extract = function(text, ref, match, opt){
+
+        var index = match.index + match[1].length;
+        var text  = match[0];
+        text  = match[0].substr(match[1].length, match[0].length - match[1].length);
+
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref
+        });
+
+        var num = match[3].toLowerCase();
+        if (util.INTEGER_WORDS[num] !== undefined) {
+            num = util.INTEGER_WORDS[num];
+        } else if (num === 'einer' || num === 'einem') {
+            num = 1;
+        } else if (num === 'einigen') {
+            num = 3;
+        } else if (/halben/.test(num)) {
+            num = 0.5;
+        } else {
+            num = parseInt(num);
+        }
+
+        var date = moment(ref);
+        if (/tag|woche|monat|jahr/i.test(match[4])) {
+
+            if (/tag/i.test(match[4])) {
+                date.add(num, 'd');
+            } else if (/woche/i.test(match[4])) {
+                date.add(num * 7, 'd');
+            } else if (/monat/i.test(match[4])) {
+                date.add(num, 'month');
+            } else if (/jahr/i.test(match[4])) {
+                date.add(num, 'year');
+            }
+
+            result.start.assign('year', date.year());
+            result.start.assign('month', date.month() + 1);
+            result.start.assign('day', date.date());
+            return result;
+        }
+
+        if (/stunde/i.test(match[4])) {
+
+            date.add(num, 'hour');
+
+        } else if (/min/i.test(match[4])) {
+
+            date.add(num, 'minute');
+
+        } else if (/sekunde/i.test(match[4])) {
+
+            date.add(num, 'second');
+        }
+
+        result.start.imply('year', date.year());
+        result.start.imply('month', date.month() + 1);
+        result.start.imply('day', date.date());
+        result.start.assign('hour', date.hour());
+        result.start.assign('minute', date.minute());
+        result.start.assign('second', date.second());
+        result.tags['DEDeadlineFormatParser'] = true;
+        return result;
+    };
+};
+
+},{"../../result":92,"../../utils/DE":93,"../parser":77,"moment":223}],36:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var util  = require('../../utils/DE');
+
+var PATTERN = new RegExp('(\\W|^)' +
+        '(?:am\\s*?)?' +
+        '(?:(Sonntag|Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag|So|Mo|Di|Mi|Do|Fr|Sa)\\s*,?\\s*)?' +
+        '(?:den\\s*)?' +
+        '([0-9]{1,2})\\.' +
+        '(?:\\s*(?:bis(?:\\s*(?:am|zum))?|\\-|\\–|\\s)\\s*([0-9]{1,2})\\.)?\\s*' +
+        '(Jan(?:uar|\\.)?|Feb(?:ruar|\\.)?|Mär(?:z|\\.)?|Maerz|Mrz\\.?|Apr(?:il|\\.)?|Mai|Jun(?:i|\\.)?|Jul(?:i|\\.)?|Aug(?:ust|\\.)?|Sep(?:t|t\\.|tember|\\.)?|Okt(?:ober|\\.)?|Nov(?:ember|\\.)?|Dez(?:ember|\\.)?)' +
+        '(?:' +
+            ',?\\s*([0-9]{1,4}(?![^\\s]\\d))' +
+            '(\\s*[vn]\\.?\\s*C(?:hr)?\\.?)?' +
+        ')?' +
+        '(?=\\W|$)', 'i'
+    );
+
+var WEEKDAY_GROUP = 2;
+var DATE_GROUP = 3;
+var DATE_TO_GROUP = 4;
+var MONTH_NAME_GROUP = 5;
+var YEAR_GROUP = 6;
+var YEAR_BE_GROUP = 7;
+
+exports.Parser = function DEMonthNameLittleEndianParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; }
+
+    this.extract = function(text, ref, match, opt){
+
+        var result = new ParsedResult({
+            text: match[0].substr(match[1].length, match[0].length - match[1].length),
+            index: match.index + match[1].length,
+            ref: ref,
+        });
+
+        var month = match[MONTH_NAME_GROUP];
+        month = util.MONTH_OFFSET[month.toLowerCase()];
+
+        var day = match[DATE_GROUP];
+        day = parseInt(day);
+
+        var year = null;
+        if (match[YEAR_GROUP]) {
+            year = match[YEAR_GROUP];
+            year = parseInt(year);
+
+            if(match[YEAR_BE_GROUP]){
+                if (/v/i.test(match[YEAR_BE_GROUP])) {
+                    // v.Chr.
+                    year = -year;
+                }
+            } else if (year < 100){
+
+                year = year + 2000;
+            }
+        }
+
+        if(year){
+            result.start.assign('day', day);
+            result.start.assign('month', month);
+            result.start.assign('year', year);
+        } else {
+
+            //Find the most appropriated year
+            var refMoment = moment(ref);
+            refMoment.month(month - 1);
+            refMoment.date(day);
+            refMoment.year(moment(ref).year());
+
+            var nextYear = refMoment.clone().add(1, 'y');
+            var lastYear = refMoment.clone().add(-1, 'y');
+            if( Math.abs(nextYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){
+                refMoment = nextYear;
+            }
+            else if( Math.abs(lastYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){
+                refMoment = lastYear;
+            }
+
+            result.start.assign('day', day);
+            result.start.assign('month', month);
+            result.start.imply('year', refMoment.year());
+        }
+
+        // Weekday component
+        if (match[WEEKDAY_GROUP]) {
+            var weekday = match[WEEKDAY_GROUP];
+            weekday = util.WEEKDAY_OFFSET[weekday.toLowerCase()]
+            result.start.assign('weekday', weekday);
+        }
+
+        // Text can be 'range' value. Such as '12 - 13 January 2012'
+        if (match[DATE_TO_GROUP]) {
+            result.end = result.start.clone();
+            result.end.assign('day', parseInt(match[DATE_TO_GROUP]));
+        }
+
+        result.tags['DEMonthNameLittleEndianParser'] = true;
+        return result;
+    };
+}
+
+},{"../../result":92,"../../utils/DE":93,"../parser":77,"moment":223}],37:[function(require,module,exports){
+/*
+    
+    The parser for parsing month name and year.
+    
+    EX. 
+        - Januar
+        - Januar 2012
+*/
+
+var moment = require('moment');
+
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var util  = require('../../utils/DE');
+
+var PATTERN = new RegExp('(^|\\D\\s+|[^\\w\\s])' +
+    '(Jan\\.?|Januar|Feb\\.?|Februar|Mär\\.?|M(?:ä|ae)rz|Mrz\\.?|Apr\\.?|April|Mai\\.?|Jun\\.?|Juni|Jul\\.?|Juli|Aug\\.?|August|Sep\\.?|Sept\\.?|September|Okt\\.?|Oktober|Nov\\.?|November|Dez\\.?|Dezember)' + 
+    '\\s*' +
+    '(?:' +
+        ',?\\s*(?:([0-9]{4})(\\s*[vn]\\.?\\s*C(?:hr)?\\.?)?|([0-9]{1,4})\\s*([vn]\\.?\\s*C(?:hr)?\\.?))' +
+    ')?' +
+    '(?=[^\\s\\w]|$)', 'i');
+
+var MONTH_NAME_GROUP = 2;
+var YEAR_GROUP = 3;
+var YEAR_BE_GROUP = 4;
+var YEAR_GROUP2 = 5;
+var YEAR_BE_GROUP2 = 6;
+
+exports.Parser = function ENMonthNameParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; }
+    
+    this.extract = function(text, ref, match, opt){
+        var result = new ParsedResult({
+            text: match[0].substr(match[1].length, match[0].length - match[1].length),
+            index: match.index + match[1].length,
+            ref: ref,
+        });
+
+        
+        var month = match[MONTH_NAME_GROUP];
+        month = util.MONTH_OFFSET[month.toLowerCase()];
+
+        var day = 1;
+
+        var year = null;
+        if (match[YEAR_GROUP] || match[YEAR_GROUP2]) {
+            year = match[YEAR_GROUP] || match[YEAR_GROUP2];
+            year = parseInt(year);
+
+            if (match[YEAR_BE_GROUP] || match[YEAR_BE_GROUP2]) {
+                if (/v/i.test(match[YEAR_BE_GROUP] || match[YEAR_BE_GROUP2])) {
+                    // v.Chr.
+                    year = -year;
+                }
+
+            } else if (year < 100){ 
+
+                year = year + 2000;
+            }
+        }
+
+        if(year){
+            result.start.imply('day', day);
+            result.start.assign('month', month);
+            result.start.assign('year', year);
+        } else {
+            
+            //Find the most appropriated year
+            var refMoment = moment(ref);
+            refMoment.month(month - 1);
+            refMoment.date(day);
+
+            var nextYear = refMoment.clone().add(1, 'y');
+            var lastYear = refMoment.clone().add(-1, 'y');
+            if( Math.abs(nextYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){  
+                refMoment = nextYear;
+            }
+            else if( Math.abs(lastYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){ 
+                refMoment = lastYear;
+            }
+
+            result.start.imply('day', day);
+            result.start.assign('month', month);
+            result.start.imply('year', refMoment.year());
+        }
+
+        result.tags['DEMonthNameParser'] = true;
+        return result;
+    }
+}
+
+
+},{"../../result":92,"../../utils/DE":93,"../parser":77,"moment":223}],38:[function(require,module,exports){
+/*
+    Date format with slash "/" (also "-" and ".") between numbers
+    - Tuesday 11/3/2015
+    - 11/3/2015
+    - 11/3
+*/
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = new RegExp('(\\W|^)' +
+    '(?:' +
+        '(?:am\\s*?)?' +
+        '((?:sonntag|so|montag|mo|dienstag|di|mittwoch|mi|donnerstag|do|freitag|fr|samstag|sa))' +
+        '\\s*\\,?\\s*' +
+        '(?:den\\s*)?' +
+    ')?' +
+    '([0-3]{0,1}[0-9]{1})[\\/\\.\\-]([0-3]{0,1}[0-9]{1})' +
+    '(?:' +
+        '[\\/\\.\\-]' +
+        '([0-9]{4}\s*\,?\s*|[0-9]{2}\s*\,?\s*)' +
+    ')?' +
+    '(\\W|$)', 'i');
+
+var DAYS_OFFSET = {
+    'sonntag': 0, 'so': 0,
+    'montag': 1, 'mo': 1,
+    'dienstag': 2, 'di': 2,
+    'mittwoch': 3, 'mi': 3,
+    'donnerstag': 4, 'do': 4,
+    'freitag': 5, 'fr': 5,
+    'samstag': 6, 'sa': 6
+};
+
+
+var OPENNING_GROUP = 1;
+var ENDING_GROUP = 6;
+
+var WEEKDAY_GROUP = 2;
+var DAY_GROUP = 3;
+var MONTH_GROUP = 4;
+var YEAR_GROUP = 5;
+
+exports.Parser = function DESlashDateFormatParser(argument) {
+    Parser.apply(this, arguments);
+
+    this.pattern = function () { return PATTERN; };
+    this.extract = function(text, ref, match, opt){
+
+        if(match[OPENNING_GROUP] == '/' || match[ENDING_GROUP] == '/') {
+            // Long skip, if there is some overlapping like:
+            // XX[/YY/ZZ]
+            // [XX/YY/]ZZ
+            match.index += match[0].length
+            return;
+        }
+
+        var index = match.index + match[OPENNING_GROUP].length;
+        var text = match[0].substr(match[OPENNING_GROUP].length, match[0].length - match[ENDING_GROUP].length);
+
+
+        var result = new ParsedResult({
+            text: text,
+            index: index,
+            ref: ref,
+        });
+
+        if(text.match(/^\d\.\d$/)) return;
+        if(text.match(/^\d\.\d{1,2}\.\d{1,2}$/)) return;
+
+        // MM/dd -> OK
+        // MM.dd -> NG
+        if(!match[YEAR_GROUP] && match[0].indexOf('/') < 0) return;
+
+        var date = null;
+        var year = match[YEAR_GROUP] || moment(ref).year() + '';
+        var month = match[MONTH_GROUP];
+        var day   = match[DAY_GROUP];
+
+        month = parseInt(month);
+        day  = parseInt(day);
+        year = parseInt(year);
+
+        if (month < 1 || month > 12) return null;
+        if(day < 1 || day > 31) return null;
+
+        if(year < 100){
+            if (year > 50) {
+                year = year + 1900;
+            } else {
+                year = year + 2000;
+            }
+        }
+
+        result.start.assign('day', day);
+        result.start.assign('month', month);
+        result.start.assign('year', year);
+
+        //Day of week
+        if(match[WEEKDAY_GROUP]) {
+            result.start.assign('weekday', DAYS_OFFSET[match[WEEKDAY_GROUP].toLowerCase()]);
+        }
+
+        result.tags['DESlashDateFormatParser'] = true;
+        return result;
+    };
+};
+
+},{"../../result":92,"../parser":77,"moment":223}],39:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var util  = require('../../utils/DE');
+
+var PATTERN = new RegExp('' +
+    '(\\W|^)vor\\s*' +
+    '(' + util.INTEGER_WORDS_PATTERN + '|[0-9]+|einigen|eine[rm]\\s*halben|eine[rm])\\s*' +
+    '(sekunden?|min(?:ute)?n?|stunden?|wochen?|tag(?:en)?|monat(?:en)?|jahr(?:en)?)\\s*' +
+    '(?=(?:\\W|$))', 'i');
+
+var STRICT_PATTERN = new RegExp('' +
+    '(\\W|^)vor\\s*' +
+    '([0-9]+|eine(?:r|m))\\s*' +
+    '(sekunden?|minuten?|stunden?|tag(?:en)?)' +
+    '(?=(?:\\W|$))', 'i');
+
+exports.Parser = function DETimeAgoFormatParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() {
+        return this.isStrictMode()? STRICT_PATTERN : PATTERN;
+    };
+
+    this.extract = function(text, ref, match, opt){
+
+        if (match.index > 0 && text[match.index-1].match(/\w/)) return null;
+
+        var text = match[0];
+        text  = match[0].substr(match[1].length, match[0].length - match[1].length);
+        index = match.index + match[1].length;
+
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref
+        });
+
+        var num = match[2].toLowerCase() ;
+        if (util.INTEGER_WORDS[num] !== undefined) {
+            num = util.INTEGER_WORDS[num];
+        } else if (num === 'einer' || num === 'einem') {
+            num = 1;
+        } else if (num === 'einigen') {
+            num = 3;
+        } else if (/halben/.test(num)) {
+            num = 0.5;
+        } else {
+            num = parseInt(num);
+        }
+
+        var date = moment(ref);
+
+        if (/stunde|min|sekunde/i.test(match[3])) {
+            if (/stunde/i.test(match[3])) {
+
+                date.add(-num, 'hour');
+
+            } else if (/min/i.test(match[3])) {
+
+                date.add(-num, 'minute');
+
+            } else if (/sekunde/i.test(match[3])) {
+
+                date.add(-num, 'second');
+            }
+
+            result.start.imply('day', date.date());
+            result.start.imply('month', date.month() + 1);
+            result.start.imply('year', date.year());
+            result.start.assign('hour', date.hour());
+            result.start.assign('minute', date.minute());
+            result.start.assign('second', date.second());
+            result.tags['DETimeAgoFormatParser'] = true;
+            return result;
+        }
+
+        if (/woche/i.test(match[3])) {
+            date.add(-num, 'week');
+
+            result.start.imply('day', date.date());
+            result.start.imply('month', date.month() + 1);
+            result.start.imply('year', date.year());
+            result.start.imply('weekday', date.day());
+            return result;
+        }
+
+        if (/tag/i.test(match[3])) {
+            date.add(-num, 'd');
+        }
+
+        if (/monat/i.test(match[3])) {
+            date.add(-num, 'month');
+        }
+
+        if (/jahr/i.test(match[3])) {
+
+            date.add(-num, 'year');
+        }
+
+        result.start.assign('day', date.date());
+        result.start.assign('month', date.month() + 1);
+        result.start.assign('year', date.year());
+        return result;
+
+    };
+}
+
+},{"../../result":92,"../../utils/DE":93,"../parser":77,"moment":223}],40:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var ParsedComponents = require('../../result').ParsedComponents;
+
+var FIRST_REG_PATTERN  = new RegExp("(^|\\s|T)" +
+    "(?:(?:um|von)\\s*)?" + 
+    "(\\d{1,4}|mittags?|mitternachts?)" + 
+    "(?:" + 
+        "(?:\\.|\\:|\\：)(\\d{1,2})" + 
+        "(?:" + 
+            "(?:\\:|\\：)(\\d{2})" + 
+        ")?" + 
+    ")?" +
+    "(?:\\s*uhr)?" +
+    "(?:\\s*(morgens|vormittags|mittags|nachmittags|abends|nachts))?" + 
+    "(?=\\W|$)", 'i');
+
+
+var SECOND_REG_PATTERN = new RegExp("^\\s*" + 
+    "(\\-|\\–|\\~|\\〜|bis|\\?)\\s*" + 
+    "(\\d{1,4})" +
+    "(?:" + 
+        "(?:\\.|\\:|\\：)(\\d{1,2})" + 
+        "(?:" + 
+            "(?:\\.|\\:|\\：)(\\d{1,2})" + 
+        ")?" + 
+    ")?" + 
+    "(?:\\s*(morgens|vormittags|mittags|nachmittags|abends|nachts))?" + 
+    "(?=\\W|$)", 'i');
+
+var HOUR_GROUP    = 2;
+var MINUTE_GROUP  = 3;
+var SECOND_GROUP  = 4;
+var AM_PM_HOUR_GROUP = 5;
+
+
+exports.Parser = function DETimeExpressionParser() {
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return FIRST_REG_PATTERN; }
+    
+    this.extract = function(text, ref, match, opt){ 
+        
+        // This pattern can be overlaped Ex. [12] AM, 1[2] AM
+        if (match.index > 0 && text[match.index-1].match(/\w/)) return null;
+        var refMoment = moment(ref);
+        var result = new ParsedResult();
+        result.ref = ref;
+        result.index = match.index + match[1].length;
+        result.text  = match[0].substring(match[1].length);
+        result.tags['DETimeExpressionParser'] = true;
+
+        result.start.imply('day',   refMoment.date());
+        result.start.imply('month', refMoment.month()+1);
+        result.start.imply('year',  refMoment.year());
+        
+        var hour = 0;
+        var minute = 0;
+        var meridiem = -1;
+
+        // ----- Second
+        if(match[SECOND_GROUP] != null){ 
+            var second = parseInt(match[SECOND_GROUP]);
+            if(second >= 60) return null;
+
+            result.start.assign('second', second);
+        }
+        
+        // ----- Hours
+        if (/mittags?/i.test(match[HOUR_GROUP])) {
+            meridiem = 1; 
+            hour = 12;
+        } else if (/mitternachts?/i.test(match[HOUR_GROUP])) {
+            meridiem = 0; 
+            hour = 0;
+        } else {
+            hour = parseInt(match[HOUR_GROUP]);
+        }
+        
+        // ----- Minutes
+        if(match[MINUTE_GROUP] != null){ 
+            minute = parseInt(match[MINUTE_GROUP]);
+        } else if(hour > 100) { 
+            minute = hour%100;
+            hour   = parseInt(hour/100);
+        } 
+        
+        if(minute >= 60) {
+            return null;
+        }
+
+        if(hour > 24) {
+            return null;
+        }
+        if (hour >= 12) { 
+            meridiem = 1;
+        }
+
+        // ----- AM & PM  
+        if (match[AM_PM_HOUR_GROUP] != null) {
+            if (hour > 12) return null;
+            var ampm = match[AM_PM_HOUR_GROUP][0].toLowerCase();
+            if (ampm === 'morgens' || ampm === 'vormittags') {
+                meridiem = 0; 
+                if(hour == 12) hour = 0;
+            } else {
+                meridiem = 1; 
+                if(hour != 12) hour += 12;
+            }
+        } 
+
+        result.start.assign('hour', hour);
+        result.start.assign('minute', minute);
+
+        if (meridiem >= 0) {
+            result.start.assign('meridiem', meridiem);
+        } else {
+            if (hour < 12) {
+                result.start.imply('meridiem', 0);
+            } else {
+                result.start.imply('meridiem', 1);
+            }
+        }
+        
+        // ==============================================================
+        //                  Extracting the 'to' chunk
+        // ==============================================================
+        match = SECOND_REG_PATTERN.exec(text.substring(result.index + result.text.length));
+        if (!match) {
+            // Not accept number only result
+            if (result.text.match(/^\d+$/)) { 
+                return null;
+            }
+            return result;
+        }
+
+
+
+        // Pattern "YY.YY -XXXX" is more like timezone offset
+        if (match[0].match(/^\s*(\+|\-)\s*\d{3,4}$/)) {
+            return result;
+        }
+
+        if(result.end == null){
+            result.end = new ParsedComponents(null, result.start.date());
+        }
+
+        var hour = 0;
+        var minute = 0;
+        var meridiem = -1;
+
+        // ----- Second
+        if(match[SECOND_GROUP] != null){ 
+            var second = parseInt(match[SECOND_GROUP]);
+            if(second >= 60) return null;
+
+            result.end.assign('second', second);
+        }
+
+        hour = parseInt(match[2]);
+        
+        // ----- Minute
+        if (match[MINUTE_GROUP]!= null) {
+            
+            minute = parseInt(match[MINUTE_GROUP]);
+            if(minute >= 60) return result;
+            
+        } else if (hour > 100) {
+
+            minute = hour%100;
+            hour   = parseInt(hour/100);
+        }
+
+        if(minute >= 60) {
+            return null;
+        }
+
+        if(hour > 24) {
+            return null;
+        }
+        if (hour >= 12) { 
+            meridiem = 1;
+        }
+        
+        // ----- AM & PM 
+        if (match[AM_PM_HOUR_GROUP] != null) {
+
+            if (hour > 12) return null;
+
+            var ampm = match[AM_PM_HOUR_GROUP][0].toLowerCase();
+            if (ampm === 'morgens' || ampm === 'vormittags') {
+                meridiem = 0; 
+                if(hour == 12) {
+                    hour = 0;
+                    if (!result.end.isCertain('day')) {
+                        result.end.imply('day', result.end.get('day') + 1);
+                    }
+                }
+            } else {
+                meridiem = 1; 
+                if(hour != 12) hour += 12;
+            }
+            
+            if (!result.start.isCertain('meridiem')) {
+                if (meridiem == 0) {
+                    
+                    result.start.imply('meridiem', 0);
+                    
+                    if (result.start.get('hour') == 12) {
+                        result.start.assign('hour', 0);
+                    }
+
+                } else {
+
+                    result.start.imply('meridiem', 1);
+                    
+                    if (result.start.get('hour') != 12) {
+                        result.start.assign('hour', result.start.get('hour') + 12); 
+                    }
+                }
+            }
+        }
+
+        result.text = result.text + match[0];
+        result.end.assign('hour', hour);
+        result.end.assign('minute', minute);
+        if (meridiem >= 0) {
+            result.end.assign('meridiem', meridiem);
+        } else {
+            var startAtPM = result.start.isCertain('meridiem') && result.start.get('meridiem') == 1;
+            if (startAtPM && result.start.get('hour') > hour) {
+                // 10pm - 1 (am)
+                result.end.imply('meridiem', 0);
+
+            } else if (hour > 12) {
+                result.end.imply('meridiem', 1);
+            }
+        }
+
+        if (result.end.date().getTime() < result.start.date().getTime()) {
+            result.end.imply('day', result.end.get('day') + 1)
+        }
+        
+        return result;
+    }
+}
+
+},{"../../result":92,"../parser":77,"moment":223}],41:[function(require,module,exports){
+/*
+
+
+*/
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var DAYS_OFFSET = {
+    'sonntag': 0, 'so': 0,
+    'montag': 1, 'mo': 1,
+    'dienstag': 2, 'di': 2,
+    'mittwoch': 3, 'mi': 3,
+    'donnerstag': 4, 'do': 4,
+    'freitag': 5, 'fr': 5,
+    'samstag': 6, 'sa': 6
+};
+
+var PATTERN = new RegExp('(\\W|^)' +
+    '(?:(?:\\,|\\(|\\（)\\s*)?' +
+    '(?:a[mn]\\s*?)?' +
+    '(?:(diese[mn]|letzte[mn]|n(?:ä|ae)chste[mn])\\s*)?' +
+    '(' + Object.keys(DAYS_OFFSET).join('|') + ')' +
+    '(?:\\s*(?:\\,|\\)|\\）))?' +
+    '(?:\\s*(diese|letzte|n(?:ä|ae)chste)\\s*woche)?' +
+    '(?=\\W|$)', 'i');
+
+var PREFIX_GROUP = 2;
+var WEEKDAY_GROUP = 3;
+var POSTFIX_GROUP = 4;
+
+exports.Parser = function DEWeekdayParser() {
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; };
+
+    this.extract = function(text, ref, match, opt){
+        var index = match.index + match[1].length;
+        var text = match[0].substr(match[1].length, match[0].length - match[1].length);
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref,
+        });
+
+        var dayOfWeek = match[WEEKDAY_GROUP].toLowerCase();
+        var offset = DAYS_OFFSET[dayOfWeek];
+        if(offset === undefined) return null;
+
+        var startMoment = moment(ref);
+        var prefix = match[PREFIX_GROUP];
+        var postfix = match[POSTFIX_GROUP];
+
+        var refOffset = startMoment.day();
+        var norm = prefix || postfix;
+        norm = norm || '';
+        norm = norm.toLowerCase();
+        if (/letzte/.test(norm)) {
+            startMoment.day(offset - 7);
+        } else if (/n(?:ä|ae)chste/.test(norm)) {
+            startMoment.day(offset + 7);
+        } else if (/diese/.test(norm)) {
+            if ( opt.forwardDatesOnly && refOffset > offset ) {
+                startMoment.day(offset + 7);
+            } else {
+                startMoment.day(offset);
+            }
+        } else {
+            if ( opt.forwardDatesOnly && refOffset > offset ) {
+                startMoment.day(offset + 7);
+            } else if (!opt.forwardDatesOnly && Math.abs(offset - 7 - refOffset) < Math.abs(offset - refOffset)) {
+                startMoment.day(offset - 7);
+            } else if (!opt.forwardDatesOnly && Math.abs(offset + 7 - refOffset) < Math.abs(offset - refOffset)) {
+                startMoment.day(offset + 7);
+            } else {
+                startMoment.day(offset);
+            }
+        }
+
+        result.start.assign('weekday', offset);
+        result.start.imply('day', startMoment.date());
+        result.start.imply('month', startMoment.month() + 1);
+        result.start.imply('year', startMoment.year());
+        return result;
+    }
+};
+
+},{"../../result":92,"../parser":77,"moment":223}],42:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = /(\W|^)(now|today|tonight|last\s*night|(?:tomorrow|tmr|yesterday)\s*|tomorrow|tmr|yesterday)(?=\W|$)/i;
+
+exports.Parser = function ENCasualDateParser(){
+
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; }
+
+    this.extract = function(text, ref, match, opt){
+
+        var text = match[0].substr(match[1].length);
+        var index = match.index + match[1].length;
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref,
+        });
+
+        var refMoment = moment(ref);
+        var startMoment = refMoment.clone();
+        var lowerText = text.toLowerCase();
+
+        if(lowerText == 'tonight'){
+            // Normally means this coming midnight
+            result.start.imply('hour', 22);
+            result.start.imply('meridiem', 1);
+
+        } else if (/^tomorrow|^tmr/.test(lowerText)) {
+
+            // Check not "Tomorrow" on late night
+            if(refMoment.hour() > 1) {
+                startMoment.add(1, 'day');
+            }
+
+        } else if (/^yesterday/.test(lowerText)) {
+
+            startMoment.add(-1, 'day');
+
+        } else if(lowerText.match(/last\s*night/)) {
+
+            result.start.imply('hour', 0);
+            if (refMoment.hour() > 6) {
+                startMoment.add(-1, 'day');
+            }
+
+        } else if (lowerText.match("now")) {
+
+          result.start.imply('hour', refMoment.hour());
+          result.start.imply('minute', refMoment.minute());
+          result.start.imply('second', refMoment.second());
+          result.start.imply('millisecond', refMoment.millisecond());
+
+        }
+
+        result.start.assign('day', startMoment.date())
+        result.start.assign('month', startMoment.month() + 1)
+        result.start.assign('year', startMoment.year())
+        result.tags['ENCasualDateParser'] = true;
+        return result;
+    }
+}
+
+},{"../../result":92,"../parser":77,"moment":223}],43:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = /(\W|^)((this)?\s*(morning|afternoon|evening|noon))/i;
+
+var TIME_MATCH = 4;
+
+exports.Parser = function ENCasualTimeParser(){
+
+    Parser.apply(this, arguments);
+
+
+    this.pattern = function() { return PATTERN; }
+
+    this.extract = function(text, ref, match, opt){
+
+        var text = match[0].substr(match[1].length);
+        var index = match.index + match[1].length;
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref,
+        });
+
+        if(!match[TIME_MATCH]) TIME_MATCH = 3;
+
+        if (match[TIME_MATCH] == "afternoon") {
+
+            result.start.imply('hour', opt['afternoon'] ? opt['afternoon'] : 15);
+
+        } else if (match[TIME_MATCH] == "evening") {
+
+            result.start.imply('hour', opt['evening'] ? opt['evening'] : 18);
+
+        } else if (match[TIME_MATCH] == "morning") {
+
+            result.start.imply('hour', opt['morning'] ? opt['morning'] : 6);
+
+        } else if (match[TIME_MATCH] == "noon") {
+
+            result.start.imply('hour', opt['noon'] ? opt['noon'] : 12);
+        }
+
+        result.tags['ENCasualTimeParser'] = true;
+        return result;
+    };
+};
+
+},{"../../result":92,"../parser":77,"moment":223}],44:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var util  = require('../../utils/EN');
+
+var PATTERN = new RegExp('(\\W|^)' +
+    '(within|in)\\s*' +
+    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|an?(?:\\s*few)?|half(?:\\s*an?)?)\\s*' +
+    '(seconds?|min(?:ute)?s?|hours?|days?|weeks?|months?|years?)\\s*' +
+    '(?=\\W|$)', 'i'
+);
+
+var STRICT_PATTERN = new RegExp('(\\W|^)' +
+    '(within|in)\\s*' +
+    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|an?)\\s*' +
+    '(seconds?|minutes?|hours?|days?)\\s*' +
+    '(?=\\W|$)', 'i'
+);
+
+exports.Parser = function ENDeadlineFormatParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() {
+        return this.isStrictMode()? STRICT_PATTERN : PATTERN;
+    };
+
+    this.extract = function(text, ref, match, opt){
+
+        var index = match.index + match[1].length;
+        var text  = match[0];
+        text  = match[0].substr(match[1].length, match[0].length - match[1].length);
+
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref
+        });
+
+        var num = match[3].toLowerCase();
+        if (util.INTEGER_WORDS[num] !== undefined) {
+            num = util.INTEGER_WORDS[num];
+        } else if (num === 'a' || num === 'an'){
+            num = 1;
+        } else if (num.match(/few/i)){
+            num = 3;
+        } else if (num.match(/half/i)) {
+            num = 0.5;
+        } else {
+            num = parseInt(num);
+        }
+
+        var date = moment(ref);
+        if (match[4].match(/day|week|month|year/i)) {
+
+            if (match[4].match(/day/i)) {
+                date.add(num, 'd');
+            } else if (match[4].match(/week/i)) {
+                date.add(num * 7, 'd');
+            } else if (match[4].match(/month/i)) {
+                date.add(num, 'month');
+            } else if (match[4].match(/year/i)) {
+                date.add(num, 'year');
+            }
+
+            result.start.assign('year', date.year());
+            result.start.assign('month', date.month() + 1);
+            result.start.assign('day', date.date());
+            return result;
+        }
+
+        if (match[4].match(/hour/i)) {
+
+            date.add(num, 'hour');
+
+        } else if (match[4].match(/min/i)) {
+
+            date.add(num, 'minute');
+
+        } else if (match[4].match(/second/i)) {
+
+            date.add(num, 'second');
+        }
+
+        result.start.imply('year', date.year());
+        result.start.imply('month', date.month() + 1);
+        result.start.imply('day', date.date());
+        result.start.assign('hour', date.hour());
+        result.start.assign('minute', date.minute());
+        result.start.assign('second', date.second());
+        result.tags['ENDeadlineFormatParser'] = true;
+        return result;
+    };
+};
+
+},{"../../result":92,"../../utils/EN":94,"../parser":77,"moment":223}],45:[function(require,module,exports){
+/*
+    ISO 8601
+    http://www.w3.org/TR/NOTE-datetime
+    - YYYY-MM-DD
+    - YYYY-MM-DDThh:mmTZD
+    - YYYY-MM-DDThh:mm:ssTZD
+    - YYYY-MM-DDThh:mm:ss.sTZD 
+    - TZD = (Z or +hh:mm or -hh:mm)
+*/
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = new RegExp('(\\W|^)' 
+            + '([0-9]{4})\\-([0-9]{1,2})\\-([0-9]{1,2})'
+            + '(?:T' //..
+                + '([0-9]{1,2}):([0-9]{1,2})' // hh:mm
+                + '(?::([0-9]{1,2})(?:\\.(\\d{1,4}))?)?' // :ss.s
+                + '(?:Z|([+-]\\d{2}):?(\\d{2})?)?' // TZD (Z or ±hh:mm or ±hhmm or ±hh)
+            + ')?'  //..
+            + '(?=\\W|$)', 'i');
+
+var YEAR_NUMBER_GROUP = 2;
+var MONTH_NUMBER_GROUP = 3;
+var DATE_NUMBER_GROUP  = 4;
+var HOUR_NUMBER_GROUP  = 5;
+var MINUTE_NUMBER_GROUP = 6;
+var SECOND_NUMBER_GROUP = 7;
+var MILLISECOND_NUMBER_GROUP = 8;
+var TZD_HOUR_OFFSET_GROUP = 9;
+var TZD_MINUTE_OFFSET_GROUP = 10;
+
+exports.Parser = function ENISOFormatParser(){
+    Parser.apply(this, arguments);
+    
+    this.pattern = function() { return PATTERN; }
+    
+    this.extract = function(text, ref, match, opt){ 
+        
+        var text = match[0].substr(match[1].length);
+        var index = match.index + match[1].length;
+
+        var result = new ParsedResult({
+            text: text,
+            index: index,
+            ref: ref,
+        })
+        
+        result.start.assign('year', parseInt(match[YEAR_NUMBER_GROUP]));
+        result.start.assign('month', parseInt(match[MONTH_NUMBER_GROUP]));
+        result.start.assign('day', parseInt(match[DATE_NUMBER_GROUP]));
+
+        if (moment(result.start.get('month')) > 12 || moment(result.start.get('month')) < 1 ||
+            moment(result.start.get('day')) > 31 || moment(result.start.get('day')) < 1) {
+            return null;
+        }
+
+        if (match[HOUR_NUMBER_GROUP] != null) {
+            
+            result.start.assign('hour',
+                    parseInt(match[HOUR_NUMBER_GROUP]));
+            result.start.assign('minute',
+                    parseInt(match[MINUTE_NUMBER_GROUP]));
+
+            if (match[SECOND_NUMBER_GROUP] != null) {
+
+                result.start.assign('second',
+                        parseInt(match[SECOND_NUMBER_GROUP]));
+            }
+
+            if (match[MILLISECOND_NUMBER_GROUP] != null) {
+
+                result.start.assign('millisecond',
+                        parseInt(match[MILLISECOND_NUMBER_GROUP]));
+            }
+
+            if (match[TZD_HOUR_OFFSET_GROUP] == null) {
+
+                result.start.assign('timezoneOffset', 0);
+            } else {
+
+                var minuteOffset = 0;
+                var hourOffset = parseInt(match[TZD_HOUR_OFFSET_GROUP]);
+                if (match[TZD_MINUTE_OFFSET_GROUP] != null)
+                    minuteOffset = parseInt(match[TZD_MINUTE_OFFSET_GROUP]);
+
+                var offset = hourOffset * 60;
+                if (offset < 0) {
+                    offset -= minuteOffset;
+                } else {
+                    offset += minuteOffset;
+                }
+
+                result.start.assign('timezoneOffset', offset);
+            }
+        }
+        
+        result.tags['ENISOFormatParser'] = true;
+        return result;
+    };
+
+}
+
+
+},{"../../result":92,"../parser":77,"moment":223}],46:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var util  = require('../../utils/EN');
+
+var PATTERN = new RegExp('(\\W|^)' +
+        '(?:on\\s*?)?' +
+        '(?:(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sun|Mon|Tue|Wed|Thu|Fri|Sat)\\s*,?\\s*)?' +
+        '(([0-9]{1,2})(?:st|nd|rd|th)?|' + util.ORDINAL_WORDS_PATTERN + ')' +
+        '(?:\\s*' +
+            '(?:to|\\-|\\–|until|through|till|\\s)\\s*' +
+            '(([0-9]{1,2})(?:st|nd|rd|th)?|' + util.ORDINAL_WORDS_PATTERN + ')' +
+        ')?\\s*(?:of)?\\s*' +
+        '(Jan(?:uary|\\.)?|Feb(?:ruary|\\.)?|Mar(?:ch|\\.)?|Apr(?:il|\\.)?|May|Jun(?:e|\\.)?|Jul(?:y|\\.)?|Aug(?:ust|\\.)?|Sep(?:tember|\\.)?|Oct(?:ober|\\.)?|Nov(?:ember|\\.)?|Dec(?:ember|\\.)?)' +
+        '(?:' +
+            ',?\\s*([0-9]{1,4}(?![^\\s]\\d))' +
+            '(\\s*(?:BE|AD|BC))?' +
+        ')?' +
+        '(?=\\W|$)', 'i'
+    );
+
+var WEEKDAY_GROUP = 2;
+var DATE_GROUP = 3;
+var DATE_NUM_GROUP = 4;
+var DATE_TO_GROUP = 5;
+var DATE_TO_NUM_GROUP = 6;
+var MONTH_NAME_GROUP = 7;
+var YEAR_GROUP = 8;
+var YEAR_BE_GROUP = 9;
+
+exports.Parser = function ENMonthNameLittleEndianParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; }
+
+    this.extract = function(text, ref, match, opt){
+
+        var result = new ParsedResult({
+            text: match[0].substr(match[1].length, match[0].length - match[1].length),
+            index: match.index + match[1].length,
+            ref: ref
+        });
+
+        var month = match[MONTH_NAME_GROUP];
+        month = util.MONTH_OFFSET[month.toLowerCase()];
+
+        var day = match[DATE_NUM_GROUP] ?
+            parseInt(match[DATE_NUM_GROUP]):
+            util.ORDINAL_WORDS[match[DATE_GROUP].trim().replace('-', ' ').toLowerCase()];
+
+        var year = null;
+        if (match[YEAR_GROUP]) {
+            year = match[YEAR_GROUP];
+            year = parseInt(year);
+
+            if(match[YEAR_BE_GROUP]){
+
+                if (/BE/i.test(match[YEAR_BE_GROUP])) {
+                    // Buddhist Era
+                    year = year - 543;
+                } else if (/BC/i.test(match[YEAR_BE_GROUP])) {
+                    // Before Christ
+                    year = -year;
+                }
+
+            } else if (year < 10) {
+
+                // require single digit years to always have BC/AD
+                return null;
+
+            } else if (year < 100){
+
+                year = year + 2000;
+            }
+        }
+
+        if(year){
+            result.start.assign('day', day);
+            result.start.assign('month', month);
+            result.start.assign('year', year);
+        } else {
+
+            //Find the most appropriated year
+            var refMoment = moment(ref);
+            refMoment.month(month - 1);
+            refMoment.date(day);
+            refMoment.year(moment(ref).year());
+
+            var nextYear = refMoment.clone().add(1, 'y');
+            var lastYear = refMoment.clone().add(-1, 'y');
+            if( Math.abs(nextYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){
+                refMoment = nextYear;
+            }
+            else if( Math.abs(lastYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){
+                refMoment = lastYear;
+            }
+
+            result.start.assign('day', day);
+            result.start.assign('month', month);
+            result.start.imply('year', refMoment.year());
+        }
+
+        // Weekday component
+        if (match[WEEKDAY_GROUP]) {
+            var weekday = match[WEEKDAY_GROUP];
+            weekday = util.WEEKDAY_OFFSET[weekday.toLowerCase()]
+            result.start.assign('weekday', weekday);
+        }
+
+        // Text can be 'range' value. Such as '12 - 13 January 2012'
+        if (match[DATE_TO_GROUP]) {
+            var endDate = match[DATE_TO_NUM_GROUP] ?
+                parseInt(match[DATE_TO_NUM_GROUP]):
+                util.ORDINAL_WORDS[match[DATE_TO_GROUP].trim().replace('-', ' ').toLowerCase()];
+
+            result.end = result.start.clone();
+            result.end.assign('day', endDate);
+        }
+
+        result.tags['ENMonthNameLittleEndianParser'] = true;
+        return result;
+    };
+};
+
+},{"../../result":92,"../../utils/EN":94,"../parser":77,"moment":223}],47:[function(require,module,exports){
+/*
+
+    The parser for parsing US's date format that begin with month's name.
+
+    EX.
+        - January 13
+        - January 13, 2012
+        - January 13 - 15, 2012
+        - Tuesday, January 13, 2012
+
+    Watch out for:
+        - January 12:00
+        - January 12.44
+        - January 1222344
+*/
+
+var moment = require('moment');
+
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var util  = require('../../utils/EN');
+
+var PATTERN = new RegExp('(\\W|^)' +
+    '(?:' +
+        '(?:on\\s*?)?' +
+        '(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sun\\.?|Mon\\.?|Tue\\.?|Wed\\.?|Thu\\.?|Fri\\.?|Sat\\.?)' +
+    '\\s*,?\\s*)?' +
+    '(Jan\\.?|January|Feb\\.?|February|Mar\\.?|March|Apr\\.?|April|May\\.?|Jun\\.?|June|Jul\\.?|July|Aug\\.?|August|Sep\\.?|Sept\\.?|September|Oct\\.?|October|Nov\\.?|November|Dec\\.?|December)' +
+    '\\s*' +
+    '(([0-9]{1,2})(?:st|nd|rd|th)?|' + util.ORDINAL_WORDS_PATTERN +')\\s*' +
+    '(?:' +
+        '(?:to|\\-)\\s*' +
+        '(([0-9]{1,2})(?:st|nd|rd|th)?| ' + util.ORDINAL_WORDS_PATTERN + ')\\s*' +
+    ')?' +
+    '(?:' +
+        '\\s*,?\\s*(?:([0-9]{4})\\s*(BE|AD|BC)?|([0-9]{1,4})\\s*(AD|BC))\\s*' +
+    ')?' +
+    '(?=\\W|$)(?!\\:\\d)', 'i');
+
+var WEEKDAY_GROUP = 2;
+var MONTH_NAME_GROUP = 3;
+var DATE_GROUP = 4;
+var DATE_NUM_GROUP = 5;
+var DATE_TO_GROUP = 6;
+var DATE_TO_NUM_GROUP = 7;
+var YEAR_GROUP = 8;
+var YEAR_BE_GROUP = 9;
+var YEAR_GROUP2 = 10;
+var YEAR_BE_GROUP2 = 11;
+
+exports.Parser = function ENMonthNameMiddleEndianParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; }
+
+    this.extract = function(text, ref, match, opt){
+
+        var result = new ParsedResult({
+            text: match[0].substr(match[1].length, match[0].length - match[1].length),
+            index: match.index + match[1].length,
+            ref: ref,
+        });
+
+
+        var month = match[MONTH_NAME_GROUP];
+        month = util.MONTH_OFFSET[month.toLowerCase()];
+        var day = match[DATE_NUM_GROUP] ?
+            parseInt(match[DATE_NUM_GROUP]) :
+            util.ORDINAL_WORDS[match[DATE_GROUP].trim().replace('-', ' ').toLowerCase()];
+
+        var year = null;
+        if (match[YEAR_GROUP] || match[YEAR_GROUP2]) {
+            year = match[YEAR_GROUP] || match[YEAR_GROUP2];
+            year = parseInt(year);
+
+            var yearBE = match[YEAR_BE_GROUP] || match[YEAR_BE_GROUP2];
+            if (yearBE) {
+                if (/BE/i.test(yearBE)) {
+                    // Buddhist Era
+                    year = year - 543;
+                } else if (/BC/i.test(yearBE)) {
+                    // Before Christ
+                    year = -year;
+                }
+            } else if (year < 100){
+
+                year = year + 2000;
+            }
+        }
+
+        if(year){
+            result.start.assign('day', day);
+            result.start.assign('month', month);
+            result.start.assign('year', year);
+        } else {
+
+            //Find the most appropriated year
+            var refMoment = moment(ref);
+            refMoment.month(month - 1);
+            refMoment.date(day);
+
+            var nextYear = refMoment.clone().add(1, 'y');
+            var lastYear = refMoment.clone().add(-1, 'y');
+            if( Math.abs(nextYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){
+                refMoment = nextYear;
+            }
+            else if( Math.abs(lastYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){
+                refMoment = lastYear;
+            }
+
+            result.start.assign('day', day);
+            result.start.assign('month', month);
+            result.start.imply('year', refMoment.year());
+        }
+
+        // Weekday component
+        if (match[WEEKDAY_GROUP]) {
+            var weekday = match[WEEKDAY_GROUP];
+            weekday = util.WEEKDAY_OFFSET[weekday.toLowerCase()]
+            result.start.assign('weekday', weekday);
+        }
+
+        // Text can be 'range' value. Such as 'January 12 - 13, 2012'
+        if (match[DATE_TO_GROUP]) {
+            var endDate = match[DATE_TO_NUM_GROUP] ?
+                endDate = parseInt(match[DATE_TO_NUM_GROUP]) :
+                util.ORDINAL_WORDS[match[DATE_TO_GROUP].replace('-', ' ').trim().toLowerCase()];
+
+            result.end = result.start.clone();
+            result.end.assign('day', endDate);
+        }
+
+        result.tags['ENMonthNameMiddleEndianParser'] = true;
+        return result;
+    }
+};
+},{"../../result":92,"../../utils/EN":94,"../parser":77,"moment":223}],48:[function(require,module,exports){
+/*
+    
+    The parser for parsing month name and year.
+    
+    EX. 
+        - January
+        - January 2012
+        - January, 2012
+*/
+
+var moment = require('moment');
+
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var util  = require('../../utils/EN');
+
+var PATTERN = new RegExp('(^|\\D\\s+|[^\\w\\s])' +
+    '(Jan\\.?|January|Feb\\.?|February|Mar\\.?|March|Apr\\.?|April|May\\.?|Jun\\.?|June|Jul\\.?|July|Aug\\.?|August|Sep\\.?|Sept\\.?|September|Oct\\.?|October|Nov\\.?|November|Dec\\.?|December)' + 
+    '\\s*' +
+    '(?:' +
+        '[,-]?\\s*([0-9]{4})(\\s*BE|AD|BC)?' +
+    ')?' +
+    '(?=[^\\s\\w]|\\s+[^0-9]|\\s+$|$)', 'i');
+
+var MONTH_NAME_GROUP = 2;
+var YEAR_GROUP = 3;
+var YEAR_BE_GROUP = 4;
+
+exports.Parser = function ENMonthNameParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; }
+    
+    this.extract = function(text, ref, match, opt){
+        var result = new ParsedResult({
+            text: match[0].substr(match[1].length, match[0].length - match[1].length),
+            index: match.index + match[1].length,
+            ref: ref,
+        });
+
+        
+        var month = match[MONTH_NAME_GROUP];
+        month = util.MONTH_OFFSET[month.toLowerCase()];
+
+        var day = 1;
+
+        var year = null;
+        if (match[YEAR_GROUP]) {
+            year = match[YEAR_GROUP];
+            year = parseInt(year);
+
+            if(match[YEAR_BE_GROUP]){
+                if (match[YEAR_BE_GROUP].match(/BE/)) {
+                    // Buddhist Era
+                    year = year - 543;
+                } else if (match[YEAR_BE_GROUP].match(/BC/)) {
+                    // Before Christ
+                    year = -year;
+                }
+
+            } else if (year < 100){ 
+
+                year = year + 2000;
+            }
+        }
+
+        if(year){
+            result.start.imply('day', day);
+            result.start.assign('month', month);
+            result.start.assign('year', year);
+        } else {
+            
+            //Find the most appropriated year
+            var refMoment = moment(ref);
+            refMoment.month(month - 1);
+            refMoment.date(day);
+
+            var nextYear = refMoment.clone().add(1, 'y');
+            var lastYear = refMoment.clone().add(-1, 'y');
+            if( Math.abs(nextYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){  
+                refMoment = nextYear;
+            }
+            else if( Math.abs(lastYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){ 
+                refMoment = lastYear;
+            }
+
+            result.start.imply('day', day);
+            result.start.assign('month', month);
+            result.start.imply('year', refMoment.year());
+        }
+
+        result.tags['ENMonthNameParser'] = true;
+        return result;
+    }
+}
+
+},{"../../result":92,"../../utils/EN":94,"../parser":77,"moment":223}],49:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var util  = require('../../utils/EN');
+
+var PATTERN = new RegExp('(\\W|^)' +
+    '(next|last|past)\\s*' +
+    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|few|half(?:\\s*an?)?)?\\s*' +
+    '(seconds?|min(?:ute)?s?|hours?|days?|weeks?|months?|years?)(?=\\s*)' +
+    '(?=\\W|$)', 'i'
+);
+
+var MODIFIER_WORD_GROUP = 2;
+var MULTIPLIER_WORD_GROUP = 3;
+var RELATIVE_WORD_GROUP = 4;
+
+exports.Parser = function ENRelativeDateFormatParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; };
+
+    this.extract = function(text, ref, match, opt){
+
+        var index = match.index + match[1].length;
+        var modifier = match[MODIFIER_WORD_GROUP].toLowerCase().match(/^next/) ? 1 : -1;
+        var text  = match[0];
+        text  = match[0].substr(match[1].length, match[0].length - match[1].length);
+
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref
+        });
+        result.tags['ENRelativeDateFormatParser'] = true;
+
+        var num = match[MULTIPLIER_WORD_GROUP] === undefined ? '' : match[3].toLowerCase();
+        if (util.INTEGER_WORDS[num] !== undefined) {
+            num = util.INTEGER_WORDS[num];
+        } else if (num === ''){
+            num = 1;
+        } else if (num.match(/few/i)){
+            num = 3;
+        } else if (num.match(/half/i)) {
+            num = 0.5;
+        } else {
+            num = parseInt(num);
+        }
+
+        num *= modifier;
+
+        var date = moment(ref);
+        if (match[RELATIVE_WORD_GROUP].match(/day|week|month|year/i)) {
+
+            if (match[RELATIVE_WORD_GROUP].match(/day/i)) {
+                date.add(num, 'd');
+                result.start.assign('year', date.year());
+                result.start.assign('month', date.month() + 1);
+                result.start.assign('day', date.date());
+            } else if (match[RELATIVE_WORD_GROUP].match(/week/i)) {
+                date.add(num * 7, 'd');
+                // We don't know the exact date for next/last week so we imply
+                // them
+                result.start.imply('day', date.date());
+                result.start.imply('month', date.month() + 1);
+                result.start.imply('year', date.year());
+            } else if (match[RELATIVE_WORD_GROUP].match(/month/i)) {
+                date.add(num, 'month');
+                // We don't know the exact day for next/last month
+                result.start.imply('day', date.date());
+                result.start.assign('year', date.year());
+                result.start.assign('month', date.month() + 1);
+            } else if (match[RELATIVE_WORD_GROUP].match(/year/i)) {
+                date.add(num, 'year');
+                // We don't know the exact day for month on next/last year
+                result.start.imply('day', date.date());
+                result.start.imply('month', date.month() + 1);
+                result.start.assign('year', date.year());
+            }
+
+            return result;
+        }
+
+        if (match[RELATIVE_WORD_GROUP].match(/hour/i)) {
+
+            date.add(num, 'hour');
+            result.start.imply('minute', date.minute());
+            result.start.imply('second', date.second());
+
+        } else if (match[RELATIVE_WORD_GROUP].match(/min/i)) {
+
+            date.add(num, 'minute');
+            result.start.assign('minute', date.minute());
+            result.start.imply('second', date.second());
+
+        } else if (match[RELATIVE_WORD_GROUP].match(/second/i)) {
+
+            date.add(num, 'second');
+            result.start.assign('second', date.second());
+            result.start.assign('minute', date.minute());
+        }
+
+        result.start.assign('hour', date.hour());
+        result.start.assign('year', date.year());
+        result.start.assign('month', date.month() + 1);
+        result.start.assign('day', date.date());
+        return result;
+    };
+};
+
+},{"../../result":92,"../../utils/EN":94,"../parser":77,"moment":223}],50:[function(require,module,exports){
+/*
+    Date format with slash "/" (also "-" and ".") between numbers
+    - Tuesday 11/3/2015
+    - 11/3/2015
+    - 11/3
+*/
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = new RegExp('(\\W|^)' +
+    '(?:' +
+        '(?:on\\s*?)?' +
+        '((?:sun|mon|tues?|wed(?:nes)?|thu(?:rs?)?|fri|sat(?:ur)?)(?:day)?)' +
+        '\\s*\\,?\\s*' +
+    ')?' +
+    '([0-3]{0,1}[0-9]{1})[\\/\\.\\-]([0-3]{0,1}[0-9]{1})' +
+    '(?:' +
+        '[\\/\\.\\-]' +
+        '([0-9]{4}\s*\,?\s*|[0-9]{2}\s*\,?\s*)' +
+    ')?' +
+    '(\\W|$)', 'i');
+
+var DAYS_OFFSET = { 'sunday': 0, 'sun': 0, 'monday': 1, 'mon': 1,'tuesday': 2, 'wednesday': 3, 'wed': 3,
+    'thursday': 4, 'thur': 4,'friday': 5, 'fri': 5,'saturday': 6, 'sat': 6,}
+
+
+var OPENNING_GROUP = 1;
+var ENDING_GROUP = 6;
+
+var WEEKDAY_GROUP = 2;
+var MONTH_GROUP = 3;
+var DAY_GROUP = 4;
+var YEAR_GROUP = 5;
+
+exports.Parser = function ENSlashDateFormatParser(argument) {
+    Parser.apply(this, arguments);
+
+    this.pattern = function () { return PATTERN; };
+    this.extract = function(text, ref, match, opt){
+
+        if(match[OPENNING_GROUP] == '/' || match[ENDING_GROUP] == '/') {
+            // Long skip, if there is some overlapping like:
+            // XX[/YY/ZZ]
+            // [XX/YY/]ZZ
+            match.index += match[0].length
+            return;
+        }
+
+        var index = match.index + match[OPENNING_GROUP].length;
+        var text = match[0].substr(match[OPENNING_GROUP].length, match[0].length - match[ENDING_GROUP].length);
+
+
+        var result = new ParsedResult({
+            text: text,
+            index: index,
+            ref: ref,
+        });
+
+        if(text.match(/^\d\.\d$/)) return;
+        if(text.match(/^\d\.\d{1,2}\.\d{1,2}$/)) return;
+
+        // MM/dd -> OK
+        // MM.dd -> NG
+        if(!match[YEAR_GROUP] && match[0].indexOf('/') < 0) return;
+
+        var date = null;
+        var year = match[YEAR_GROUP] || moment(ref).year() + '';
+        var month = match[MONTH_GROUP];
+        var day   = match[DAY_GROUP];
+
+        month = parseInt(month);
+        day  = parseInt(day);
+        year = parseInt(year);
+
+        if(month < 1 || month > 12) {
+            if(month > 12) {
+                // dd/mm/yyyy date format if day looks like a month, and month
+                // looks like a day.
+                if (day >= 1 && day <= 12 && month >= 13 && month <= 31) {
+                    // unambiguous
+                    var tday = month;
+                    month = day;
+                    day = tday;
+                }
+                else {
+                    // both month and day are <= 12
+                    return null;
+                }
+            }
+        }
+        if(day < 1 || day > 31) return null;
+
+        if(year < 100){
+            if (year > 50) {
+                year = year + 1900;
+            } else {
+                year = year + 2000;
+            }
+        }
+
+        result.start.assign('day', day);
+        result.start.assign('month', month);
+        result.start.assign('year', year);
+
+        //Day of week
+        if(match[WEEKDAY_GROUP]) {
+            result.start.assign('weekday', DAYS_OFFSET[match[WEEKDAY_GROUP].toLowerCase()]);
+        }
+
+        result.tags['ENSlashDateFormatParser'] = true;
+        return result;
+    };
+};
+
+},{"../../result":92,"../parser":77,"moment":223}],51:[function(require,module,exports){
+/*
+    Date format with slash "/" between numbers like ENSlashDateFormatParser,
+    but this parser expect year before month and date. 
+    - YYYY/MM/DD
+    - YYYY-MM-DD
+    - YYYY.MM.DD
+*/
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = new RegExp('(\\W|^)' 
+            + '([0-9]{4})[\\-\\.\\/]([0-9]{1,2})[\\-\\.\\/]([0-9]{1,2})'
+            + '(?=\\W|$)', 'i');
+
+var YEAR_NUMBER_GROUP = 2;
+var MONTH_NUMBER_GROUP = 3;
+var DATE_NUMBER_GROUP  = 4;
+
+exports.Parser = function ENSlashDateFormatStartWithYearParser(){
+    Parser.apply(this, arguments);
+    
+    this.pattern = function() { return PATTERN; }
+    
+    this.extract = function(text, ref, match, opt){
+
+        var text = match[0].substr(match[1].length);
+        var index = match.index + match[1].length;
+
+        var result = new ParsedResult({
+            text: text,
+            index: index,
+            ref: ref,
+        })
+        
+        result.start.assign('year', parseInt(match[YEAR_NUMBER_GROUP]));
+        result.start.assign('month', parseInt(match[MONTH_NUMBER_GROUP]));
+        result.start.assign('day', parseInt(match[DATE_NUMBER_GROUP]));
+
+        if (moment(result.start.get('month')) > 12 || moment(result.start.get('month')) < 1 ||
+            moment(result.start.get('day')) > 31 || moment(result.start.get('day')) < 1) {
+            return null;
+        }
+        
+        result.tags['ENDateFormatParser'] = true;
+        return result;
+    };
+}
+
+},{"../../result":92,"../parser":77,"moment":223}],52:[function(require,module,exports){
+/*
+    Month/Year date format with slash "/" (also "-" and ".") between numbers 
+    - 11/05
+    - 06/2005
+*/
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = new RegExp('(^|[^\\d/]\\s+|[^\\w\\s])' +
+    '([0-9]|0[1-9]|1[012])/([0-9]{4})' + 
+    '([^\\d/]|$)', 'i');
+
+var OPENNING_GROUP = 1;
+var ENDING_GROUP = 4;
+
+var MONTH_GROUP = 2;
+var YEAR_GROUP = 3;
+
+exports.Parser = function ENSlashMonthFormatParser(argument) {
+    Parser.apply(this, arguments);
+
+    this.pattern = function () { return PATTERN; };
+    this.extract = function(text, ref, match, opt){
+        
+        var index = match.index + match[OPENNING_GROUP].length;
+        var text = match[0].substr(match[OPENNING_GROUP].length, match[0].length - (1 + match[ENDING_GROUP].length)).trim();
+
+        var result = new ParsedResult({
+            text: text,
+            index: index,
+            ref: ref,
+        });
+
+        var date = null;
+        var year = match[YEAR_GROUP] ;
+        var month = match[MONTH_GROUP];
+        var day   = 1;
+        
+        month = parseInt(month);
+        year = parseInt(year);
+
+        result.start.imply('day', day);
+        result.start.assign('month', month);
+        result.start.assign('year', year);
+
+        result.tags['ENSlashMonthFormatParser'] = true;
+        return result;
+    };
+};
+
+},{"../../result":92,"../parser":77,"moment":223}],53:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var util  = require('../../utils/EN');
+
+var PATTERN = new RegExp('' +
+    '(\\W|^)' +
+    '(?:within\\s*)?' +
+    '(' + util.INTEGER_WORDS_PATTERN + '|[0-9]+|an?(?:\\s*few)?|half(?:\\s*an?)?)\\s*' +
+    '(seconds?|min(?:ute)?s?|hours?|weeks?|days?|months?|years?)\\s*' +
+    '(?:ago|before|earlier)(?=(?:\\W|$))', 'i');
+
+var STRICT_PATTERN = new RegExp('' +
+    '(\\W|^)' +
+    '(?:within\\s*)?' +
+    '([0-9]+|an?)\\s*' +
+    '(seconds?|minutes?|hours?|days?)\\s*' +
+    'ago(?=(?:\\W|$))', 'i');
+
+exports.Parser = function ENTimeAgoFormatParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() {
+        return this.isStrictMode()? STRICT_PATTERN : PATTERN;
+    };
+
+    this.extract = function(text, ref, match, opt){
+
+        if (match.index > 0 && text[match.index-1].match(/\w/)) return null;
+
+        var text = match[0];
+        text  = match[0].substr(match[1].length, match[0].length - match[1].length);
+        index = match.index + match[1].length;
+
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref
+        });
+
+        var num = match[2].toLowerCase() ;
+        if (util.INTEGER_WORDS[num] !== undefined) {
+            num = util.INTEGER_WORDS[num];
+        } else if(num === 'a' || num === 'an'){
+            num = 1;
+        } else if (num.match(/few/)) {
+            num = 3;
+        } else if (num.match(/half/)) {
+            num = 0.5;
+        } else {
+            num = parseInt(num);
+        }
+
+        var date = moment(ref);
+
+        if (match[3].match(/hour|min|second/i)) {
+            if (match[3].match(/hour/i)) {
+
+                date.add(-num, 'hour');
+
+            } else if (match[3].match(/min/i)) {
+
+                date.add(-num, 'minute');
+
+            } else if (match[3].match(/second/i)) {
+
+                date.add(-num, 'second');
+            }
+
+            result.start.imply('day', date.date());
+            result.start.imply('month', date.month() + 1);
+            result.start.imply('year', date.year());
+            result.start.assign('hour', date.hour());
+            result.start.assign('minute', date.minute());
+            result.start.assign('second', date.second());
+            result.tags['ENTimeAgoFormatParser'] = true;
+            return result;
+        }
+
+        if (match[3].match(/week/i)) {
+            date.add(-num, 'week');
+
+            result.start.imply('day', date.date());
+            result.start.imply('month', date.month() + 1);
+            result.start.imply('year', date.year());
+            result.start.imply('weekday', date.day());
+            return result;
+        }
+
+        if (match[3].match(/day/i)) {
+            date.add(-num, 'd');
+        }
+
+        if (match[3].match(/month/i)) {
+            date.add(-num, 'month');
+        }
+
+        if (match[3].match(/year/i)) {
+
+            date.add(-num, 'year');
+        }
+
+        result.start.assign('day', date.date());
+        result.start.assign('month', date.month() + 1);
+        result.start.assign('year', date.year());
+        return result;
+
+    };
+}
+
+},{"../../result":92,"../../utils/EN":94,"../parser":77,"moment":223}],54:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var ParsedComponents = require('../../result').ParsedComponents;
+
+var FIRST_REG_PATTERN  = new RegExp("(^|\\s|T)" +
+    "(?:(?:at|from)\\s*)?" + 
+    "(\\d{1,4}|noon|midnight)" + 
+    "(?:" + 
+        "(?:\\.|\\:|\\：)(\\d{1,2})" + 
+        "(?:" + 
+            "(?:\\:|\\：)(\\d{2})" + 
+        ")?" + 
+    ")?" + 
+    "(?:\\s*(A\\.M\\.|P\\.M\\.|AM?|PM?))?" + 
+    "(?=\\W|$)", 'i');
+
+
+var SECOND_REG_PATTERN = new RegExp("^\\s*" + 
+    "(\\-|\\–|\\~|\\〜|to|\\?)\\s*" + 
+    "(\\d{1,4})" +
+    "(?:" + 
+        "(?:\\.|\\:|\\：)(\\d{1,2})" + 
+        "(?:" + 
+            "(?:\\.|\\:|\\：)(\\d{1,2})" + 
+        ")?" + 
+    ")?" + 
+    "(?:\\s*(A\\.M\\.|P\\.M\\.|AM?|PM?))?" + 
+    "(?=\\W|$)", 'i');
+
+var HOUR_GROUP    = 2;
+var MINUTE_GROUP  = 3;
+var SECOND_GROUP  = 4;
+var AM_PM_HOUR_GROUP = 5;
+
+
+exports.Parser = function ENTimeExpressionParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return FIRST_REG_PATTERN; }
+    
+    this.extract = function(text, ref, match, opt){ 
+        
+        // This pattern can be overlaped Ex. [12] AM, 1[2] AM
+        if (match.index > 0 && text[match.index-1].match(/\w/)) return null;
+        var refMoment = moment(ref);
+        var result = new ParsedResult();
+        result.ref = ref;
+        result.index = match.index + match[1].length;
+        result.text  = match[0].substring(match[1].length);
+        result.tags['ENTimeExpressionParser'] = true;
+
+        result.start.imply('day',   refMoment.date());
+        result.start.imply('month', refMoment.month()+1);
+        result.start.imply('year',  refMoment.year());
+        
+        var hour = 0;
+        var minute = 0;
+        var meridiem = -1;
+
+        // ----- Second
+        if(match[SECOND_GROUP] != null){ 
+            var second = parseInt(match[SECOND_GROUP]);
+            if(second >= 60) return null;
+
+            result.start.assign('second', second);
+        }
+        
+        // ----- Hours
+        if (match[HOUR_GROUP].toLowerCase() == "noon"){
+            meridiem = 1; 
+            hour = 12;
+        } else if (match[HOUR_GROUP].toLowerCase() == "midnight") {
+            meridiem = 0; 
+            hour = 0;
+        } else {
+            hour = parseInt(match[HOUR_GROUP]);
+        }
+        
+        // ----- Minutes
+        if(match[MINUTE_GROUP] != null){ 
+            minute = parseInt(match[MINUTE_GROUP]);
+        } else if(hour > 100) { 
+            minute = hour%100;
+            hour   = parseInt(hour/100);
+        } 
+        
+        if(minute >= 60) {
+            return null;
+        }
+
+        if(hour > 24) {
+            return null;
+        }
+        if (hour >= 12) { 
+            meridiem = 1;
+        }
+
+        // ----- AM & PM  
+        if(match[AM_PM_HOUR_GROUP] != null) {
+            if(hour > 12) return null;
+            var ampm = match[AM_PM_HOUR_GROUP][0].toLowerCase();
+            if(ampm == "a"){
+                meridiem = 0; 
+                if(hour == 12) hour = 0;
+            }
+            
+            if(ampm == "p"){
+                meridiem = 1; 
+                if(hour != 12) hour += 12;
+            }
+        } 
+
+        result.start.assign('hour', hour);
+        result.start.assign('minute', minute);
+
+        if (meridiem >= 0) {
+            result.start.assign('meridiem', meridiem);
+        } else {
+            if (hour < 12) {
+                result.start.imply('meridiem', 0);
+            } else {
+                result.start.imply('meridiem', 1);
+            }
+        }
+        
+        // ==============================================================
+        //                  Extracting the 'to' chunk
+        // ==============================================================
+        match = SECOND_REG_PATTERN.exec(text.substring(result.index + result.text.length));
+        if (!match) {
+            // Not accept number only result
+            if (result.text.match(/^\d+$/)) { 
+                return null;
+            }
+            return result;
+        }
+
+
+
+        // Pattern "YY.YY -XXXX" is more like timezone offset
+        if (match[0].match(/^\s*(\+|\-)\s*\d{3,4}$/)) {
+            return result;
+        }
+
+        if(result.end == null){
+            result.end = new ParsedComponents(null, result.start.date());
+        }
+
+        var hour = 0;
+        var minute = 0;
+        var meridiem = -1;
+
+        // ----- Second
+        if(match[SECOND_GROUP] != null){ 
+            var second = parseInt(match[SECOND_GROUP]);
+            if(second >= 60) return null;
+
+            result.end.assign('second', second);
+        }
+
+        hour = parseInt(match[2]);
+        
+        // ----- Minute
+        if (match[MINUTE_GROUP]!= null) {
+            
+            minute = parseInt(match[MINUTE_GROUP]);
+            if(minute >= 60) return result;
+            
+        } else if (hour > 100) {
+
+            minute = hour%100;
+            hour   = parseInt(hour/100);
+        }
+
+        if(minute >= 60) {
+            return null;
+        }
+
+        if(hour > 24) {
+            return null;
+        }
+        if (hour >= 12) { 
+            meridiem = 1;
+        }
+        
+        // ----- AM & PM 
+        if (match[AM_PM_HOUR_GROUP] != null){
+
+            if (hour > 12) return null;
+
+            var ampm = match[AM_PM_HOUR_GROUP][0].toLowerCase();
+            if(ampm == "a"){
+                meridiem = 0; 
+                if(hour == 12) {
+                    hour = 0;
+                    if (!result.end.isCertain('day')) {
+                        result.end.imply('day', result.end.get('day') + 1);
+                    }
+                }
+            }
+            
+            if(ampm == "p"){
+                meridiem = 1; 
+                if(hour != 12) hour += 12;
+            }
+            
+            if (!result.start.isCertain('meridiem')) {
+                if (meridiem == 0) {
+                    
+                    result.start.imply('meridiem', 0);
+                    
+                    if (result.start.get('hour') == 12) {
+                        result.start.assign('hour', 0);
+                    }
+
+                } else {
+
+                    result.start.imply('meridiem', 1);
+                    
+                    if (result.start.get('hour') != 12) {
+                        result.start.assign('hour', result.start.get('hour') + 12); 
+                    }
+                }
+            }
+        }
+
+        result.text = result.text + match[0];
+        result.end.assign('hour', hour);
+        result.end.assign('minute', minute);
+        if (meridiem >= 0) {
+            result.end.assign('meridiem', meridiem);
+        } else {
+            var startAtPM = result.start.isCertain('meridiem') && result.start.get('meridiem') == 1;
+            if (startAtPM && result.start.get('hour') > hour) {
+                // 10pm - 1 (am)
+                result.end.imply('meridiem', 0);
+
+            } else if (hour > 12) {
+                result.end.imply('meridiem', 1);
+            }
+        }
+
+        if (result.end.date().getTime() < result.start.date().getTime()) {
+            result.end.imply('day', result.end.get('day') + 1)
+        }
+        
+        return result;
+    }
+}
+
+},{"../../result":92,"../parser":77,"moment":223}],55:[function(require,module,exports){
+/*
+
+
+*/
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var DAYS_OFFSET = { 'sunday': 0, 'sun': 0, 'monday': 1, 'mon': 1,'tuesday': 2, 'tues':2, 'tue':2, 'wednesday': 3, 'wed': 3,
+    'thursday': 4, 'thurs':4, 'thur': 4, 'thu': 4,'friday': 5, 'fri': 5,'saturday': 6, 'sat': 6};
+
+var PATTERN = new RegExp('(\\W|^)' +
+    '(?:(?:\\,|\\(|\\（)\\s*)?' +
+    '(?:on\\s*?)?' +
+    '(?:(this|last|past|next)\\s*)?' +
+    '(' + Object.keys(DAYS_OFFSET).join('|') + ')' +
+    '(?:\\s*(?:\\,|\\)|\\）))?' +
+    '(?:\\s*(this|last|past|next)\\s*week)?' +
+    '(?=\\W|$)', 'i');
+
+var PREFIX_GROUP = 2;
+var WEEKDAY_GROUP = 3;
+var POSTFIX_GROUP = 4;
+
+
+exports.updateParsedComponent = function updateParsedComponent(result, ref, offset, modifier) {
+
+    var startMoment = moment(ref);
+    var startMomentFixed = false;
+    var refOffset = startMoment.day();
+
+    if(modifier == 'last' || modifier == 'past') {
+        startMoment.day(offset - 7);
+        startMomentFixed = true;
+    } else if(modifier == 'next') {
+        startMoment.day(offset + 7);
+        startMomentFixed = true;
+    } else if(modifier == 'this') {
+        startMoment.day(offset);
+    } else {
+        if (Math.abs(offset - 7 - refOffset) < Math.abs(offset - refOffset)) {
+            startMoment.day(offset - 7);
+        } else if (Math.abs(offset + 7 - refOffset) < Math.abs(offset - refOffset)) {
+            startMoment.day(offset + 7);
+        } else {
+            startMoment.day(offset);
+        }
+    }
+
+    result.start.assign('weekday', offset);
+    if (startMomentFixed) {
+        result.start.assign('day', startMoment.date());
+        result.start.assign('month', startMoment.month() + 1);
+        result.start.assign('year', startMoment.year());
+    } else {
+        result.start.imply('day', startMoment.date());
+        result.start.imply('month', startMoment.month() + 1);
+        result.start.imply('year', startMoment.year());
+    }
+
+    return result;
+};
+
+
+exports.Parser = function ENWeekdayParser() {
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; };
+
+    this.extract = function(text, ref, match, opt){
+        var index = match.index + match[1].length;
+        var text = match[0].substr(match[1].length, match[0].length - match[1].length);
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref
+        });
+
+        var dayOfWeek = match[WEEKDAY_GROUP].toLowerCase();
+        var offset = DAYS_OFFSET[dayOfWeek];
+        if(offset === undefined) {
+            return null;
+        }
+
+        var prefix = match[PREFIX_GROUP];
+        var postfix = match[POSTFIX_GROUP];
+        var norm = prefix || postfix;
+        norm = norm || '';
+        norm = norm.toLowerCase();
+
+        exports.updateParsedComponent(result, ref, offset, norm);
+        result.tags['ENWeekdayParser'] = true;
+
+        return result;
+    }
+};
+
+},{"../../result":92,"../parser":77,"moment":223}],56:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+/*
+  Valid patterns:
+  - esta mañana -> today in the morning
+  - esta tarde -> today in the afternoon/evening
+  - esta noche -> tonight
+  - ayer por la mañana -> yesterday in the morning
+  - ayer por la tarde -> yesterday in the afternoon/evening
+  - ayer por la noche -> yesterday at night
+  - mañana por la mañana -> tomorrow in the morning
+  - mañana por la tarde -> tomorrow in the afternoon/evening
+  - mañana por la noche -> tomorrow at night
+  - anoche -> tomorrow at night
+  - hoy -> today
+  - ayer -> yesterday
+  - mañana -> tomorrow
+ */
+var PATTERN = /(\W|^)(ahora|esta\s*(mañana|tarde|noche)|(ayer|mañana)\s*por\s*la\s*(mañana|tarde|noche)|hoy|mañana|ayer|anoche)(?=\W|$)/i;
+
+exports.Parser = function ESCasualDateParser(){
+
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; }
+
+    this.extract = function(text, ref, match, opt){
+
+        var text = match[0].substr(match[1].length);
+        var index = match.index + match[1].length;
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref,
+        });
+
+        var refMoment = moment(ref);
+        var startMoment = refMoment.clone();
+        var lowerText = text.toLowerCase().replace(/\s+/g, ' ');
+
+        if(lowerText == 'mañana'){
+
+            // Check not "Tomorrow" on late night
+            if(refMoment.hour() > 1) {
+                startMoment.add(1, 'day');
+            }
+
+        } else if(lowerText == 'ayer') {
+
+            startMoment.add(-1, 'day');
+        }
+        else if(lowerText == 'anoche') {
+
+            result.start.imply('hour', 0);
+            if (refMoment.hour() > 6) {
+                startMoment.add(-1, 'day');
+            }
+
+        } else if (lowerText.match("esta")) {
+
+            var secondMatch = match[3].toLowerCase();
+            if (secondMatch == "tarde") {
+
+                result.start.imply('hour', 18);
+
+            } else if (secondMatch == "mañana") {
+
+                result.start.imply('hour', 6);
+
+            } else if (secondMatch == "noche") {
+
+              // Normally means this coming midnight
+              result.start.imply('hour', 22);
+              result.start.imply('meridiem', 1);
+
+            }
+        } else if (lowerText.match(/por\s*la/)) {
+
+            var firstMatch = match[4].toLowerCase();
+            if (firstMatch === 'ayer') {
+
+              startMoment.add(-1, 'day');
+
+            } else if (firstMatch === 'mañana') {
+
+              startMoment.add(1, 'day');
+
+            }
+
+            var secondMatch = match[5].toLowerCase();
+            if (secondMatch == "tarde") {
+
+                result.start.imply('hour', 18);
+
+            } else if (secondMatch == "mañana") {
+
+                result.start.imply('hour', 9);
+
+            } else if (secondMatch == "noche") {
+
+              // Normally means this coming midnight
+              result.start.imply('hour', 22);
+              result.start.imply('meridiem', 1);
+
+            }
+
+        } else if (lowerText.match("ahora")) {
+
+          result.start.imply('hour', refMoment.hour());
+          result.start.imply('minute', refMoment.minute());
+          result.start.imply('second', refMoment.second());
+          result.start.imply('millisecond', refMoment.millisecond());
+
+        }
+
+        result.start.assign('day', startMoment.date())
+        result.start.assign('month', startMoment.month() + 1)
+        result.start.assign('year', startMoment.year())
+        result.tags['ESCasualDateParser'] = true;
+        return result;
+    }
+}
+
+},{"../../result":92,"../parser":77,"moment":223}],57:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = /(\W|^)(dentro\s*de|en)\s*([0-9]+|medi[oa]|una?)\s*(minutos?|horas?|d[ií]as?)\s*(?=(?:\W|$))/i;
+
+exports.Parser = function ESDeadlineFormatParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; }
+
+    this.extract = function(text, ref, match, opt){
+
+        var index = match.index + match[1].length;
+        var text  = match[0];
+        text  = match[0].substr(match[1].length, match[0].length - match[1].length);
+
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref,
+        });
+
+        var num = parseInt(match[3]);
+        if (isNaN(num)) {
+          if (match[3].match(/medi/)) {
+            num = 0.5;
+          } else {
+            num = 1;
+          }
+        }
+
+        var date = moment(ref);
+        if (match[4].match(/d[ií]a/)) {
+            date.add(num, 'd');
+
+            result.start.assign('year', date.year());
+            result.start.assign('month', date.month() + 1);
+            result.start.assign('day', date.date());
+            return result;
+        }
+
+
+        if (match[4].match(/hora/)) {
+
+            date.add(num, 'hour');
+
+        } else if (match[4].match(/minuto/)) {
+
+            date.add(num, 'minute');
+        }
+
+        result.start.imply('year', date.year());
+        result.start.imply('month', date.month() + 1);
+        result.start.imply('day', date.date());
+        result.start.assign('hour', date.hour());
+        result.start.assign('minute', date.minute());
+        result.tags['ESDeadlineFormatParser'] = true;
+        return result;
+    };
+}
+
+},{"../../result":92,"../parser":77,"moment":223}],58:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var util  = require('../../utils/ES');
+
+var DAYS_OFFSET = util.WEEKDAY_OFFSET;
+
+var PATTERN = new RegExp('(\\W|^)' +
+        '(?:(Domingo|Lunes|Martes|Miércoles|Miercoles|Jueves|Viernes|Sábado|Sabado|Dom|Lun|Mar|Mie|Jue|Vie|Sab)\\s*,?\\s*)?' +
+        '([0-9]{1,2})(?:º|ª|°)?' +
+        '(?:\\s*(?:desde|de|\\-|\\–|al?|hasta|\\s)\\s*([0-9]{1,2})(?:º|ª|°)?)?\\s*(?:de)?\\s*' +
+        '(Ene(?:ro|\\.)?|Feb(?:rero|\\.)?|Mar(?:zo|\\.)?|Abr(?:il|\\.)?|May(?:o|\\.)?|Jun(?:io|\\.)?|Jul(?:io|\\.)?|Ago(?:sto|\\.)?|Sep(?:tiembre|\\.)?|Oct(?:ubre|\\.)?|Nov(?:iembre|\\.)?|Dic(?:iembre|\\.)?)' +
+        '(?:\\s*(?:del?)?(\\s*[0-9]{1,4}(?![^\\s]\\d))(\\s*[ad]\\.?\\s*c\\.?|a\\.?\\s*d\\.?)?)?' +
+        '(?=\\W|$)', 'i'
+    );
+
+var WEEKDAY_GROUP = 2;
+var DATE_GROUP = 3;
+var DATE_TO_GROUP = 4;
+var MONTH_NAME_GROUP = 5;
+var YEAR_GROUP = 6;
+var YEAR_BE_GROUP = 7;
+
+exports.Parser = function ESMonthNameLittleEndianParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; }
+
+    this.extract = function(text, ref, match, opt){
+
+        var result = new ParsedResult({
+            text: match[0].substr(match[1].length, match[0].length - match[1].length),
+            index: match.index + match[1].length,
+            ref: ref,
+        });
+
+        var month = match[MONTH_NAME_GROUP];
+        month = util.MONTH_OFFSET[month.toLowerCase()];
+
+        var day = match[DATE_GROUP];
+        day = parseInt(day);
+
+        var year = null;
+        if (match[YEAR_GROUP]) {
+            year = match[YEAR_GROUP];
+            year = parseInt(year);
+
+            if(match[YEAR_BE_GROUP]){
+                if (/a\.?\s*c\.?/i.test(match[YEAR_BE_GROUP])) {
+                    // antes de Cristo
+                    year = -year;
+                }
+            } else if (year < 100){
+
+                year = year + 2000;
+            }
+        }
+
+        if(year){
+            result.start.assign('day', day);
+            result.start.assign('month', month);
+            result.start.assign('year', year);
+        } else {
+
+            //Find the most appropriated year
+            var refMoment = moment(ref);
+            refMoment.month(month - 1);
+            refMoment.date(day);
+            refMoment.year(moment(ref).year());
+
+            var nextYear = refMoment.clone().add(1, 'y');
+            var lastYear = refMoment.clone().add(-1, 'y');
+            if( Math.abs(nextYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){
+                refMoment = nextYear;
+            }
+            else if( Math.abs(lastYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){
+                refMoment = lastYear;
+            }
+
+            result.start.assign('day', day);
+            result.start.assign('month', month);
+            result.start.imply('year', refMoment.year());
+        }
+
+        // Weekday component
+        if (match[WEEKDAY_GROUP]) {
+            var weekday = match[WEEKDAY_GROUP];
+            weekday = util.WEEKDAY_OFFSET[weekday.toLowerCase()]
+            result.start.assign('weekday', weekday);
+        }
+
+        // Text can be 'range' value. Such as '12 - 13 January 2012'
+        if (match[DATE_TO_GROUP]) {
+            result.end = result.start.clone();
+            result.end.assign('day', parseInt(match[DATE_TO_GROUP]));
+        }
+
+        result.tags['ESMonthNameLittleEndianParser'] = true;
+        return result;
+    };
+}
+},{"../../result":92,"../../utils/ES":95,"../parser":77,"moment":223}],59:[function(require,module,exports){
+/*
+    Date format with slash "/" (also "-" and ".") between numbers
+    - Martes 3/11/2015
+    - 3/11/2015
+    - 3/11
+*/
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = new RegExp('(\\W|^)' +
+    '(?:' +
+        '((?:domingo|dom|lunes|lun|martes|mar|mi[ée]rcoles|mie|jueves|jue|viernes|vie|s[áa]bado|sab))' +
+        '\\s*\\,?\\s*' +
+    ')?' +
+    '([0-1]{0,1}[0-9]{1})[\\/\\.\\-]([0-3]{0,1}[0-9]{1})' +
+    '(?:' +
+        '[\\/\\.\\-]' +
+        '([0-9]{4}\s*\,?\s*|[0-9]{2}\s*\,?\s*)' +
+    ')?' +
+    '(\\W|$)', 'i');
+
+var DAYS_OFFSET = { 'domingo': 0, 'dom': 0, 'lunes': 1, 'lun': 1, 'martes': 2, 'mar': 2, 'miercoles': 3, 'miércoles': 3, 'mie': 3,
+    'jueves': 4, 'jue': 4, 'viernes': 5, 'vier': 5, 'sábado': 6, 'sabado': 6, 'sab': 6,}
+
+
+var OPENNING_GROUP = 1;
+var ENDING_GROUP = 6;
+
+// in Spanish we use day/month/year
+var WEEKDAY_GROUP = 2;
+var MONTH_GROUP = 4;
+var DAY_GROUP = 3;
+var YEAR_GROUP = 5;
+
+exports.Parser = function ESSlashDateFormatParser(argument) {
+    Parser.apply(this, arguments);
+
+    this.pattern = function () { return PATTERN; };
+    this.extract = function(text, ref, match, opt){
+
+        if(match[OPENNING_GROUP] == '/' || match[ENDING_GROUP] == '/') {
+            // Long skip, if there is some overlapping like:
+            // XX[/YY/ZZ]
+            // [XX/YY/]ZZ
+            match.index += match[0].length
+            return;
+        }
+
+        var index = match.index + match[OPENNING_GROUP].length;
+        var text = match[0].substr(match[OPENNING_GROUP].length, match[0].length - match[ENDING_GROUP].length);
+
+
+        var result = new ParsedResult({
+            text: text,
+            index: index,
+            ref: ref,
+        });
+
+        if(text.match(/^\d\.\d$/)) return;
+        if(text.match(/^\d\.\d{1,2}\.\d{1,2}$/)) return;
+
+        // MM/dd -> OK
+        // MM.dd -> NG
+        if(!match[YEAR_GROUP] && match[0].indexOf('/') < 0) return;
+
+        var date = null;
+        var year = match[YEAR_GROUP] || moment(ref).year() + '';
+        var month = match[MONTH_GROUP];
+        var day   = match[DAY_GROUP];
+
+        month = parseInt(month);
+        day  = parseInt(day);
+        year = parseInt(year);
+
+        if(month < 1 || month > 12) {
+            if(month > 12) {
+                // dd/mm/yyyy date format if day looks like a month, and month
+                // looks like a day.
+                if (day >= 1 && day <= 12 && month >= 13 && month <= 31) {
+                    // unambiguous
+                    var tday = month;
+                    month = day;
+                    day = tday;
+                }
+                else {
+                    // both month and day are <= 12
+                    return null;
+                }
+            }
+        }
+        if(day < 1 || day > 31) return null;
+
+        if(year < 100){
+            if(year > 50){
+                year = year + 1900;
+            }else{
+                year = year + 2000;
+            }
+        }
+
+        result.start.assign('day', day);
+        result.start.assign('month', month);
+        result.start.assign('year', year);
+
+        //Day of week
+        if(match[WEEKDAY_GROUP]) {
+            result.start.assign('weekday', DAYS_OFFSET[match[WEEKDAY_GROUP].toLowerCase()]);
+        }
+
+        result.tags['ESSlashDateFormatParser'] = true;
+        return result;
+    };
+};
+},{"../../result":92,"../parser":77,"moment":223}],60:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = /(\W|^)hace\s*([0-9]+|medi[oa]|una?)\s*(minutos?|horas?|semanas?|d[ií]as?|mes(es)?|años?)(?=(?:\W|$))/i;
+
+exports.Parser = function ESTimeAgoFormatParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() {
+        return PATTERN;
+    }
+
+    this.extract = function(text, ref, match, opt){
+
+        if (match.index > 0 && text[match.index-1].match(/\w/)) return null;
+
+        var text = match[0];
+        text  = match[0].substr(match[1].length, match[0].length - match[1].length);
+        index = match.index + match[1].length;
+
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref,
+        });
+
+        var num = parseInt(match[2]);
+        if (isNaN(num)) {
+          if (match[2].match(/medi/)) {
+            num = 0.5;
+          } else {
+            num = 1;
+          }
+        }
+
+        var date = moment(ref);
+
+        if (match[3].match(/hora/) || match[3].match(/minuto/)) {
+            if (match[3].match(/hora/)) {
+
+                date.add(-num, 'hour');
+
+            } else if (match[3].match(/minuto/)) {
+
+                date.add(-num, 'minute');
+            }
+
+            result.start.imply('day', date.date());
+            result.start.imply('month', date.month() + 1);
+            result.start.imply('year', date.year());
+            result.start.assign('hour', date.hour());
+            result.start.assign('minute', date.minute());
+            result.tags['ESTimeAgoFormatParser'] = true;
+            return result;
+        }
+
+        if (match[3].match(/semana/)) {
+            date.add(-num, 'week');
+
+            result.start.imply('day', date.date());
+            result.start.imply('month', date.month() + 1);
+            result.start.imply('year', date.year());
+            result.start.imply('weekday', date.day());
+            return result;
+        }
+
+        if (match[3].match(/d[ií]a/)) {
+            date.add(-num, 'd');
+        }
+
+        if (match[3].match(/mes/)) {
+            date.add(-num, 'month');
+        }
+
+        if (match[3].match(/año/)) {
+
+            date.add(-num, 'year');
+        }
+
+        result.start.assign('day', date.date());
+        result.start.assign('month', date.month() + 1);
+        result.start.assign('year', date.year());
+        return result;
+
+    };
+}
+
+},{"../../result":92,"../parser":77,"moment":223}],61:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var ParsedComponents = require('../../result').ParsedComponents;
+
+var FIRST_REG_PATTERN  = new RegExp("(^|\\s|T)" +
+    "(?:(?:a las?|al?|desde|de)\\s*)?" +
+    "(\\d{1,4}|mediod[ií]a|medianoche)" +
+    "(?:" +
+        "(?:\\.|\\:|\\：)(\\d{1,2})" +
+        "(?:" +
+            "(?:\\:|\\：)(\\d{2})" +
+        ")?" +
+    ")?" +
+    "(?:\\s*(A\\.M\\.|P\\.M\\.|AM?|PM?))?" +
+    "(?=\\W|$)", 'i');
+
+
+var SECOND_REG_PATTERN = new RegExp("^\\s*" +
+    "(\\-|\\–|\\~|\\〜|a(?:\s*las)?|\\?)\\s*" +
+    "(\\d{1,4})" +
+    "(?:" +
+        "(?:\\.|\\:|\\：)(\\d{1,2})" +
+        "(?:" +
+            "(?:\\.|\\:|\\：)(\\d{1,2})" +
+        ")?" +
+    ")?" +
+    "(?:\\s*(A\\.M\\.|P\\.M\\.|AM?|PM?))?" +
+    "(?=\\W|$)", 'i');
+
+var HOUR_GROUP    = 2;
+var MINUTE_GROUP  = 3;
+var SECOND_GROUP  = 4;
+var AM_PM_HOUR_GROUP = 5;
+
+exports.Parser = function ESTimeExpressionParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return FIRST_REG_PATTERN; }
+
+    this.extract = function(text, ref, match, opt){
+
+        // This pattern can be overlaped Ex. [12] AM, 1[2] AM
+        if (match.index > 0 && text[match.index-1].match(/\w/)) return null;
+        var refMoment = moment(ref);
+        var result = new ParsedResult();
+        result.ref = ref;
+        result.index = match.index + match[1].length;
+        result.text  = match[0].substring(match[1].length);
+        result.tags['ESTimeExpressionParser'] = true;
+
+        result.start.imply('day',   refMoment.date());
+        result.start.imply('month', refMoment.month()+1);
+        result.start.imply('year',  refMoment.year());
+
+        var hour = 0;
+        var minute = 0;
+        var meridiem = -1;
+
+        // ----- Second
+        if(match[SECOND_GROUP] != null){
+            var second = parseInt(match[SECOND_GROUP]);
+            if(second >= 60) return null;
+
+            result.start.assign('second', second);
+        }
+
+        // ----- Hours
+        if (match[HOUR_GROUP].toLowerCase().match(/mediod/)){
+            meridiem = 1;
+            hour = 12;
+        } else if (match[HOUR_GROUP].toLowerCase() == "medianoche") {
+            meridiem = 0;
+            hour = 0;
+        } else {
+            hour = parseInt(match[HOUR_GROUP]);
+        }
+
+        // ----- Minutes
+        if(match[MINUTE_GROUP] != null){
+            minute = parseInt(match[MINUTE_GROUP]);
+        } else if(hour > 100) {
+            minute = hour%100;
+            hour   = parseInt(hour/100);
+        }
+
+        if(minute >= 60) {
+            return null;
+        }
+
+        if(hour > 24) {
+            return null;
+        }
+        if (hour >= 12) {
+            meridiem = 1;
+        }
+
+        // ----- AM & PM
+        if(match[AM_PM_HOUR_GROUP] != null) {
+            if(hour > 12) return null;
+            var ampm = match[AM_PM_HOUR_GROUP][0].toLowerCase();
+            if(ampm == "a"){
+                meridiem = 0;
+                if(hour == 12) hour = 0;
+            }
+
+            if(ampm == "p"){
+                meridiem = 1;
+                if(hour != 12) hour += 12;
+            }
+        }
+        result.start.assign('hour', hour);
+        result.start.assign('minute', minute);
+        if (meridiem >= 0) {
+            result.start.assign('meridiem', meridiem);
+        }
+
+        // ==============================================================
+        //                  Extracting the 'to' chunk
+        // ==============================================================
+        match = SECOND_REG_PATTERN.exec(text.substring(result.index + result.text.length));
+        if (!match) {
+            // Not accept number only result
+            if (result.text.match(/^\d+$/)) {
+                return null;
+            }
+            return result;
+        }
+
+
+
+        // Pattern "YY.YY -XXXX" is more like timezone offset
+        if (match[0].match(/^\s*(\+|\-)\s*\d{3,4}$/)) {
+            return result;
+        }
+
+        if(result.end == null){
+            result.end = new ParsedComponents(null, result.start.date());
+        }
+
+        var hour = 0;
+        var minute = 0;
+        var meridiem = -1;
+
+        // ----- Second
+        if(match[SECOND_GROUP] != null){
+            var second = parseInt(match[SECOND_GROUP]);
+            if(second >= 60) return null;
+
+            result.end.assign('second', second);
+        }
+
+        hour = parseInt(match[2]);
+
+        // ----- Minute
+        if (match[MINUTE_GROUP]!= null) {
+
+            minute = parseInt(match[MINUTE_GROUP]);
+            if(minute >= 60) return result;
+
+        } else if (hour > 100) {
+
+            minute = hour%100;
+            hour   = parseInt(hour/100);
+        }
+
+        if(minute >= 60) {
+            return null;
+        }
+
+        if(hour > 24) {
+            return null;
+        }
+        if (hour >= 12) {
+            meridiem = 1;
+        }
+
+        // ----- AM & PM
+        if (match[AM_PM_HOUR_GROUP] != null){
+
+            if (hour > 12) return null;
+
+            if(match[AM_PM_HOUR_GROUP][0].toLowerCase() == "a"){
+                meridiem = 0;
+                if(hour == 12) {
+                    hour = 0;
+                    if (!result.end.isCertain('day')) {
+                        result.end.imply('day', result.end.get('day') + 1);
+                    }
+                }
+            }
+
+            if(match[AM_PM_HOUR_GROUP][0].toLowerCase() == "p"){
+                meridiem = 1;
+                if(hour != 12) hour += 12;
+            }
+
+            if (!result.start.isCertain('meridiem')) {
+                if (meridiem == 0) {
+
+                    result.start.imply('meridiem', 0);
+
+                    if (result.start.get('hour') == 12) {
+                        result.start.assign('hour', 0);
+                    }
+
+                } else {
+
+                    result.start.imply('meridiem', 1);
+
+                    if (result.start.get('hour') != 12) {
+                        result.start.assign('hour', result.start.get('hour') + 12);
+                    }
+                }
+            }
+
+        } else if(hour >= 12) {
+            meridiem = 1;
+        }
+
+        result.text = result.text + match[0];
+        result.end.assign('hour', hour);
+        result.end.assign('minute', minute);
+        if (meridiem >= 0) {
+            result.end.assign('meridiem', meridiem);
+        }
+
+        if (result.end.date().getTime() < result.start.date().getTime()) {
+            result.end.imply('day', result.end.get('day') + 1)
+        }
+
+        return result;
+    }
+}
+
+},{"../../result":92,"../parser":77,"moment":223}],62:[function(require,module,exports){
+/*
+
+
+*/
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var updateParsedComponent = require('../EN/ENWeekdayParser').updateParsedComponent;
+
+var DAYS_OFFSET = { 'domingo': 0, 'dom': 0, 'lunes': 1, 'lun': 1, 'martes': 2, 'mar':2, 'miercoles': 3, 'miércoles': 3, 'mie': 3,
+    'jueves': 4, 'jue': 4, 'viernes': 5, 'vier': 5, 'sabado': 6, 'sábado': 6, 'sab': 6,}
+
+var PATTERN = new RegExp('(\\W|^)' +
+    '(?:(?:\\,|\\(|\\（)\\s*)?' +
+    '(?:(este|pasado|pr[oó]ximo)\\s*)?' +
+    '(' + Object.keys(DAYS_OFFSET).join('|') + ')' +
+    '(?:\\s*(?:\\,|\\)|\\）))?' +
+    '(?:\\s*(este|pasado|pr[óo]ximo)\\s*week)?' +
+    '(?=\\W|$)', 'i');
+
+var PREFIX_GROUP = 2;
+var WEEKDAY_GROUP = 3;
+var POSTFIX_GROUP = 4;
+
+exports.Parser = function ESWeekdayParser() {
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; }
+
+    this.extract = function(text, ref, match, opt){
+        var index = match.index + match[1].length;
+        var text = match[0].substr(match[1].length, match[0].length - match[1].length);
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref
+        });
+
+        var dayOfWeek = match[WEEKDAY_GROUP].toLowerCase();
+        var offset = DAYS_OFFSET[dayOfWeek];
+        if(offset === undefined) return null;
+
+        var modifier = null;
+        var prefix = match[PREFIX_GROUP];
+        var postfix = match[POSTFIX_GROUP];
+        if (prefix || postfix) {
+            var norm = prefix || postfix;
+            norm = norm.toLowerCase();
+
+            if(norm == 'pasado') {
+                modifier = 'this';
+            }
+            else if(norm == 'próximo' || norm == 'proximo') {
+                modifier = 'next';
+            }
+            else if(norm== 'este') {
+                modifier =  'this';
+            }
+        }
+
+        updateParsedComponent(result, ref, offset, modifier);
+        result.tags['ESWeekdayParser'] = true;
+        return result;
+    }
+}
+
+},{"../../result":92,"../EN/ENWeekdayParser":55,"../parser":77,"moment":223}],63:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = /(\W|^)(maintenant|aujourd'hui|ajd|cette\s*nuit|la\s*veille|(demain|hier)(\s*(matin|soir|aprem|après-midi))?|ce\s*(matin|soir)|cet\s*(après-midi|aprem))(?=\W|$)/i;
+
+exports.Parser = function FRCasualDateParser(){
+
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; }
+
+    this.extract = function(text, ref, match, opt){
+
+        var text = match[0].substr(match[1].length);
+        var index = match.index + match[1].length;
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref,
+        });
+
+        var refMoment = moment(ref);
+        var startMoment = refMoment.clone();
+        var lowerText = text.toLowerCase();
+
+        if(lowerText.match(/demain/)){
+            // Check not "Tomorrow" on late night
+            if(refMoment.hour() > 1) {
+                startMoment.add(1, 'day');
+            }
+        } 
+
+        if(lowerText.match(/hier/)) {
+            startMoment.add(-1, 'day');
+        }
+
+        if(lowerText.match(/cette\s*nuit/)){
+            // Normally means this coming midnight
+            result.start.imply('hour', 22);
+            result.start.imply('meridiem', 1);
+
+        } else if(lowerText.match(/la\s*veille/)) {
+
+            result.start.imply('hour', 0);
+            if (refMoment.hour() > 6) {
+                startMoment.add(-1, 'day');
+            }
+
+        } else if (lowerText.match(/(après-midi|aprem)/)) {
+
+            result.start.imply('hour', 14);
+
+        } else if (lowerText.match(/(soir)/)) {
+
+            result.start.imply('hour', 18);
+
+        } else if (lowerText.match(/matin/)) {
+
+            result.start.imply('hour', 8);
+
+        }  else if (lowerText.match("maintenant")) {
+
+          result.start.imply('hour', refMoment.hour());
+          result.start.imply('minute', refMoment.minute());
+          result.start.imply('second', refMoment.second());
+          result.start.imply('millisecond', refMoment.millisecond());
+
+        }
+
+        result.start.assign('day', startMoment.date())
+        result.start.assign('month', startMoment.month() + 1)
+        result.start.assign('year', startMoment.year())
+        result.tags['FRCasualDateParser'] = true;
+        return result;
+    }
+}
+
+},{"../../result":92,"../parser":77,"moment":223}],64:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var util  = require('../../utils/FR');
+
+var PATTERN = new RegExp('(\\W|^)' +
+    '(dans|en)\\s*' +
+    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|une?|(?:\\s*quelques)?|demi(?:\\s*|-?)?)\\s*' +
+    '(secondes?|min(?:ute)?s?|heures?|jours?|semaines?|mois|années?)\\s*' +
+    '(?=\\W|$)', 'i'
+);
+
+var STRICT_PATTERN = new RegExp('(\\W|^)' +
+    '(dans|en)\\s*' +
+    '('+ util.INTEGER_WORDS_PATTERN + '|[0-9]+|un?)\\s*' +
+    '(secondes?|minutes?|heures?|jours?)\\s*' +
+    '(?=\\W|$)', 'i'
+);
+
+exports.Parser = function FRDeadlineFormatParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() {
+        return this.isStrictMode()? STRICT_PATTERN : PATTERN;
+    };
+
+    this.extract = function(text, ref, match, opt){
+
+        var index = match.index + match[1].length;
+        var text  = match[0];
+        text  = match[0].substr(match[1].length, match[0].length - match[1].length);
+
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref
+        });
+
+        var num = match[3];
+        if (util.INTEGER_WORDS[num] !== undefined) {
+            num = util.INTEGER_WORDS[num];
+        } else if (num === 'un' || num === 'une'){
+            num = 1;
+        } else if (num.match(/quelques?/i)){
+            num = 3;
+        } else if (num.match(/demi-?/i)) {
+            num = 0.5;
+        } else {
+            num = parseInt(num);
+        }
+
+        var date = moment(ref);
+        if (match[4].match(/jour|semaine|mois|année/i)) {
+
+            if (match[4].match(/jour/)) {
+                date.add(num, 'd');
+            } else if (match[4].match(/semaine/i)) {
+                date.add(num * 7, 'd');
+            } else if (match[4].match(/mois/i)) {
+                date.add(num, 'month');
+            } else if (match[4].match(/année/i)) {
+                date.add(num, 'year');
+            }
+
+            result.start.assign('year', date.year());
+            result.start.assign('month', date.month() + 1);
+            result.start.assign('day', date.date());
+            return result;
+        }
+
+        if (match[4].match(/heure/i)) {
+
+            date.add(num, 'hour');
+
+        } else if (match[4].match(/min/i)) {
+
+            date.add(num, 'minutes');
+
+        } else if (match[4].match(/secondes/i)) {
+
+            date.add(num, 'second');
+        }
+
+        result.start.imply('year', date.year());
+        result.start.imply('month', date.month() + 1);
+        result.start.imply('day', date.date());
+        result.start.assign('hour', date.hour());
+        result.start.assign('minute', date.minute());
+        result.start.assign('second', date.second());
+        result.tags['FRDeadlineFormatParser'] = true;
+        return result;
+    };
+};
+
+},{"../../result":92,"../../utils/FR":96,"../parser":77,"moment":223}],65:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var util  = require('../../utils/FR');
+
+var DAYS_OFFSET = util.WEEKDAY_OFFSET;
+
+var PATTERN = new RegExp('(\\W|^)' +
+        '(?:(Dimanche|Lundi|Mardi|mercredi|Jeudi|Vendredi|Samedi|Dim|Lun|Mar|Mer|Jeu|Ven|Sam)\\s*,?\\s*)?' +
+        '([0-9]{1,2}|1er)' +
+        '(?:\\s*(?:au|\\-|\\–|jusqu\'au?|\\s)\\s*([0-9]{1,2})(?:er)?)?\\s*(?:de)?\\s*' +
+        '(Jan(?:vier|\\.)?|Fév(?:rier|\\.)?|Mars|Avr(?:il|\\.)?|Mai|Juin|Juil(?:let|\\.)?|Ao[uû]t|Sept(?:embre|\\.)?|Oct(?:obre|\\.)?|Nov(?:embre|\\.)?|déc(?:embre|\\.)?)' +
+        '(?:\\s*(\\s*[0-9]{1,4}(?![^\\s]\\d))(?:\\s*(AC|[ap]\\.?\\s*c(?:h(?:r)?)?\\.?\\s*n\\.?))?)?' +
+        '(?=\\W|$)', 'i'
+    );
+
+var WEEKDAY_GROUP = 2;
+var DATE_GROUP = 3;
+var DATE_TO_GROUP = 4;
+var MONTH_NAME_GROUP = 5;
+var YEAR_GROUP = 6;
+var YEAR_BE_GROUP = 7;
+
+exports.Parser = function FRMonthNameLittleEndianParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; }
+
+    this.extract = function(text, ref, match, opt){
+
+        var result = new ParsedResult({
+            text: match[0].substr(match[1].length, match[0].length - match[1].length),
+            index: match.index + match[1].length,
+            ref: ref,
+        });
+
+        var month = match[MONTH_NAME_GROUP];
+        month = util.MONTH_OFFSET[month.toLowerCase()];
+
+        var day = match[DATE_GROUP];
+        day = parseInt(day);
+
+        var year = null;
+        if (match[YEAR_GROUP]) {
+            year = match[YEAR_GROUP];
+            year = parseInt(year);
+
+            if(match[YEAR_BE_GROUP]){
+                if (/a/i.test(match[YEAR_BE_GROUP])) {
+                    // Ante Christe natum
+                    year = -year;
+                }
+            } else if (year < 100){
+
+                year = year + 2000;
+            }
+        }
+
+        if(year){
+            result.start.assign('day', day);
+            result.start.assign('month', month);
+            result.start.assign('year', year);
+        } else {
+
+            // Find the most appropriated year
+            var refMoment = moment(ref);
+            refMoment.month(month - 1);
+            refMoment.date(day);
+            refMoment.year(moment(ref).year());
+
+            var nextYear = refMoment.clone().add(1, 'y');
+            var lastYear = refMoment.clone().add(-1, 'y');
+            if( Math.abs(nextYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){
+                refMoment = nextYear;
+            }
+            else if( Math.abs(lastYear.diff(moment(ref))) < Math.abs(refMoment.diff(moment(ref))) ){
+                refMoment = lastYear;
+            }
+
+            result.start.assign('day', day);
+            result.start.assign('month', month);
+            result.start.imply('year', refMoment.year());
+        }
+
+        // Weekday component
+        if (match[WEEKDAY_GROUP]) {
+            var weekday = match[WEEKDAY_GROUP];
+            weekday = util.WEEKDAY_OFFSET[weekday.toLowerCase()]
+            result.start.assign('weekday', weekday);
+        }
+
+        // Text can be 'range' value. Such as '12 - 13 janvier 2012'
+        if (match[DATE_TO_GROUP]) {
+            result.end = result.start.clone();
+            result.end.assign('day', parseInt(match[DATE_TO_GROUP]));
+        }
+
+        result.tags['FRMonthNameLittleEndianParser'] = true;
+        return result;
+    };
+}
+
+},{"../../result":92,"../../utils/FR":96,"../parser":77,"moment":223}],66:[function(require,module,exports){
+/*
+    Date format with slash "/" (also "-" and ".") between numbers
+    - Martes 3/11/2015
+    - 3/11/2015
+    - 3/11
+*/
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = new RegExp('(\\W|^)' +
+    '(?:' +
+        '((?:dimanche|dim|lundi|lun|mardi|mar|mercredi|mer|jeudi|jeu|vendredi|ven|samedi|sam|le))' +
+        '\\s*\\,?\\s*' +
+    ')?' +
+    '([0-3]{0,1}[0-9]{1})[\\/\\.\\-]([0-3]{0,1}[0-9]{1})' +
+    '(?:' +
+        '[\\/\\.\\-]' +
+        '([0-9]{4}\s*\,?\s*|[0-9]{2}\s*\,?\s*)' +
+    ')?' +
+    '(\\W|$)', 'i');
+
+var DAYS_OFFSET = { 'dimanche': 0, 'dim': 0, 'lundi': 1, 'lun': 1,'mardi': 2, 'mar':2, 'mercredi': 3, 'mer': 3,
+    'jeudi': 4, 'jeu':4, 'vendredi': 5, 'ven': 5,'samedi': 6, 'sam': 6};
+
+
+var OPENNING_GROUP = 1;
+var ENDING_GROUP = 6;
+
+// In French we use day/month/year
+var WEEKDAY_GROUP = 2;
+var DAY_GROUP = 3;
+var MONTH_GROUP = 4;
+var YEAR_GROUP = 5;
+
+exports.Parser = function FRSlashDateFormatParser(argument) {
+    Parser.apply(this, arguments);
+
+    this.pattern = function () { return PATTERN; };
+    this.extract = function(text, ref, match, opt){
+
+        if(match[OPENNING_GROUP] == '/' || match[ENDING_GROUP] == '/') {
+            // Long skip, if there is some overlapping like:
+            // XX[/YY/ZZ]
+            // [XX/YY/]ZZ
+            match.index += match[0].length
+            return;
+        }
+
+        var index = match.index + match[OPENNING_GROUP].length;
+        var text = match[0].substr(match[OPENNING_GROUP].length, match[0].length - match[ENDING_GROUP].length);
+
+
+        var result = new ParsedResult({
+            text: text,
+            index: index,
+            ref: ref,
+        });
+
+        if(text.match(/^\d\.\d$/)) return;
+        if(text.match(/^\d\.\d{1,2}\.\d{1,2}$/)) return;
+
+        // MM/dd -> OK
+        // MM.dd -> NG
+        if(!match[YEAR_GROUP] && match[0].indexOf('/') < 0) return;
+
+        var date = null;
+        var year = match[YEAR_GROUP] || moment(ref).year() + '';
+        var month = match[MONTH_GROUP];
+        var day   = match[DAY_GROUP];
+
+        day  = parseInt(day);
+        month = parseInt(month);
+        year = parseInt(year);
+
+        if(month < 1 || month > 12) {
+            if(month > 12) {
+                // dd/mm/yyyy date format if day looks like a month, and month looks like a day.
+                if (day >= 1 && day <= 12 && month >= 13 && month <= 31) {
+                    // unambiguous
+                    var tday = month;
+                    month = day;
+                    day = tday;
+                }
+                else {
+                    // both month and day are <= 12
+                    return null;
+                }
+            }
+        }
+        if(day < 1 || day > 31) return null;
+
+        if(year < 100){
+            if(year > 50){
+                year = year + 1900;
+            }else{
+                year = year + 2000;
+            }
+        }
+
+        result.start.assign('day', day);
+        result.start.assign('month', month);
+        result.start.assign('year', year);
+
+        // Day of week
+        if(match[WEEKDAY_GROUP]) {
+            result.start.assign('weekday', DAYS_OFFSET[match[WEEKDAY_GROUP].toLowerCase()]);
+        }
+
+        result.tags['FRSlashDateFormatParser'] = true;
+        return result;
+    };
+};
+},{"../../result":92,"../parser":77,"moment":223}],67:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = /(\W|^)il y a\s*([0-9]+|une?)\s*(minutes?|heures?|semaines?|jours?|mois|années?|ans?)(?=(?:\W|$))/i;
+
+exports.Parser = function FRTimeAgoFormatParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() {
+        return PATTERN;
+    }
+
+    this.extract = function(text, ref, match, opt){
+
+        if (match.index > 0 && text[match.index-1].match(/\w/)) return null;
+
+        var text = match[0];
+        text  = match[0].substr(match[1].length, match[0].length - match[1].length);
+        index = match.index + match[1].length;
+
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref,
+        });
+        result.tags['FRTimeAgoFormatParser'] = true;
+        
+        var num = parseInt(match[2]);
+        if (isNaN(num)) {
+          if (match[2].match(/demi/)) {
+            num = 0.5;
+          } else {
+            num = 1;
+          }
+        }
+
+        var date = moment(ref);
+
+        if (match[3].match(/heure/) || match[3].match(/minute/)) {
+            if (match[3].match(/heure/)) {
+
+                date.add(-num, 'hour');
+
+            } else if (match[3].match(/minute/)) {
+
+                date.add(-num, 'minute');
+            }
+
+            result.start.imply('day', date.date());
+            result.start.imply('month', date.month() + 1);
+            result.start.imply('year', date.year());
+            result.start.assign('hour', date.hour());
+            result.start.assign('minute', date.minute());
+
+            return result;
+        }
+
+        if (match[3].match(/semaine/)) {
+            date.add(-num, 'week');
+
+            result.start.imply('day', date.date());
+            result.start.imply('month', date.month() + 1);
+            result.start.imply('year', date.year());
+            result.start.imply('weekday', date.day());
+            return result;
+        }
+
+        if (match[3].match(/jour/)) {
+            date.add(-num, 'd');
+        }
+
+        if (match[3].match(/mois/)) {
+            date.add(-num, 'month');
+        }
+
+        if (match[3].match(/années?|ans?/)) {
+
+            date.add(-num, 'year');
+        }
+
+        result.start.assign('day', date.date());
+        result.start.assign('month', date.month() + 1);
+        result.start.assign('year', date.year());
+        return result;
+
+    };
+}
+
+},{"../../result":92,"../parser":77,"moment":223}],68:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var ParsedComponents = require('../../result').ParsedComponents;
+
+var FIRST_REG_PATTERN  = new RegExp("(^|\\s|T)" +
+    "(?:(?:[àa])\\s*)?" +
+    "(\\d{1,2}(?:h)?|midi|minuit)" +
+    "(?:" +
+        "(?:\\.|\\:|\\：|h)(\\d{1,2})(?:m)?" +
+        "(?:" +
+            "(?:\\:|\\：|m)(\\d{0,2})(?:s)?" +
+        ")?" +
+    ")?" +
+    "(?:\\s*(A\\.M\\.|P\\.M\\.|AM?|PM?))?" +
+    "(?=\\W|$)", 'i');
+
+
+var SECOND_REG_PATTERN = new RegExp("^\\s*" +
+    "(\\-|\\–|\\~|\\〜|[àa]|\\?)\\s*" +
+    "(\\d{1,2}(?:h)?)" +
+    "(?:" +
+        "(?:\\.|\\:|\\：|h)(\\d{1,2})(?:m)?" +
+        "(?:" +
+            "(?:\\.|\\:|\\：|m)(\\d{1,2})(?:s)?" +
+        ")?" +
+    ")?" +
+    "(?:\\s*(A\\.M\\.|P\\.M\\.|AM?|PM?))?" +
+    "(?=\\W|$)", 'i');
+
+var HOUR_GROUP    = 2;
+var MINUTE_GROUP  = 3;
+var SECOND_GROUP  = 4;
+var AM_PM_HOUR_GROUP = 5;
+
+exports.Parser = function FRTimeExpressionParser(){
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return FIRST_REG_PATTERN; }
+
+    this.extract = function(text, ref, match, opt){
+
+        // This pattern can be overlaped Ex. [12] AM, 1[2] AM
+        if (match.index > 0 && text[match.index-1].match(/\w/)) return null;
+        var refMoment = moment(ref);
+        var result = new ParsedResult();
+        result.ref = ref;
+        result.index = match.index + match[1].length;
+        result.text  = match[0].substring(match[1].length);
+        result.tags['FRTimeExpressionParser'] = true;
+
+        result.start.imply('day',   refMoment.date());
+        result.start.imply('month', refMoment.month()+1);
+        result.start.imply('year',  refMoment.year());
+
+        var hour = 0;
+        var minute = 0;
+        var meridiem = -1;
+
+        // ----- Second
+        if(match[SECOND_GROUP] != null){
+            var second = parseInt(match[SECOND_GROUP]);
+            if(second >= 60) return null;
+
+            result.start.assign('second', second);
+        }
+
+        // ----- Hours
+        if (match[HOUR_GROUP].toLowerCase() == "midi"){
+            meridiem = 1;
+            hour = 12;
+        } else if (match[HOUR_GROUP].toLowerCase() == "minuit") {
+            meridiem = 0;
+            hour = 0;
+        } else {
+            hour = parseInt(match[HOUR_GROUP]);
+        }
+
+        // ----- Minutes
+        if(match[MINUTE_GROUP] != null){
+            minute = parseInt(match[MINUTE_GROUP]);
+        } else if(hour > 100) {
+            minute = hour%100;
+            hour   = parseInt(hour/100);
+        }
+
+        if(minute >= 60) {
+            return null;
+        }
+
+        if(hour > 24) {
+            return null;
+        }
+        if (hour >= 12) {
+            meridiem = 1;
+        }
+
+        // ----- AM & PM
+        if(match[AM_PM_HOUR_GROUP] != null) {
+            if(hour > 12) return null;
+            var ampm = match[AM_PM_HOUR_GROUP][0].toLowerCase();
+            if(ampm == "a"){
+                meridiem = 0;
+                if(hour == 12) hour = 0;
+            }
+
+            if(ampm == "p"){
+                meridiem = 1;
+                if(hour != 12) hour += 12;
+            }
+        }
+        result.start.assign('hour', hour);
+        result.start.assign('minute', minute);
+        if (meridiem >= 0) {
+            result.start.assign('meridiem', meridiem);
+        }
+
+        // ==============================================================
+        //                  Extracting the 'to' chunk
+        // ==============================================================
+        match = SECOND_REG_PATTERN.exec(text.substring(result.index + result.text.length));
+        if (!match) {
+            // Not accept number only result
+            if (result.text.match(/^\d+$/)) {
+                return null;
+            }
+            return result;
+        }
+
+
+
+        // Pattern "YY.YY -XXXX" is more like timezone offset
+        if (match[0].match(/^\s*(\+|\-)\s*\d{3,4}$/)) {
+            return result;
+        }
+
+        if(result.end == null){
+            result.end = new ParsedComponents(null, result.start.date());
+        }
+
+        var hour = 0;
+        var minute = 0;
+        var meridiem = -1;
+
+        // ----- Second
+        if(match[SECOND_GROUP] != null){
+            var second = parseInt(match[SECOND_GROUP]);
+            if(second >= 60) return null;
+
+            result.end.assign('second', second);
+        }
+
+        hour = parseInt(match[2]);
+
+        // ----- Minute
+        if (match[MINUTE_GROUP]!= null) {
+
+            minute = parseInt(match[MINUTE_GROUP]);
+            if(minute >= 60) return result;
+
+        } else if (hour > 100) {
+
+            minute = hour%100;
+            hour   = parseInt(hour/100);
+        }
+
+        if(minute >= 60) {
+            return null;
+        }
+
+        if(hour > 24) {
+            return null;
+        }
+        if (hour >= 12) {
+            meridiem = 1;
+        }
+
+        // ----- AM & PM
+        if (match[AM_PM_HOUR_GROUP] != null){
+
+            if (hour > 12) return null;
+
+            if(match[AM_PM_HOUR_GROUP][0].toLowerCase() == "a"){
+                meridiem = 0;
+                if(hour == 12) {
+                    hour = 0;
+                    if (!result.end.isCertain('day')) {
+                        result.end.imply('day', result.end.get('day') + 1);
+                    }
+                }
+            }
+
+            if(match[AM_PM_HOUR_GROUP][0].toLowerCase() == "p"){
+                meridiem = 1;
+                if(hour != 12) hour += 12;
+            }
+
+            if (!result.start.isCertain('meridiem')) {
+                if (meridiem == 0) {
+
+                    result.start.imply('meridiem', 0);
+
+                    if (result.start.get('hour') == 12) {
+                        result.start.assign('hour', 0);
+                    }
+
+                } else {
+
+                    result.start.imply('meridiem', 1);
+
+                    if (result.start.get('hour') != 12) {
+                        result.start.assign('hour', result.start.get('hour') + 12);
+                    }
+                }
+            }
+
+        } else if(hour >= 12) {
+            meridiem = 1;
+        }
+
+        result.text = result.text + match[0];
+        result.end.assign('hour', hour);
+        result.end.assign('minute', minute);
+        if (meridiem >= 0) {
+            result.end.assign('meridiem', meridiem);
+        }
+
+        if (result.end.date().getTime() < result.start.date().getTime()) {
+            result.end.imply('day', result.end.get('day') + 1)
+        }
+
+        return result;
+    }
+}
+
+},{"../../result":92,"../parser":77,"moment":223}],69:[function(require,module,exports){
+/*
+
+
+*/
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var updateParsedComponent = require('../EN/ENWeekdayParser').updateParsedComponent;
+
+var DAYS_OFFSET = { 'dimanche': 0, 'dim': 0, 'lundi': 1, 'lun': 1,'mardi': 2, 'mar':2, 'mercredi': 3, 'mer': 3,
+    'jeudi': 4, 'jeu':4, 'vendredi': 5, 'ven': 5,'samedi': 6, 'sam': 6};
+
+var PATTERN = new RegExp('(\\s|^)' +
+    '(?:(?:\\,|\\(|\\（)\\s*)?' +
+    '(?:(ce)\\s*)?' +
+    '(' + Object.keys(DAYS_OFFSET).join('|') + ')' +
+    '(?:\\s*(?:\\,|\\)|\\）))?' +
+    '(?:\\s*(dernier|prochain)\\s*)?' +
+    '(?=\\W|$)', 'i');
+
+var PREFIX_GROUP = 2;
+var WEEKDAY_GROUP = 3;
+var POSTFIX_GROUP = 4;
+
+exports.Parser = function FRWeekdayParser() {
+    Parser.apply(this, arguments);
+
+    this.pattern = function() { return PATTERN; };
+
+    this.extract = function(text, ref, match, opt){
+        var index = match.index + match[1].length;
+        var text = match[0].substr(match[1].length, match[0].length - match[1].length);
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref
+        });
+
+        var dayOfWeek = match[WEEKDAY_GROUP].toLowerCase();
+        var offset = DAYS_OFFSET[dayOfWeek];
+        if(offset === undefined) return null;
+
+        var modifier = null;
+        var prefix = match[PREFIX_GROUP];
+        var postfix = match[POSTFIX_GROUP];
+        if (prefix || postfix) {
+            var norm = prefix || postfix;
+            norm = norm.toLowerCase();
+
+            if(norm == 'dernier') {
+                modifier = 'last';
+            } else if(norm == 'prochain') {
+                modifier = 'next';
+            } else if(norm== 'ce') {
+                modifier = 'this';
+            }
+        }
+
+        updateParsedComponent(result, ref, offset, modifier);
+        result.tags['FRWeekdayParser'] = true;
+        return result;
+    }
+};
+
+
+},{"../../result":92,"../EN/ENWeekdayParser":55,"../parser":77,"moment":223}],70:[function(require,module,exports){
+/*
+    
+    
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = /今日|当日|昨日|明日|今夜|今夕|今晩|今朝/i;
+
+exports.Parser = function JPCasualDateParser(){
+    
+    Parser.apply(this, arguments);
+        
+    this.pattern = function() { return PATTERN; }
+    
+    this.extract = function(text, ref, match, opt){ 
+        
+        var index = match.index;
+        var text = match[0];
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref,
+        });
+
+        var refMoment = moment(ref);
+        var startMoment = refMoment.clone();
+
+        if(text == '今夜' || text == '今夕' || text == '今晩'){
+            // Normally means this coming midnight 
+            result.start.imply('hour', 22);
+            result.start.imply('meridiem', 1);
+
+        } else if(text == '明日'){
+
+            // Check not "Tomorrow" on late night
+            if(refMoment.hour() > 4) {
+                startMoment.add(1, 'day');
+            }
+
+        } else if(text == '昨日') {
+
+            startMoment.add(-1, 'day');
+
+        } else if (text.match("今朝")) {
+
+            result.start.imply('hour', 6);
+            result.start.imply('meridiem', 0);
+        }
+
+        result.start.assign('day', startMoment.date())
+        result.start.assign('month', startMoment.month() + 1)
+        result.start.assign('year', startMoment.year())
+        result.tags['JPCasualDateParser'] = true;
+        return result;
+    }
+}
+
+
+},{"../../result":92,"../parser":77,"moment":223}],71:[function(require,module,exports){
+/*
+    
+    
+*/
+
+var moment = require('moment');
+
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var util  = require('../../utils/JP'); 
+var PATTERN = /(?:(同|((昭和|平成)?([0-9０-９]{2,4})))年\s*)?([0-9０-９]{1,2})月\s*([0-9０-９]{1,2})日/i;
+  
+var YEAR_GROUP        = 2;
+var ERA_GROUP         = 3;
+var YEAR_NUMBER_GROUP = 4;
+var MONTH_GROUP       = 5;
+var DAY_GROUP         = 6;
+
+exports.Parser = function JPStandardParser(){
+    Parser.apply(this, arguments);
+    
+    this.pattern = function() { return PATTERN; }
+    
+    this.extract = function(text, ref, match, opt){ 
+
+        var startMoment = moment(ref);
+        var result = new ParsedResult({
+            text: match[0],
+            index: match.index,
+            ref: ref,
+        });
+        
+        var month = match[MONTH_GROUP];
+        month = util.toHankaku(month);
+        month = parseInt(month);
+
+        var day = match[DAY_GROUP];
+        day = util.toHankaku(day);
+        day = parseInt(day);
+
+        startMoment.set('date', day);
+        startMoment.set('month', month - 1);
+        result.start.assign('day', startMoment.date());
+        result.start.assign('month', startMoment.month() + 1);
+            
+        if (!match[YEAR_GROUP]) {
+            
+            //Find the most appropriated year
+            startMoment.year(moment(ref).year());
+            var nextYear = startMoment.clone().add(1, 'y');
+            var lastYear = startMoment.clone().add(-1, 'y');
+            if( Math.abs(nextYear.diff(moment(ref))) < Math.abs(startMoment.diff(moment(ref))) ){  
+                startMoment = nextYear;
+            }
+            else if( Math.abs(lastYear.diff(moment(ref))) < Math.abs(startMoment.diff(moment(ref))) ){ 
+                startMoment = lastYear;
+            }
+
+            result.start.assign('day', startMoment.date());
+            result.start.assign('month', startMoment.month() + 1);
+            result.start.imply('year', startMoment.year());
+
+        } else if (match[YEAR_GROUP].match('同年')) {
+
+            result.start.assign('year', startMoment.year());
+
+        } else {
+            var year = match[YEAR_NUMBER_GROUP];
+            year = util.toHankaku(year);
+            year = parseInt(year);
+
+            if (match[ERA_GROUP] == '平成') {
+                year += 1988;
+            } else if (match[ERA_GROUP] == '昭和') {
+                year += 1925;
+            }
+
+            result.start.assign('year', year);
+        }
+        
+
+        result.tags['JPStandardParser'] = true;
+        return result;
+    };
+
+}
+
+
+},{"../../result":92,"../../utils/JP":97,"../parser":77,"moment":223}],72:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var PATTERN = new RegExp(
+    '(而家|立(?:刻|即)|即刻)|' +
+    '(今|明|聽|昨|尋|琴)(早|朝|晚)|' +
+    '(上(?:午|晝)|朝(?:早)|早(?:上)|下(?:午|晝)|晏(?:晝)|晚(?:上)|夜(?:晚)?|中(?:午)|凌(?:晨))|' +
+    '(今|明|聽|昨|尋|琴)(?:日|天)' +
+    '(?:[\\s|,|，]*)' +
+    '(?:(上(?:午|晝)|朝(?:早)|早(?:上)|下(?:午|晝)|晏(?:晝)|晚(?:上)|夜(?:晚)?|中(?:午)|凌(?:晨)))?', 'i');
+
+var NOW_GROUP = 1;
+var DAY_GROUP_1 = 2;
+var TIME_GROUP_1 = 3;
+var TIME_GROUP_2 = 4;
+var DAY_GROUP_3 = 5;
+var TIME_GROUP_3 = 6;
+
+exports.Parser = function ZHHantCasualDateParser() {
+
+    Parser.apply(this, arguments);
+
+    this.pattern = function() {
+        return PATTERN;
+    };
+
+    this.extract = function(text, ref, match, opt) {
+        text = match[0];
+        var index = match.index;
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref,
+        });
+
+        var refMoment = moment(ref);
+        var startMoment = refMoment.clone();
+
+        if (match[NOW_GROUP]) {
+            result.start.imply('hour', refMoment.hour());
+            result.start.imply('minute', refMoment.minute());
+            result.start.imply('second', refMoment.second());
+            result.start.imply('millisecond', refMoment.millisecond());
+        } else if (match[DAY_GROUP_1]) {
+            var day1 = match[DAY_GROUP_1];
+            var time1 = match[TIME_GROUP_1];
+
+            if (day1 == '明' || day1 == '聽') {
+              // Check not "Tomorrow" on late night
+              if(refMoment.hour() > 1) {
+                  startMoment.add(1, 'day');
+              }
+            } else if (day1 == '昨' || day1 == '尋' || day1 == '琴') {
+                startMoment.add(-1, 'day');
+            }
+
+            if (time1 == '早' || time1 == '朝') {
+                result.start.imply('hour', 6);
+            } else if (time1 == '晚') {
+                result.start.imply('hour', 22);
+                result.start.imply('meridiem', 1);
+            }
+
+        } else if (match[TIME_GROUP_2]) {
+            var timeString2 = match[TIME_GROUP_2];
+            var time2 = timeString2[0];
+            if (time2 == '早' || time2 == '朝' || time2 == '上') {
+                result.start.imply('hour', 6);
+            } else if (time2 == '下' || time2 == '晏') {
+                result.start.imply('hour', 15);
+                result.start.imply('meridiem', 1);
+            } else if (time2 == '中') {
+                result.start.imply('hour', 12);
+                result.start.imply('meridiem', 1);
+            } else if (time2 == '夜' || time2 == '晚') {
+                result.start.imply('hour', 22);
+                result.start.imply('meridiem', 1);
+            } else if (time2 == '凌') {
+                result.start.imply('hour', 0);
+            }
+
+        } else if (match[DAY_GROUP_3]) {
+            var day3 = match[DAY_GROUP_3];
+
+            if (day3 == '明' || day3 == '聽') {
+              // Check not "Tomorrow" on late night
+              if(refMoment.hour() > 1) {
+                  startMoment.add(1, 'day');
+              }
+            } else if (day3 == '昨' || day3 == '尋' || day3 == '琴') {
+                startMoment.add(-1, 'day');
+            }
+
+
+            var timeString3 = match[TIME_GROUP_3];
+            if (timeString3) {
+                var time3 = timeString3[0];
+                if (time3 == '早' || time3 == '朝' || time3 == '上') {
+                    result.start.imply('hour', 6);
+                } else if (time3 == '下' || time3 == '晏') {
+                    result.start.imply('hour', 15);
+                    result.start.imply('meridiem', 1);
+                } else if (time3 == '中') {
+                    result.start.imply('hour', 12);
+                    result.start.imply('meridiem', 1);
+                } else if (time3 == '夜' || time3 == '晚') {
+                    result.start.imply('hour', 22);
+                    result.start.imply('meridiem', 1);
+                } else if (time3 == '凌') {
+                    result.start.imply('hour', 0);
+                }
+            }
+        }
+
+        result.start.assign('day', startMoment.date())
+        result.start.assign('month', startMoment.month() + 1)
+        result.start.assign('year', startMoment.year())
+        result.tags.ZHHantCasualDateParser = true;
+        return result;
+    };
+};
+
+},{"../../result":92,"../parser":77,"moment":223}],73:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var util = require('../../utils/ZH-Hant.js');
+
+var PATTERN = new RegExp(
+    '(\\d{2,4}|[' + Object.keys(util.NUMBER).join('') + ']{2,4})?' +
+    '(?:\\s*)' +
+    '(?:年)?' +
+    '(?:[\\s|,|，]*)' +
+    '(\\d{1,2}|[' + Object.keys(util.NUMBER).join('') + ']{1,2})' +
+    '(?:\\s*)' +
+    '(?:月)' +
+    '(?:\\s*)' +
+    '(\\d{1,2}|[' + Object.keys(util.NUMBER).join('') + ']{1,2})?' +
+    '(?:\\s*)' +
+    '(?:日|號)?'
+);
+
+var YEAR_GROUP = 1;
+var MONTH_GROUP = 2;
+var DAY_GROUP = 3;
+
+exports.Parser = function ZHHantDateParser() {
+
+    Parser.apply(this, arguments);
+
+    this.pattern = function() {
+        return PATTERN;
+    };
+
+    this.extract = function(text, ref, match, opt) {
+        var startMoment = moment(ref);
+        var result = new ParsedResult({
+            text: match[0],
+            index: match.index,
+            ref: ref,
+        });
+
+        //Month
+        var month = parseInt(match[MONTH_GROUP]);
+        if (isNaN(month)) month = util.zhStringToNumber(match[MONTH_GROUP]);
+        result.start.assign('month', month);
+
+        //Day
+        if (match[DAY_GROUP]) {
+            var day = parseInt(match[DAY_GROUP]);
+            if (isNaN(day)) day = util.zhStringToNumber(match[DAY_GROUP]);
+            result.start.assign('day', day);
+        } else {
+            result.start.imply('day', startMoment.date());
+        }
+
+        //Year
+        if (match[YEAR_GROUP]) {
+            var year = parseInt(match[YEAR_GROUP]);
+            if (isNaN(year)) year = util.zhStringToYear(match[YEAR_GROUP]);
+            result.start.assign('year', year);
+        } else {
+            result.start.imply('year', startMoment.year());
+        }
+
+        result.tags.ZHHantDateParser = true;
+        return result;
+    };
+};
+
+},{"../../result":92,"../../utils/ZH-Hant.js":98,"../parser":77,"moment":223}],74:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+
+var util = require('../../utils/ZH-Hant.js');
+
+var PATTERN = new RegExp(
+    '(\\d+|[' + Object.keys(util.NUMBER).join('') + ']+|半|幾)(?:\\s*)' +
+    '(?:個)?' +
+    '(秒(?:鐘)?|分鐘|小時|鐘|日|天|星期|禮拜|月|年)' +
+    '(?:(?:之|過)?後|(?:之)?內)', 'i'
+);
+
+var NUMBER_GROUP = 1;
+var UNIT_GROUP = 2;
+
+exports.Parser = function ZHHantCasualDateParser() {
+
+    Parser.apply(this, arguments);
+
+    this.pattern = function() {
+        return PATTERN;
+    };
+
+    this.extract = function(text, ref, match, opt) {
+      var index = match.index;
+      text  = match[0];
+
+      var result = new ParsedResult({
+          index: index,
+          text: text,
+          ref: ref
+      });
+
+      var number = parseInt(match[NUMBER_GROUP]);
+      if (isNaN(number)){
+        number = util.zhStringToNumber(match[NUMBER_GROUP]);
+      }
+
+      if (isNaN(number)){
+        var string = match[NUMBER_GROUP];
+        if (string === '幾'){
+          number = 3;
+        }else if(string === '半'){
+          number = 0.5;
+        }else{
+
+          //just in case
+          return null;
+        }
+      }
+
+      var date = moment(ref);
+      var unit = match[UNIT_GROUP];
+      var unitAbbr = unit[0];
+
+      if (unitAbbr.match(/[日天星禮月年]/)){
+        if(unitAbbr == '日' || unitAbbr == '天'){
+          date.add(number, 'd');
+        }else if(unitAbbr == '星' || unitAbbr == '禮'){
+          date.add(number * 7, 'd');
+        }else if(unitAbbr == '月'){
+          date.add(number, 'month');
+        }else if(unitAbbr == '年'){
+          date.add(number, 'year');
+        }
+
+        result.start.assign('year', date.year());
+        result.start.assign('month', date.month() + 1);
+        result.start.assign('day', date.date());
+        return result;
+      }
+
+      if(unitAbbr == '秒'){
+        date.add(number, 'second');
+      }else if(unitAbbr == '分'){
+        date.add(number, 'minute');
+      }else if(unitAbbr == '小' || unitAbbr == '鐘'){
+        date.add(number, 'hour');
+      }
+
+      result.start.imply('year', date.year());
+      result.start.imply('month', date.month() + 1);
+      result.start.imply('day', date.date());
+      result.start.assign('hour', date.hour());
+      result.start.assign('minute', date.minute());
+      result.start.assign('second', date.second());
+      result.tags.ZHHantDeadlineFormatParser = true;
+      return result;
+    };
+};
+
+},{"../../result":92,"../../utils/ZH-Hant.js":98,"../parser":77,"moment":223}],75:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var ParsedComponents = require('../../result').ParsedComponents;
+
+var util = require('../../utils/ZH-Hant.js');
+
+var patternString1 = '(?:由|從|自)?' +
+    '(?:' +
+    '(今|明|聽|昨|尋|琴)(早|朝|晚)|' +
+    '(上(?:午|晝)|朝(?:早)|早(?:上)|下(?:午|晝)|晏(?:晝)|晚(?:上)|夜(?:晚)?|中(?:午)|凌(?:晨))|' +
+    '(今|明|聽|昨|尋|琴)(?:日|天)' +
+    '(?:[\\s,，]*)' +
+    '(?:(上(?:午|晝)|朝(?:早)|早(?:上)|下(?:午|晝)|晏(?:晝)|晚(?:上)|夜(?:晚)?|中(?:午)|凌(?:晨)))?' +
+    ')?' +
+    '(?:[\\s,，]*)' +
+    '(?:(\\d+|[' + Object.keys(util.NUMBER).join('') + ']+)(?:\\s*)(?:點|時|:|：)' +
+    '(?:\\s*)' +
+    '(\\d+|半|正|整|[' + Object.keys(util.NUMBER).join('') + ']+)?(?:\\s*)(?:分|:|：)?' +
+    '(?:\\s*)' +
+    '(\\d+|[' + Object.keys(util.NUMBER).join('') + ']+)?(?:\\s*)(?:秒)?)' +
+    '(?:\\s*(A\.M\.|P\.M\.|AM?|PM?))?';
+
+var patternString2 = '(?:\\s*(?:到|至|\\-|\\–|\\~|\\〜)\\s*)' +
+    '(?:' +
+    '(今|明|聽|昨|尋|琴)(早|朝|晚)|' +
+    '(上(?:午|晝)|朝(?:早)|早(?:上)|下(?:午|晝)|晏(?:晝)|晚(?:上)|夜(?:晚)?|中(?:午)|凌(?:晨))|' +
+    '(今|明|聽|昨|尋|琴)(?:日|天)' +
+    '(?:[\\s,，]*)' +
+    '(?:(上(?:午|晝)|朝(?:早)|早(?:上)|下(?:午|晝)|晏(?:晝)|晚(?:上)|夜(?:晚)?|中(?:午)|凌(?:晨)))?' +
+    ')?' +
+    '(?:[\\s,，]*)' +
+    '(?:(\\d+|[' + Object.keys(util.NUMBER).join('') + ']+)(?:\\s*)(?:點|時|:|：)' +
+    '(?:\\s*)' +
+    '(\\d+|半|正|整|[' + Object.keys(util.NUMBER).join('') + ']+)?(?:\\s*)(?:分|:|：)?' +
+    '(?:\\s*)' +
+    '(\\d+|[' + Object.keys(util.NUMBER).join('') + ']+)?(?:\\s*)(?:秒)?)' +
+    '(?:\\s*(A\.M\.|P\.M\.|AM?|PM?))?';
+
+var FIRST_REG_PATTERN = new RegExp(patternString1, 'i');
+var SECOND_REG_PATTERN = new RegExp(patternString2, 'i');
+
+var DAY_GROUP_1 = 1;
+var ZH_AM_PM_HOUR_GROUP_1 = 2;
+var ZH_AM_PM_HOUR_GROUP_2 = 3;
+var DAY_GROUP_3 = 4;
+var ZH_AM_PM_HOUR_GROUP_3 = 5;
+var HOUR_GROUP = 6;
+var MINUTE_GROUP = 7;
+var SECOND_GROUP = 8;
+var AM_PM_HOUR_GROUP = 9;
+
+exports.Parser = function ZHHantTimeExpressionParser() {
+
+    Parser.apply(this, arguments);
+
+    this.pattern = function() {
+        return FIRST_REG_PATTERN;
+    };
+
+    this.extract = function(text, ref, match, opt) {
+
+        // This pattern can be overlaped Ex. [12] AM, 1[2] AM
+        if (match.index > 0 && text[match.index - 1].match(/\w/)) return null;
+        var refMoment = moment(ref);
+        var result = new ParsedResult();
+        result.ref = ref;
+        result.index = match.index;
+        result.text = match[0];
+        result.tags.ZHTimeExpressionParser = true;
+
+        var startMoment = refMoment.clone();
+
+        // ----- Day
+        if (match[DAY_GROUP_1]) {
+            var day1 = match[DAY_GROUP_1];
+            if (day1 == '明' || day1 == '聽') {
+              // Check not "Tomorrow" on late night
+              if(refMoment.hour() > 1) {
+                  startMoment.add(1, 'day');
+              }
+            } else if (day1 == '昨' || day1 == '尋' || day1 == '琴') {
+                startMoment.add(-1, 'day');
+            }
+            result.start.assign('day', startMoment.date());
+            result.start.assign('month', startMoment.month() + 1);
+            result.start.assign('year', startMoment.year());
+        } else if (match[DAY_GROUP_3]) {
+            var day3 = match[DAY_GROUP_3];
+            if (day3 == '明' || day3 == '聽') {
+                startMoment.add(1, 'day');
+            } else if (day3 == '昨' || day3 == '尋' || day3 == '琴') {
+                startMoment.add(-1, 'day');
+            }
+            result.start.assign('day', startMoment.date());
+            result.start.assign('month', startMoment.month() + 1);
+            result.start.assign('year', startMoment.year());
+        } else {
+            result.start.imply('day', startMoment.date());
+            result.start.imply('month', startMoment.month() + 1);
+            result.start.imply('year', startMoment.year());
+        }
+
+        var hour = 0;
+        var minute = 0;
+        var meridiem = -1;
+
+        // ----- Second
+        if (match[SECOND_GROUP]) {
+            var second = parseInt(match[SECOND_GROUP]);
+            if (isNaN(second)) {
+                second = util.zhStringToNumber(match[SECOND_GROUP]);
+            }
+            if (second >= 60) return null;
+            result.start.assign('second', second);
+        }
+
+        hour = parseInt(match[HOUR_GROUP]);
+        if (isNaN(hour)) {
+            hour = util.zhStringToNumber(match[HOUR_GROUP]);
+        }
+
+        // ----- Minutes
+        if (match[MINUTE_GROUP]) {
+            if (match[MINUTE_GROUP] == '半') {
+                minute = 30;
+            } else if (match[MINUTE_GROUP] == '正' || match[MINUTE_GROUP] == '整') {
+                minute = 0;
+            } else {
+                minute = parseInt(match[MINUTE_GROUP]);
+                if (isNaN(minute)) {
+                    minute = util.zhStringToNumber(match[MINUTE_GROUP]);
+                }
+            }
+        } else if (hour > 100) {
+            minute = hour % 100;
+            hour = parseInt(hour / 100);
+        }
+
+        if (minute >= 60) {
+            return null;
+        }
+
+        if (hour > 24) {
+            return null;
+        }
+        if (hour >= 12) {
+            meridiem = 1;
+        }
+
+        // ----- AM & PM
+        if (match[AM_PM_HOUR_GROUP]) {
+            if (hour > 12) return null;
+            var ampm = match[AM_PM_HOUR_GROUP][0].toLowerCase();
+            if (ampm == "a") {
+                meridiem = 0;
+                if (hour == 12) hour = 0;
+            }
+
+            if (ampm == "p") {
+                meridiem = 1;
+                if (hour != 12) hour += 12;
+            }
+        } else if (match[ZH_AM_PM_HOUR_GROUP_1]) {
+            var zhAMPMString1 = match[ZH_AM_PM_HOUR_GROUP_1];
+            var zhAMPM1 = zhAMPMString1[0];
+            if (zhAMPM1 == '朝' || zhAMPM1 == '早') {
+                meridiem = 0;
+                if (hour == 12) hour = 0;
+            } else if (zhAMPM1 == '晚') {
+                meridiem = 1;
+                if (hour != 12) hour += 12;
+            }
+        } else if (match[ZH_AM_PM_HOUR_GROUP_2]) {
+            var zhAMPMString2 = match[ZH_AM_PM_HOUR_GROUP_2];
+            var zhAMPM2 = zhAMPMString2[0];
+            if (zhAMPM2 == '上' || zhAMPM2 == '朝' || zhAMPM2 == '早' || zhAMPM2 == '凌') {
+                meridiem = 0;
+                if (hour == 12) hour = 0;
+            } else if (zhAMPM2 == '下' || zhAMPM2 == '晏' || zhAMPM2 == '晚') {
+                meridiem = 1;
+                if (hour != 12) hour += 12;
+            }
+        } else if (match[ZH_AM_PM_HOUR_GROUP_3]) {
+            var zhAMPMString3 = match[ZH_AM_PM_HOUR_GROUP_3];
+            var zhAMPM3 = zhAMPMString3[0];
+            if (zhAMPM3 == '上' || zhAMPM3 == '朝' || zhAMPM3 == '早' || zhAMPM3 == '凌') {
+                meridiem = 0;
+                if (hour == 12) hour = 0;
+            } else if (zhAMPM3 == '下' || zhAMPM3 == '晏' || zhAMPM3 == '晚') {
+                meridiem = 1;
+                if (hour != 12) hour += 12;
+            }
+        }
+
+        result.start.assign('hour', hour);
+        result.start.assign('minute', minute);
+
+        if (meridiem >= 0) {
+            result.start.assign('meridiem', meridiem);
+        } else {
+            if (hour < 12) {
+                result.start.imply('meridiem', 0);
+            } else {
+                result.start.imply('meridiem', 1);
+            }
+        }
+
+        // ==============================================================
+        //                  Extracting the 'to' chunk
+        // ==============================================================
+
+        match = SECOND_REG_PATTERN.exec(text.substring(result.index + result.text.length));
+        if (!match) {
+            // Not accept number only result
+            if (result.text.match(/^\d+$/)) {
+                return null;
+            }
+            return result;
+        }
+
+        var endMoment = startMoment.clone();
+        result.end = new ParsedComponents(null, null);
+
+        // ----- Day
+        if (match[DAY_GROUP_1]) {
+            var day1 = match[DAY_GROUP_1];
+            if (day1 == '明' || day1 == '聽') {
+              // Check not "Tomorrow" on late night
+              if(refMoment.hour() > 1) {
+                  endMoment.add(1, 'day');
+              }
+            } else if (day1 == '昨' || day1 == '尋' || day1 == '琴') {
+                endMoment.add(-1, 'day');
+            }
+            result.end.assign('day', endMoment.date());
+            result.end.assign('month', endMoment.month() + 1);
+            result.end.assign('year', endMoment.year());
+        } else if (match[DAY_GROUP_3]) {
+            var day3 = match[DAY_GROUP_3];
+            if (day3 == '明' || day3 == '聽') {
+                endMoment.add(1, 'day');
+            } else if (day3 == '昨' || day3 == '尋' || day3 == '琴') {
+                endMoment.add(-1, 'day');
+            }
+            result.end.assign('day', endMoment.date());
+            result.end.assign('month', endMoment.month() + 1);
+            result.end.assign('year', endMoment.year());
+        } else {
+            result.end.imply('day', endMoment.date());
+            result.end.imply('month', endMoment.month() + 1);
+            result.end.imply('year', endMoment.year());
+        }
+
+        hour = 0;
+        minute = 0;
+        meridiem = -1;
+
+        // ----- Second
+        if (match[SECOND_GROUP]) {
+            var second = parseInt(match[SECOND_GROUP]);
+            if (isNaN(second)) {
+                second = util.zhStringToNumber(match[SECOND_GROUP]);
+            }
+
+            if (second >= 60) return null;
+            result.end.assign('second', second);
+        }
+
+        hour = parseInt(match[HOUR_GROUP]);
+        if (isNaN(hour)) {
+            hour = util.zhStringToNumber(match[HOUR_GROUP]);
+        }
+
+        // ----- Minutes
+        if (match[MINUTE_GROUP]) {
+            if (match[MINUTE_GROUP] == '半') {
+                minute = 30;
+            } else if (match[MINUTE_GROUP] == '正' || match[MINUTE_GROUP] == '整') {
+                minute = 0;
+            } else {
+                minute = parseInt(match[MINUTE_GROUP]);
+                if (isNaN(minute)) {
+                    minute = util.zhStringToNumber(match[MINUTE_GROUP]);
+                }
+            }
+        } else if (hour > 100) {
+            minute = hour % 100;
+            hour = parseInt(hour / 100);
+        }
+
+        if (minute >= 60) {
+            return null;
+        }
+
+        if (hour > 24) {
+            return null;
+        }
+        if (hour >= 12) {
+            meridiem = 1;
+        }
+
+        // ----- AM & PM
+        if (match[AM_PM_HOUR_GROUP]) {
+            if (hour > 12) return null;
+            var ampm = match[AM_PM_HOUR_GROUP][0].toLowerCase();
+            if (ampm == "a") {
+                meridiem = 0;
+                if (hour == 12) hour = 0;
+            }
+
+            if (ampm == "p") {
+                meridiem = 1;
+                if (hour != 12) hour += 12;
+            }
+
+            if (!result.start.isCertain('meridiem')) {
+                if (meridiem == 0) {
+
+                    result.start.imply('meridiem', 0);
+
+                    if (result.start.get('hour') == 12) {
+                        result.start.assign('hour', 0);
+                    }
+
+                } else {
+
+                    result.start.imply('meridiem', 1);
+
+                    if (result.start.get('hour') != 12) {
+                        result.start.assign('hour', result.start.get('hour') + 12);
+                    }
+                }
+            }
+
+        } else if (match[ZH_AM_PM_HOUR_GROUP_1]) {
+            var zhAMPMString1 = match[ZH_AM_PM_HOUR_GROUP_1];
+            var zhAMPM1 = zhAMPMString1[0];
+            if (zhAMPM1 == '朝' || zhAMPM1 == '早') {
+                meridiem = 0;
+                if (hour == 12) hour = 0;
+            } else if (zhAMPM1 == '晚') {
+                meridiem = 1;
+                if (hour != 12) hour += 12;
+            }
+        } else if (match[ZH_AM_PM_HOUR_GROUP_2]) {
+            var zhAMPMString2 = match[ZH_AM_PM_HOUR_GROUP_2];
+            var zhAMPM2 = zhAMPMString2[0];
+            if (zhAMPM2 == '上' || zhAMPM2 == '朝' || zhAMPM2 == '早' || zhAMPM2 == '凌') {
+                meridiem = 0;
+                if (hour == 12) hour = 0;
+            } else if (zhAMPM2 == '下' || zhAMPM2 == '晏' || zhAMPM2 == '晚') {
+                meridiem = 1;
+                if (hour != 12) hour += 12;
+            }
+        } else if (match[ZH_AM_PM_HOUR_GROUP_3]) {
+            var zhAMPMString3 = match[ZH_AM_PM_HOUR_GROUP_3];
+            var zhAMPM3 = zhAMPMString3[0];
+            if (zhAMPM3 == '上' || zhAMPM3 == '朝' || zhAMPM3 == '早' || zhAMPM3 == '凌') {
+                meridiem = 0;
+                if (hour == 12) hour = 0;
+            } else if (zhAMPM3 == '下' || zhAMPM3 == '晏' || zhAMPM3 == '晚') {
+                meridiem = 1;
+                if (hour != 12) hour += 12;
+            }
+        }
+
+        result.text = result.text + match[0];
+        result.end.assign('hour', hour);
+        result.end.assign('minute', minute);
+        if (meridiem >= 0) {
+            result.end.assign('meridiem', meridiem);
+        } else {
+            var startAtPM = result.start.isCertain('meridiem') && result.start.get('meridiem') == 1;
+            if (startAtPM && result.start.get('hour') > hour) {
+                // 10pm - 1 (am)
+                result.end.imply('meridiem', 0);
+
+            } else if (hour > 12) {
+                result.end.imply('meridiem', 1);
+            }
+        }
+
+        if (result.end.date().getTime() < result.start.date().getTime()) {
+            result.end.imply('day', result.end.get('day') + 1)
+        }
+
+        return result;
+    };
+};
+
+},{"../../result":92,"../../utils/ZH-Hant.js":98,"../parser":77,"moment":223}],76:[function(require,module,exports){
+/*
+
+
+*/
+
+var moment = require('moment');
+var Parser = require('../parser').Parser;
+var ParsedResult = require('../../result').ParsedResult;
+var updateParsedComponent = require('../EN/ENWeekdayParser').updateParsedComponent;
+
+var util = require('../../utils/ZH-Hant.js');
+
+var PATTERN = new RegExp(
+    '(上|今|下|這|呢)?' +
+    '(?:個)?' +
+    '(?:星期|禮拜)' +
+    '(' + Object.keys(util.WEEKDAY_OFFSET).join('|') + ')'
+);
+
+var PREFIX_GROUP = 1;
+var WEEKDAY_GROUP = 2;
+
+exports.Parser = function ZHHantWeekdayParser() {
+
+    Parser.apply(this, arguments);
+
+    this.pattern = function() {
+        return PATTERN;
+    };
+
+    this.extract = function(text, ref, match, opt) {
+        var index = match.index;
+        text = match[0];
+        var result = new ParsedResult({
+            index: index,
+            text: text,
+            ref: ref
+        });
+
+        var dayOfWeek = match[WEEKDAY_GROUP];
+        var offset = util.WEEKDAY_OFFSET[dayOfWeek];
+        if(offset === undefined) return null;
+
+        var modifier = null;
+        var prefix = match[PREFIX_GROUP];
+
+        if(prefix == '上') {
+            modifier = 'last';
+        } else if(prefix == '下') {
+            modifier = 'next';
+        } else if(prefix == '今' || prefix == '這' || prefix == '呢') {
+            modifier = 'this';
+        }
+
+        updateParsedComponent(result, ref, offset, modifier);
+        result.tags['ZHHantWeekdayParser'] = true;
+        return result;
+    };
+};
+
+},{"../../result":92,"../../utils/ZH-Hant.js":98,"../EN/ENWeekdayParser":55,"../parser":77,"moment":223}],77:[function(require,module,exports){
+
+function Parser(strictMode) {
+
+    this.isStrictMode = function() { return (strictMode == true) };
+
+    this.pattern = function() { return /./i; }
+
+    this.extract = function(text, ref, match, opt){ return null; }
+
+    this.execute = function(text, ref, opt) {
+
+        var results = [];
+        var regex = this.pattern();
+
+        var remainingText = text;
+        var match = regex.exec(remainingText);
+
+        while (match) {
+
+            // Calculate match index on the full text;
+            match.index += text.length - remainingText.length;
+
+            var result = this.extract(text, ref, match, opt);
+            if (result) {
+
+                // If success, start from the end of the result
+                remainingText = text.substring(result.index + result.text.length);
+
+                if (!this.isStrictMode() || result.hasPossibleDates()) {
+                    results.push(result);
+                }
+
+            } else {
+                // If fail, move on by 1
+                remainingText = text.substring(match.index + 1);
+            }
+
+            match = regex.exec(remainingText);
+        }
+
+        if (this.refiners) {
+            this.refiners.forEach(function () {
+                results = refiner.refine(results, text, options);
+            });
+        }
+
+        return results;
+    }
+}
+
+exports.Parser = Parser;
+
+exports.ENISOFormatParser = require('./EN/ENISOFormatParser').Parser;
+exports.ENDeadlineFormatParser = require('./EN/ENDeadlineFormatParser').Parser;
+exports.ENRelativeDateFormatParser = require('./EN/ENRelativeDateFormatParser').Parser;
+exports.ENMonthNameLittleEndianParser = require('./EN/ENMonthNameLittleEndianParser').Parser;
+exports.ENMonthNameMiddleEndianParser = require('./EN/ENMonthNameMiddleEndianParser').Parser;
+exports.ENMonthNameParser = require('./EN/ENMonthNameParser').Parser;
+exports.ENSlashDateFormatParser = require('./EN/ENSlashDateFormatParser').Parser;
+exports.ENSlashDateFormatStartWithYearParser = require('./EN/ENSlashDateFormatStartWithYearParser').Parser;
+exports.ENSlashMonthFormatParser = require('./EN/ENSlashMonthFormatParser').Parser;
+exports.ENTimeAgoFormatParser = require('./EN/ENTimeAgoFormatParser').Parser;
+exports.ENTimeExpressionParser = require('./EN/ENTimeExpressionParser').Parser;
+exports.ENWeekdayParser = require('./EN/ENWeekdayParser').Parser;
+exports.ENCasualDateParser = require('./EN/ENCasualDateParser').Parser;
+exports.ENCasualTimeParser = require('./EN/ENCasualTimeParser').Parser;
+
+exports.JPStandardParser = require('./JP/JPStandardParser').Parser;
+exports.JPCasualDateParser = require('./JP/JPCasualDateParser').Parser;
+
+exports.ESCasualDateParser = require('./ES/ESCasualDateParser').Parser;
+exports.ESDeadlineFormatParser = require('./ES/ESDeadlineFormatParser').Parser;
+exports.ESTimeAgoFormatParser = require('./ES/ESTimeAgoFormatParser').Parser;
+exports.ESTimeExpressionParser = require('./ES/ESTimeExpressionParser').Parser;
+exports.ESWeekdayParser = require('./ES/ESWeekdayParser').Parser;
+exports.ESMonthNameLittleEndianParser = require('./ES/ESMonthNameLittleEndianParser').Parser;
+exports.ESSlashDateFormatParser = require('./ES/ESSlashDateFormatParser').Parser;
+
+exports.FRCasualDateParser = require('./FR/FRCasualDateParser').Parser;
+exports.FRDeadlineFormatParser = require('./FR/FRDeadlineFormatParser').Parser;
+exports.FRMonthNameLittleEndianParser = require('./FR/FRMonthNameLittleEndianParser').Parser;
+exports.FRSlashDateFormatParser = require('./FR/FRSlashDateFormatParser').Parser;
+exports.FRTimeAgoFormatParser = require('./FR/FRTimeAgoFormatParser').Parser;
+exports.FRTimeExpressionParser = require('./FR/FRTimeExpressionParser').Parser;
+exports.FRWeekdayParser = require('./FR/FRWeekdayParser').Parser;
+
+exports.ZHHantDateParser = require('./ZH-Hant/ZHHantDateParser').Parser;
+exports.ZHHantWeekdayParser = require('./ZH-Hant/ZHHantWeekdayParser').Parser;
+exports.ZHHantTimeExpressionParser = require('./ZH-Hant/ZHHantTimeExpressionParser').Parser;
+exports.ZHHantCasualDateParser = require('./ZH-Hant/ZHHantCasualDateParser').Parser;
+exports.ZHHantDeadlineFormatParser = require('./ZH-Hant/ZHHantDeadlineFormatParser').Parser;
+
+exports.DEDeadlineFormatParser = require('./DE/DEDeadlineFormatParser').Parser;
+exports.DEMonthNameLittleEndianParser = require('./DE/DEMonthNameLittleEndianParser').Parser;
+exports.DEMonthNameParser = require('./DE/DEMonthNameParser').Parser;
+exports.DESlashDateFormatParser = require('./DE/DESlashDateFormatParser').Parser;
+exports.DETimeAgoFormatParser = require('./DE/DETimeAgoFormatParser').Parser;
+exports.DETimeExpressionParser = require('./DE/DETimeExpressionParser').Parser;
+exports.DEWeekdayParser = require('./DE/DEWeekdayParser').Parser;
+exports.DECasualDateParser = require('./DE/DECasualDateParser').Parser;
+
+},{"./DE/DECasualDateParser":34,"./DE/DEDeadlineFormatParser":35,"./DE/DEMonthNameLittleEndianParser":36,"./DE/DEMonthNameParser":37,"./DE/DESlashDateFormatParser":38,"./DE/DETimeAgoFormatParser":39,"./DE/DETimeExpressionParser":40,"./DE/DEWeekdayParser":41,"./EN/ENCasualDateParser":42,"./EN/ENCasualTimeParser":43,"./EN/ENDeadlineFormatParser":44,"./EN/ENISOFormatParser":45,"./EN/ENMonthNameLittleEndianParser":46,"./EN/ENMonthNameMiddleEndianParser":47,"./EN/ENMonthNameParser":48,"./EN/ENRelativeDateFormatParser":49,"./EN/ENSlashDateFormatParser":50,"./EN/ENSlashDateFormatStartWithYearParser":51,"./EN/ENSlashMonthFormatParser":52,"./EN/ENTimeAgoFormatParser":53,"./EN/ENTimeExpressionParser":54,"./EN/ENWeekdayParser":55,"./ES/ESCasualDateParser":56,"./ES/ESDeadlineFormatParser":57,"./ES/ESMonthNameLittleEndianParser":58,"./ES/ESSlashDateFormatParser":59,"./ES/ESTimeAgoFormatParser":60,"./ES/ESTimeExpressionParser":61,"./ES/ESWeekdayParser":62,"./FR/FRCasualDateParser":63,"./FR/FRDeadlineFormatParser":64,"./FR/FRMonthNameLittleEndianParser":65,"./FR/FRSlashDateFormatParser":66,"./FR/FRTimeAgoFormatParser":67,"./FR/FRTimeExpressionParser":68,"./FR/FRWeekdayParser":69,"./JP/JPCasualDateParser":70,"./JP/JPStandardParser":71,"./ZH-Hant/ZHHantCasualDateParser":72,"./ZH-Hant/ZHHantDateParser":73,"./ZH-Hant/ZHHantDeadlineFormatParser":74,"./ZH-Hant/ZHHantTimeExpressionParser":75,"./ZH-Hant/ZHHantWeekdayParser":76}],78:[function(require,module,exports){
+/*
+  
+*/
+var ENMergeDateRangeRefiner = require('../EN/ENMergeDateRangeRefiner').Refiner;
+
+exports.Refiner = function DEMergeDateRangeRefiner() {
+    ENMergeDateRangeRefiner.call(this);
+
+    this.pattern = function () {
+        return /^\s*(bis(?:\s*(?:am|zum))?|\-)\s*$/i
+    };
+};
+
+},{"../EN/ENMergeDateRangeRefiner":80}],79:[function(require,module,exports){
+/*
+    
+*/
+var ParsedComponents = require('../../result').ParsedComponents;
+var Refiner = require('../refiner').Refiner;
+
+
+
+var PATTERN = new RegExp("^\\s*(T|um|am|,|-)?\\s*$");
+
+function isDateOnly(result) {
+    return !result.start.isCertain('hour');
+}
+    
+function isTimeOnly(result) {
+    return !result.start.isCertain('month') && !result.start.isCertain('weekday');
+}
+
+
+function isAbleToMerge(text, prevResult, curResult) {
+    var textBetween = text.substring(prevResult.index + prevResult.text.length, curResult.index);
+    return textBetween.match(PATTERN);
+}
+
+function mergeResult(text, dateResult, timeResult){
+
+    var beginDate = dateResult.start;
+    var beginTime = timeResult.start;
+        
+    var beginDateTime = beginDate.clone();
+    beginDateTime.assign('hour', beginTime.get('hour'));
+    beginDateTime.assign('minute', beginTime.get('minute'));
+    beginDateTime.assign('second', beginTime.get('second'));
+        
+    if (beginTime.isCertain('meridiem')) {
+        beginDateTime.assign('meridiem', beginTime.get('meridiem'));
+    } else if (
+        beginTime.get('meridiem') !== undefined &&
+        beginDateTime.get('meridiem') === undefined
+    ) {
+        beginDateTime.imply('meridiem', beginTime.get('meridiem'));
+    }
+
+    if (beginDateTime.get('meridiem') == 1 && beginDateTime.get('hour') < 12) {
+        beginDateTime.assign('hour', beginDateTime.get('hour') + 12);
+    }
+
+    if (dateResult.end != null || timeResult.end != null) {
+        
+        var endDate   = dateResult.end == null ? dateResult.start : dateResult.end;            
+        var endTime   = timeResult.end == null ? timeResult.start : timeResult.end;
+
+        var endDateTime = endDate.clone();
+        endDateTime.assign('hour', endTime.get('hour'));
+        endDateTime.assign('minute', endTime.get('minute'));
+        endDateTime.assign('second', endTime.get('second'));
+        
+        if (endTime.isCertain('meridiem')) {
+            endDateTime.assign('meridiem', endTime.get('meridiem'));
+        } else if (beginTime.get('meridiem') != null) {
+            endDateTime.imply('meridiem', endTime.get('meridiem'));
+        }
+        
+        if (dateResult.end == null && endDateTime.date().getTime() < beginDateTime.date().getTime()) {
+            // Ex. 9pm - 1am
+            if (endDateTime.isCertain('day')) {
+                endDateTime.assign('day', endDateTime.get('day') + 1);
+            } else {
+                endDateTime.imply('day', endDateTime.get('day') + 1);
+            }
+        }
+
+        dateResult.end = endDateTime;
+    }
+
+    dateResult.start = beginDateTime;    
+
+    var startIndex = Math.min(dateResult.index, timeResult.index);
+    var endIndex = Math.max(
+            dateResult.index + dateResult.text.length, 
+            timeResult.index + timeResult.text.length);
+    
+    dateResult.index = startIndex;
+    dateResult.text  = text.substring(startIndex, endIndex);
+
+    for (var tag in timeResult.tags) {
+        dateResult.tags[tag] = true;
+    }
+    dateResult.tags['DEMergeDateAndTimeRefiner'] = true;
+    return dateResult;
+}
+
+exports.Refiner = function DEMergeDateTimeRefiner() {
+    Refiner.call(this);
+
+
+    this.refine = function(text, results, opt) { 
+
+        if (results.length < 2) return results;
+
+        var mergedResult = [];
+        var currResult = null;
+        var prevResult = null;
+
+        for (var i = 1; i < results.length; i++) {
+
+            currResult = results[i];
+            prevResult = results[i-1];
+            
+            if (isDateOnly(prevResult) && isTimeOnly(currResult) 
+                    && isAbleToMerge(text, prevResult, currResult)) {
+                
+                prevResult = mergeResult(text, prevResult, currResult);
+                currResult = null;
+                i += 1;
+                
+            } else if (isDateOnly(currResult) && isTimeOnly(prevResult)
+                    && isAbleToMerge(text, prevResult, currResult)) {
+                
+                prevResult = mergeResult(text, currResult, prevResult);
+                currResult = null;
+                i += 1;
+            }
+            
+            mergedResult.push(prevResult);
+        }
+
+        if (currResult != null) {
+            mergedResult.push(currResult);
+        }
+
+        return mergedResult;
+    }
+}
+},{"../../result":92,"../refiner":91}],80:[function(require,module,exports){
+/*
+  
+*/
+var Refiner = require('../refiner').Refiner;
+
+exports.Refiner = function ENMergeDateRangeRefiner() {
+    Refiner.call(this);
+
+    this.pattern = function () { return /^\s*(to|\-)\s*$/i };
+
+    this.refine = function(text, results, opt) {
+
+        if (results.length < 2) return results;
+        
+        var mergedResult = [];
+        var currResult = null;
+        var prevResult = null;
+        
+        for (var i=1; i<results.length; i++){
+            
+            currResult = results[i];
+            prevResult = results[i-1];
+            
+            if (!prevResult.end && !currResult.end 
+                && this.isAbleToMerge(text, prevResult, currResult)) {
+              
+                prevResult = this.mergeResult(text, prevResult, currResult);
+                currResult = null;
+                i += 1;
+            }
+            
+            mergedResult.push(prevResult);
+        }
+        
+        if (currResult != null) {
+            mergedResult.push(currResult);
+        }
+
+
+        return mergedResult;
+    };
+
+    this.isAbleToMerge = function(text, result1, result2) {
+        var begin = result1.index + result1.text.length;
+        var end   = result2.index;
+        var textBetween = text.substring(begin,end);
+
+        return textBetween.match(this.pattern());
+    };
+
+    this.isWeekdayResult = function (result) {
+        return result.start.isCertain('weekday') && !result.start.isCertain('day');
+    };
+
+    this.mergeResult = function(text, fromResult, toResult) {
+
+        if (!this.isWeekdayResult(fromResult) && !this.isWeekdayResult(toResult)) {
+
+            for (var key in toResult.start.knownValues) {
+                if (!fromResult.start.isCertain(key)) {
+                    fromResult.start.assign(key, toResult.start.get(key));
+                }
+            }
+
+            for (var key in fromResult.start.knownValues) {
+                if (!toResult.start.isCertain(key)) {
+                    toResult.start.assign(key, fromResult.start.get(key));
+                }
+            }
+        }
+
+        if (fromResult.start.date().getTime() > toResult.start.date().getTime()) {
+            var tmp = toResult;
+            toResult = fromResult;
+            fromResult = tmp;
+        }
+        
+        fromResult.end = toResult.start;
+
+        
+
+        for (var tag in toResult.tags) {
+            fromResult.tags[tag] = true;
+        }
+
+            
+        var startIndex = Math.min(fromResult.index, toResult.index);
+        var endIndex = Math.max(
+            fromResult.index + fromResult.text.length, 
+            toResult.index + toResult.text.length);
+            
+        fromResult.index = startIndex;
+        fromResult.text  = text.substring(startIndex, endIndex);
+        fromResult.tags[this.constructor.name] = true;
+        return fromResult;
+    }
+};
+
+
+},{"../refiner":91}],81:[function(require,module,exports){
+/*
+    
+*/
+var ParsedComponents = require('../../result').ParsedComponents;
+var Refiner = require('../refiner').Refiner;
+
+
+
+var PATTERN = new RegExp("^\\s*(T|at|after|before|on|of|,|-)?\\s*$");
+
+function isDateOnly(result) {
+    return !result.start.isCertain('hour');
+}
+    
+function isTimeOnly(result) {
+    return !result.start.isCertain('month') && !result.start.isCertain('weekday');
+}
+
+
+function isAbleToMerge(text, prevResult, curResult) {
+    var textBetween = text.substring(prevResult.index + prevResult.text.length, curResult.index);
+    return textBetween.match(PATTERN);
+}
+
+function mergeResult(text, dateResult, timeResult){
+
+    var beginDate = dateResult.start;
+    var beginTime = timeResult.start;
+        
+    var beginDateTime = beginDate.clone();
+    beginDateTime.assign('hour', beginTime.get('hour'));
+    beginDateTime.assign('minute', beginTime.get('minute'));
+    beginDateTime.assign('second', beginTime.get('second'));
+        
+    if (beginTime.isCertain('meridiem')) {
+        beginDateTime.assign('meridiem', beginTime.get('meridiem'));
+    } else if (
+        beginTime.get('meridiem') !== undefined &&
+        beginDateTime.get('meridiem') === undefined
+    ) {
+        beginDateTime.imply('meridiem', beginTime.get('meridiem'));
+    }
+
+    if (beginDateTime.get('meridiem') == 1 && beginDateTime.get('hour') < 12) {
+        beginDateTime.assign('hour', beginDateTime.get('hour') + 12);
+    }
+
+    if (dateResult.end != null || timeResult.end != null) {
+        
+        var endDate   = dateResult.end == null ? dateResult.start : dateResult.end;            
+        var endTime   = timeResult.end == null ? timeResult.start : timeResult.end;
+
+        var endDateTime = endDate.clone();
+        endDateTime.assign('hour', endTime.get('hour'));
+        endDateTime.assign('minute', endTime.get('minute'));
+        endDateTime.assign('second', endTime.get('second'));
+        
+        if (endTime.isCertain('meridiem')) {
+            endDateTime.assign('meridiem', endTime.get('meridiem'));
+        } else if (beginTime.get('meridiem') != null) {
+            endDateTime.imply('meridiem', endTime.get('meridiem'));
+        }
+        
+        if (dateResult.end == null && endDateTime.date().getTime() < beginDateTime.date().getTime()) {
+            // Ex. 9pm - 1am
+            if (endDateTime.isCertain('day')) {
+                endDateTime.assign('day', endDateTime.get('day') + 1);
+            } else {
+                endDateTime.imply('day', endDateTime.get('day') + 1);
+            }
+        }
+
+        dateResult.end = endDateTime;
+    }
+
+    dateResult.start = beginDateTime;    
+
+    var startIndex = Math.min(dateResult.index, timeResult.index);
+    var endIndex = Math.max(
+            dateResult.index + dateResult.text.length, 
+            timeResult.index + timeResult.text.length);
+    
+    dateResult.index = startIndex;
+    dateResult.text  = text.substring(startIndex, endIndex);
+
+    for (var tag in timeResult.tags) {
+        dateResult.tags[tag] = true;
+    }
+    dateResult.tags['ENMergeDateAndTimeRefiner'] = true;
+    return dateResult;
+}
+
+exports.Refiner = function ENMergeDateTimeRefiner() {
+    Refiner.call(this);
+
+
+    this.refine = function(text, results, opt) { 
+
+        if (results.length < 2) return results;
+
+        var mergedResult = [];
+        var currResult = null;
+        var prevResult = null;
+
+        for (var i = 1; i < results.length; i++) {
+
+            currResult = results[i];
+            prevResult = results[i-1];
+            
+            if (isDateOnly(prevResult) && isTimeOnly(currResult) 
+                    && isAbleToMerge(text, prevResult, currResult)) {
+                
+                prevResult = mergeResult(text, prevResult, currResult);
+                currResult = null;
+                i += 1;
+                
+            } else if (isDateOnly(currResult) && isTimeOnly(prevResult)
+                    && isAbleToMerge(text, prevResult, currResult)) {
+                
+                prevResult = mergeResult(text, currResult, prevResult);
+                currResult = null;
+                i += 1;
+            }
+            
+            mergedResult.push(prevResult);
+        }
+
+        if (currResult != null) {
+            mergedResult.push(currResult);
+        }
+
+        return mergedResult;
+    }
+}
+},{"../../result":92,"../refiner":91}],82:[function(require,module,exports){
+/*
+
+*/
+var ParsedComponents = require('../../result').ParsedComponents;
+var Refiner = require('../refiner').Refiner;
+
+
+var PATTERN = new RegExp("^\\s*(at|after|before|on|,|-|\\(|\\))?\\s*$");
+
+function isMoreSpecific(prevResult, currResult) {
+    var moreSpecific = false;
+
+    if (prevResult.start.isCertain('year')) {
+        if (!currResult.start.isCertain('year')) {
+            moreSpecific = true;
+        } else {
+            if (prevResult.start.isCertain('month')) {
+                if (!currResult.start.isCertain('month')) {
+                    moreSpecific = true;
+                } else {
+                    if (prevResult.start.isCertain('day') && !currResult.start.isCertain('day')) {
+                        moreSpecific = true;
+                    }
+                }
+            }
+        }
+    }
+
+    return moreSpecific;
+}
+
+
+function isAbleToMerge(text, prevResult, currResult) {
+    var textBetween = text.substring(prevResult.index + prevResult.text.length, currResult.index);
+
+    // Only accepts merge if one of them comes from casual relative date
+    var includesRelativeResult = (prevResult.tags['ENRelativeDateFormatParser'] || currResult.tags['ENRelativeDateFormatParser']);
+
+    // We assume they refer to the same date if all date fields are implied
+    var referToSameDate = !prevResult.start.isCertain('day') && !prevResult.start.isCertain('month') && !prevResult.start.isCertain('year');
+
+    // If both years are certain, that determines if they refer to the same date
+    // but with one more specific than the other
+    if (prevResult.start.isCertain('year') && currResult.start.isCertain('year'))
+        referToSameDate = (prevResult.start.get('year') === currResult.start.get('year'));
+
+    // We now test with the next level (month) if they refer to the same date
+    if (prevResult.start.isCertain('month') && currResult.start.isCertain('month'))
+        referToSameDate = (prevResult.start.get('month') === currResult.start.get('month')) && referToSameDate;
+
+    return includesRelativeResult && textBetween.match(PATTERN) && referToSameDate;
+}
+
+function mergeResult(text, specificResult, nonSpecificResult){
+
+    var specificDate = specificResult.start;
+    var nonSpecificDate = nonSpecificResult.start;
+
+    var startIndex = Math.min(specificResult.index, nonSpecificResult.index);
+    var endIndex = Math.max(
+            specificResult.index + specificResult.text.length,
+            nonSpecificResult.index + nonSpecificResult.text.length);
+
+    specificResult.index = startIndex;
+    specificResult.text  = text.substring(startIndex, endIndex);
+
+    for (var tag in nonSpecificResult.tags) {
+        specificResult.tags[tag] = true;
+    }
+    specificResult.tags['ENPrioritizeSpecificDateRefiner'] = true;
+    return specificResult;
+}
+
+exports.Refiner = function ENPrioritizeSpecificDateRefiner() {
+    Refiner.call(this);
+
+    this.refine = function(text, results, opt) {
+
+        if (results.length < 2) return results;
+
+        var mergedResult = [];
+        var currResult = null;
+        var prevResult = null;
+
+        for (var i = 1; i < results.length; i++) {
+
+            currResult = results[i];
+            prevResult = results[i-1];
+
+            if (isMoreSpecific(prevResult, currResult)
+                    && isAbleToMerge(text, prevResult, currResult)) {
+
+                prevResult = mergeResult(text, prevResult, currResult);
+                currResult = null;
+                i += 1;
+
+            } else if (isMoreSpecific(currResult, prevResult)
+                    && isAbleToMerge(text, prevResult, currResult)) {
+
+                prevResult = mergeResult(text, currResult, prevResult);
+                currResult = null;
+                i += 1;
+            }
+
+            mergedResult.push(prevResult);
+        }
+
+        if (currResult != null) {
+            mergedResult.push(currResult);
+        }
+
+        return mergedResult;
+    }
+}
+
+},{"../../result":92,"../refiner":91}],83:[function(require,module,exports){
+/*
+
+*/
+var Refiner = require('./refiner').Refiner;
+
+// Map ABBR -> Offset in minute
+var TIMEZONE_ABBR_MAP = {};
+var TIMEZONE_NAME_PATTERN = new RegExp("^\\s*\\(?([A-Z]{2,4})\\)?(?=\\W|$)", 'i');
+
+exports.Refiner = function ExtractTimezoneAbbrRefiner() {
+	Refiner.call(this);
+
+	this.refine = function(text, results, opt) {
+
+		results.forEach(function(result) {
+
+            if (!result.tags['ENTimeExpressionParser'] && !result.tags['ZHTimeExpressionParser'] && !result.tags['FRTimeExpressionParser'] && !result.tags['DETimeExpressionParser']) {
+                return;
+            }
+
+            var match = TIMEZONE_NAME_PATTERN.exec(text.substring(result.index + result.text.length));
+            if (match) {
+                var timezoneAbbr = match[1].toUpperCase();
+                if (TIMEZONE_ABBR_MAP[timezoneAbbr] === undefined) {
+                    return;
+                }
+
+                var timezoneOffset = TIMEZONE_ABBR_MAP[timezoneAbbr];
+                if (!result.start.isCertain('timezoneOffset')) {
+                    result.start.assign('timezoneOffset', timezoneOffset);
+                }
+
+                if (result.end != null && !result.end.isCertain('timezoneOffset')) {
+                    result.end.assign('timezoneOffset', timezoneOffset);
+                }
+
+                result.text += match[0];
+                result.tags['ExtractTimezoneAbbrRefiner'] = true;
+            }
+		});
+
+        return results;
+	}
+}
+
+// TODO: Move this to some configuration
+TIMEZONE_ABBR_MAP = {"ACDT":630,"ACST":570,"ADT":-180,"AEDT":660,"AEST":600,"AFT":270,"AKDT":-480,"AKST":-540,"ALMT":360,"AMST":-180,"AMT":-240,"ANAST":720,"ANAT":720,"AQTT":300,"ART":-180,"AST":-240,"AWDT":540,"AWST":480,"AZOST":0,"AZOT":-60,"AZST":300,"AZT":240,"BNT":480,"BOT":-240,"BRST":-120,"BRT":-180,"BST":60,"BTT":360,"CAST":480,"CAT":120,"CCT":390,"CDT":-300,"CEST":120,"CET":60,"CHADT":825,"CHAST":765,"CKT":-600,"CLST":-180,"CLT":-240,"COT":-300,"CST":-360,"CVT":-60,"CXT":420,"ChST":600,"DAVT":420,"EASST":-300,"EAST":-360,"EAT":180,"ECT":-300,"EDT":-240,"EEST":180,"EET":120,"EGST":0,"EGT":-60,"EST":-300,"ET":-300,"FJST":780,"FJT":720,"FKST":-180,"FKT":-240,"FNT":-120,"GALT":-360,"GAMT":-540,"GET":240,"GFT":-180,"GILT":720,"GMT":0,"GST":240,"GYT":-240,"HAA":-180,"HAC":-300,"HADT":-540,"HAE":-240,"HAP":-420,"HAR":-360,"HAST":-600,"HAT":-90,"HAY":-480,"HKT":480,"HLV":-210,"HNA":-240,"HNC":-360,"HNE":-300,"HNP":-480,"HNR":-420,"HNT":-150,"HNY":-540,"HOVT":420,"ICT":420,"IDT":180,"IOT":360,"IRDT":270,"IRKST":540,"IRKT":540,"IRST":210,"IST":60,"JST":540,"KGT":360,"KRAST":480,"KRAT":480,"KST":540,"KUYT":240,"LHDT":660,"LHST":630,"LINT":840,"MAGST":720,"MAGT":720,"MART":-510,"MAWT":300,"MDT":-360,"MESZ":120,"MEZ":60,"MHT":720,"MMT":390,"MSD":240,"MSK":240,"MST":-420,"MUT":240,"MVT":300,"MYT":480,"NCT":660,"NDT":-90,"NFT":690,"NOVST":420,"NOVT":360,"NPT":345,"NST":-150,"NUT":-660,"NZDT":780,"NZST":720,"OMSST":420,"OMST":420,"PDT":-420,"PET":-300,"PETST":720,"PETT":720,"PGT":600,"PHOT":780,"PHT":480,"PKT":300,"PMDT":-120,"PMST":-180,"PONT":660,"PST":-480,"PT":-480,"PWT":540,"PYST":-180,"PYT":-240,"RET":240,"SAMT":240,"SAST":120,"SBT":660,"SCT":240,"SGT":480,"SRT":-180,"SST":-660,"TAHT":-600,"TFT":300,"TJT":300,"TKT":780,"TLT":540,"TMT":300,"TVT":720,"ULAT":480,"UTC":0,"UYST":-120,"UYT":-180,"UZT":300,"VET":-210,"VLAST":660,"VLAT":660,"VUT":660,"WAST":120,"WAT":60,"WEST":60,"WESZ":60,"WET":0,"WEZ":0,"WFT":720,"WGST":-120,"WGT":-180,"WIB":420,"WIT":540,"WITA":480,"WST":780,"WT":0,"YAKST":600,"YAKT":600,"YAPT":600,"YEKST":360,"YEKT":360}
+
+},{"./refiner":91}],84:[function(require,module,exports){
+/*
+  
+*/
+var Refiner = require('./refiner').Refiner;
+
+
+var TIMEZONE_OFFSET_PATTERN = new RegExp("^\\s*(GMT|UTC)?(\\+|\\-)(\\d{1,2}):?(\\d{2})", 'i');
+var TIMEZONE_OFFSET_SIGN_GROUP = 2;
+var TIMEZONE_OFFSET_HOUR_OFFSET_GROUP = 3;
+var TIMEZONE_OFFSET_MINUTE_OFFSET_GROUP = 4;
+
+exports.Refiner = function ExtractTimezoneOffsetRefiner() {
+    Refiner.call(this);
+
+    this.refine = function(text, results, opt) {
+
+        results.forEach(function(result) {
+
+            if (result.start.isCertain('timezoneOffset')) {
+                return;
+            }
+
+            var match = TIMEZONE_OFFSET_PATTERN.exec(text.substring(result.index + result.text.length));
+            if (!match) {
+                return;
+            }
+
+            var hourOffset = parseInt(match[TIMEZONE_OFFSET_HOUR_OFFSET_GROUP]);
+            var minuteOffset = parseInt(match[TIMEZONE_OFFSET_MINUTE_OFFSET_GROUP]);
+            var timezoneOffset = hourOffset * 60 + minuteOffset;
+            if (match[TIMEZONE_OFFSET_SIGN_GROUP] === '-') {
+                timezoneOffset = -timezoneOffset;
+            }
+
+            if (result.end != null) {
+                result.end.assign('timezoneOffset', timezoneOffset);
+            }
+
+            result.start.assign('timezoneOffset', timezoneOffset);
+            result.text += match[0];
+            result.tags['ExtractTimezoneOffsetRefiner'] = true;
+        });
+
+        return results;
+    }
+}
+
+},{"./refiner":91}],85:[function(require,module,exports){
+/*
+  
+*/
+var Refiner = require('../refiner').Refiner;
+
+exports.Refiner = function FRMergeDateRangeRefiner() {
+    Refiner.call(this);
+
+    this.pattern = function () { return /^\s*(à|a|\-)\s*$/i };
+
+    this.refine = function(text, results, opt) {
+
+        if (results.length < 2) return results;
+        
+        var mergedResult = [];
+        var currResult = null;
+        var prevResult = null;
+        
+        for (var i=1; i<results.length; i++){
+            
+            currResult = results[i];
+            prevResult = results[i-1];
+            
+            if (!prevResult.end && !currResult.end 
+                && this.isAbleToMerge(text, prevResult, currResult)) {
+              
+                prevResult = this.mergeResult(text, prevResult, currResult);
+                currResult = null;
+                i += 1;
+            }
+            
+            mergedResult.push(prevResult);
+        }
+        
+        if (currResult != null) {
+            mergedResult.push(currResult);
+        }
+
+
+        return mergedResult;
+    };
+
+    this.isAbleToMerge = function(text, result1, result2) {
+        var begin = result1.index + result1.text.length;
+        var end   = result2.index;
+        var textBetween = text.substring(begin,end);
+
+        return textBetween.match(this.pattern());
+    };
+
+    this.isWeekdayResult = function (result) {
+        return result.start.isCertain('weekday') && !result.start.isCertain('day');
+    };
+
+    this.mergeResult = function(text, fromResult, toResult) {
+
+        if (!this.isWeekdayResult(fromResult) && !this.isWeekdayResult(toResult)) {
+
+            for (var key in toResult.start.knownValues) {
+                if (!fromResult.start.isCertain(key)) {
+                    fromResult.start.assign(key, toResult.start.get(key));
+                }
+            }
+
+            for (var key in fromResult.start.knownValues) {
+                if (!toResult.start.isCertain(key)) {
+                    toResult.start.assign(key, fromResult.start.get(key));
+                }
+            }
+        }
+
+        if (fromResult.start.date().getTime() > toResult.start.date()) {
+            var tmp = toResult;
+            toResult = fromResult;
+            fromResult = tmp;
+        }
+        
+        fromResult.end = toResult.start;
+
+        
+
+        for (var tag in toResult.tags) {
+            fromResult.tags[tag] = true;
+        }
+
+            
+        var startIndex = Math.min(fromResult.index, toResult.index);
+        var endIndex = Math.max(
+            fromResult.index + fromResult.text.length, 
+            toResult.index + toResult.text.length);
+            
+        fromResult.index = startIndex;
+        fromResult.text  = text.substring(startIndex, endIndex);
+        fromResult.tags[this.constructor.name] = true;
+        return fromResult;
+    }
+};
+
+
+},{"../refiner":91}],86:[function(require,module,exports){
+/*
+    
+*/
+var ParsedComponents = require('../../result').ParsedComponents;
+var Refiner = require('../refiner').Refiner;
+
+
+
+var PATTERN = new RegExp("^\\s*(T|à|a|vers|de|,|-)?\\s*$");
+
+function isDateOnly(result) {
+    return !result.start.isCertain('hour') || result.tags['FRCasualDateParser'];
+}
+    
+function isTimeOnly(result) {
+    return !result.start.isCertain('month') && !result.start.isCertain('weekday');
+}
+
+
+function isAbleToMerge(text, prevResult, curResult) {
+    var textBetween = text.substring(prevResult.index + prevResult.text.length, curResult.index);
+    return textBetween.match(PATTERN);
+}
+
+function mergeResult(text, dateResult, timeResult){
+
+    var beginDate = dateResult.start;
+    var beginTime = timeResult.start;
+        
+    var beginDateTime = beginDate.clone();
+    beginDateTime.assign('hour', beginTime.get('hour'));
+    beginDateTime.assign('minute', beginTime.get('minute'));
+    beginDateTime.assign('second', beginTime.get('second'));
+        
+    if (beginTime.isCertain('meridiem')) {
+        beginDateTime.assign('meridiem', beginTime.get('meridiem'));
+    } else if (
+        beginTime.get('meridiem') !== undefined &&
+        beginDateTime.get('meridiem') === undefined
+    ) {
+        beginDateTime.imply('meridiem', beginTime.get('meridiem'));
+    }
+
+    if (beginDateTime.get('meridiem') == 1 && beginDateTime.get('hour') < 12) {
+        beginDateTime.assign('hour', beginDateTime.get('hour') + 12);
+    }
+
+    if (dateResult.end != null || timeResult.end != null) {
+        
+        var endDate   = dateResult.end == null ? dateResult.start : dateResult.end;            
+        var endTime   = timeResult.end == null ? timeResult.start : timeResult.end;
+
+        var endDateTime = endDate.clone();
+        endDateTime.assign('hour', endTime.get('hour'));
+        endDateTime.assign('minute', endTime.get('minute'));
+        endDateTime.assign('second', endTime.get('second'));
+        
+        if (endTime.isCertain('meridiem')) {
+            endDateTime.assign('meridiem', endTime.get('meridiem'));
+        } else if (beginTime.get('meridiem') != null) {
+            endDateTime.imply('meridiem', endTime.get('meridiem'));
+        }
+        
+        if (dateResult.end == null && endDateTime.date().getTime() < beginDateTime.date().getTime()) {
+            // Ex. 9pm - 1am
+            if (endDateTime.isCertain('day')) {
+                endDateTime.assign('day', endDateTime.get('day') + 1);
+            } else {
+                endDateTime.imply('day', endDateTime.get('day') + 1);
+            }
+        }
+
+        dateResult.end = endDateTime;
+    }
+
+    dateResult.start = beginDateTime;    
+
+    var startIndex = Math.min(dateResult.index, timeResult.index);
+    var endIndex = Math.max(
+            dateResult.index + dateResult.text.length, 
+            timeResult.index + timeResult.text.length);
+    
+    dateResult.index = startIndex;
+    dateResult.text  = text.substring(startIndex, endIndex);
+
+    for (var tag in timeResult.tags) {
+        dateResult.tags[tag] = true;
+    }
+    dateResult.tags['FRMergeDateAndTimeRefiner'] = true;
+    return dateResult;
+}
+
+exports.Refiner = function FRMergeDateTimeRefiner() {
+    Refiner.call(this);
+
+
+    this.refine = function(text, results, opt) { 
+
+        if (results.length < 2) return results;
+
+        var mergedResult = [];
+        var currResult = null;
+        var prevResult = null;
+
+        for (var i = 1; i < results.length; i++) {
+
+            currResult = results[i];
+            prevResult = results[i-1];
+            
+            if (isDateOnly(prevResult) && isTimeOnly(currResult) 
+                    && isAbleToMerge(text, prevResult, currResult)) {
+                
+                prevResult = mergeResult(text, prevResult, currResult);
+                currResult = null;
+                i += 1;
+                
+            } else if (isDateOnly(currResult) && isTimeOnly(prevResult)
+                    && isAbleToMerge(text, prevResult, currResult)) {
+                
+                prevResult = mergeResult(text, currResult, prevResult);
+                currResult = null;
+                i += 1;
+            }
+            
+            mergedResult.push(prevResult);
+        }
+
+        if (currResult != null) {
+            mergedResult.push(currResult);
+        }
+
+        return mergedResult;
+    }
+}
+},{"../../result":92,"../refiner":91}],87:[function(require,module,exports){
+/*
+    Enforce 'forwardDate' option to on the results. When there are missing component,
+    e.g. "March 12-13 (without year)" or "Thursday", the refiner will try to adjust the result
+    into the future instead of the past.
+*/
+var moment = require('moment');
+var Refiner = require('./refiner').Refiner;
+
+exports.Refiner = function ForwardDateRefiner() {
+    Refiner.call(this);
+
+    this.refine = function(text, results, opt) {
+
+        if (!opt['forwardDate'] && !opt['forwardDatesOnly']) {
+            return results;
+        }
+
+        results.forEach(function(result) {
+
+            var refMoment = moment(result.ref);
+
+            if (result.start.isCertain('day') && result.start.isCertain('month') &&
+                !result.start.isCertain('year') &&
+                refMoment.isAfter(result.start.moment())
+            ) {
+                // Adjust year into the future
+                for (var i=0; i < 3 && refMoment.isAfter(result.start.moment()); i++) {
+                    result.start.imply('year', result.start.get('year') + 1);
+
+                    if (result.end && !result.end.isCertain('year')) {
+                        result.end.imply('year', result.end.get('year') + 1);
+                    }
+                }
+
+                result.tags['ExtractTimezoneOffsetRefiner'] = true;
+            }
+
+            if (!result.start.isCertain('day') && !result.start.isCertain('month') && !result.start.isCertain('year') &&
+                result.start.isCertain('weekday') &&
+                refMoment.isAfter(result.start.moment())
+            ) {
+                // Adjust date to the coming week
+                if (refMoment.day() > result.start.get('weekday')) {
+                    refMoment.day(result.start.get('weekday') + 7);
+                } else {
+                    refMoment.day(result.start.get('weekday'));
+                }
+
+                result.start.imply('day', refMoment.date());
+                result.start.imply('month', refMoment.month() + 1);
+                result.start.imply('year', refMoment.year());
+                result.tags['ExtractTimezoneOffsetRefiner'] = true;
+            }
+        });
+
+        return results;
+    }
+};
+
+},{"./refiner":91,"moment":223}],88:[function(require,module,exports){
+/*
+  
+*/
+var ENMergeDateRangeRefiner = require('../EN/ENMergeDateRangeRefiner').Refiner;
+
+exports.Refiner = function JPMergeDateRangeRefiner() {
+    ENMergeDateRangeRefiner.call(this);
+
+    this.pattern = function () { return /^\s*(から|ー)\s*$/i };
+}
+
+
+},{"../EN/ENMergeDateRangeRefiner":80}],89:[function(require,module,exports){
+/*
+  
+*/
+var Refiner = require('./refiner').Refiner;
+
+exports.Refiner = function OverlapRemovalRefiner() {
+	Refiner.call(this);
+	
+
+	this.refine = function(text, results, opt) { 
+
+        if (results.length < 2) return results;
+        
+        var filteredResults = [];
+        var prevResult = results[0];
+        
+        for (var i=1; i<results.length; i++){
+            
+            var result = results[i];
+            
+            // If overlap, compare the length and discard the shorter one
+            if (result.index < prevResult.index + prevResult.text.length) {
+
+                if (result.text.length > prevResult.text.length){
+                    prevResult = result;
+                }
+                
+            } else {
+                filteredResults.push(prevResult);
+                prevResult = result;
+            }
+        }
+        
+        // The last one
+        if (prevResult != null) {
+            filteredResults.push(prevResult);
+        }
+
+        return filteredResults;
+    }
+}
+},{"./refiner":91}],90:[function(require,module,exports){
+/*
+  
+*/
+var Filter = require('./refiner').Filter;
+
+exports.Refiner = function UnlikelyFormatFilter() {
+    Filter.call(this);
+    
+
+    this.isValid = function(text, result, opt) { 
+
+        if (result.text.replace(' ','').match(/^\d*(\.\d*)?$/)) {
+            return false;
+        }
+
+        return true; 
+    }
+}
+},{"./refiner":91}],91:[function(require,module,exports){
+
+exports.Refiner = function Refiner() { 
+
+    this.refine = function(text, results, opt) { return results; };
+}
+
+exports.Filter = function Filter() { 
+    
+    exports.Refiner.call(this);
+
+    this.isValid = function(text, result, opt) { return true; }
+    this.refine = function(text, results, opt) { 
+
+        var filteredResult = [];
+        for (var i=0; i < results.length; i++) {
+
+            var result = results[i];
+            if (this.isValid(text, result, opt)) {
+                filteredResult.push(result);
+            }
+        }
+
+        return filteredResult;
+    }
+}
+
+
+// Common refiners
+exports.OverlapRemovalRefiner = require('./OverlapRemovalRefiner').Refiner;
+exports.ExtractTimezoneOffsetRefiner = require('./ExtractTimezoneOffsetRefiner').Refiner;
+exports.ExtractTimezoneAbbrRefiner = require('./ExtractTimezoneAbbrRefiner').Refiner;
+exports.ForwardDateRefiner = require('./ForwardDateRefiner').Refiner;
+exports.UnlikelyFormatFilter = require('./UnlikelyFormatFilter').Refiner;
+
+// EN refiners
+exports.ENMergeDateTimeRefiner = require('./EN/ENMergeDateTimeRefiner').Refiner;
+exports.ENMergeDateRangeRefiner = require('./EN/ENMergeDateRangeRefiner').Refiner;
+exports.ENPrioritizeSpecificDateRefiner = require('./EN/ENPrioritizeSpecificDateRefiner').Refiner;
+
+// JP refiners
+exports.JPMergeDateRangeRefiner = require('./JP/JPMergeDateRangeRefiner').Refiner;
+
+// FR refiners
+exports.FRMergeDateRangeRefiner = require('./FR/FRMergeDateRangeRefiner').Refiner;
+exports.FRMergeDateTimeRefiner = require('./FR/FRMergeDateTimeRefiner').Refiner;
+
+// DE refiners
+exports.DEMergeDateRangeRefiner = require('./DE/DEMergeDateRangeRefiner').Refiner;
+exports.DEMergeDateTimeRefiner = require('./DE/DEMergeDateTimeRefiner').Refiner;
+
+},{"./DE/DEMergeDateRangeRefiner":78,"./DE/DEMergeDateTimeRefiner":79,"./EN/ENMergeDateRangeRefiner":80,"./EN/ENMergeDateTimeRefiner":81,"./EN/ENPrioritizeSpecificDateRefiner":82,"./ExtractTimezoneAbbrRefiner":83,"./ExtractTimezoneOffsetRefiner":84,"./FR/FRMergeDateRangeRefiner":85,"./FR/FRMergeDateTimeRefiner":86,"./ForwardDateRefiner":87,"./JP/JPMergeDateRangeRefiner":88,"./OverlapRemovalRefiner":89,"./UnlikelyFormatFilter":90}],92:[function(require,module,exports){
+var moment = require('moment');
+
+function ParsedResult(result){
+    result = result || {};
+
+    this.ref   = result.ref;
+    this.index = result.index;
+    this.text  = result.text;
+    this.tags  = result.tags || {};
+
+    this.start = new ParsedComponents(result.start, result.ref)
+    if(result.end){
+        this.end = new ParsedComponents(result.end, result.ref)
+    }
+}
+
+ParsedResult.prototype.clone = function() {
+    var result = new ParsedResult(this);
+    result.tags = JSON.parse(JSON.stringify(this.tags));
+    result.start = this.start.clone();
+    if (this.end) {
+        result.end = this.end.clone();
+    }
+}
+
+ParsedResult.prototype.hasPossibleDates = function() {
+    return this.start.isPossibleDate() && (!this.end || this.end.isPossibleDate());
+}
+
+
+function ParsedComponents (components, ref){
+
+    this.knownValues = {};
+    this.impliedValues = {};
+
+    if (components) {
+        for (key in components) {
+            this.knownValues[key] = components[key];
+        }
+    }
+
+    if (ref) {
+        ref = moment(ref);
+        this.imply('day', ref.date())
+        this.imply('month', ref.month() + 1)
+        this.imply('year', ref.year())
+    }
+    
+
+    this.imply('hour', 12);
+    this.imply('minute', 0);
+    this.imply('second', 0);
+    this.imply('millisecond', 0);
+}
+
+ParsedComponents.prototype.clone = function () {
+    var component = new ParsedComponents();
+    component.knownValues = JSON.parse(JSON.stringify(this.knownValues));
+    component.impliedValues = JSON.parse(JSON.stringify(this.impliedValues));
+    return component;
+};
+
+ParsedComponents.prototype.get = function(component, value) {
+    if (component in this.knownValues) return this.knownValues[component];
+    if (component in this.impliedValues) return this.impliedValues[component];
+};
+
+ParsedComponents.prototype.assign = function(component, value) {
+    this.knownValues[component] = value;
+    delete this.impliedValues[component];
+};
+
+ParsedComponents.prototype.imply = function(component, value) {
+    if (component in this.knownValues) return;
+    this.impliedValues[component] = value;
+};
+
+ParsedComponents.prototype.isCertain = function(component) {
+    return component in this.knownValues;
+};
+
+ParsedComponents.prototype.isPossibleDate = function() {
+    var dateMoment = this.moment();
+    if (this.isCertain('timezoneOffset')) {
+        dateMoment.utcOffset(this.get('timezoneOffset'))
+    }
+
+    if (dateMoment.get('year') != this.get('year')) return false;
+    if (dateMoment.get('month') != this.get('month')-1) return false;
+    if (dateMoment.get('date') != this.get('day')) return false;
+    if (dateMoment.get('hour') != this.get('hour')) return false;
+    if (dateMoment.get('minute') != this.get('minute')) return false;
+
+    return true;
+};
+
+ParsedComponents.prototype.date = function() {
+    var dateMoment = this.moment();
+    return dateMoment.toDate();
+};
+
+ParsedComponents.prototype.moment = function() {
+    var dateMoment = moment();
+
+    dateMoment.set('year', this.get('year'));
+    dateMoment.set('month', this.get('month')-1);
+    dateMoment.set('date', this.get('day'));
+    dateMoment.set('hour', this.get('hour'));
+    dateMoment.set('minute', this.get('minute'));
+    dateMoment.set('second', this.get('second'));
+    dateMoment.set('millisecond', this.get('millisecond'));
+
+    // Javascript Date Object return minus timezone offset
+    var currentTimezoneOffset = dateMoment.utcOffset();
+    var targetTimezoneOffset = this.isCertain('timezoneOffset') ? 
+        this.get('timezoneOffset') : currentTimezoneOffset;
+
+    var adjustTimezoneOffset = targetTimezoneOffset - currentTimezoneOffset;
+    dateMoment.add(-adjustTimezoneOffset, 'minutes');
+
+    return dateMoment;
+};
+
+
+
+exports.ParsedComponents = ParsedComponents;
+exports.ParsedResult = ParsedResult;
+
+},{"moment":223}],93:[function(require,module,exports){
+exports.WEEKDAY_OFFSET = { 
+    'sonntag': 0, 
+    'so': 0, 
+    'montag': 1, 
+    'mo': 1,
+    'dienstag': 2, 
+    'di':2, 
+    'mittwoch': 3, 
+    'mi': 3, 
+    'donnerstag': 4, 
+    'do': 4, 
+    'freitag': 5, 
+    'fr': 5,
+    'samstag': 6, 
+    'sa': 6
+};
+    
+exports.MONTH_OFFSET = { 
+    'januar': 1,
+    'jan': 1,
+    'jan.': 1,
+    'februar': 2,
+    'feb': 2,
+    'feb.': 2,
+    'märz': 3,
+    'maerz': 3,
+    'mär': 3,
+    'mär.': 3,
+    'mrz': 3,
+    'mrz.': 3,
+    'april': 4,
+    'apr': 4,
+    'apr.': 4,
+    'mai': 5,
+    'juni': 6,
+    'jun': 6,
+    'jun.': 6,
+    'juli': 7,
+    'jul': 7,
+    'jul.': 7,
+    'august': 8,
+    'aug': 8,
+    'aug.': 8,
+    'september': 9,
+    'sep': 9,
+    'sep.': 9,
+    'sept': 9,
+    'sept.': 9,
+    'oktober': 10,
+    'okt': 10,
+    'okt.': 10,
+    'november': 11,
+    'nov': 11,
+    'nov.': 11,
+    'dezember': 12,
+    'dez': 12,
+    'dez.': 12
+};
+
+exports.INTEGER_WORDS_PATTERN = '(?:eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf)';
+exports.INTEGER_WORDS = {
+    'eins' : 1,
+    'zwei' : 2,
+    'drei' : 3,
+    'vier' : 4,
+    'fünf' : 5,
+    'fuenf': 5,
+    'sechs' : 6,
+    'sieben' : 7,
+    'acht' : 8,
+    'neun' : 9,
+    'zehn' : 10,
+    'elf' : 11,
+    'zwölf' : 12,
+    'zwoelf' : 12
+};
+
+},{}],94:[function(require,module,exports){
+exports.WEEKDAY_OFFSET = { 
+    'sunday': 0, 
+    'sun': 0, 
+    'monday': 1, 
+    'mon': 1,
+    'tuesday': 2, 
+    'tue':2, 
+    'wednesday': 3, 
+    'wed': 3, 
+    'thursday': 4, 
+    'thur': 4, 
+    'thu': 4,
+    'friday': 5, 
+    'fri': 5,
+    'saturday': 6, 
+    'sat': 6
+};
+    
+exports.MONTH_OFFSET = { 
+    'january': 1,
+    'jan': 1,
+    'jan.': 1,
+    'february': 2,
+    'feb': 2,
+    'feb.': 2,
+    'march': 3,
+    'mar': 3,
+    'mar.': 3,
+    'april': 4,
+    'apr': 4,
+    'apr.': 4,
+    'may': 5,
+    'june': 6,
+    'jun': 6,
+    'jun.': 6,
+    'july': 7,
+    'jul': 7,
+    'jul.': 7,
+    'august': 8,
+    'aug': 8,
+    'aug.': 8,
+    'september': 9,
+    'sep': 9,
+    'sep.': 9,
+    'sept': 9,
+    'sept.': 9,
+    'october': 10,
+    'oct': 10,
+    'oct.': 10,
+    'november': 11,
+    'nov': 11,
+    'nov.': 11,
+    'december': 12,
+    'dec': 12,
+    'dec.': 12
+};
+
+exports.INTEGER_WORDS = {
+    'one' : 1,
+    'two' : 2,
+    'three' : 3,
+    'four' : 4,
+    'five' : 5,
+    'six' : 6,
+    'seven' : 7,
+    'eight' : 8,
+    'nine' : 9,
+    'ten' : 10,
+    'eleven' : 11,
+    'twelve' : 12
+};
+exports.INTEGER_WORDS_PATTERN = '(?:' + Object.keys(exports.INTEGER_WORDS).join('|') +')';
+
+exports.ORDINAL_WORDS = {
+    'first' : 1,
+    'second': 2,
+    'third': 3,
+    'fourth': 4,
+    'fifth': 5,
+    'sixth': 6,
+    'seventh': 7,
+    'eighth': 8,
+    'ninth': 9,
+    'tenth': 10,
+    'eleventh': 11,
+    'twelfth': 12,
+    'thirteenth': 13,
+    'fourteenth': 14,
+    'fifteenth': 15,
+    'sixteenth': 16,
+    'seventeenth': 17,
+    'eighteenth': 18,
+    'nineteenth': 19,
+    'twentieth': 20,
+    'twenty first': 21,
+    'twenty second': 22,
+    'twenty third': 23,
+    'twenty fourth': 24,
+    'twenty fifth': 25,
+    'twenty sixth': 26,
+    'twenty seventh': 27,
+    'twenty eighth': 28,
+    'twenty ninth': 29,
+    'thirtieth': 30,
+    'thirty first': 31
+};
+exports.ORDINAL_WORDS_PATTERN = '(?:' + Object.keys(exports.ORDINAL_WORDS).join('|').replace(/ /g, '[ -]') + ')';
+},{}],95:[function(require,module,exports){
+exports.WEEKDAY_OFFSET = {
+    'domingo': 0,
+    'dom': 0,
+    'lunes': 1,
+    'lun': 1,
+    'martes': 2,
+    'mar':2,
+    'miércoles': 3,
+    'miercoles': 3,
+    'mie': 3,
+    'jueves': 4,
+    'jue': 4,
+    'viernes': 5,
+    'vie': 5,
+    'sábado': 6,
+    'sabado': 6,
+    'sab': 6,}
+
+exports.MONTH_OFFSET = {
+    'enero': 1,
+    'ene': 1,
+    'ene.': 1,
+    'febrero': 2,
+    'feb': 2,
+    'feb.': 2,
+    'marzo': 3,
+    'mar': 3,
+    'mar.': 3,
+    'abril': 4,
+    'abr': 4,
+    'abr.': 4,
+    'mayo': 5,
+    'may': 5,
+    'may.': 5,
+    'junio': 6,
+    'jun': 6,
+    'jun.': 6,
+    'julio': 7,
+    'jul': 7,
+    'jul.': 7,
+    'agosto': 8,
+    'ago': 8,
+    'ago.': 8,
+    'septiembre': 9,
+    'sep': 9,
+    'sept': 9,
+    'sep.': 9,
+    'sept.': 9,
+    'octubre': 10,
+    'oct': 10,
+    'oct.': 10,
+    'noviembre': 11,
+    'nov': 11,
+    'nov.': 11,
+    'diciembre': 12,
+    'dic': 12,
+    'dic.': 12,
+}
+
+},{}],96:[function(require,module,exports){
+exports.WEEKDAY_OFFSET = { 
+    'dimanche': 0, 
+    'dim': 0, 
+    'lundi': 1, 
+    'lun': 1,
+    'mardi': 2, 
+    'mar':2, 
+    'mercredi': 3, 
+    'mer': 3, 
+    'jeudi': 4, 
+    'jeu': 4, 
+    'vendredi': 5, 
+    'ven': 5,
+    'samedi': 6, 
+    'sam': 6
+};
+    
+exports.MONTH_OFFSET = { 
+    'janvier': 1,
+    'jan': 1,
+    'jan.': 1,
+    'février': 2,
+    'fév': 2,
+    'fév.': 2,
+    'mars': 3,
+    'mar': 3,
+    'mar.': 3,
+    'avril': 4,
+    'avr': 4,
+    'avr.': 4,
+    'mai': 5,
+    'juin': 6,
+    'jun': 6,
+    'juillet': 7,
+    'jul': 7,
+    'jul.': 7,
+    'août': 8,
+    'aout': 8,
+    'septembre': 9,
+    'sep': 9,
+    'sep.': 9,
+    'sept': 9,
+    'sept.': 9,
+    'octobre': 10,
+    'oct': 10,
+    'oct.': 10,
+    'novembre': 11,
+    'nov': 11,
+    'nov.': 11,
+    'décembre': 12,
+    'dec': 12,
+    'dec.': 12
+};
+
+exports.INTEGER_WORDS_PATTERN = '(?:un|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize)';
+exports.INTEGER_WORDS = {
+    'un' : 1,
+    'deux' : 2,
+    'trois' : 3,
+    'quatre' : 4,
+    'cinq' : 5,
+    'six' : 6,
+    'sept' : 7,
+    'huit' : 8,
+    'neuf' : 9,
+    'dix' : 10,
+    'onze' : 11,
+    'douze' : 12,
+    'treize' : 13,
+};
+
+},{}],97:[function(require,module,exports){
+
+
+/**
+ * to-hankaku.js
+ * convert to ascii code strings.
+ *
+ * @version 1.0.1
+ * @author think49
+ * @url https://gist.github.com/964592
+ * @license http://www.opensource.org/licenses/mit-license.php (The MIT License)
+ */
+ 
+exports.toHankaku = (function (String, fromCharCode) {
+ 
+    function toHankaku (string) {
+        return String(string).replace(/\u2019/g, '\u0027').replace(/\u201D/g, '\u0022').replace(/\u3000/g, '\u0020').replace(/\uFFE5/g, '\u00A5').replace(/[\uFF01\uFF03-\uFF06\uFF08\uFF09\uFF0C-\uFF19\uFF1C-\uFF1F\uFF21-\uFF3B\uFF3D\uFF3F\uFF41-\uFF5B\uFF5D\uFF5E]/g, alphaNum);
+    }
+ 
+    function alphaNum (token) {
+        return fromCharCode(token.charCodeAt(0) - 65248);
+    }
+ 
+    return toHankaku;
+})(String, String.fromCharCode);
+
+/**
+ * to-zenkaku.js
+ * convert to multi byte strings.
+ *
+ * @version 1.0.2
+ * @author think49
+ * @url https://gist.github.com/964592
+ * @license http://www.opensource.org/licenses/mit-license.php (The MIT License)
+ */
+exports.toZenkaku = (function (String, fromCharCode) {
+ 
+    function toZenkaku (string) {
+        return String(string).replace(/\u0020/g, '\u3000').replace(/\u0022/g, '\u201D').replace(/\u0027/g, '\u2019').replace(/\u00A5/g, '\uFFE5').replace(/[!#-&(),-9\u003C-?A-[\u005D_a-{}~]/g, alphaNum);
+    }
+ 
+    function alphaNum (token) {
+        return fromCharCode(token.charCodeAt(0) + 65248);
+    }
+ 
+    return toZenkaku;
+})(String, String.fromCharCode);
+},{}],98:[function(require,module,exports){
+var NUMBER ={
+  '零':0,
+  '一':1,
+  '二':2,
+  '兩':2,
+  '三':3,
+  '四':4,
+  '五':5,
+  '六':6,
+  '七':7,
+  '八':8,
+  '九':9,
+  '十':10,
+  '廿':20,
+  '卅':30,
+};
+
+var WEEKDAY_OFFSET ={
+  '天':0,
+  '日':0,
+  '一':1,
+  '二':2,
+  '三':3,
+  '四':4,
+  '五':5,
+  '六':6,
+};
+
+exports.NUMBER = NUMBER;
+exports.WEEKDAY_OFFSET = WEEKDAY_OFFSET;
+
+exports.zhStringToNumber=function(text){
+  var number = 0;
+  for(var i=0; i<text.length ;i++){
+    var char = text[i];
+    if(char === '十'){
+      number = number=== 0 ? NUMBER[char] : (number * NUMBER[char]);
+    }else{
+      number += NUMBER[char];
+    }
+  }
+  return number;
+};
+
+exports.zhStringToYear=function(text){
+  var string = '';
+  for(var i=0; i<text.length ;i++){
+    var char = text[i];
+    string = string + NUMBER[char];
+  }
+  return parseInt(string);
+};
+
+},{}],99:[function(require,module,exports){
 /*!
 Copyright (C) 2013 by WebReflection
 
@@ -11563,7 +18770,7 @@ function parseRecursion(text, reviver) {
 }
 this.stringify = stringifyRecursion;
 this.parse = parseRecursion;
-},{}],28:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2015 Titus Wormer
@@ -11592,7 +18799,7 @@ function collapse(value) {
   return String(value).replace(/\s+/g, ' ');
 }
 
-},{}],29:[function(require,module,exports){
+},{}],101:[function(require,module,exports){
 module.exports = function (xs, fn) {
     var res = [];
     for (var i = 0; i < xs.length; i++) {
@@ -11607,7 +18814,7 @@ var isArray = Array.isArray || function (xs) {
     return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],30:[function(require,module,exports){
+},{}],102:[function(require,module,exports){
 module.exports={
   "O_RDONLY": 0,
   "O_WRONLY": 1,
@@ -11818,7 +19025,7 @@ module.exports={
   "UV_UDP_REUSEADDR": 4
 }
 
-},{}],31:[function(require,module,exports){
+},{}],103:[function(require,module,exports){
 (function (Buffer){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -11929,7 +19136,7 @@ function objectToString(o) {
 }
 
 }).call(this,{"isBuffer":require("../../is-buffer/index.js")})
-},{"../../is-buffer/index.js":70}],32:[function(require,module,exports){
+},{"../../is-buffer/index.js":158}],104:[function(require,module,exports){
 (function() {
   var base64map
       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/',
@@ -12027,7 +19234,7 @@ function objectToString(o) {
   module.exports = crypt;
 })();
 
-},{}],33:[function(require,module,exports){
+},{}],105:[function(require,module,exports){
 (function (process){
 /**
  * This is the web browser implementation of `debug()`.
@@ -12216,7 +19423,7 @@ function localstorage() {
 }
 
 }).call(this,require('_process'))
-},{"./debug":34,"_process":159}],34:[function(require,module,exports){
+},{"./debug":106,"_process":259}],106:[function(require,module,exports){
 
 /**
  * This is the common logic for both the Node.js and web browser
@@ -12420,7 +19627,7 @@ function coerce(val) {
   return val;
 }
 
-},{"ms":124}],35:[function(require,module,exports){
+},{"ms":224}],107:[function(require,module,exports){
 var pSlice = Array.prototype.slice;
 var objectKeys = require('./lib/keys.js');
 var isArguments = require('./lib/is_arguments.js');
@@ -12516,7 +19723,7 @@ function objEquiv(a, b, opts) {
   return typeof a === typeof b;
 }
 
-},{"./lib/is_arguments.js":36,"./lib/keys.js":37}],36:[function(require,module,exports){
+},{"./lib/is_arguments.js":108,"./lib/keys.js":109}],108:[function(require,module,exports){
 var supportsArgumentsClass = (function(){
   return Object.prototype.toString.call(arguments)
 })() == '[object Arguments]';
@@ -12538,7 +19745,7 @@ function unsupported(object){
     false;
 };
 
-},{}],37:[function(require,module,exports){
+},{}],109:[function(require,module,exports){
 exports = module.exports = typeof Object.keys === 'function'
   ? Object.keys : shim;
 
@@ -12549,7 +19756,7 @@ function shim (obj) {
   return keys;
 }
 
-},{}],38:[function(require,module,exports){
+},{}],110:[function(require,module,exports){
 var pSlice = Array.prototype.slice;
 var Object_keys = typeof Object.keys === 'function'
     ? Object.keys
@@ -12653,7 +19860,65 @@ function objEquiv(a, b) {
   return true;
 }
 
-},{}],39:[function(require,module,exports){
+},{}],111:[function(require,module,exports){
+'use strict';
+
+var keys = require('object-keys');
+var foreach = require('foreach');
+var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
+
+var toStr = Object.prototype.toString;
+
+var isFunction = function (fn) {
+	return typeof fn === 'function' && toStr.call(fn) === '[object Function]';
+};
+
+var arePropertyDescriptorsSupported = function () {
+	var obj = {};
+	try {
+		Object.defineProperty(obj, 'x', { enumerable: false, value: obj });
+        /* eslint-disable no-unused-vars, no-restricted-syntax */
+        for (var _ in obj) { return false; }
+        /* eslint-enable no-unused-vars, no-restricted-syntax */
+		return obj.x === obj;
+	} catch (e) { /* this is IE 8. */
+		return false;
+	}
+};
+var supportsDescriptors = Object.defineProperty && arePropertyDescriptorsSupported();
+
+var defineProperty = function (object, name, value, predicate) {
+	if (name in object && (!isFunction(predicate) || !predicate())) {
+		return;
+	}
+	if (supportsDescriptors) {
+		Object.defineProperty(object, name, {
+			configurable: true,
+			enumerable: false,
+			value: value,
+			writable: true
+		});
+	} else {
+		object[name] = value;
+	}
+};
+
+var defineProperties = function (object, map) {
+	var predicates = arguments.length > 2 ? arguments[2] : {};
+	var props = keys(map);
+	if (hasSymbols) {
+		props = props.concat(Object.getOwnPropertySymbols(map));
+	}
+	foreach(props, function (name) {
+		defineProperty(object, name, map[name], predicates[name]);
+	});
+};
+
+defineProperties.supportsDescriptors = !!supportsDescriptors;
+
+module.exports = defineProperties;
+
+},{"foreach":134,"object-keys":232}],112:[function(require,module,exports){
 'use strict';
 var path = require('path');
 var globby = require('globby');
@@ -12728,7 +19993,38 @@ module.exports.sync = function (patterns, opts) {
 	});
 };
 
-},{"globby":54,"is-path-cwd":75,"is-path-in-cwd":76,"object-assign":131,"path":144,"pify":149,"pinkie-promise":150,"rimraf":189}],40:[function(require,module,exports){
+},{"globby":142,"is-path-cwd":165,"is-path-in-cwd":166,"object-assign":231,"path":244,"pify":249,"pinkie-promise":250,"rimraf":294}],113:[function(require,module,exports){
+"use strict";
+
+module.exports = function () {
+	// https://mathiasbynens.be/notes/es-unicode-property-escapes#emoji
+	return (/\uD83D\uDC69(?:\u200D(?:(?:\uD83D\uDC69\u200D)?\uD83D\uDC67|(?:\uD83D\uDC69\u200D)?\uD83D\uDC66)|\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC69\u200D(?:\uD83D\uDC69\u200D)?\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC69\u200D(?:\uD83D\uDC69\u200D)?\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C\uDFF3\uFE0F\u200D\uD83C\uDF08|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]\uFE0F|\uD83D\uDC69(?:\uD83C[\uDFFB-\uDFFF])\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92])|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC6F\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3C-\uDD3E\uDDD6-\uDDDF])\u200D[\u2640\u2642]\uFE0F|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDF6\uD83C\uDDE6|\uD83C\uDDF4\uD83C\uDDF2|\uD83C\uDDE9(?:\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF])|\uD83C\uDDF7(?:\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC])|\uD83C\uDDE8(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uFE0F\u200D[\u2640\u2642]|(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642])\uFE0F|(?:\uD83D\uDC41\uFE0F\u200D\uD83D\uDDE8|\uD83D\uDC69(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2695\u2696\u2708]|\uD83D\uDC69\u200D[\u2695\u2696\u2708]|\uD83D\uDC68(?:(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708]))\uFE0F|\uD83C\uDDF2(?:\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF])|\uD83D\uDC69\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69]))|\uD83C\uDDF1(?:\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE])|\uD83C\uDDEF(?:\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5])|\uD83C\uDDED(?:\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA])|\uD83C\uDDEB(?:\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7])|[#\*0-9]\uFE0F\u20E3|\uD83C\uDDE7(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF])|\uD83C\uDDE6(?:\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF])|\uD83C\uDDFF(?:\uD83C[\uDDE6\uDDF2\uDDFC])|\uD83C\uDDF5(?:\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE])|\uD83C\uDDFB(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA])|\uD83C\uDDF3(?:\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF])|\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62(?:\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73|\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74|\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67)\uDB40\uDC7F|\uD83D\uDC68(?:\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83D\uDC68|(?:(?:\uD83D[\uDC68\uDC69])\u200D)?\uD83D\uDC66\u200D\uD83D\uDC66|(?:(?:\uD83D[\uDC68\uDC69])\u200D)?\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92])|(?:\uD83C[\uDFFB-\uDFFF])\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]))|\uD83C\uDDF8(?:\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF])|\uD83C\uDDF0(?:\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF])|\uD83C\uDDFE(?:\uD83C[\uDDEA\uDDF9])|\uD83C\uDDEE(?:\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9])|\uD83C\uDDF9(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF])|\uD83C\uDDEC(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE])|\uD83C\uDDFA(?:\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF])|\uD83C\uDDEA(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA])|\uD83C\uDDFC(?:\uD83C[\uDDEB\uDDF8])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uD83C[\uDFFB-\uDFFF])|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u270A-\u270D]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC70\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDCAA\uDD74\uDD7A\uDD90\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD36\uDDD1-\uDDD5])(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC68(?:\u200D(?:(?:(?:\uD83D[\uDC68\uDC69])\u200D)?\uD83D\uDC67|(?:(?:\uD83D[\uDC68\uDC69])\u200D)?\uD83D\uDC66)|\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u26F9\u270A-\u270D]|\uD83C[\uDF85\uDFC2-\uDFC4\uDFC7\uDFCA-\uDFCC]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66-\uDC69\uDC6E\uDC70-\uDC78\uDC7C\uDC81-\uDC83\uDC85-\uDC87\uDCAA\uDD74\uDD75\uDD7A\uDD90\uDD95\uDD96\uDE45-\uDE47\uDE4B-\uDE4F\uDEA3\uDEB4-\uDEB6\uDEC0\uDECC]|\uD83E[\uDD18-\uDD1C\uDD1E\uDD1F\uDD26\uDD30-\uDD39\uDD3D\uDD3E\uDDD1-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])?|(?:[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u270A\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF93\uDFA0-\uDFCA\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF4\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC3E\uDC40\uDC42-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDD7A\uDD95\uDD96\uDDA4\uDDFB-\uDE4F\uDE80-\uDEC5\uDECC\uDED0-\uDED2\uDEEB\uDEEC\uDEF4-\uDEF8]|\uD83E[\uDD10-\uDD3A\uDD3C-\uDD3E\uDD40-\uDD45\uDD47-\uDD4C\uDD50-\uDD6B\uDD80-\uDD97\uDDC0\uDDD0-\uDDE6])|(?:[#\*0-9\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u2660\u2663\u2665\u2666\u2668\u267B\u267F\u2692-\u2697\u2699\u269B\u269C\u26A0\u26A1\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD7A\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA4\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED2\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3-\uDEF8]|\uD83E[\uDD10-\uDD3A\uDD3C-\uDD3E\uDD40-\uDD45\uDD47-\uDD4C\uDD50-\uDD6B\uDD80-\uDD97\uDDC0\uDDD0-\uDDE6])\uFE0F/g
+	);
+};
+},{}],114:[function(require,module,exports){
+'use strict';
+
+module.exports = function (str, suffix) {
+
+  if (typeof suffix === 'undefined' || suffix === null) {
+    return false;
+  }
+
+  str    = String(str);
+  suffix = String(suffix);
+
+  var i = suffix.length;
+  var l = str.length - i;
+
+  while (i--) {
+    if (suffix.charAt(i) !== str.charAt(l + i)) {
+      return false;
+    }
+  }
+  return true;
+};
+
+},{}],115:[function(require,module,exports){
 'use strict';
 
 var util = require('util');
@@ -12863,7 +20159,596 @@ errorEx.line = function (str, def) {
 
 module.exports = errorEx;
 
-},{"is-arrayish":69,"util":299}],41:[function(require,module,exports){
+},{"is-arrayish":157,"util":421}],116:[function(require,module,exports){
+'use strict';
+
+var $isNaN = require('./helpers/isNaN');
+var $isFinite = require('./helpers/isFinite');
+
+var sign = require('./helpers/sign');
+var mod = require('./helpers/mod');
+
+var IsCallable = require('is-callable');
+var toPrimitive = require('es-to-primitive/es5');
+
+// https://es5.github.io/#x9
+var ES5 = {
+	ToPrimitive: toPrimitive,
+
+	ToBoolean: function ToBoolean(value) {
+		return Boolean(value);
+	},
+	ToNumber: function ToNumber(value) {
+		return Number(value);
+	},
+	ToInteger: function ToInteger(value) {
+		var number = this.ToNumber(value);
+		if ($isNaN(number)) { return 0; }
+		if (number === 0 || !$isFinite(number)) { return number; }
+		return sign(number) * Math.floor(Math.abs(number));
+	},
+	ToInt32: function ToInt32(x) {
+		return this.ToNumber(x) >> 0;
+	},
+	ToUint32: function ToUint32(x) {
+		return this.ToNumber(x) >>> 0;
+	},
+	ToUint16: function ToUint16(value) {
+		var number = this.ToNumber(value);
+		if ($isNaN(number) || number === 0 || !$isFinite(number)) { return 0; }
+		var posInt = sign(number) * Math.floor(Math.abs(number));
+		return mod(posInt, 0x10000);
+	},
+	ToString: function ToString(value) {
+		return String(value);
+	},
+	ToObject: function ToObject(value) {
+		this.CheckObjectCoercible(value);
+		return Object(value);
+	},
+	CheckObjectCoercible: function CheckObjectCoercible(value, optMessage) {
+		/* jshint eqnull:true */
+		if (value == null) {
+			throw new TypeError(optMessage || 'Cannot call method on ' + value);
+		}
+		return value;
+	},
+	IsCallable: IsCallable,
+	SameValue: function SameValue(x, y) {
+		if (x === y) { // 0 === -0, but they are not identical.
+			if (x === 0) { return 1 / x === 1 / y; }
+			return true;
+		}
+		return $isNaN(x) && $isNaN(y);
+	},
+
+	// http://www.ecma-international.org/ecma-262/5.1/#sec-8
+	Type: function Type(x) {
+		if (x === null) {
+			return 'Null';
+		}
+		if (typeof x === 'undefined') {
+			return 'Undefined';
+		}
+		if (typeof x === 'function' || typeof x === 'object') {
+			return 'Object';
+		}
+		if (typeof x === 'number') {
+			return 'Number';
+		}
+		if (typeof x === 'boolean') {
+			return 'Boolean';
+		}
+		if (typeof x === 'string') {
+			return 'String';
+		}
+	}
+};
+
+module.exports = ES5;
+
+},{"./helpers/isFinite":119,"./helpers/isNaN":120,"./helpers/mod":122,"./helpers/sign":123,"es-to-primitive/es5":124,"is-callable":160}],117:[function(require,module,exports){
+'use strict';
+
+var toStr = Object.prototype.toString;
+var hasSymbols = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol';
+var symbolToStr = hasSymbols ? Symbol.prototype.toString : toStr;
+
+var $isNaN = require('./helpers/isNaN');
+var $isFinite = require('./helpers/isFinite');
+var MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || Math.pow(2, 53) - 1;
+
+var assign = require('./helpers/assign');
+var sign = require('./helpers/sign');
+var mod = require('./helpers/mod');
+var isPrimitive = require('./helpers/isPrimitive');
+var toPrimitive = require('es-to-primitive/es6');
+var parseInteger = parseInt;
+var bind = require('function-bind');
+var strSlice = bind.call(Function.call, String.prototype.slice);
+var isBinary = bind.call(Function.call, RegExp.prototype.test, /^0b[01]+$/i);
+var isOctal = bind.call(Function.call, RegExp.prototype.test, /^0o[0-7]+$/i);
+var nonWS = ['\u0085', '\u200b', '\ufffe'].join('');
+var nonWSregex = new RegExp('[' + nonWS + ']', 'g');
+var hasNonWS = bind.call(Function.call, RegExp.prototype.test, nonWSregex);
+var invalidHexLiteral = /^[-+]0x[0-9a-f]+$/i;
+var isInvalidHexLiteral = bind.call(Function.call, RegExp.prototype.test, invalidHexLiteral);
+
+// whitespace from: http://es5.github.io/#x15.5.4.20
+// implementation from https://github.com/es-shims/es5-shim/blob/v3.4.0/es5-shim.js#L1304-L1324
+var ws = [
+	'\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003',
+	'\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028',
+	'\u2029\uFEFF'
+].join('');
+var trimRegex = new RegExp('(^[' + ws + ']+)|([' + ws + ']+$)', 'g');
+var replace = bind.call(Function.call, String.prototype.replace);
+var trim = function (value) {
+	return replace(value, trimRegex, '');
+};
+
+var ES5 = require('./es5');
+
+var hasRegExpMatcher = require('is-regex');
+
+// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-abstract-operations
+var ES6 = assign(assign({}, ES5), {
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-call-f-v-args
+	Call: function Call(F, V) {
+		var args = arguments.length > 2 ? arguments[2] : [];
+		if (!this.IsCallable(F)) {
+			throw new TypeError(F + ' is not a function');
+		}
+		return F.apply(V, args);
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-toprimitive
+	ToPrimitive: toPrimitive,
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-toboolean
+	// ToBoolean: ES5.ToBoolean,
+
+	// http://www.ecma-international.org/ecma-262/6.0/#sec-tonumber
+	ToNumber: function ToNumber(argument) {
+		var value = isPrimitive(argument) ? argument : toPrimitive(argument, 'number');
+		if (typeof value === 'symbol') {
+			throw new TypeError('Cannot convert a Symbol value to a number');
+		}
+		if (typeof value === 'string') {
+			if (isBinary(value)) {
+				return this.ToNumber(parseInteger(strSlice(value, 2), 2));
+			} else if (isOctal(value)) {
+				return this.ToNumber(parseInteger(strSlice(value, 2), 8));
+			} else if (hasNonWS(value) || isInvalidHexLiteral(value)) {
+				return NaN;
+			} else {
+				var trimmed = trim(value);
+				if (trimmed !== value) {
+					return this.ToNumber(trimmed);
+				}
+			}
+		}
+		return Number(value);
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tointeger
+	// ToInteger: ES5.ToNumber,
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-toint32
+	// ToInt32: ES5.ToInt32,
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-touint32
+	// ToUint32: ES5.ToUint32,
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-toint16
+	ToInt16: function ToInt16(argument) {
+		var int16bit = this.ToUint16(argument);
+		return int16bit >= 0x8000 ? int16bit - 0x10000 : int16bit;
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-touint16
+	// ToUint16: ES5.ToUint16,
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-toint8
+	ToInt8: function ToInt8(argument) {
+		var int8bit = this.ToUint8(argument);
+		return int8bit >= 0x80 ? int8bit - 0x100 : int8bit;
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-touint8
+	ToUint8: function ToUint8(argument) {
+		var number = this.ToNumber(argument);
+		if ($isNaN(number) || number === 0 || !$isFinite(number)) { return 0; }
+		var posInt = sign(number) * Math.floor(Math.abs(number));
+		return mod(posInt, 0x100);
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-touint8clamp
+	ToUint8Clamp: function ToUint8Clamp(argument) {
+		var number = this.ToNumber(argument);
+		if ($isNaN(number) || number <= 0) { return 0; }
+		if (number >= 0xFF) { return 0xFF; }
+		var f = Math.floor(argument);
+		if (f + 0.5 < number) { return f + 1; }
+		if (number < f + 0.5) { return f; }
+		if (f % 2 !== 0) { return f + 1; }
+		return f;
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tostring
+	ToString: function ToString(argument) {
+		if (typeof argument === 'symbol') {
+			throw new TypeError('Cannot convert a Symbol value to a string');
+		}
+		return String(argument);
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-toobject
+	ToObject: function ToObject(value) {
+		this.RequireObjectCoercible(value);
+		return Object(value);
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-topropertykey
+	ToPropertyKey: function ToPropertyKey(argument) {
+		var key = this.ToPrimitive(argument, String);
+		return typeof key === 'symbol' ? symbolToStr.call(key) : this.ToString(key);
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength
+	ToLength: function ToLength(argument) {
+		var len = this.ToInteger(argument);
+		if (len <= 0) { return 0; } // includes converting -0 to +0
+		if (len > MAX_SAFE_INTEGER) { return MAX_SAFE_INTEGER; }
+		return len;
+	},
+
+	// http://www.ecma-international.org/ecma-262/6.0/#sec-canonicalnumericindexstring
+	CanonicalNumericIndexString: function CanonicalNumericIndexString(argument) {
+		if (toStr.call(argument) !== '[object String]') {
+			throw new TypeError('must be a string');
+		}
+		if (argument === '-0') { return -0; }
+		var n = this.ToNumber(argument);
+		if (this.SameValue(this.ToString(n), argument)) { return n; }
+		return void 0;
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-requireobjectcoercible
+	RequireObjectCoercible: ES5.CheckObjectCoercible,
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-isarray
+	IsArray: Array.isArray || function IsArray(argument) {
+		return toStr.call(argument) === '[object Array]';
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-iscallable
+	// IsCallable: ES5.IsCallable,
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-isconstructor
+	IsConstructor: function IsConstructor(argument) {
+		return typeof argument === 'function' && !!argument.prototype; // unfortunately there's no way to truly check this without try/catch `new argument`
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-isextensible-o
+	IsExtensible: function IsExtensible(obj) {
+		if (!Object.preventExtensions) { return true; }
+		if (isPrimitive(obj)) {
+			return false;
+		}
+		return Object.isExtensible(obj);
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-isinteger
+	IsInteger: function IsInteger(argument) {
+		if (typeof argument !== 'number' || $isNaN(argument) || !$isFinite(argument)) {
+			return false;
+		}
+		var abs = Math.abs(argument);
+		return Math.floor(abs) === abs;
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ispropertykey
+	IsPropertyKey: function IsPropertyKey(argument) {
+		return typeof argument === 'string' || typeof argument === 'symbol';
+	},
+
+	// http://www.ecma-international.org/ecma-262/6.0/#sec-isregexp
+	IsRegExp: function IsRegExp(argument) {
+		if (!argument || typeof argument !== 'object') {
+			return false;
+		}
+		if (hasSymbols) {
+			var isRegExp = argument[Symbol.match];
+			if (typeof isRegExp !== 'undefined') {
+				return ES5.ToBoolean(isRegExp);
+			}
+		}
+		return hasRegExpMatcher(argument);
+	},
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevalue
+	// SameValue: ES5.SameValue,
+
+	// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero
+	SameValueZero: function SameValueZero(x, y) {
+		return (x === y) || ($isNaN(x) && $isNaN(y));
+	},
+
+	/**
+	 * 7.3.2 GetV (V, P)
+	 * 1. Assert: IsPropertyKey(P) is true.
+	 * 2. Let O be ToObject(V).
+	 * 3. ReturnIfAbrupt(O).
+	 * 4. Return O.[[Get]](P, V).
+	 */
+	GetV: function GetV(V, P) {
+		// 7.3.2.1
+		if (!this.IsPropertyKey(P)) {
+			throw new TypeError('Assertion failed: IsPropertyKey(P) is not true');
+		}
+
+		// 7.3.2.2-3
+		var O = this.ToObject(V);
+
+		// 7.3.2.4
+		return O[P];
+	},
+
+	/**
+	 * 7.3.9 - http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod
+	 * 1. Assert: IsPropertyKey(P) is true.
+	 * 2. Let func be GetV(O, P).
+	 * 3. ReturnIfAbrupt(func).
+	 * 4. If func is either undefined or null, return undefined.
+	 * 5. If IsCallable(func) is false, throw a TypeError exception.
+	 * 6. Return func.
+	 */
+	GetMethod: function GetMethod(O, P) {
+		// 7.3.9.1
+		if (!this.IsPropertyKey(P)) {
+			throw new TypeError('Assertion failed: IsPropertyKey(P) is not true');
+		}
+
+		// 7.3.9.2
+		var func = this.GetV(O, P);
+
+		// 7.3.9.4
+		if (func == null) {
+			return undefined;
+		}
+
+		// 7.3.9.5
+		if (!this.IsCallable(func)) {
+			throw new TypeError(P + 'is not a function');
+		}
+
+		// 7.3.9.6
+		return func;
+	},
+
+	/**
+	 * 7.3.1 Get (O, P) - http://www.ecma-international.org/ecma-262/6.0/#sec-get-o-p
+	 * 1. Assert: Type(O) is Object.
+	 * 2. Assert: IsPropertyKey(P) is true.
+	 * 3. Return O.[[Get]](P, O).
+	 */
+	Get: function Get(O, P) {
+		// 7.3.1.1
+		if (this.Type(O) !== 'Object') {
+			throw new TypeError('Assertion failed: Type(O) is not Object');
+		}
+		// 7.3.1.2
+		if (!this.IsPropertyKey(P)) {
+			throw new TypeError('Assertion failed: IsPropertyKey(P) is not true');
+		}
+		// 7.3.1.3
+		return O[P];
+	},
+
+	Type: function Type(x) {
+		if (typeof x === 'symbol') {
+			return 'Symbol';
+		}
+		return ES5.Type(x);
+	},
+
+	// http://www.ecma-international.org/ecma-262/6.0/#sec-speciesconstructor
+	SpeciesConstructor: function SpeciesConstructor(O, defaultConstructor) {
+		if (this.Type(O) !== 'Object') {
+			throw new TypeError('Assertion failed: Type(O) is not Object');
+		}
+		var C = O.constructor;
+		if (typeof C === 'undefined') {
+			return defaultConstructor;
+		}
+		if (this.Type(C) !== 'Object') {
+			throw new TypeError('O.constructor is not an Object');
+		}
+		var S = hasSymbols && Symbol.species ? C[Symbol.species] : undefined;
+		if (S == null) {
+			return defaultConstructor;
+		}
+		if (this.IsConstructor(S)) {
+			return S;
+		}
+		throw new TypeError('no constructor found');
+	}
+});
+
+delete ES6.CheckObjectCoercible; // renamed in ES6 to RequireObjectCoercible
+
+module.exports = ES6;
+
+},{"./es5":116,"./helpers/assign":118,"./helpers/isFinite":119,"./helpers/isNaN":120,"./helpers/isPrimitive":121,"./helpers/mod":122,"./helpers/sign":123,"es-to-primitive/es6":125,"function-bind":138,"is-regex":168}],118:[function(require,module,exports){
+var has = Object.prototype.hasOwnProperty;
+module.exports = Object.assign || function assign(target, source) {
+	for (var key in source) {
+		if (has.call(source, key)) {
+			target[key] = source[key];
+		}
+	}
+	return target;
+};
+
+},{}],119:[function(require,module,exports){
+var $isNaN = Number.isNaN || function (a) { return a !== a; };
+
+module.exports = Number.isFinite || function (x) { return typeof x === 'number' && !$isNaN(x) && x !== Infinity && x !== -Infinity; };
+
+},{}],120:[function(require,module,exports){
+module.exports = Number.isNaN || function isNaN(a) {
+	return a !== a;
+};
+
+},{}],121:[function(require,module,exports){
+module.exports = function isPrimitive(value) {
+	return value === null || (typeof value !== 'function' && typeof value !== 'object');
+};
+
+},{}],122:[function(require,module,exports){
+module.exports = function mod(number, modulo) {
+	var remain = number % modulo;
+	return Math.floor(remain >= 0 ? remain : remain + modulo);
+};
+
+},{}],123:[function(require,module,exports){
+module.exports = function sign(number) {
+	return number >= 0 ? 1 : -1;
+};
+
+},{}],124:[function(require,module,exports){
+'use strict';
+
+var toStr = Object.prototype.toString;
+
+var isPrimitive = require('./helpers/isPrimitive');
+
+var isCallable = require('is-callable');
+
+// https://es5.github.io/#x8.12
+var ES5internalSlots = {
+	'[[DefaultValue]]': function (O, hint) {
+		var actualHint = hint || (toStr.call(O) === '[object Date]' ? String : Number);
+
+		if (actualHint === String || actualHint === Number) {
+			var methods = actualHint === String ? ['toString', 'valueOf'] : ['valueOf', 'toString'];
+			var value, i;
+			for (i = 0; i < methods.length; ++i) {
+				if (isCallable(O[methods[i]])) {
+					value = O[methods[i]]();
+					if (isPrimitive(value)) {
+						return value;
+					}
+				}
+			}
+			throw new TypeError('No default value');
+		}
+		throw new TypeError('invalid [[DefaultValue]] hint supplied');
+	}
+};
+
+// https://es5.github.io/#x9
+module.exports = function ToPrimitive(input, PreferredType) {
+	if (isPrimitive(input)) {
+		return input;
+	}
+	return ES5internalSlots['[[DefaultValue]]'](input, PreferredType);
+};
+
+},{"./helpers/isPrimitive":126,"is-callable":160}],125:[function(require,module,exports){
+'use strict';
+
+var hasSymbols = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol';
+
+var isPrimitive = require('./helpers/isPrimitive');
+var isCallable = require('is-callable');
+var isDate = require('is-date-object');
+var isSymbol = require('is-symbol');
+
+var ordinaryToPrimitive = function OrdinaryToPrimitive(O, hint) {
+	if (typeof O === 'undefined' || O === null) {
+		throw new TypeError('Cannot call method on ' + O);
+	}
+	if (typeof hint !== 'string' || (hint !== 'number' && hint !== 'string')) {
+		throw new TypeError('hint must be "string" or "number"');
+	}
+	var methodNames = hint === 'string' ? ['toString', 'valueOf'] : ['valueOf', 'toString'];
+	var method, result, i;
+	for (i = 0; i < methodNames.length; ++i) {
+		method = O[methodNames[i]];
+		if (isCallable(method)) {
+			result = method.call(O);
+			if (isPrimitive(result)) {
+				return result;
+			}
+		}
+	}
+	throw new TypeError('No default value');
+};
+
+var GetMethod = function GetMethod(O, P) {
+	var func = O[P];
+	if (func !== null && typeof func !== 'undefined') {
+		if (!isCallable(func)) {
+			throw new TypeError(func + ' returned for property ' + P + ' of object ' + O + ' is not a function');
+		}
+		return func;
+	}
+};
+
+// http://www.ecma-international.org/ecma-262/6.0/#sec-toprimitive
+module.exports = function ToPrimitive(input, PreferredType) {
+	if (isPrimitive(input)) {
+		return input;
+	}
+	var hint = 'default';
+	if (arguments.length > 1) {
+		if (PreferredType === String) {
+			hint = 'string';
+		} else if (PreferredType === Number) {
+			hint = 'number';
+		}
+	}
+
+	var exoticToPrim;
+	if (hasSymbols) {
+		if (Symbol.toPrimitive) {
+			exoticToPrim = GetMethod(input, Symbol.toPrimitive);
+		} else if (isSymbol(input)) {
+			exoticToPrim = Symbol.prototype.valueOf;
+		}
+	}
+	if (typeof exoticToPrim !== 'undefined') {
+		var result = exoticToPrim.call(input, hint);
+		if (isPrimitive(result)) {
+			return result;
+		}
+		throw new TypeError('unable to convert exotic object to primitive');
+	}
+	if (hint === 'default' && (isDate(input) || isSymbol(input))) {
+		hint = 'string';
+	}
+	return ordinaryToPrimitive(input, hint === 'default' ? 'number' : hint);
+};
+
+},{"./helpers/isPrimitive":126,"is-callable":160,"is-date-object":161,"is-symbol":169}],126:[function(require,module,exports){
+arguments[4][121][0].apply(exports,arguments)
+},{"dup":121}],127:[function(require,module,exports){
+'use strict';
+
+var matchOperatorsRe = /[|\\{}()[\]^$+*?.]/g;
+
+module.exports = function (str) {
+	if (typeof str !== 'string') {
+		throw new TypeError('Expected a string');
+	}
+
+	return str.replace(matchOperatorsRe, '\\$&');
+};
+
+},{}],128:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -13167,7 +21052,7 @@ function isUndefined(arg) {
   return arg === void 0;
 }
 
-},{}],42:[function(require,module,exports){
+},{}],129:[function(require,module,exports){
 'use strict';
 
 var hasOwn = Object.prototype.hasOwnProperty;
@@ -13255,7 +21140,7 @@ module.exports = function extend() {
 	return target;
 };
 
-},{}],43:[function(require,module,exports){
+},{}],130:[function(require,module,exports){
 (function() {
   'use strict';
   
@@ -13393,7 +21278,7 @@ module.exports = function extend() {
 }());
 
 
-},{}],44:[function(require,module,exports){
+},{}],131:[function(require,module,exports){
 var path = require( 'path' );
 
 module.exports = {
@@ -13611,7 +21496,7 @@ module.exports = {
   }
 };
 
-},{"flat-cache":45,"fs":15,"object-assign":131,"path":144}],45:[function(require,module,exports){
+},{"flat-cache":132,"fs":19,"object-assign":231,"path":244}],132:[function(require,module,exports){
 (function (__dirname){
 var path = require( 'path' );
 var fs = require( 'graceful-fs' );
@@ -13803,7 +21688,7 @@ module.exports = {
 };
 
 }).call(this,"/node_modules/flat-cache")
-},{"./utils":46,"del":39,"graceful-fs":56,"path":144}],46:[function(require,module,exports){
+},{"./utils":133,"del":112,"graceful-fs":144,"path":244}],133:[function(require,module,exports){
 var fs = require( 'graceful-fs' );
 var write = require( 'write' );
 var circularJson = require( 'circular-json' );
@@ -13844,7 +21729,31 @@ module.exports = {
 
 };
 
-},{"circular-json":27,"graceful-fs":56,"write":307}],47:[function(require,module,exports){
+},{"circular-json":99,"graceful-fs":144,"write":429}],134:[function(require,module,exports){
+
+var hasOwn = Object.prototype.hasOwnProperty;
+var toString = Object.prototype.toString;
+
+module.exports = function forEach (obj, fn, ctx) {
+    if (toString.call(fn) !== '[object Function]') {
+        throw new TypeError('iterator must be a function');
+    }
+    var l = obj.length;
+    if (l === +l) {
+        for (var i = 0; i < l; i++) {
+            fn.call(ctx, obj[i], i, obj);
+        }
+    } else {
+        for (var k in obj) {
+            if (hasOwn.call(obj, k)) {
+                fn.call(ctx, obj[k], k, obj);
+            }
+        }
+    }
+};
+
+
+},{}],135:[function(require,module,exports){
 (function (process){
 module.exports = realpath
 realpath.realpath = realpath
@@ -13914,7 +21823,7 @@ function unmonkeypatch () {
 }
 
 }).call(this,require('_process'))
-},{"./old.js":48,"_process":159,"fs":15}],48:[function(require,module,exports){
+},{"./old.js":136,"_process":259,"fs":19}],136:[function(require,module,exports){
 (function (process){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -14221,7 +22130,7 @@ exports.realpath = function realpath(p, cache, cb) {
 };
 
 }).call(this,require('_process'))
-},{"_process":159,"fs":15,"path":144}],49:[function(require,module,exports){
+},{"_process":259,"fs":19,"path":244}],137:[function(require,module,exports){
 var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
 var slice = Array.prototype.slice;
 var toStr = Object.prototype.toString;
@@ -14271,12 +22180,12 @@ module.exports = function bind(that) {
     return bound;
 };
 
-},{}],50:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 var implementation = require('./implementation');
 
 module.exports = Function.prototype.bind || implementation;
 
-},{"./implementation":49}],51:[function(require,module,exports){
+},{"./implementation":137}],139:[function(require,module,exports){
 (function (process){
 exports.alphasort = alphasort
 exports.alphasorti = alphasorti
@@ -14520,7 +22429,7 @@ function childrenIgnored (self, path) {
 }
 
 }).call(this,require('_process'))
-},{"_process":159,"minimatch":122,"path":144,"path-is-absolute":145}],52:[function(require,module,exports){
+},{"_process":259,"minimatch":216,"path":244,"path-is-absolute":245}],140:[function(require,module,exports){
 (function (process){
 // Approach:
 //
@@ -15316,7 +23225,7 @@ Glob.prototype._stat2 = function (f, abs, er, stat, cb) {
 }
 
 }).call(this,require('_process'))
-},{"./common.js":51,"./sync.js":53,"_process":159,"assert":7,"events":41,"fs":15,"fs.realpath":47,"inflight":64,"inherits":65,"minimatch":122,"once":134,"path":144,"path-is-absolute":145,"util":299}],53:[function(require,module,exports){
+},{"./common.js":139,"./sync.js":141,"_process":259,"assert":11,"events":128,"fs":19,"fs.realpath":135,"inflight":152,"inherits":153,"minimatch":216,"once":234,"path":244,"path-is-absolute":245,"util":421}],141:[function(require,module,exports){
 (function (process){
 module.exports = globSync
 globSync.GlobSync = GlobSync
@@ -15806,7 +23715,7 @@ GlobSync.prototype._makeAbs = function (f) {
 }
 
 }).call(this,require('_process'))
-},{"./common.js":51,"./glob.js":52,"_process":159,"assert":7,"fs":15,"fs.realpath":47,"minimatch":122,"path":144,"path-is-absolute":145,"util":299}],54:[function(require,module,exports){
+},{"./common.js":139,"./glob.js":140,"_process":259,"assert":11,"fs":19,"fs.realpath":135,"minimatch":216,"path":244,"path-is-absolute":245,"util":421}],142:[function(require,module,exports){
 'use strict';
 var Promise = require('pinkie-promise');
 var arrayUnion = require('array-union');
@@ -15873,7 +23782,7 @@ module.exports.sync = function (patterns, opts) {
 
 module.exports.generateGlobTasks = generateGlobTasks;
 
-},{"array-union":4,"arrify":6,"glob":52,"object-assign":131,"pify":149,"pinkie-promise":150}],55:[function(require,module,exports){
+},{"array-union":4,"arrify":10,"glob":140,"object-assign":231,"pify":249,"pinkie-promise":250}],143:[function(require,module,exports){
 'use strict'
 
 var fs = require('fs')
@@ -15896,7 +23805,7 @@ function clone (obj) {
   return copy
 }
 
-},{"fs":15}],56:[function(require,module,exports){
+},{"fs":19}],144:[function(require,module,exports){
 (function (process){
 var fs = require('fs')
 var polyfills = require('./polyfills.js')
@@ -16162,7 +24071,7 @@ function retry () {
 }
 
 }).call(this,require('_process'))
-},{"./fs.js":55,"./legacy-streams.js":57,"./polyfills.js":58,"_process":159,"assert":7,"fs":15,"util":299}],57:[function(require,module,exports){
+},{"./fs.js":143,"./legacy-streams.js":145,"./polyfills.js":146,"_process":259,"assert":11,"fs":19,"util":421}],145:[function(require,module,exports){
 (function (process){
 var Stream = require('stream').Stream
 
@@ -16284,7 +24193,7 @@ function legacy (fs) {
 }
 
 }).call(this,require('_process'))
-},{"_process":159,"stream":200}],58:[function(require,module,exports){
+},{"_process":259,"stream":306}],146:[function(require,module,exports){
 (function (process){
 var fs = require('./fs.js')
 var constants = require('constants')
@@ -16618,12 +24527,12 @@ function chownErOk (er) {
 }
 
 }).call(this,require('_process'))
-},{"./fs.js":55,"_process":159,"constants":30}],59:[function(require,module,exports){
+},{"./fs.js":143,"_process":259,"constants":102}],147:[function(require,module,exports){
 var bind = require('function-bind');
 
 module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
 
-},{"function-bind":50}],60:[function(require,module,exports){
+},{"function-bind":138}],148:[function(require,module,exports){
 'use strict'
 
 var gitHosts = module.exports = {
@@ -16693,7 +24602,7 @@ Object.keys(gitHosts).forEach(function (name) {
     }).join('|') + '):$')
 })
 
-},{}],61:[function(require,module,exports){
+},{}],149:[function(require,module,exports){
 'use strict'
 var gitHosts = require('./git-host-info.js')
 var extend = Object.assign || require('util')._extend
@@ -16809,7 +24718,7 @@ GitHost.prototype.toString = function (opts) {
   return (this[this.default] || this.sshurl).call(this, opts)
 }
 
-},{"./git-host-info.js":60,"util":299}],62:[function(require,module,exports){
+},{"./git-host-info.js":148,"util":421}],150:[function(require,module,exports){
 'use strict'
 var url = require('url')
 var gitHosts = require('./git-host-info.js')
@@ -16920,7 +24829,7 @@ function parseGitUrl (giturl) {
   }
 }
 
-},{"./git-host-info.js":60,"./git-host.js":61,"url":294}],63:[function(require,module,exports){
+},{"./git-host-info.js":148,"./git-host.js":149,"url":416}],151:[function(require,module,exports){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = nBytes * 8 - mLen - 1
@@ -17006,7 +24915,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],64:[function(require,module,exports){
+},{}],152:[function(require,module,exports){
 (function (process){
 var wrappy = require('wrappy')
 var reqs = Object.create(null)
@@ -17064,7 +24973,7 @@ function slice (args) {
 }
 
 }).call(this,require('_process'))
-},{"_process":159,"once":134,"wrappy":306}],65:[function(require,module,exports){
+},{"_process":259,"once":234,"wrappy":428}],153:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -17089,13 +24998,13 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],66:[function(require,module,exports){
+},{}],154:[function(require,module,exports){
 module.exports = function(path) {
   var obj = require(path);
   return obj && obj.__esModule ? obj['default'] : obj;
 }
 
-},{}],67:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2016 Titus Wormer
@@ -17126,7 +25035,7 @@ function alphabetical(character) {
     (code >= 65 && code <= 90); /* A-Z */
 }
 
-},{}],68:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2016 Titus Wormer
@@ -17157,7 +25066,7 @@ function alphanumerical(character) {
   return alphabetical(character) || decimal(character);
 }
 
-},{"is-alphabetical":67,"is-decimal":72}],69:[function(require,module,exports){
+},{"is-alphabetical":155,"is-decimal":162}],157:[function(require,module,exports){
 'use strict';
 
 module.exports = function isArrayish(obj) {
@@ -17169,7 +25078,7 @@ module.exports = function isArrayish(obj) {
 		(obj.length >= 0 && obj.splice instanceof Function);
 };
 
-},{}],70:[function(require,module,exports){
+},{}],158:[function(require,module,exports){
 /*!
  * Determine if an object is a Buffer
  *
@@ -17192,7 +25101,7 @@ function isSlowBuffer (obj) {
   return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
 }
 
-},{}],71:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 'use strict';
 var builtinModules = require('builtin-modules');
 
@@ -17204,7 +25113,70 @@ module.exports = function (str) {
 	return builtinModules.indexOf(str) !== -1;
 };
 
-},{"builtin-modules":17}],72:[function(require,module,exports){
+},{"builtin-modules":21}],160:[function(require,module,exports){
+'use strict';
+
+var fnToStr = Function.prototype.toString;
+
+var constructorRegex = /^\s*class /;
+var isES6ClassFn = function isES6ClassFn(value) {
+	try {
+		var fnStr = fnToStr.call(value);
+		var singleStripped = fnStr.replace(/\/\/.*\n/g, '');
+		var multiStripped = singleStripped.replace(/\/\*[.\s\S]*\*\//g, '');
+		var spaceStripped = multiStripped.replace(/\n/mg, ' ').replace(/ {2}/g, ' ');
+		return constructorRegex.test(spaceStripped);
+	} catch (e) {
+		return false; // not a function
+	}
+};
+
+var tryFunctionObject = function tryFunctionObject(value) {
+	try {
+		if (isES6ClassFn(value)) { return false; }
+		fnToStr.call(value);
+		return true;
+	} catch (e) {
+		return false;
+	}
+};
+var toStr = Object.prototype.toString;
+var fnClass = '[object Function]';
+var genClass = '[object GeneratorFunction]';
+var hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
+
+module.exports = function isCallable(value) {
+	if (!value) { return false; }
+	if (typeof value !== 'function' && typeof value !== 'object') { return false; }
+	if (hasToStringTag) { return tryFunctionObject(value); }
+	if (isES6ClassFn(value)) { return false; }
+	var strClass = toStr.call(value);
+	return strClass === fnClass || strClass === genClass;
+};
+
+},{}],161:[function(require,module,exports){
+'use strict';
+
+var getDay = Date.prototype.getDay;
+var tryDateObject = function tryDateObject(value) {
+	try {
+		getDay.call(value);
+		return true;
+	} catch (e) {
+		return false;
+	}
+};
+
+var toStr = Object.prototype.toString;
+var dateClass = '[object Date]';
+var hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
+
+module.exports = function isDateObject(value) {
+	if (typeof value !== 'object' || value === null) { return false; }
+	return hasToStringTag ? tryDateObject(value) : toStr.call(value) === dateClass;
+};
+
+},{}],162:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2016 Titus Wormer
@@ -17234,7 +25206,7 @@ function decimal(character) {
   return code >= 48 && code <= 57; /* 0-9 */
 }
 
-},{}],73:[function(require,module,exports){
+},{}],163:[function(require,module,exports){
 'use strict';
 
 var fs = require('fs');
@@ -17254,7 +25226,7 @@ function isFileSync(path){
   return fs.existsSync(path) && fs.statSync(path).isFile();
 }
 
-},{"fs":15}],74:[function(require,module,exports){
+},{"fs":19}],164:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2016 Titus Wormer
@@ -17286,7 +25258,7 @@ function hexadecimal(character) {
     (code >= 48 /* A */ && code <= 57 /* Z */);
 }
 
-},{}],75:[function(require,module,exports){
+},{}],165:[function(require,module,exports){
 (function (process){
 'use strict';
 var path = require('path');
@@ -17296,7 +25268,7 @@ module.exports = function (str) {
 };
 
 }).call(this,require('_process'))
-},{"_process":159,"path":144}],76:[function(require,module,exports){
+},{"_process":259,"path":244}],166:[function(require,module,exports){
 (function (process){
 'use strict';
 var isPathInside = require('is-path-inside');
@@ -17306,7 +25278,7 @@ module.exports = function (str) {
 };
 
 }).call(this,require('_process'))
-},{"_process":159,"is-path-inside":77}],77:[function(require,module,exports){
+},{"_process":259,"is-path-inside":167}],167:[function(require,module,exports){
 'use strict';
 var path = require('path');
 var pathIsInside = require('path-is-inside');
@@ -17322,7 +25294,77 @@ module.exports = function (a, b) {
 	return pathIsInside(a, b);
 };
 
-},{"path":144,"path-is-inside":146}],78:[function(require,module,exports){
+},{"path":244,"path-is-inside":246}],168:[function(require,module,exports){
+'use strict';
+
+var has = require('has');
+var regexExec = RegExp.prototype.exec;
+var gOPD = Object.getOwnPropertyDescriptor;
+
+var tryRegexExecCall = function tryRegexExec(value) {
+	try {
+		var lastIndex = value.lastIndex;
+		value.lastIndex = 0;
+
+		regexExec.call(value);
+		return true;
+	} catch (e) {
+		return false;
+	} finally {
+		value.lastIndex = lastIndex;
+	}
+};
+var toStr = Object.prototype.toString;
+var regexClass = '[object RegExp]';
+var hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
+
+module.exports = function isRegex(value) {
+	if (!value || typeof value !== 'object') {
+		return false;
+	}
+	if (!hasToStringTag) {
+		return toStr.call(value) === regexClass;
+	}
+
+	var descriptor = gOPD(value, 'lastIndex');
+	var hasLastIndexDataProperty = descriptor && has(descriptor, 'value');
+	if (!hasLastIndexDataProperty) {
+		return false;
+	}
+
+	return tryRegexExecCall(value);
+};
+
+},{"has":147}],169:[function(require,module,exports){
+'use strict';
+
+var toStr = Object.prototype.toString;
+var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
+
+if (hasSymbols) {
+	var symToStr = Symbol.prototype.toString;
+	var symStringRegex = /^Symbol\(.*\)$/;
+	var isSymbolObject = function isSymbolObject(value) {
+		if (typeof value.valueOf() !== 'symbol') { return false; }
+		return symStringRegex.test(symToStr.call(value));
+	};
+	module.exports = function isSymbol(value) {
+		if (typeof value === 'symbol') { return true; }
+		if (toStr.call(value) !== '[object Symbol]') { return false; }
+		try {
+			return isSymbolObject(value);
+		} catch (e) {
+			return false;
+		}
+	};
+} else {
+	module.exports = function isSymbol(value) {
+		// this environment does not support Symbols.
+		return false;
+	};
+}
+
+},{}],170:[function(require,module,exports){
 
 exports = module.exports = function(bytes)
 {
@@ -17400,14 +25442,14 @@ exports = module.exports = function(bytes)
     return true;
 }
 
-},{}],79:[function(require,module,exports){
+},{}],171:[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],80:[function(require,module,exports){
+},{}],172:[function(require,module,exports){
 'use strict';
 
 
@@ -17416,7 +25458,7 @@ var yaml = require('./lib/js-yaml.js');
 
 module.exports = yaml;
 
-},{"./lib/js-yaml.js":81}],81:[function(require,module,exports){
+},{"./lib/js-yaml.js":173}],173:[function(require,module,exports){
 'use strict';
 
 
@@ -17457,7 +25499,7 @@ module.exports.parse          = deprecated('parse');
 module.exports.compose        = deprecated('compose');
 module.exports.addConstructor = deprecated('addConstructor');
 
-},{"./js-yaml/dumper":83,"./js-yaml/exception":84,"./js-yaml/loader":85,"./js-yaml/schema":87,"./js-yaml/schema/core":88,"./js-yaml/schema/default_full":89,"./js-yaml/schema/default_safe":90,"./js-yaml/schema/failsafe":91,"./js-yaml/schema/json":92,"./js-yaml/type":93}],82:[function(require,module,exports){
+},{"./js-yaml/dumper":175,"./js-yaml/exception":176,"./js-yaml/loader":177,"./js-yaml/schema":179,"./js-yaml/schema/core":180,"./js-yaml/schema/default_full":181,"./js-yaml/schema/default_safe":182,"./js-yaml/schema/failsafe":183,"./js-yaml/schema/json":184,"./js-yaml/type":185}],174:[function(require,module,exports){
 'use strict';
 
 
@@ -17518,7 +25560,7 @@ module.exports.repeat         = repeat;
 module.exports.isNegativeZero = isNegativeZero;
 module.exports.extend         = extend;
 
-},{}],83:[function(require,module,exports){
+},{}],175:[function(require,module,exports){
 'use strict';
 
 /*eslint-disable no-use-before-define*/
@@ -18321,7 +26363,7 @@ function safeDump(input, options) {
 module.exports.dump     = dump;
 module.exports.safeDump = safeDump;
 
-},{"./common":82,"./exception":84,"./schema/default_full":89,"./schema/default_safe":90}],84:[function(require,module,exports){
+},{"./common":174,"./exception":176,"./schema/default_full":181,"./schema/default_safe":182}],176:[function(require,module,exports){
 // YAML error class. http://stackoverflow.com/questions/8458984
 //
 'use strict';
@@ -18366,7 +26408,7 @@ YAMLException.prototype.toString = function toString(compact) {
 
 module.exports = YAMLException;
 
-},{}],85:[function(require,module,exports){
+},{}],177:[function(require,module,exports){
 'use strict';
 
 /*eslint-disable max-len,no-use-before-define*/
@@ -19955,7 +27997,7 @@ module.exports.load        = load;
 module.exports.safeLoadAll = safeLoadAll;
 module.exports.safeLoad    = safeLoad;
 
-},{"./common":82,"./exception":84,"./mark":86,"./schema/default_full":89,"./schema/default_safe":90}],86:[function(require,module,exports){
+},{"./common":174,"./exception":176,"./mark":178,"./schema/default_full":181,"./schema/default_safe":182}],178:[function(require,module,exports){
 'use strict';
 
 
@@ -20033,7 +28075,7 @@ Mark.prototype.toString = function toString(compact) {
 
 module.exports = Mark;
 
-},{"./common":82}],87:[function(require,module,exports){
+},{"./common":174}],179:[function(require,module,exports){
 'use strict';
 
 /*eslint-disable max-len*/
@@ -20143,7 +28185,7 @@ Schema.create = function createSchema() {
 
 module.exports = Schema;
 
-},{"./common":82,"./exception":84,"./type":93}],88:[function(require,module,exports){
+},{"./common":174,"./exception":176,"./type":185}],180:[function(require,module,exports){
 // Standard YAML's Core schema.
 // http://www.yaml.org/spec/1.2/spec.html#id2804923
 //
@@ -20163,7 +28205,7 @@ module.exports = new Schema({
   ]
 });
 
-},{"../schema":87,"./json":92}],89:[function(require,module,exports){
+},{"../schema":179,"./json":184}],181:[function(require,module,exports){
 // JS-YAML's default schema for `load` function.
 // It is not described in the YAML specification.
 //
@@ -20190,7 +28232,7 @@ module.exports = Schema.DEFAULT = new Schema({
   ]
 });
 
-},{"../schema":87,"../type/js/function":98,"../type/js/regexp":99,"../type/js/undefined":100,"./default_safe":90}],90:[function(require,module,exports){
+},{"../schema":179,"../type/js/function":190,"../type/js/regexp":191,"../type/js/undefined":192,"./default_safe":182}],182:[function(require,module,exports){
 // JS-YAML's default schema for `safeLoad` function.
 // It is not described in the YAML specification.
 //
@@ -20220,7 +28262,7 @@ module.exports = new Schema({
   ]
 });
 
-},{"../schema":87,"../type/binary":94,"../type/merge":102,"../type/omap":104,"../type/pairs":105,"../type/set":107,"../type/timestamp":109,"./core":88}],91:[function(require,module,exports){
+},{"../schema":179,"../type/binary":186,"../type/merge":194,"../type/omap":196,"../type/pairs":197,"../type/set":199,"../type/timestamp":201,"./core":180}],183:[function(require,module,exports){
 // Standard YAML's Failsafe schema.
 // http://www.yaml.org/spec/1.2/spec.html#id2802346
 
@@ -20239,7 +28281,7 @@ module.exports = new Schema({
   ]
 });
 
-},{"../schema":87,"../type/map":101,"../type/seq":106,"../type/str":108}],92:[function(require,module,exports){
+},{"../schema":179,"../type/map":193,"../type/seq":198,"../type/str":200}],184:[function(require,module,exports){
 // Standard YAML's JSON schema.
 // http://www.yaml.org/spec/1.2/spec.html#id2803231
 //
@@ -20266,7 +28308,7 @@ module.exports = new Schema({
   ]
 });
 
-},{"../schema":87,"../type/bool":95,"../type/float":96,"../type/int":97,"../type/null":103,"./failsafe":91}],93:[function(require,module,exports){
+},{"../schema":179,"../type/bool":187,"../type/float":188,"../type/int":189,"../type/null":195,"./failsafe":183}],185:[function(require,module,exports){
 'use strict';
 
 var YAMLException = require('./exception');
@@ -20329,7 +28371,7 @@ function Type(tag, options) {
 
 module.exports = Type;
 
-},{"./exception":84}],94:[function(require,module,exports){
+},{"./exception":176}],186:[function(require,module,exports){
 'use strict';
 
 /*eslint-disable no-bitwise*/
@@ -20466,7 +28508,7 @@ module.exports = new Type('tag:yaml.org,2002:binary', {
   represent: representYamlBinary
 });
 
-},{"../type":93}],95:[function(require,module,exports){
+},{"../type":185}],187:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -20503,7 +28545,7 @@ module.exports = new Type('tag:yaml.org,2002:bool', {
   defaultStyle: 'lowercase'
 });
 
-},{"../type":93}],96:[function(require,module,exports){
+},{"../type":185}],188:[function(require,module,exports){
 'use strict';
 
 var common = require('../common');
@@ -20610,7 +28652,7 @@ module.exports = new Type('tag:yaml.org,2002:float', {
   defaultStyle: 'lowercase'
 });
 
-},{"../common":82,"../type":93}],97:[function(require,module,exports){
+},{"../common":174,"../type":185}],189:[function(require,module,exports){
 'use strict';
 
 var common = require('../common');
@@ -20780,7 +28822,7 @@ module.exports = new Type('tag:yaml.org,2002:int', {
   }
 });
 
-},{"../common":82,"../type":93}],98:[function(require,module,exports){
+},{"../common":174,"../type":185}],190:[function(require,module,exports){
 'use strict';
 
 var esprima;
@@ -20866,7 +28908,7 @@ module.exports = new Type('tag:yaml.org,2002:js/function', {
   represent: representJavascriptFunction
 });
 
-},{"../../type":93}],99:[function(require,module,exports){
+},{"../../type":185}],191:[function(require,module,exports){
 'use strict';
 
 var Type = require('../../type');
@@ -20928,7 +28970,7 @@ module.exports = new Type('tag:yaml.org,2002:js/regexp', {
   represent: representJavascriptRegExp
 });
 
-},{"../../type":93}],100:[function(require,module,exports){
+},{"../../type":185}],192:[function(require,module,exports){
 'use strict';
 
 var Type = require('../../type');
@@ -20958,7 +29000,7 @@ module.exports = new Type('tag:yaml.org,2002:js/undefined', {
   represent: representJavascriptUndefined
 });
 
-},{"../../type":93}],101:[function(require,module,exports){
+},{"../../type":185}],193:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -20968,7 +29010,7 @@ module.exports = new Type('tag:yaml.org,2002:map', {
   construct: function (data) { return data !== null ? data : {}; }
 });
 
-},{"../type":93}],102:[function(require,module,exports){
+},{"../type":185}],194:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -20982,7 +29024,7 @@ module.exports = new Type('tag:yaml.org,2002:merge', {
   resolve: resolveYamlMerge
 });
 
-},{"../type":93}],103:[function(require,module,exports){
+},{"../type":185}],195:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -21018,7 +29060,7 @@ module.exports = new Type('tag:yaml.org,2002:null', {
   defaultStyle: 'lowercase'
 });
 
-},{"../type":93}],104:[function(require,module,exports){
+},{"../type":185}],196:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -21064,7 +29106,7 @@ module.exports = new Type('tag:yaml.org,2002:omap', {
   construct: constructYamlOmap
 });
 
-},{"../type":93}],105:[function(require,module,exports){
+},{"../type":185}],197:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -21119,7 +29161,7 @@ module.exports = new Type('tag:yaml.org,2002:pairs', {
   construct: constructYamlPairs
 });
 
-},{"../type":93}],106:[function(require,module,exports){
+},{"../type":185}],198:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -21129,7 +29171,7 @@ module.exports = new Type('tag:yaml.org,2002:seq', {
   construct: function (data) { return data !== null ? data : []; }
 });
 
-},{"../type":93}],107:[function(require,module,exports){
+},{"../type":185}],199:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -21160,7 +29202,7 @@ module.exports = new Type('tag:yaml.org,2002:set', {
   construct: constructYamlSet
 });
 
-},{"../type":93}],108:[function(require,module,exports){
+},{"../type":185}],200:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -21170,7 +29212,7 @@ module.exports = new Type('tag:yaml.org,2002:str', {
   construct: function (data) { return data !== null ? data : ''; }
 });
 
-},{"../type":93}],109:[function(require,module,exports){
+},{"../type":185}],201:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -21260,7 +29302,7 @@ module.exports = new Type('tag:yaml.org,2002:timestamp', {
   represent: representYamlTimestamp
 });
 
-},{"../type":93}],110:[function(require,module,exports){
+},{"../type":185}],202:[function(require,module,exports){
 // json5.js
 // Modern JSON. See README.md for details.
 //
@@ -22032,7 +30074,7 @@ JSON5.stringify = function (obj, replacer, space) {
     return internalStringify(topLevelHolder, '', true);
 };
 
-},{}],111:[function(require,module,exports){
+},{}],203:[function(require,module,exports){
 // Generated by LiveScript 1.4.0
 (function(){
   var parsedTypeCheck, types, toString$ = {}.toString;
@@ -22332,7 +30374,7 @@ JSON5.stringify = function (obj, replacer, space) {
   module.exports = typesCast;
 }).call(this);
 
-},{"type-check":287}],112:[function(require,module,exports){
+},{"type-check":408}],204:[function(require,module,exports){
 // Generated by LiveScript 1.4.0
 (function(){
   var parseString, cast, parseType, VERSION, parsedTypeParse, parse;
@@ -22356,7 +30398,7 @@ JSON5.stringify = function (obj, replacer, space) {
   };
 }).call(this);
 
-},{"./cast":111,"./parse-string":113,"type-check":287}],113:[function(require,module,exports){
+},{"./cast":203,"./parse-string":205,"type-check":408}],205:[function(require,module,exports){
 // Generated by LiveScript 1.4.0
 (function(){
   var reject, special, tokenRegex;
@@ -22471,7 +30513,7 @@ JSON5.stringify = function (obj, replacer, space) {
   function not$(x){ return !x; }
 }).call(this);
 
-},{"prelude-ls":157}],114:[function(require,module,exports){
+},{"prelude-ls":257}],206:[function(require,module,exports){
 (function (process){
 'use strict';
 var path = require('path');
@@ -22496,7 +30538,7 @@ module.exports.sync = function (fp) {
 };
 
 }).call(this,require('_process'))
-},{"_process":159,"graceful-fs":56,"parse-json":141,"path":144,"pify":149,"pinkie-promise":150,"strip-bom":204}],115:[function(require,module,exports){
+},{"_process":259,"graceful-fs":144,"parse-json":241,"path":244,"pify":249,"pinkie-promise":250,"strip-bom":310}],207:[function(require,module,exports){
 'use strict';
 
 /**
@@ -22549,7 +30591,7 @@ function longestStreak(value, character) {
 
 module.exports = longestStreak;
 
-},{}],116:[function(require,module,exports){
+},{}],208:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 // constants
@@ -22758,7 +30800,7 @@ var MapLike = function () {
 exports.default = MapLike;
 module.exports = exports["default"];
 
-},{}],117:[function(require,module,exports){
+},{}],209:[function(require,module,exports){
 'use strict';
 
 /*
@@ -23044,7 +31086,7 @@ function markdownTable(table, options) {
 
 module.exports = markdownTable;
 
-},{}],118:[function(require,module,exports){
+},{}],210:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 // Replace key to value mapping
@@ -23073,7 +31115,7 @@ var exports = {
     'yaml': 'Yaml'
 };
 module.exports = exports;
-},{}],119:[function(require,module,exports){
+},{}],211:[function(require,module,exports){
 /*eslint-disable */
 // LICENSE : MIT
 
@@ -23130,7 +31172,7 @@ module.exports = {
     parse: parse,
     Syntax: require("./union-syntax")
 };
-},{"./mapping/markdown-syntax-map":118,"./union-syntax":120,"debug":33,"remark":185,"structured-source":205,"traverse":277}],120:[function(require,module,exports){
+},{"./mapping/markdown-syntax-map":210,"./union-syntax":212,"debug":105,"remark":290,"structured-source":311,"traverse":398}],212:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 // public key interface
@@ -23156,7 +31198,113 @@ var exports = {
     'Code': 'Code'
 };
 module.exports = exports;
-},{}],121:[function(require,module,exports){
+},{}],213:[function(require,module,exports){
+// LICENSE : MIT
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.matchCaptureGroupAll = matchCaptureGroupAll;
+exports.matchAll = matchAll;
+var flagsGetter = require("regexp.prototype.flags");
+var assert = require("assert");
+
+/**
+ * @typedef {Object} MatchCaptureGroup
+ * @property {string} text - text is matched texts
+ * @property {number} index - index is start of match
+ */
+/**
+ * @typedef {Object} MatchAllGroup
+ * @property {Array} all
+ * @property {string} input
+ * @property {number} index
+ * @property {MatchCaptureGroup[]} captureGroups
+ */
+
+/**
+ * @param {string} text
+ * @param {RegExp} regExp regExp should include capture
+ * @returns {MatchCaptureGroup[]} return array of MatchCaptureGroup
+ */
+function matchCaptureGroupAll(text, regExp) {
+    var source = regExp.source;
+    assert(source.indexOf("(") >= 0, "RegExp should contain capture group at least one");
+    var all = matchAll(text, regExp);
+    var captureGroups = [];
+    all.forEach(function (match) {
+        match.captureGroups.forEach(function (captureGroup) {
+            captureGroups.push(captureGroup);
+        });
+    });
+    return captureGroups;
+}
+/**
+ * matchAll function inspired String.prototype.matchAll
+ * @param {String} text
+ * @param {RegExp} regExp
+ * @returns {MatchAllGroup[]}
+ * @see reference https://github.com/tc39/String.prototype.matchAll
+ * http://stackoverflow.com/questions/15934353/get-index-of-each-capture-in-a-javascript-regex
+ */
+function matchAll(text, regExp) {
+    var matches = [];
+    var flags = regExp.flags || flagsGetter(regExp);
+    if (flags.indexOf('g') === -1) {
+        flags = 'g' + flags;
+    }
+    var rx = new RegExp(regExp.source, flags);
+    text.replace(rx, function () {
+        var matchAll = Array.prototype.slice.call(arguments, 0, -2);
+        var match = {};
+        match.all = matchAll;
+
+        match.input = arguments[arguments.length - 1];
+        match.index = arguments[arguments.length - 2];
+        var groups = matchAll.slice(1);
+
+        var captureGroups = [];
+        for (var cursor = match.index, l = groups.length, i = 0; i < l; i++) {
+            var index = cursor;
+
+            if (i + 1 !== l && groups[i] !== groups[i + 1]) {
+                var nextIndex = text.indexOf(groups[i + 1], cursor);
+                while (true) {
+                    var currentIndex = text.indexOf(groups[i], index);
+                    if (currentIndex !== -1 && currentIndex <= nextIndex) {
+                        index = currentIndex + 1;
+                    } else {
+                        break;
+                    }
+                }
+                index--;
+            } else {
+                index = text.indexOf(groups[i], cursor);
+            }
+            cursor = index + groups[i].length;
+            var captureGroup = {
+                text: groups[i],
+                index: index
+            };
+            captureGroups.push(captureGroup);
+        }
+        match.captureGroups = captureGroups;
+        matches.push(match);
+        /*
+            index,
+            input,
+            all,
+            captureGroups = [{
+                text,
+                index
+            }]
+         */
+    });
+    return matches;
+}
+
+},{"assert":11,"regexp.prototype.flags":278}],214:[function(require,module,exports){
 (function(){
   var crypt = require('crypt'),
       utf8 = require('charenc').utf8,
@@ -23318,7 +31466,53 @@ module.exports = exports;
 
 })();
 
-},{"charenc":26,"crypt":32,"is-buffer":70}],122:[function(require,module,exports){
+},{"charenc":30,"crypt":104,"is-buffer":158}],215:[function(require,module,exports){
+/**
+ * @author Titus Wormer
+ * @copyright 2015 Titus Wormer
+ * @license MIT
+ * @module mdast:util:to-string
+ * @fileoverview Utility to get the plain text content of a node.
+ */
+
+'use strict';
+
+/* eslint-env node */
+
+/**
+ * Get the value of `node`.  Checks, `value`,
+ * `alt`, and `title`, in that order.
+ *
+ * @param {Node} node - Node to get the internal value of.
+ * @return {string} - Textual representation.
+ */
+function valueOf(node) {
+    return node &&
+        (node.value ? node.value :
+        (node.alt ? node.alt : node.title)) || '';
+}
+
+/**
+ * Returns the text content of a node.  If the node itself
+ * does not expose plain-text fields, `toString` will
+ * recursivly try its children.
+ *
+ * @param {Node} node - Node to transform to a string.
+ * @return {string} - Textual representation.
+ */
+function toString(node) {
+    return valueOf(node) ||
+        (node.children && node.children.map(toString).join('')) ||
+        '';
+}
+
+/*
+ * Expose.
+ */
+
+module.exports = toString;
+
+},{}],216:[function(require,module,exports){
 module.exports = minimatch
 minimatch.Minimatch = Minimatch
 
@@ -24243,7 +32437,7 @@ function regExpEscape (s) {
   return s.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')
 }
 
-},{"brace-expansion":13,"path":144}],123:[function(require,module,exports){
+},{"brace-expansion":17,"path":244}],217:[function(require,module,exports){
 (function (process){
 var path = require('path');
 var fs = require('fs');
@@ -24345,7 +32539,4822 @@ mkdirP.sync = function sync (p, opts, made) {
 };
 
 }).call(this,require('_process'))
-},{"_process":159,"fs":15,"path":144}],124:[function(require,module,exports){
+},{"_process":259,"fs":19,"path":244}],218:[function(require,module,exports){
+'use strict';
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function ToObject(val) {
+	if (val == null) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function ownEnumerableKeys(obj) {
+	var keys = Object.getOwnPropertyNames(obj);
+
+	if (Object.getOwnPropertySymbols) {
+		keys = keys.concat(Object.getOwnPropertySymbols(obj));
+	}
+
+	return keys.filter(function (key) {
+		return propIsEnumerable.call(obj, key);
+	});
+}
+
+module.exports = Object.assign || function (target, source) {
+	var from;
+	var keys;
+	var to = ToObject(target);
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = arguments[s];
+		keys = ownEnumerableKeys(Object(from));
+
+		for (var i = 0; i < keys.length; i++) {
+			to[keys[i]] = from[keys[i]];
+		}
+	}
+
+	return to;
+};
+
+},{}],219:[function(require,module,exports){
+"use strict";
+module.exports = {
+    'ZE': {start:0xff01, end:0xff5e}, // 全角英数
+    'HE': {start:0x0021, end:0x007e}, // 半角英数
+    'HG': {start:0x3041, end:0x3096}, // ひらがな
+    'KK': {start:0x30a1, end:0x30f6}, // カタカナ
+
+    'HS': {regexp: /(\s|\u00A0)/g, list:['\u0020', '\u00A0']}, // 半角スペース
+    'ZS': {regexp: /(\u3000)/g, list:['　', '　']}, //全角スペース
+
+    'HK': {regexp: /([\uff66-\uff9c]\uff9e)|([\uff8a-\uff8e]\uff9f)|([\uff61-\uff9f])/g, // 半角カナ
+        list: ['｡', '｢', '｣', '､', '･', 'ｦ', 'ｧ', 'ｨ', 'ｩ', 'ｪ', 'ｫ', 'ｬ', 'ｭ', 'ｮ', 'ｯ', 'ｰ', 'ｱ', 'ｲ', 'ｳ', 'ｴ', 'ｵ', 'ｶ', 'ｷ', 'ｸ', 'ｹ', 'ｺ', 'ｻ', 'ｼ', 'ｽ', 'ｾ', 'ｿ', 'ﾀ', 'ﾁ', 'ﾂ', 'ﾃ', 'ﾄ', 'ﾅ', 'ﾆ', 'ﾇ', 'ﾈ', 'ﾉ', 'ﾊ', 'ﾋ', 'ﾌ', 'ﾍ', 'ﾎ', 'ﾏ', 'ﾐ', 'ﾑ', 'ﾒ', 'ﾓ', 'ﾔ', 'ﾕ', 'ﾖ', 'ﾗ', 'ﾘ', 'ﾙ', 'ﾚ', 'ﾛ', 'ﾜ', 'ﾝ', 'ﾞ', 'ﾟ', 'ｦﾞ', 'ｳﾞ', 'ｶﾞ', 'ｷﾞ', 'ｸﾞ', 'ｹﾞ', 'ｺﾞ', 'ｻﾞ', 'ｼﾞ', 'ｽﾞ', 'ｾﾞ', 'ｿﾞ', 'ﾀﾞ', 'ﾁﾞ', 'ﾂﾞ', 'ﾃﾞ', 'ﾄﾞ', 'ﾊﾞ', 'ﾊﾟ', 'ﾋﾞ', 'ﾋﾟ', 'ﾌﾞ', 'ﾌﾟ', 'ﾍﾞ', 'ﾍﾟ', 'ﾎﾞ', 'ﾎﾟ', 'ﾜﾞ']},
+    'ZK': {regexp: /([\u3001-\u30fc])/g,  //全角カナ (半角カナ変換用)
+        list: ['。', '「', '」', '、', '・', 'ヲ', 'ァ', 'ィ', 'ゥ', 'ェ', 'ォ', 'ャ', 'ュ', 'ョ', 'ッ', 'ー', 'ア', 'イ', 'ウ', 'エ', 'オ', 'カ', 'キ', 'ク', 'ケ', 'コ', 'サ', 'シ', 'ス', 'セ', 'ソ', 'タ', 'チ', 'ツ', 'テ', 'ト', 'ナ', 'ニ', 'ヌ', 'ネ', 'ノ', 'ハ', 'ヒ', 'フ', 'ヘ', 'ホ', 'マ', 'ミ', 'ム', 'メ', 'モ', 'ヤ', 'ユ', 'ヨ', 'ラ', 'リ', 'ル', 'レ', 'ロ', 'ワ', 'ン', '゛', '゜', 'ヺ', 'ヴ', 'ガ', 'ギ', 'グ', 'ゲ', 'ゴ', 'ザ', 'ジ', 'ズ', 'ゼ', 'ゾ', 'ダ', 'ヂ', 'ヅ', 'デ', 'ド', 'バ', 'パ', 'ビ', 'ピ', 'ブ', 'プ', 'ベ', 'ペ', 'ボ', 'ポ', 'ヷ']}
+};
+},{}],220:[function(require,module,exports){
+'use strict';
+
+
+/**
+ * @constructor
+ * @param {object} mojisyu
+ * @param {string} str
+ */
+function Moji(mojisyu, str) {
+    this.origin = str;
+    this._result = this.origin;
+    this._mojisyu = mojisyu;
+}
+
+Moji.prototype.toString = function () {
+    return this._result;
+};
+
+
+/**
+ * convert
+ * 変換の実行
+ *
+ * @param {string} from_syumei 変換前の文字種名
+ * @param {string} to_syumei 変化後の文字種名
+ * @returns {Moji}
+ */
+Moji.prototype.convert = function convert(from_syumei, to_syumei) {
+    var from_mojisyu_body = this._mojisyu[from_syumei];
+    var to_mojisyu_body = this._mojisyu[to_syumei];
+
+    if (this._mojisyuType(from_mojisyu_body) === 'range' && this._mojisyuType(to_mojisyu_body) === 'range') {
+        this._result = this._rangeConvert(from_mojisyu_body, to_mojisyu_body);
+        return this;
+    }
+
+    if (this._mojisyuType(from_mojisyu_body) === 'regexp' && this._mojisyuType(to_mojisyu_body) === 'regexp') {
+        this._result = this._regexpConvert(from_mojisyu_body, to_mojisyu_body);
+        return this;
+    }
+};
+
+/**
+ * _rangeConvert
+ * @param {object} from_syu
+ * @param {object} to_syu
+ * @return {string}
+ * @private
+ */
+Moji.prototype._rangeConvert = function _rangeConvert(from_syu, to_syu) {
+    var distance = to_syu.start - from_syu.start;
+    return this._rangeMap(from_syu, function (moji, is_match, code) {
+        if (is_match) {
+            return String.fromCharCode(code + distance);
+        }
+        return moji;
+    }).join('');
+};
+
+/**
+ * _regexpConvert
+ * @param from_syu
+ * @param to_syu
+ * @return {string}
+ * @private
+ */
+Moji.prototype._regexpConvert = function _regexpConvert(from_syu, to_syu) {
+    return this._regexpMap(from_syu, function (moji, is_match, index) {
+        if (!is_match) {
+            return moji;
+        }
+        return to_syu.list[index];
+    });
+};
+
+
+/**
+ *  filter
+ *  文字種のみに絞込
+ *  @param {string} mojisyu_name 絞り込まれる文字種
+ *  @returns {Moji}
+ */
+Moji.prototype.filter = function filter(mojisyu_name) {
+    var mojisyu_body = this._mojisyu[mojisyu_name];
+
+    if (this._mojisyuType(mojisyu_body) === 'range') {
+        this._result = this._rangeFilter(mojisyu_body);
+        return this;
+    }
+
+    if (this._mojisyuType(mojisyu_body) === 'regexp') {
+        this._result = this._regexpFilter(mojisyu_body);
+        return this;
+    }
+};
+
+/**
+ * _rangeFilter
+ * @param mojisyu
+ * @return {string}
+ * @private
+ */
+Moji.prototype._rangeFilter = function _rangeFilter(mojisyu) {
+    return this._rangeMap(mojisyu, function (moji, is_range) {
+        if (is_range) {
+            return moji;
+        }
+        return '';
+    }).join('');
+};
+
+/**
+ * _regexpFilter
+ * @param mojisyu
+ * @return {string}
+ * @private
+ */
+Moji.prototype._regexpFilter = function _regexpFilter(mojisyu) {
+    var match_mojis = [];
+    this._regexpMap(mojisyu, function (moji, is_match) {
+        if (is_match) {
+            match_mojis.push(moji);
+        }
+    });
+    return match_mojis.join('');
+};
+
+
+/**
+ * reject
+ * 文字種は排除
+ * @param {string} mojisyu_name 排除される文字種
+ * @returns {Moji}
+ */
+Moji.prototype.reject = function reject(mojisyu_name) {
+    var mojisyu_body = this._mojisyu[mojisyu_name];
+
+    if (this._mojisyuType(mojisyu_body) === 'range') {
+        this._result = this._rangeReject(mojisyu_body);
+        return this;
+    }
+
+    if (this._mojisyuType(mojisyu_body) === 'regexp') {
+        this._result = this._regexpReject(mojisyu_body);
+        return this;
+    }
+};
+
+/**
+ * _rangeReject
+ * @param mojisyu
+ * @return {string}
+ * @private
+ */
+Moji.prototype._rangeReject = function _rangeReject(mojisyu) {
+    return this._rangeMap(mojisyu, function (moji, is_range) {
+        if (!is_range) {
+            return moji;
+        }
+        return '';
+    }).join('');
+};
+
+/**
+ * _regexpReject
+ * @param mojisyu
+ * @return {string}
+ * @private
+ */
+Moji.prototype._regexpReject = function _regexpReject(mojisyu) {
+    var reject_moji = this._regexpFilter(mojisyu);
+    return this._result.replace(reject_moji, '');
+};
+
+
+/**
+ * _mojisyuType
+ * 文字種のタイプを判別
+ * range || regexp
+ * @param {mojisyu} mojisyu 文字種
+ * @return {string}
+ */
+Moji.prototype._mojisyuType = function _mojisyuType(mojisyu) {
+    if (mojisyu.start && mojisyu.end) {
+        return 'range';
+    }
+    if (mojisyu.regexp && mojisyu.list) {
+        return 'regexp';
+    }
+
+    return '';
+};
+
+/**
+ * _rangeMap
+ * @param {object} mojisyu - 文字種オブジェクト
+ * @param {function} callback
+ * @return {Array}
+ * @private
+ */
+Moji.prototype._rangeMap = function _rangeMap(mojisyu, callback) {
+    return this._result.split('').map(function (moji) {
+        var code = moji.charCodeAt(0);
+        var is_match = (code >= mojisyu.start && code <= mojisyu.end);
+        return callback.call(this, moji, is_match, code);
+    });
+};
+
+/**
+ * _regexpMap
+ * @param {object} mojisyu - 文字種オブジェクト
+ * @param callback
+ * @return {string}
+ * @private
+ */
+Moji.prototype._regexpMap = function _regexpMap(mojisyu, callback) {
+    return this._result.replace(mojisyu.regexp, function (moji) {
+        var index = mojisyu.list.indexOf(moji);
+        var is_match = index >= 0;
+        return callback.call(this, moji, is_match, index);
+    });
+};
+
+module.exports = Moji;
+},{}],221:[function(require,module,exports){
+"use strict";
+var Moji = require("./moji.core");
+var mojiStr = require("./moji.string");
+var _mojisyu = require("./default_mojisyu");
+var assign = require("object-assign");
+var mojisyu = assign({}, _mojisyu);
+
+mojiStr.call(Moji.prototype);
+
+var moji = function (str) {
+    return new Moji(mojisyu, str);
+};
+
+moji.addMojisyu = function (syu) {
+    mojisyu = assign(mojisyu, syu);
+};
+
+module.exports = moji;
+
+},{"./default_mojisyu":219,"./moji.core":220,"./moji.string":222,"object-assign":218}],222:[function(require,module,exports){
+function mojiStr() {
+    /**
+     * trim
+     * 行頭、行末の空白を削除
+     */
+    this.trim = function () {
+        this._result = this._result.trim();
+        return this;
+    };
+
+    /**
+     * match
+     * matchした文字列に変更
+     * matchしなければなにもしない
+     * @param {RegExp} regexp
+     */
+    this.match = function(regexp) {
+        var result = this._result.match(regexp);
+
+        if (!result || !regexp) return this;
+
+        this._result = result.toString();
+        return this;
+    };
+
+
+    this.replace = function(regexp, new_str) {
+        this._result = this._result.replace(regexp, new_str);
+        return this;
+    };
+
+    return this;
+}
+
+module.exports = mojiStr;
+
+// slice
+//substr
+//toLocaleLowerCase
+//toLocaleUpperCase
+//toLowerCase
+//toUpperCase
+//trim
+//trimLeft
+//trimRight
+//encodeURIComponent
+//decodeURIComponent
+},{}],223:[function(require,module,exports){
+//! moment.js
+//! version : 2.18.1
+//! authors : Tim Wood, Iskren Chernev, Moment.js contributors
+//! license : MIT
+//! momentjs.com
+
+;(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    global.moment = factory()
+}(this, (function () { 'use strict';
+
+var hookCallback;
+
+function hooks () {
+    return hookCallback.apply(null, arguments);
+}
+
+// This is done to register the method called with moment()
+// without creating circular dependencies.
+function setHookCallback (callback) {
+    hookCallback = callback;
+}
+
+function isArray(input) {
+    return input instanceof Array || Object.prototype.toString.call(input) === '[object Array]';
+}
+
+function isObject(input) {
+    // IE8 will treat undefined and null as object if it wasn't for
+    // input != null
+    return input != null && Object.prototype.toString.call(input) === '[object Object]';
+}
+
+function isObjectEmpty(obj) {
+    var k;
+    for (k in obj) {
+        // even if its not own property I'd still call it non-empty
+        return false;
+    }
+    return true;
+}
+
+function isUndefined(input) {
+    return input === void 0;
+}
+
+function isNumber(input) {
+    return typeof input === 'number' || Object.prototype.toString.call(input) === '[object Number]';
+}
+
+function isDate(input) {
+    return input instanceof Date || Object.prototype.toString.call(input) === '[object Date]';
+}
+
+function map(arr, fn) {
+    var res = [], i;
+    for (i = 0; i < arr.length; ++i) {
+        res.push(fn(arr[i], i));
+    }
+    return res;
+}
+
+function hasOwnProp(a, b) {
+    return Object.prototype.hasOwnProperty.call(a, b);
+}
+
+function extend(a, b) {
+    for (var i in b) {
+        if (hasOwnProp(b, i)) {
+            a[i] = b[i];
+        }
+    }
+
+    if (hasOwnProp(b, 'toString')) {
+        a.toString = b.toString;
+    }
+
+    if (hasOwnProp(b, 'valueOf')) {
+        a.valueOf = b.valueOf;
+    }
+
+    return a;
+}
+
+function createUTC (input, format, locale, strict) {
+    return createLocalOrUTC(input, format, locale, strict, true).utc();
+}
+
+function defaultParsingFlags() {
+    // We need to deep clone this object.
+    return {
+        empty           : false,
+        unusedTokens    : [],
+        unusedInput     : [],
+        overflow        : -2,
+        charsLeftOver   : 0,
+        nullInput       : false,
+        invalidMonth    : null,
+        invalidFormat   : false,
+        userInvalidated : false,
+        iso             : false,
+        parsedDateParts : [],
+        meridiem        : null,
+        rfc2822         : false,
+        weekdayMismatch : false
+    };
+}
+
+function getParsingFlags(m) {
+    if (m._pf == null) {
+        m._pf = defaultParsingFlags();
+    }
+    return m._pf;
+}
+
+var some;
+if (Array.prototype.some) {
+    some = Array.prototype.some;
+} else {
+    some = function (fun) {
+        var t = Object(this);
+        var len = t.length >>> 0;
+
+        for (var i = 0; i < len; i++) {
+            if (i in t && fun.call(this, t[i], i, t)) {
+                return true;
+            }
+        }
+
+        return false;
+    };
+}
+
+var some$1 = some;
+
+function isValid(m) {
+    if (m._isValid == null) {
+        var flags = getParsingFlags(m);
+        var parsedParts = some$1.call(flags.parsedDateParts, function (i) {
+            return i != null;
+        });
+        var isNowValid = !isNaN(m._d.getTime()) &&
+            flags.overflow < 0 &&
+            !flags.empty &&
+            !flags.invalidMonth &&
+            !flags.invalidWeekday &&
+            !flags.nullInput &&
+            !flags.invalidFormat &&
+            !flags.userInvalidated &&
+            (!flags.meridiem || (flags.meridiem && parsedParts));
+
+        if (m._strict) {
+            isNowValid = isNowValid &&
+                flags.charsLeftOver === 0 &&
+                flags.unusedTokens.length === 0 &&
+                flags.bigHour === undefined;
+        }
+
+        if (Object.isFrozen == null || !Object.isFrozen(m)) {
+            m._isValid = isNowValid;
+        }
+        else {
+            return isNowValid;
+        }
+    }
+    return m._isValid;
+}
+
+function createInvalid (flags) {
+    var m = createUTC(NaN);
+    if (flags != null) {
+        extend(getParsingFlags(m), flags);
+    }
+    else {
+        getParsingFlags(m).userInvalidated = true;
+    }
+
+    return m;
+}
+
+// Plugins that add properties should also add the key here (null value),
+// so we can properly clone ourselves.
+var momentProperties = hooks.momentProperties = [];
+
+function copyConfig(to, from) {
+    var i, prop, val;
+
+    if (!isUndefined(from._isAMomentObject)) {
+        to._isAMomentObject = from._isAMomentObject;
+    }
+    if (!isUndefined(from._i)) {
+        to._i = from._i;
+    }
+    if (!isUndefined(from._f)) {
+        to._f = from._f;
+    }
+    if (!isUndefined(from._l)) {
+        to._l = from._l;
+    }
+    if (!isUndefined(from._strict)) {
+        to._strict = from._strict;
+    }
+    if (!isUndefined(from._tzm)) {
+        to._tzm = from._tzm;
+    }
+    if (!isUndefined(from._isUTC)) {
+        to._isUTC = from._isUTC;
+    }
+    if (!isUndefined(from._offset)) {
+        to._offset = from._offset;
+    }
+    if (!isUndefined(from._pf)) {
+        to._pf = getParsingFlags(from);
+    }
+    if (!isUndefined(from._locale)) {
+        to._locale = from._locale;
+    }
+
+    if (momentProperties.length > 0) {
+        for (i = 0; i < momentProperties.length; i++) {
+            prop = momentProperties[i];
+            val = from[prop];
+            if (!isUndefined(val)) {
+                to[prop] = val;
+            }
+        }
+    }
+
+    return to;
+}
+
+var updateInProgress = false;
+
+// Moment prototype object
+function Moment(config) {
+    copyConfig(this, config);
+    this._d = new Date(config._d != null ? config._d.getTime() : NaN);
+    if (!this.isValid()) {
+        this._d = new Date(NaN);
+    }
+    // Prevent infinite loop in case updateOffset creates new moment
+    // objects.
+    if (updateInProgress === false) {
+        updateInProgress = true;
+        hooks.updateOffset(this);
+        updateInProgress = false;
+    }
+}
+
+function isMoment (obj) {
+    return obj instanceof Moment || (obj != null && obj._isAMomentObject != null);
+}
+
+function absFloor (number) {
+    if (number < 0) {
+        // -0 -> 0
+        return Math.ceil(number) || 0;
+    } else {
+        return Math.floor(number);
+    }
+}
+
+function toInt(argumentForCoercion) {
+    var coercedNumber = +argumentForCoercion,
+        value = 0;
+
+    if (coercedNumber !== 0 && isFinite(coercedNumber)) {
+        value = absFloor(coercedNumber);
+    }
+
+    return value;
+}
+
+// compare two arrays, return the number of differences
+function compareArrays(array1, array2, dontConvert) {
+    var len = Math.min(array1.length, array2.length),
+        lengthDiff = Math.abs(array1.length - array2.length),
+        diffs = 0,
+        i;
+    for (i = 0; i < len; i++) {
+        if ((dontConvert && array1[i] !== array2[i]) ||
+            (!dontConvert && toInt(array1[i]) !== toInt(array2[i]))) {
+            diffs++;
+        }
+    }
+    return diffs + lengthDiff;
+}
+
+function warn(msg) {
+    if (hooks.suppressDeprecationWarnings === false &&
+            (typeof console !==  'undefined') && console.warn) {
+        console.warn('Deprecation warning: ' + msg);
+    }
+}
+
+function deprecate(msg, fn) {
+    var firstTime = true;
+
+    return extend(function () {
+        if (hooks.deprecationHandler != null) {
+            hooks.deprecationHandler(null, msg);
+        }
+        if (firstTime) {
+            var args = [];
+            var arg;
+            for (var i = 0; i < arguments.length; i++) {
+                arg = '';
+                if (typeof arguments[i] === 'object') {
+                    arg += '\n[' + i + '] ';
+                    for (var key in arguments[0]) {
+                        arg += key + ': ' + arguments[0][key] + ', ';
+                    }
+                    arg = arg.slice(0, -2); // Remove trailing comma and space
+                } else {
+                    arg = arguments[i];
+                }
+                args.push(arg);
+            }
+            warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
+            firstTime = false;
+        }
+        return fn.apply(this, arguments);
+    }, fn);
+}
+
+var deprecations = {};
+
+function deprecateSimple(name, msg) {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(name, msg);
+    }
+    if (!deprecations[name]) {
+        warn(msg);
+        deprecations[name] = true;
+    }
+}
+
+hooks.suppressDeprecationWarnings = false;
+hooks.deprecationHandler = null;
+
+function isFunction(input) {
+    return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
+}
+
+function set (config) {
+    var prop, i;
+    for (i in config) {
+        prop = config[i];
+        if (isFunction(prop)) {
+            this[i] = prop;
+        } else {
+            this['_' + i] = prop;
+        }
+    }
+    this._config = config;
+    // Lenient ordinal parsing accepts just a number in addition to
+    // number + (possibly) stuff coming from _dayOfMonthOrdinalParse.
+    // TODO: Remove "ordinalParse" fallback in next major release.
+    this._dayOfMonthOrdinalParseLenient = new RegExp(
+        (this._dayOfMonthOrdinalParse.source || this._ordinalParse.source) +
+            '|' + (/\d{1,2}/).source);
+}
+
+function mergeConfigs(parentConfig, childConfig) {
+    var res = extend({}, parentConfig), prop;
+    for (prop in childConfig) {
+        if (hasOwnProp(childConfig, prop)) {
+            if (isObject(parentConfig[prop]) && isObject(childConfig[prop])) {
+                res[prop] = {};
+                extend(res[prop], parentConfig[prop]);
+                extend(res[prop], childConfig[prop]);
+            } else if (childConfig[prop] != null) {
+                res[prop] = childConfig[prop];
+            } else {
+                delete res[prop];
+            }
+        }
+    }
+    for (prop in parentConfig) {
+        if (hasOwnProp(parentConfig, prop) &&
+                !hasOwnProp(childConfig, prop) &&
+                isObject(parentConfig[prop])) {
+            // make sure changes to properties don't modify parent config
+            res[prop] = extend({}, res[prop]);
+        }
+    }
+    return res;
+}
+
+function Locale(config) {
+    if (config != null) {
+        this.set(config);
+    }
+}
+
+var keys;
+
+if (Object.keys) {
+    keys = Object.keys;
+} else {
+    keys = function (obj) {
+        var i, res = [];
+        for (i in obj) {
+            if (hasOwnProp(obj, i)) {
+                res.push(i);
+            }
+        }
+        return res;
+    };
+}
+
+var keys$1 = keys;
+
+var defaultCalendar = {
+    sameDay : '[Today at] LT',
+    nextDay : '[Tomorrow at] LT',
+    nextWeek : 'dddd [at] LT',
+    lastDay : '[Yesterday at] LT',
+    lastWeek : '[Last] dddd [at] LT',
+    sameElse : 'L'
+};
+
+function calendar (key, mom, now) {
+    var output = this._calendar[key] || this._calendar['sameElse'];
+    return isFunction(output) ? output.call(mom, now) : output;
+}
+
+var defaultLongDateFormat = {
+    LTS  : 'h:mm:ss A',
+    LT   : 'h:mm A',
+    L    : 'MM/DD/YYYY',
+    LL   : 'MMMM D, YYYY',
+    LLL  : 'MMMM D, YYYY h:mm A',
+    LLLL : 'dddd, MMMM D, YYYY h:mm A'
+};
+
+function longDateFormat (key) {
+    var format = this._longDateFormat[key],
+        formatUpper = this._longDateFormat[key.toUpperCase()];
+
+    if (format || !formatUpper) {
+        return format;
+    }
+
+    this._longDateFormat[key] = formatUpper.replace(/MMMM|MM|DD|dddd/g, function (val) {
+        return val.slice(1);
+    });
+
+    return this._longDateFormat[key];
+}
+
+var defaultInvalidDate = 'Invalid date';
+
+function invalidDate () {
+    return this._invalidDate;
+}
+
+var defaultOrdinal = '%d';
+var defaultDayOfMonthOrdinalParse = /\d{1,2}/;
+
+function ordinal (number) {
+    return this._ordinal.replace('%d', number);
+}
+
+var defaultRelativeTime = {
+    future : 'in %s',
+    past   : '%s ago',
+    s  : 'a few seconds',
+    ss : '%d seconds',
+    m  : 'a minute',
+    mm : '%d minutes',
+    h  : 'an hour',
+    hh : '%d hours',
+    d  : 'a day',
+    dd : '%d days',
+    M  : 'a month',
+    MM : '%d months',
+    y  : 'a year',
+    yy : '%d years'
+};
+
+function relativeTime (number, withoutSuffix, string, isFuture) {
+    var output = this._relativeTime[string];
+    return (isFunction(output)) ?
+        output(number, withoutSuffix, string, isFuture) :
+        output.replace(/%d/i, number);
+}
+
+function pastFuture (diff, output) {
+    var format = this._relativeTime[diff > 0 ? 'future' : 'past'];
+    return isFunction(format) ? format(output) : format.replace(/%s/i, output);
+}
+
+var aliases = {};
+
+function addUnitAlias (unit, shorthand) {
+    var lowerCase = unit.toLowerCase();
+    aliases[lowerCase] = aliases[lowerCase + 's'] = aliases[shorthand] = unit;
+}
+
+function normalizeUnits(units) {
+    return typeof units === 'string' ? aliases[units] || aliases[units.toLowerCase()] : undefined;
+}
+
+function normalizeObjectUnits(inputObject) {
+    var normalizedInput = {},
+        normalizedProp,
+        prop;
+
+    for (prop in inputObject) {
+        if (hasOwnProp(inputObject, prop)) {
+            normalizedProp = normalizeUnits(prop);
+            if (normalizedProp) {
+                normalizedInput[normalizedProp] = inputObject[prop];
+            }
+        }
+    }
+
+    return normalizedInput;
+}
+
+var priorities = {};
+
+function addUnitPriority(unit, priority) {
+    priorities[unit] = priority;
+}
+
+function getPrioritizedUnits(unitsObj) {
+    var units = [];
+    for (var u in unitsObj) {
+        units.push({unit: u, priority: priorities[u]});
+    }
+    units.sort(function (a, b) {
+        return a.priority - b.priority;
+    });
+    return units;
+}
+
+function makeGetSet (unit, keepTime) {
+    return function (value) {
+        if (value != null) {
+            set$1(this, unit, value);
+            hooks.updateOffset(this, keepTime);
+            return this;
+        } else {
+            return get(this, unit);
+        }
+    };
+}
+
+function get (mom, unit) {
+    return mom.isValid() ?
+        mom._d['get' + (mom._isUTC ? 'UTC' : '') + unit]() : NaN;
+}
+
+function set$1 (mom, unit, value) {
+    if (mom.isValid()) {
+        mom._d['set' + (mom._isUTC ? 'UTC' : '') + unit](value);
+    }
+}
+
+// MOMENTS
+
+function stringGet (units) {
+    units = normalizeUnits(units);
+    if (isFunction(this[units])) {
+        return this[units]();
+    }
+    return this;
+}
+
+
+function stringSet (units, value) {
+    if (typeof units === 'object') {
+        units = normalizeObjectUnits(units);
+        var prioritized = getPrioritizedUnits(units);
+        for (var i = 0; i < prioritized.length; i++) {
+            this[prioritized[i].unit](units[prioritized[i].unit]);
+        }
+    } else {
+        units = normalizeUnits(units);
+        if (isFunction(this[units])) {
+            return this[units](value);
+        }
+    }
+    return this;
+}
+
+function zeroFill(number, targetLength, forceSign) {
+    var absNumber = '' + Math.abs(number),
+        zerosToFill = targetLength - absNumber.length,
+        sign = number >= 0;
+    return (sign ? (forceSign ? '+' : '') : '-') +
+        Math.pow(10, Math.max(0, zerosToFill)).toString().substr(1) + absNumber;
+}
+
+var formattingTokens = /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|YYYYYY|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g;
+
+var localFormattingTokens = /(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g;
+
+var formatFunctions = {};
+
+var formatTokenFunctions = {};
+
+// token:    'M'
+// padded:   ['MM', 2]
+// ordinal:  'Mo'
+// callback: function () { this.month() + 1 }
+function addFormatToken (token, padded, ordinal, callback) {
+    var func = callback;
+    if (typeof callback === 'string') {
+        func = function () {
+            return this[callback]();
+        };
+    }
+    if (token) {
+        formatTokenFunctions[token] = func;
+    }
+    if (padded) {
+        formatTokenFunctions[padded[0]] = function () {
+            return zeroFill(func.apply(this, arguments), padded[1], padded[2]);
+        };
+    }
+    if (ordinal) {
+        formatTokenFunctions[ordinal] = function () {
+            return this.localeData().ordinal(func.apply(this, arguments), token);
+        };
+    }
+}
+
+function removeFormattingTokens(input) {
+    if (input.match(/\[[\s\S]/)) {
+        return input.replace(/^\[|\]$/g, '');
+    }
+    return input.replace(/\\/g, '');
+}
+
+function makeFormatFunction(format) {
+    var array = format.match(formattingTokens), i, length;
+
+    for (i = 0, length = array.length; i < length; i++) {
+        if (formatTokenFunctions[array[i]]) {
+            array[i] = formatTokenFunctions[array[i]];
+        } else {
+            array[i] = removeFormattingTokens(array[i]);
+        }
+    }
+
+    return function (mom) {
+        var output = '', i;
+        for (i = 0; i < length; i++) {
+            output += isFunction(array[i]) ? array[i].call(mom, format) : array[i];
+        }
+        return output;
+    };
+}
+
+// format date using native date object
+function formatMoment(m, format) {
+    if (!m.isValid()) {
+        return m.localeData().invalidDate();
+    }
+
+    format = expandFormat(format, m.localeData());
+    formatFunctions[format] = formatFunctions[format] || makeFormatFunction(format);
+
+    return formatFunctions[format](m);
+}
+
+function expandFormat(format, locale) {
+    var i = 5;
+
+    function replaceLongDateFormatTokens(input) {
+        return locale.longDateFormat(input) || input;
+    }
+
+    localFormattingTokens.lastIndex = 0;
+    while (i >= 0 && localFormattingTokens.test(format)) {
+        format = format.replace(localFormattingTokens, replaceLongDateFormatTokens);
+        localFormattingTokens.lastIndex = 0;
+        i -= 1;
+    }
+
+    return format;
+}
+
+var match1         = /\d/;            //       0 - 9
+var match2         = /\d\d/;          //      00 - 99
+var match3         = /\d{3}/;         //     000 - 999
+var match4         = /\d{4}/;         //    0000 - 9999
+var match6         = /[+-]?\d{6}/;    // -999999 - 999999
+var match1to2      = /\d\d?/;         //       0 - 99
+var match3to4      = /\d\d\d\d?/;     //     999 - 9999
+var match5to6      = /\d\d\d\d\d\d?/; //   99999 - 999999
+var match1to3      = /\d{1,3}/;       //       0 - 999
+var match1to4      = /\d{1,4}/;       //       0 - 9999
+var match1to6      = /[+-]?\d{1,6}/;  // -999999 - 999999
+
+var matchUnsigned  = /\d+/;           //       0 - inf
+var matchSigned    = /[+-]?\d+/;      //    -inf - inf
+
+var matchOffset    = /Z|[+-]\d\d:?\d\d/gi; // +00:00 -00:00 +0000 -0000 or Z
+var matchShortOffset = /Z|[+-]\d\d(?::?\d\d)?/gi; // +00 -00 +00:00 -00:00 +0000 -0000 or Z
+
+var matchTimestamp = /[+-]?\d+(\.\d{1,3})?/; // 123456789 123456789.123
+
+// any word (or two) characters or numbers including two/three word month in arabic.
+// includes scottish gaelic two word and hyphenated months
+var matchWord = /[0-9]*['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+|[\u0600-\u06FF\/]+(\s*?[\u0600-\u06FF]+){1,2}/i;
+
+
+var regexes = {};
+
+function addRegexToken (token, regex, strictRegex) {
+    regexes[token] = isFunction(regex) ? regex : function (isStrict, localeData) {
+        return (isStrict && strictRegex) ? strictRegex : regex;
+    };
+}
+
+function getParseRegexForToken (token, config) {
+    if (!hasOwnProp(regexes, token)) {
+        return new RegExp(unescapeFormat(token));
+    }
+
+    return regexes[token](config._strict, config._locale);
+}
+
+// Code from http://stackoverflow.com/questions/3561493/is-there-a-regexp-escape-function-in-javascript
+function unescapeFormat(s) {
+    return regexEscape(s.replace('\\', '').replace(/\\(\[)|\\(\])|\[([^\]\[]*)\]|\\(.)/g, function (matched, p1, p2, p3, p4) {
+        return p1 || p2 || p3 || p4;
+    }));
+}
+
+function regexEscape(s) {
+    return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+}
+
+var tokens = {};
+
+function addParseToken (token, callback) {
+    var i, func = callback;
+    if (typeof token === 'string') {
+        token = [token];
+    }
+    if (isNumber(callback)) {
+        func = function (input, array) {
+            array[callback] = toInt(input);
+        };
+    }
+    for (i = 0; i < token.length; i++) {
+        tokens[token[i]] = func;
+    }
+}
+
+function addWeekParseToken (token, callback) {
+    addParseToken(token, function (input, array, config, token) {
+        config._w = config._w || {};
+        callback(input, config._w, config, token);
+    });
+}
+
+function addTimeToArrayFromToken(token, input, config) {
+    if (input != null && hasOwnProp(tokens, token)) {
+        tokens[token](input, config._a, config, token);
+    }
+}
+
+var YEAR = 0;
+var MONTH = 1;
+var DATE = 2;
+var HOUR = 3;
+var MINUTE = 4;
+var SECOND = 5;
+var MILLISECOND = 6;
+var WEEK = 7;
+var WEEKDAY = 8;
+
+var indexOf;
+
+if (Array.prototype.indexOf) {
+    indexOf = Array.prototype.indexOf;
+} else {
+    indexOf = function (o) {
+        // I know
+        var i;
+        for (i = 0; i < this.length; ++i) {
+            if (this[i] === o) {
+                return i;
+            }
+        }
+        return -1;
+    };
+}
+
+var indexOf$1 = indexOf;
+
+function daysInMonth(year, month) {
+    return new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+}
+
+// FORMATTING
+
+addFormatToken('M', ['MM', 2], 'Mo', function () {
+    return this.month() + 1;
+});
+
+addFormatToken('MMM', 0, 0, function (format) {
+    return this.localeData().monthsShort(this, format);
+});
+
+addFormatToken('MMMM', 0, 0, function (format) {
+    return this.localeData().months(this, format);
+});
+
+// ALIASES
+
+addUnitAlias('month', 'M');
+
+// PRIORITY
+
+addUnitPriority('month', 8);
+
+// PARSING
+
+addRegexToken('M',    match1to2);
+addRegexToken('MM',   match1to2, match2);
+addRegexToken('MMM',  function (isStrict, locale) {
+    return locale.monthsShortRegex(isStrict);
+});
+addRegexToken('MMMM', function (isStrict, locale) {
+    return locale.monthsRegex(isStrict);
+});
+
+addParseToken(['M', 'MM'], function (input, array) {
+    array[MONTH] = toInt(input) - 1;
+});
+
+addParseToken(['MMM', 'MMMM'], function (input, array, config, token) {
+    var month = config._locale.monthsParse(input, token, config._strict);
+    // if we didn't find a month name, mark the date as invalid.
+    if (month != null) {
+        array[MONTH] = month;
+    } else {
+        getParsingFlags(config).invalidMonth = input;
+    }
+});
+
+// LOCALES
+
+var MONTHS_IN_FORMAT = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/;
+var defaultLocaleMonths = 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_');
+function localeMonths (m, format) {
+    if (!m) {
+        return isArray(this._months) ? this._months :
+            this._months['standalone'];
+    }
+    return isArray(this._months) ? this._months[m.month()] :
+        this._months[(this._months.isFormat || MONTHS_IN_FORMAT).test(format) ? 'format' : 'standalone'][m.month()];
+}
+
+var defaultLocaleMonthsShort = 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_');
+function localeMonthsShort (m, format) {
+    if (!m) {
+        return isArray(this._monthsShort) ? this._monthsShort :
+            this._monthsShort['standalone'];
+    }
+    return isArray(this._monthsShort) ? this._monthsShort[m.month()] :
+        this._monthsShort[MONTHS_IN_FORMAT.test(format) ? 'format' : 'standalone'][m.month()];
+}
+
+function handleStrictParse(monthName, format, strict) {
+    var i, ii, mom, llc = monthName.toLocaleLowerCase();
+    if (!this._monthsParse) {
+        // this is not used
+        this._monthsParse = [];
+        this._longMonthsParse = [];
+        this._shortMonthsParse = [];
+        for (i = 0; i < 12; ++i) {
+            mom = createUTC([2000, i]);
+            this._shortMonthsParse[i] = this.monthsShort(mom, '').toLocaleLowerCase();
+            this._longMonthsParse[i] = this.months(mom, '').toLocaleLowerCase();
+        }
+    }
+
+    if (strict) {
+        if (format === 'MMM') {
+            ii = indexOf$1.call(this._shortMonthsParse, llc);
+            return ii !== -1 ? ii : null;
+        } else {
+            ii = indexOf$1.call(this._longMonthsParse, llc);
+            return ii !== -1 ? ii : null;
+        }
+    } else {
+        if (format === 'MMM') {
+            ii = indexOf$1.call(this._shortMonthsParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf$1.call(this._longMonthsParse, llc);
+            return ii !== -1 ? ii : null;
+        } else {
+            ii = indexOf$1.call(this._longMonthsParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf$1.call(this._shortMonthsParse, llc);
+            return ii !== -1 ? ii : null;
+        }
+    }
+}
+
+function localeMonthsParse (monthName, format, strict) {
+    var i, mom, regex;
+
+    if (this._monthsParseExact) {
+        return handleStrictParse.call(this, monthName, format, strict);
+    }
+
+    if (!this._monthsParse) {
+        this._monthsParse = [];
+        this._longMonthsParse = [];
+        this._shortMonthsParse = [];
+    }
+
+    // TODO: add sorting
+    // Sorting makes sure if one month (or abbr) is a prefix of another
+    // see sorting in computeMonthsParse
+    for (i = 0; i < 12; i++) {
+        // make the regex if we don't have it already
+        mom = createUTC([2000, i]);
+        if (strict && !this._longMonthsParse[i]) {
+            this._longMonthsParse[i] = new RegExp('^' + this.months(mom, '').replace('.', '') + '$', 'i');
+            this._shortMonthsParse[i] = new RegExp('^' + this.monthsShort(mom, '').replace('.', '') + '$', 'i');
+        }
+        if (!strict && !this._monthsParse[i]) {
+            regex = '^' + this.months(mom, '') + '|^' + this.monthsShort(mom, '');
+            this._monthsParse[i] = new RegExp(regex.replace('.', ''), 'i');
+        }
+        // test the regex
+        if (strict && format === 'MMMM' && this._longMonthsParse[i].test(monthName)) {
+            return i;
+        } else if (strict && format === 'MMM' && this._shortMonthsParse[i].test(monthName)) {
+            return i;
+        } else if (!strict && this._monthsParse[i].test(monthName)) {
+            return i;
+        }
+    }
+}
+
+// MOMENTS
+
+function setMonth (mom, value) {
+    var dayOfMonth;
+
+    if (!mom.isValid()) {
+        // No op
+        return mom;
+    }
+
+    if (typeof value === 'string') {
+        if (/^\d+$/.test(value)) {
+            value = toInt(value);
+        } else {
+            value = mom.localeData().monthsParse(value);
+            // TODO: Another silent failure?
+            if (!isNumber(value)) {
+                return mom;
+            }
+        }
+    }
+
+    dayOfMonth = Math.min(mom.date(), daysInMonth(mom.year(), value));
+    mom._d['set' + (mom._isUTC ? 'UTC' : '') + 'Month'](value, dayOfMonth);
+    return mom;
+}
+
+function getSetMonth (value) {
+    if (value != null) {
+        setMonth(this, value);
+        hooks.updateOffset(this, true);
+        return this;
+    } else {
+        return get(this, 'Month');
+    }
+}
+
+function getDaysInMonth () {
+    return daysInMonth(this.year(), this.month());
+}
+
+var defaultMonthsShortRegex = matchWord;
+function monthsShortRegex (isStrict) {
+    if (this._monthsParseExact) {
+        if (!hasOwnProp(this, '_monthsRegex')) {
+            computeMonthsParse.call(this);
+        }
+        if (isStrict) {
+            return this._monthsShortStrictRegex;
+        } else {
+            return this._monthsShortRegex;
+        }
+    } else {
+        if (!hasOwnProp(this, '_monthsShortRegex')) {
+            this._monthsShortRegex = defaultMonthsShortRegex;
+        }
+        return this._monthsShortStrictRegex && isStrict ?
+            this._monthsShortStrictRegex : this._monthsShortRegex;
+    }
+}
+
+var defaultMonthsRegex = matchWord;
+function monthsRegex (isStrict) {
+    if (this._monthsParseExact) {
+        if (!hasOwnProp(this, '_monthsRegex')) {
+            computeMonthsParse.call(this);
+        }
+        if (isStrict) {
+            return this._monthsStrictRegex;
+        } else {
+            return this._monthsRegex;
+        }
+    } else {
+        if (!hasOwnProp(this, '_monthsRegex')) {
+            this._monthsRegex = defaultMonthsRegex;
+        }
+        return this._monthsStrictRegex && isStrict ?
+            this._monthsStrictRegex : this._monthsRegex;
+    }
+}
+
+function computeMonthsParse () {
+    function cmpLenRev(a, b) {
+        return b.length - a.length;
+    }
+
+    var shortPieces = [], longPieces = [], mixedPieces = [],
+        i, mom;
+    for (i = 0; i < 12; i++) {
+        // make the regex if we don't have it already
+        mom = createUTC([2000, i]);
+        shortPieces.push(this.monthsShort(mom, ''));
+        longPieces.push(this.months(mom, ''));
+        mixedPieces.push(this.months(mom, ''));
+        mixedPieces.push(this.monthsShort(mom, ''));
+    }
+    // Sorting makes sure if one month (or abbr) is a prefix of another it
+    // will match the longer piece.
+    shortPieces.sort(cmpLenRev);
+    longPieces.sort(cmpLenRev);
+    mixedPieces.sort(cmpLenRev);
+    for (i = 0; i < 12; i++) {
+        shortPieces[i] = regexEscape(shortPieces[i]);
+        longPieces[i] = regexEscape(longPieces[i]);
+    }
+    for (i = 0; i < 24; i++) {
+        mixedPieces[i] = regexEscape(mixedPieces[i]);
+    }
+
+    this._monthsRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
+    this._monthsShortRegex = this._monthsRegex;
+    this._monthsStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
+    this._monthsShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
+}
+
+// FORMATTING
+
+addFormatToken('Y', 0, 0, function () {
+    var y = this.year();
+    return y <= 9999 ? '' + y : '+' + y;
+});
+
+addFormatToken(0, ['YY', 2], 0, function () {
+    return this.year() % 100;
+});
+
+addFormatToken(0, ['YYYY',   4],       0, 'year');
+addFormatToken(0, ['YYYYY',  5],       0, 'year');
+addFormatToken(0, ['YYYYYY', 6, true], 0, 'year');
+
+// ALIASES
+
+addUnitAlias('year', 'y');
+
+// PRIORITIES
+
+addUnitPriority('year', 1);
+
+// PARSING
+
+addRegexToken('Y',      matchSigned);
+addRegexToken('YY',     match1to2, match2);
+addRegexToken('YYYY',   match1to4, match4);
+addRegexToken('YYYYY',  match1to6, match6);
+addRegexToken('YYYYYY', match1to6, match6);
+
+addParseToken(['YYYYY', 'YYYYYY'], YEAR);
+addParseToken('YYYY', function (input, array) {
+    array[YEAR] = input.length === 2 ? hooks.parseTwoDigitYear(input) : toInt(input);
+});
+addParseToken('YY', function (input, array) {
+    array[YEAR] = hooks.parseTwoDigitYear(input);
+});
+addParseToken('Y', function (input, array) {
+    array[YEAR] = parseInt(input, 10);
+});
+
+// HELPERS
+
+function daysInYear(year) {
+    return isLeapYear(year) ? 366 : 365;
+}
+
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+
+// HOOKS
+
+hooks.parseTwoDigitYear = function (input) {
+    return toInt(input) + (toInt(input) > 68 ? 1900 : 2000);
+};
+
+// MOMENTS
+
+var getSetYear = makeGetSet('FullYear', true);
+
+function getIsLeapYear () {
+    return isLeapYear(this.year());
+}
+
+function createDate (y, m, d, h, M, s, ms) {
+    // can't just apply() to create a date:
+    // https://stackoverflow.com/q/181348
+    var date = new Date(y, m, d, h, M, s, ms);
+
+    // the date constructor remaps years 0-99 to 1900-1999
+    if (y < 100 && y >= 0 && isFinite(date.getFullYear())) {
+        date.setFullYear(y);
+    }
+    return date;
+}
+
+function createUTCDate (y) {
+    var date = new Date(Date.UTC.apply(null, arguments));
+
+    // the Date.UTC function remaps years 0-99 to 1900-1999
+    if (y < 100 && y >= 0 && isFinite(date.getUTCFullYear())) {
+        date.setUTCFullYear(y);
+    }
+    return date;
+}
+
+// start-of-first-week - start-of-year
+function firstWeekOffset(year, dow, doy) {
+    var // first-week day -- which january is always in the first week (4 for iso, 1 for other)
+        fwd = 7 + dow - doy,
+        // first-week day local weekday -- which local weekday is fwd
+        fwdlw = (7 + createUTCDate(year, 0, fwd).getUTCDay() - dow) % 7;
+
+    return -fwdlw + fwd - 1;
+}
+
+// https://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
+function dayOfYearFromWeeks(year, week, weekday, dow, doy) {
+    var localWeekday = (7 + weekday - dow) % 7,
+        weekOffset = firstWeekOffset(year, dow, doy),
+        dayOfYear = 1 + 7 * (week - 1) + localWeekday + weekOffset,
+        resYear, resDayOfYear;
+
+    if (dayOfYear <= 0) {
+        resYear = year - 1;
+        resDayOfYear = daysInYear(resYear) + dayOfYear;
+    } else if (dayOfYear > daysInYear(year)) {
+        resYear = year + 1;
+        resDayOfYear = dayOfYear - daysInYear(year);
+    } else {
+        resYear = year;
+        resDayOfYear = dayOfYear;
+    }
+
+    return {
+        year: resYear,
+        dayOfYear: resDayOfYear
+    };
+}
+
+function weekOfYear(mom, dow, doy) {
+    var weekOffset = firstWeekOffset(mom.year(), dow, doy),
+        week = Math.floor((mom.dayOfYear() - weekOffset - 1) / 7) + 1,
+        resWeek, resYear;
+
+    if (week < 1) {
+        resYear = mom.year() - 1;
+        resWeek = week + weeksInYear(resYear, dow, doy);
+    } else if (week > weeksInYear(mom.year(), dow, doy)) {
+        resWeek = week - weeksInYear(mom.year(), dow, doy);
+        resYear = mom.year() + 1;
+    } else {
+        resYear = mom.year();
+        resWeek = week;
+    }
+
+    return {
+        week: resWeek,
+        year: resYear
+    };
+}
+
+function weeksInYear(year, dow, doy) {
+    var weekOffset = firstWeekOffset(year, dow, doy),
+        weekOffsetNext = firstWeekOffset(year + 1, dow, doy);
+    return (daysInYear(year) - weekOffset + weekOffsetNext) / 7;
+}
+
+// FORMATTING
+
+addFormatToken('w', ['ww', 2], 'wo', 'week');
+addFormatToken('W', ['WW', 2], 'Wo', 'isoWeek');
+
+// ALIASES
+
+addUnitAlias('week', 'w');
+addUnitAlias('isoWeek', 'W');
+
+// PRIORITIES
+
+addUnitPriority('week', 5);
+addUnitPriority('isoWeek', 5);
+
+// PARSING
+
+addRegexToken('w',  match1to2);
+addRegexToken('ww', match1to2, match2);
+addRegexToken('W',  match1to2);
+addRegexToken('WW', match1to2, match2);
+
+addWeekParseToken(['w', 'ww', 'W', 'WW'], function (input, week, config, token) {
+    week[token.substr(0, 1)] = toInt(input);
+});
+
+// HELPERS
+
+// LOCALES
+
+function localeWeek (mom) {
+    return weekOfYear(mom, this._week.dow, this._week.doy).week;
+}
+
+var defaultLocaleWeek = {
+    dow : 0, // Sunday is the first day of the week.
+    doy : 6  // The week that contains Jan 1st is the first week of the year.
+};
+
+function localeFirstDayOfWeek () {
+    return this._week.dow;
+}
+
+function localeFirstDayOfYear () {
+    return this._week.doy;
+}
+
+// MOMENTS
+
+function getSetWeek (input) {
+    var week = this.localeData().week(this);
+    return input == null ? week : this.add((input - week) * 7, 'd');
+}
+
+function getSetISOWeek (input) {
+    var week = weekOfYear(this, 1, 4).week;
+    return input == null ? week : this.add((input - week) * 7, 'd');
+}
+
+// FORMATTING
+
+addFormatToken('d', 0, 'do', 'day');
+
+addFormatToken('dd', 0, 0, function (format) {
+    return this.localeData().weekdaysMin(this, format);
+});
+
+addFormatToken('ddd', 0, 0, function (format) {
+    return this.localeData().weekdaysShort(this, format);
+});
+
+addFormatToken('dddd', 0, 0, function (format) {
+    return this.localeData().weekdays(this, format);
+});
+
+addFormatToken('e', 0, 0, 'weekday');
+addFormatToken('E', 0, 0, 'isoWeekday');
+
+// ALIASES
+
+addUnitAlias('day', 'd');
+addUnitAlias('weekday', 'e');
+addUnitAlias('isoWeekday', 'E');
+
+// PRIORITY
+addUnitPriority('day', 11);
+addUnitPriority('weekday', 11);
+addUnitPriority('isoWeekday', 11);
+
+// PARSING
+
+addRegexToken('d',    match1to2);
+addRegexToken('e',    match1to2);
+addRegexToken('E',    match1to2);
+addRegexToken('dd',   function (isStrict, locale) {
+    return locale.weekdaysMinRegex(isStrict);
+});
+addRegexToken('ddd',   function (isStrict, locale) {
+    return locale.weekdaysShortRegex(isStrict);
+});
+addRegexToken('dddd',   function (isStrict, locale) {
+    return locale.weekdaysRegex(isStrict);
+});
+
+addWeekParseToken(['dd', 'ddd', 'dddd'], function (input, week, config, token) {
+    var weekday = config._locale.weekdaysParse(input, token, config._strict);
+    // if we didn't get a weekday name, mark the date as invalid
+    if (weekday != null) {
+        week.d = weekday;
+    } else {
+        getParsingFlags(config).invalidWeekday = input;
+    }
+});
+
+addWeekParseToken(['d', 'e', 'E'], function (input, week, config, token) {
+    week[token] = toInt(input);
+});
+
+// HELPERS
+
+function parseWeekday(input, locale) {
+    if (typeof input !== 'string') {
+        return input;
+    }
+
+    if (!isNaN(input)) {
+        return parseInt(input, 10);
+    }
+
+    input = locale.weekdaysParse(input);
+    if (typeof input === 'number') {
+        return input;
+    }
+
+    return null;
+}
+
+function parseIsoWeekday(input, locale) {
+    if (typeof input === 'string') {
+        return locale.weekdaysParse(input) % 7 || 7;
+    }
+    return isNaN(input) ? null : input;
+}
+
+// LOCALES
+
+var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
+function localeWeekdays (m, format) {
+    if (!m) {
+        return isArray(this._weekdays) ? this._weekdays :
+            this._weekdays['standalone'];
+    }
+    return isArray(this._weekdays) ? this._weekdays[m.day()] :
+        this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
+}
+
+var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
+function localeWeekdaysShort (m) {
+    return (m) ? this._weekdaysShort[m.day()] : this._weekdaysShort;
+}
+
+var defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_');
+function localeWeekdaysMin (m) {
+    return (m) ? this._weekdaysMin[m.day()] : this._weekdaysMin;
+}
+
+function handleStrictParse$1(weekdayName, format, strict) {
+    var i, ii, mom, llc = weekdayName.toLocaleLowerCase();
+    if (!this._weekdaysParse) {
+        this._weekdaysParse = [];
+        this._shortWeekdaysParse = [];
+        this._minWeekdaysParse = [];
+
+        for (i = 0; i < 7; ++i) {
+            mom = createUTC([2000, 1]).day(i);
+            this._minWeekdaysParse[i] = this.weekdaysMin(mom, '').toLocaleLowerCase();
+            this._shortWeekdaysParse[i] = this.weekdaysShort(mom, '').toLocaleLowerCase();
+            this._weekdaysParse[i] = this.weekdays(mom, '').toLocaleLowerCase();
+        }
+    }
+
+    if (strict) {
+        if (format === 'dddd') {
+            ii = indexOf$1.call(this._weekdaysParse, llc);
+            return ii !== -1 ? ii : null;
+        } else if (format === 'ddd') {
+            ii = indexOf$1.call(this._shortWeekdaysParse, llc);
+            return ii !== -1 ? ii : null;
+        } else {
+            ii = indexOf$1.call(this._minWeekdaysParse, llc);
+            return ii !== -1 ? ii : null;
+        }
+    } else {
+        if (format === 'dddd') {
+            ii = indexOf$1.call(this._weekdaysParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf$1.call(this._shortWeekdaysParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf$1.call(this._minWeekdaysParse, llc);
+            return ii !== -1 ? ii : null;
+        } else if (format === 'ddd') {
+            ii = indexOf$1.call(this._shortWeekdaysParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf$1.call(this._weekdaysParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf$1.call(this._minWeekdaysParse, llc);
+            return ii !== -1 ? ii : null;
+        } else {
+            ii = indexOf$1.call(this._minWeekdaysParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf$1.call(this._weekdaysParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf$1.call(this._shortWeekdaysParse, llc);
+            return ii !== -1 ? ii : null;
+        }
+    }
+}
+
+function localeWeekdaysParse (weekdayName, format, strict) {
+    var i, mom, regex;
+
+    if (this._weekdaysParseExact) {
+        return handleStrictParse$1.call(this, weekdayName, format, strict);
+    }
+
+    if (!this._weekdaysParse) {
+        this._weekdaysParse = [];
+        this._minWeekdaysParse = [];
+        this._shortWeekdaysParse = [];
+        this._fullWeekdaysParse = [];
+    }
+
+    for (i = 0; i < 7; i++) {
+        // make the regex if we don't have it already
+
+        mom = createUTC([2000, 1]).day(i);
+        if (strict && !this._fullWeekdaysParse[i]) {
+            this._fullWeekdaysParse[i] = new RegExp('^' + this.weekdays(mom, '').replace('.', '\.?') + '$', 'i');
+            this._shortWeekdaysParse[i] = new RegExp('^' + this.weekdaysShort(mom, '').replace('.', '\.?') + '$', 'i');
+            this._minWeekdaysParse[i] = new RegExp('^' + this.weekdaysMin(mom, '').replace('.', '\.?') + '$', 'i');
+        }
+        if (!this._weekdaysParse[i]) {
+            regex = '^' + this.weekdays(mom, '') + '|^' + this.weekdaysShort(mom, '') + '|^' + this.weekdaysMin(mom, '');
+            this._weekdaysParse[i] = new RegExp(regex.replace('.', ''), 'i');
+        }
+        // test the regex
+        if (strict && format === 'dddd' && this._fullWeekdaysParse[i].test(weekdayName)) {
+            return i;
+        } else if (strict && format === 'ddd' && this._shortWeekdaysParse[i].test(weekdayName)) {
+            return i;
+        } else if (strict && format === 'dd' && this._minWeekdaysParse[i].test(weekdayName)) {
+            return i;
+        } else if (!strict && this._weekdaysParse[i].test(weekdayName)) {
+            return i;
+        }
+    }
+}
+
+// MOMENTS
+
+function getSetDayOfWeek (input) {
+    if (!this.isValid()) {
+        return input != null ? this : NaN;
+    }
+    var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
+    if (input != null) {
+        input = parseWeekday(input, this.localeData());
+        return this.add(input - day, 'd');
+    } else {
+        return day;
+    }
+}
+
+function getSetLocaleDayOfWeek (input) {
+    if (!this.isValid()) {
+        return input != null ? this : NaN;
+    }
+    var weekday = (this.day() + 7 - this.localeData()._week.dow) % 7;
+    return input == null ? weekday : this.add(input - weekday, 'd');
+}
+
+function getSetISODayOfWeek (input) {
+    if (!this.isValid()) {
+        return input != null ? this : NaN;
+    }
+
+    // behaves the same as moment#day except
+    // as a getter, returns 7 instead of 0 (1-7 range instead of 0-6)
+    // as a setter, sunday should belong to the previous week.
+
+    if (input != null) {
+        var weekday = parseIsoWeekday(input, this.localeData());
+        return this.day(this.day() % 7 ? weekday : weekday - 7);
+    } else {
+        return this.day() || 7;
+    }
+}
+
+var defaultWeekdaysRegex = matchWord;
+function weekdaysRegex (isStrict) {
+    if (this._weekdaysParseExact) {
+        if (!hasOwnProp(this, '_weekdaysRegex')) {
+            computeWeekdaysParse.call(this);
+        }
+        if (isStrict) {
+            return this._weekdaysStrictRegex;
+        } else {
+            return this._weekdaysRegex;
+        }
+    } else {
+        if (!hasOwnProp(this, '_weekdaysRegex')) {
+            this._weekdaysRegex = defaultWeekdaysRegex;
+        }
+        return this._weekdaysStrictRegex && isStrict ?
+            this._weekdaysStrictRegex : this._weekdaysRegex;
+    }
+}
+
+var defaultWeekdaysShortRegex = matchWord;
+function weekdaysShortRegex (isStrict) {
+    if (this._weekdaysParseExact) {
+        if (!hasOwnProp(this, '_weekdaysRegex')) {
+            computeWeekdaysParse.call(this);
+        }
+        if (isStrict) {
+            return this._weekdaysShortStrictRegex;
+        } else {
+            return this._weekdaysShortRegex;
+        }
+    } else {
+        if (!hasOwnProp(this, '_weekdaysShortRegex')) {
+            this._weekdaysShortRegex = defaultWeekdaysShortRegex;
+        }
+        return this._weekdaysShortStrictRegex && isStrict ?
+            this._weekdaysShortStrictRegex : this._weekdaysShortRegex;
+    }
+}
+
+var defaultWeekdaysMinRegex = matchWord;
+function weekdaysMinRegex (isStrict) {
+    if (this._weekdaysParseExact) {
+        if (!hasOwnProp(this, '_weekdaysRegex')) {
+            computeWeekdaysParse.call(this);
+        }
+        if (isStrict) {
+            return this._weekdaysMinStrictRegex;
+        } else {
+            return this._weekdaysMinRegex;
+        }
+    } else {
+        if (!hasOwnProp(this, '_weekdaysMinRegex')) {
+            this._weekdaysMinRegex = defaultWeekdaysMinRegex;
+        }
+        return this._weekdaysMinStrictRegex && isStrict ?
+            this._weekdaysMinStrictRegex : this._weekdaysMinRegex;
+    }
+}
+
+
+function computeWeekdaysParse () {
+    function cmpLenRev(a, b) {
+        return b.length - a.length;
+    }
+
+    var minPieces = [], shortPieces = [], longPieces = [], mixedPieces = [],
+        i, mom, minp, shortp, longp;
+    for (i = 0; i < 7; i++) {
+        // make the regex if we don't have it already
+        mom = createUTC([2000, 1]).day(i);
+        minp = this.weekdaysMin(mom, '');
+        shortp = this.weekdaysShort(mom, '');
+        longp = this.weekdays(mom, '');
+        minPieces.push(minp);
+        shortPieces.push(shortp);
+        longPieces.push(longp);
+        mixedPieces.push(minp);
+        mixedPieces.push(shortp);
+        mixedPieces.push(longp);
+    }
+    // Sorting makes sure if one weekday (or abbr) is a prefix of another it
+    // will match the longer piece.
+    minPieces.sort(cmpLenRev);
+    shortPieces.sort(cmpLenRev);
+    longPieces.sort(cmpLenRev);
+    mixedPieces.sort(cmpLenRev);
+    for (i = 0; i < 7; i++) {
+        shortPieces[i] = regexEscape(shortPieces[i]);
+        longPieces[i] = regexEscape(longPieces[i]);
+        mixedPieces[i] = regexEscape(mixedPieces[i]);
+    }
+
+    this._weekdaysRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
+    this._weekdaysShortRegex = this._weekdaysRegex;
+    this._weekdaysMinRegex = this._weekdaysRegex;
+
+    this._weekdaysStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
+    this._weekdaysShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
+    this._weekdaysMinStrictRegex = new RegExp('^(' + minPieces.join('|') + ')', 'i');
+}
+
+// FORMATTING
+
+function hFormat() {
+    return this.hours() % 12 || 12;
+}
+
+function kFormat() {
+    return this.hours() || 24;
+}
+
+addFormatToken('H', ['HH', 2], 0, 'hour');
+addFormatToken('h', ['hh', 2], 0, hFormat);
+addFormatToken('k', ['kk', 2], 0, kFormat);
+
+addFormatToken('hmm', 0, 0, function () {
+    return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2);
+});
+
+addFormatToken('hmmss', 0, 0, function () {
+    return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2) +
+        zeroFill(this.seconds(), 2);
+});
+
+addFormatToken('Hmm', 0, 0, function () {
+    return '' + this.hours() + zeroFill(this.minutes(), 2);
+});
+
+addFormatToken('Hmmss', 0, 0, function () {
+    return '' + this.hours() + zeroFill(this.minutes(), 2) +
+        zeroFill(this.seconds(), 2);
+});
+
+function meridiem (token, lowercase) {
+    addFormatToken(token, 0, 0, function () {
+        return this.localeData().meridiem(this.hours(), this.minutes(), lowercase);
+    });
+}
+
+meridiem('a', true);
+meridiem('A', false);
+
+// ALIASES
+
+addUnitAlias('hour', 'h');
+
+// PRIORITY
+addUnitPriority('hour', 13);
+
+// PARSING
+
+function matchMeridiem (isStrict, locale) {
+    return locale._meridiemParse;
+}
+
+addRegexToken('a',  matchMeridiem);
+addRegexToken('A',  matchMeridiem);
+addRegexToken('H',  match1to2);
+addRegexToken('h',  match1to2);
+addRegexToken('k',  match1to2);
+addRegexToken('HH', match1to2, match2);
+addRegexToken('hh', match1to2, match2);
+addRegexToken('kk', match1to2, match2);
+
+addRegexToken('hmm', match3to4);
+addRegexToken('hmmss', match5to6);
+addRegexToken('Hmm', match3to4);
+addRegexToken('Hmmss', match5to6);
+
+addParseToken(['H', 'HH'], HOUR);
+addParseToken(['k', 'kk'], function (input, array, config) {
+    var kInput = toInt(input);
+    array[HOUR] = kInput === 24 ? 0 : kInput;
+});
+addParseToken(['a', 'A'], function (input, array, config) {
+    config._isPm = config._locale.isPM(input);
+    config._meridiem = input;
+});
+addParseToken(['h', 'hh'], function (input, array, config) {
+    array[HOUR] = toInt(input);
+    getParsingFlags(config).bigHour = true;
+});
+addParseToken('hmm', function (input, array, config) {
+    var pos = input.length - 2;
+    array[HOUR] = toInt(input.substr(0, pos));
+    array[MINUTE] = toInt(input.substr(pos));
+    getParsingFlags(config).bigHour = true;
+});
+addParseToken('hmmss', function (input, array, config) {
+    var pos1 = input.length - 4;
+    var pos2 = input.length - 2;
+    array[HOUR] = toInt(input.substr(0, pos1));
+    array[MINUTE] = toInt(input.substr(pos1, 2));
+    array[SECOND] = toInt(input.substr(pos2));
+    getParsingFlags(config).bigHour = true;
+});
+addParseToken('Hmm', function (input, array, config) {
+    var pos = input.length - 2;
+    array[HOUR] = toInt(input.substr(0, pos));
+    array[MINUTE] = toInt(input.substr(pos));
+});
+addParseToken('Hmmss', function (input, array, config) {
+    var pos1 = input.length - 4;
+    var pos2 = input.length - 2;
+    array[HOUR] = toInt(input.substr(0, pos1));
+    array[MINUTE] = toInt(input.substr(pos1, 2));
+    array[SECOND] = toInt(input.substr(pos2));
+});
+
+// LOCALES
+
+function localeIsPM (input) {
+    // IE8 Quirks Mode & IE7 Standards Mode do not allow accessing strings like arrays
+    // Using charAt should be more compatible.
+    return ((input + '').toLowerCase().charAt(0) === 'p');
+}
+
+var defaultLocaleMeridiemParse = /[ap]\.?m?\.?/i;
+function localeMeridiem (hours, minutes, isLower) {
+    if (hours > 11) {
+        return isLower ? 'pm' : 'PM';
+    } else {
+        return isLower ? 'am' : 'AM';
+    }
+}
+
+
+// MOMENTS
+
+// Setting the hour should keep the time, because the user explicitly
+// specified which hour he wants. So trying to maintain the same hour (in
+// a new timezone) makes sense. Adding/subtracting hours does not follow
+// this rule.
+var getSetHour = makeGetSet('Hours', true);
+
+// months
+// week
+// weekdays
+// meridiem
+var baseConfig = {
+    calendar: defaultCalendar,
+    longDateFormat: defaultLongDateFormat,
+    invalidDate: defaultInvalidDate,
+    ordinal: defaultOrdinal,
+    dayOfMonthOrdinalParse: defaultDayOfMonthOrdinalParse,
+    relativeTime: defaultRelativeTime,
+
+    months: defaultLocaleMonths,
+    monthsShort: defaultLocaleMonthsShort,
+
+    week: defaultLocaleWeek,
+
+    weekdays: defaultLocaleWeekdays,
+    weekdaysMin: defaultLocaleWeekdaysMin,
+    weekdaysShort: defaultLocaleWeekdaysShort,
+
+    meridiemParse: defaultLocaleMeridiemParse
+};
+
+// internal storage for locale config files
+var locales = {};
+var localeFamilies = {};
+var globalLocale;
+
+function normalizeLocale(key) {
+    return key ? key.toLowerCase().replace('_', '-') : key;
+}
+
+// pick the locale from the array
+// try ['en-au', 'en-gb'] as 'en-au', 'en-gb', 'en', as in move through the list trying each
+// substring from most specific to least, but move to the next array item if it's a more specific variant than the current root
+function chooseLocale(names) {
+    var i = 0, j, next, locale, split;
+
+    while (i < names.length) {
+        split = normalizeLocale(names[i]).split('-');
+        j = split.length;
+        next = normalizeLocale(names[i + 1]);
+        next = next ? next.split('-') : null;
+        while (j > 0) {
+            locale = loadLocale(split.slice(0, j).join('-'));
+            if (locale) {
+                return locale;
+            }
+            if (next && next.length >= j && compareArrays(split, next, true) >= j - 1) {
+                //the next array item is better than a shallower substring of this one
+                break;
+            }
+            j--;
+        }
+        i++;
+    }
+    return null;
+}
+
+function loadLocale(name) {
+    var oldLocale = null;
+    // TODO: Find a better way to register and load all the locales in Node
+    if (!locales[name] && (typeof module !== 'undefined') &&
+            module && module.exports) {
+        try {
+            oldLocale = globalLocale._abbr;
+            require('./locale/' + name);
+            // because defineLocale currently also sets the global locale, we
+            // want to undo that for lazy loaded locales
+            getSetGlobalLocale(oldLocale);
+        } catch (e) { }
+    }
+    return locales[name];
+}
+
+// This function will load locale and then set the global locale.  If
+// no arguments are passed in, it will simply return the current global
+// locale key.
+function getSetGlobalLocale (key, values) {
+    var data;
+    if (key) {
+        if (isUndefined(values)) {
+            data = getLocale(key);
+        }
+        else {
+            data = defineLocale(key, values);
+        }
+
+        if (data) {
+            // moment.duration._locale = moment._locale = data;
+            globalLocale = data;
+        }
+    }
+
+    return globalLocale._abbr;
+}
+
+function defineLocale (name, config) {
+    if (config !== null) {
+        var parentConfig = baseConfig;
+        config.abbr = name;
+        if (locales[name] != null) {
+            deprecateSimple('defineLocaleOverride',
+                    'use moment.updateLocale(localeName, config) to change ' +
+                    'an existing locale. moment.defineLocale(localeName, ' +
+                    'config) should only be used for creating a new locale ' +
+                    'See http://momentjs.com/guides/#/warnings/define-locale/ for more info.');
+            parentConfig = locales[name]._config;
+        } else if (config.parentLocale != null) {
+            if (locales[config.parentLocale] != null) {
+                parentConfig = locales[config.parentLocale]._config;
+            } else {
+                if (!localeFamilies[config.parentLocale]) {
+                    localeFamilies[config.parentLocale] = [];
+                }
+                localeFamilies[config.parentLocale].push({
+                    name: name,
+                    config: config
+                });
+                return null;
+            }
+        }
+        locales[name] = new Locale(mergeConfigs(parentConfig, config));
+
+        if (localeFamilies[name]) {
+            localeFamilies[name].forEach(function (x) {
+                defineLocale(x.name, x.config);
+            });
+        }
+
+        // backwards compat for now: also set the locale
+        // make sure we set the locale AFTER all child locales have been
+        // created, so we won't end up with the child locale set.
+        getSetGlobalLocale(name);
+
+
+        return locales[name];
+    } else {
+        // useful for testing
+        delete locales[name];
+        return null;
+    }
+}
+
+function updateLocale(name, config) {
+    if (config != null) {
+        var locale, parentConfig = baseConfig;
+        // MERGE
+        if (locales[name] != null) {
+            parentConfig = locales[name]._config;
+        }
+        config = mergeConfigs(parentConfig, config);
+        locale = new Locale(config);
+        locale.parentLocale = locales[name];
+        locales[name] = locale;
+
+        // backwards compat for now: also set the locale
+        getSetGlobalLocale(name);
+    } else {
+        // pass null for config to unupdate, useful for tests
+        if (locales[name] != null) {
+            if (locales[name].parentLocale != null) {
+                locales[name] = locales[name].parentLocale;
+            } else if (locales[name] != null) {
+                delete locales[name];
+            }
+        }
+    }
+    return locales[name];
+}
+
+// returns locale data
+function getLocale (key) {
+    var locale;
+
+    if (key && key._locale && key._locale._abbr) {
+        key = key._locale._abbr;
+    }
+
+    if (!key) {
+        return globalLocale;
+    }
+
+    if (!isArray(key)) {
+        //short-circuit everything else
+        locale = loadLocale(key);
+        if (locale) {
+            return locale;
+        }
+        key = [key];
+    }
+
+    return chooseLocale(key);
+}
+
+function listLocales() {
+    return keys$1(locales);
+}
+
+function checkOverflow (m) {
+    var overflow;
+    var a = m._a;
+
+    if (a && getParsingFlags(m).overflow === -2) {
+        overflow =
+            a[MONTH]       < 0 || a[MONTH]       > 11  ? MONTH :
+            a[DATE]        < 1 || a[DATE]        > daysInMonth(a[YEAR], a[MONTH]) ? DATE :
+            a[HOUR]        < 0 || a[HOUR]        > 24 || (a[HOUR] === 24 && (a[MINUTE] !== 0 || a[SECOND] !== 0 || a[MILLISECOND] !== 0)) ? HOUR :
+            a[MINUTE]      < 0 || a[MINUTE]      > 59  ? MINUTE :
+            a[SECOND]      < 0 || a[SECOND]      > 59  ? SECOND :
+            a[MILLISECOND] < 0 || a[MILLISECOND] > 999 ? MILLISECOND :
+            -1;
+
+        if (getParsingFlags(m)._overflowDayOfYear && (overflow < YEAR || overflow > DATE)) {
+            overflow = DATE;
+        }
+        if (getParsingFlags(m)._overflowWeeks && overflow === -1) {
+            overflow = WEEK;
+        }
+        if (getParsingFlags(m)._overflowWeekday && overflow === -1) {
+            overflow = WEEKDAY;
+        }
+
+        getParsingFlags(m).overflow = overflow;
+    }
+
+    return m;
+}
+
+// iso 8601 regex
+// 0000-00-00 0000-W00 or 0000-W00-0 + T + 00 or 00:00 or 00:00:00 or 00:00:00.000 + +00:00 or +0000 or +00)
+var extendedIsoRegex = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?$/;
+var basicIsoRegex = /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?$/;
+
+var tzRegex = /Z|[+-]\d\d(?::?\d\d)?/;
+
+var isoDates = [
+    ['YYYYYY-MM-DD', /[+-]\d{6}-\d\d-\d\d/],
+    ['YYYY-MM-DD', /\d{4}-\d\d-\d\d/],
+    ['GGGG-[W]WW-E', /\d{4}-W\d\d-\d/],
+    ['GGGG-[W]WW', /\d{4}-W\d\d/, false],
+    ['YYYY-DDD', /\d{4}-\d{3}/],
+    ['YYYY-MM', /\d{4}-\d\d/, false],
+    ['YYYYYYMMDD', /[+-]\d{10}/],
+    ['YYYYMMDD', /\d{8}/],
+    // YYYYMM is NOT allowed by the standard
+    ['GGGG[W]WWE', /\d{4}W\d{3}/],
+    ['GGGG[W]WW', /\d{4}W\d{2}/, false],
+    ['YYYYDDD', /\d{7}/]
+];
+
+// iso time formats and regexes
+var isoTimes = [
+    ['HH:mm:ss.SSSS', /\d\d:\d\d:\d\d\.\d+/],
+    ['HH:mm:ss,SSSS', /\d\d:\d\d:\d\d,\d+/],
+    ['HH:mm:ss', /\d\d:\d\d:\d\d/],
+    ['HH:mm', /\d\d:\d\d/],
+    ['HHmmss.SSSS', /\d\d\d\d\d\d\.\d+/],
+    ['HHmmss,SSSS', /\d\d\d\d\d\d,\d+/],
+    ['HHmmss', /\d\d\d\d\d\d/],
+    ['HHmm', /\d\d\d\d/],
+    ['HH', /\d\d/]
+];
+
+var aspNetJsonRegex = /^\/?Date\((\-?\d+)/i;
+
+// date from iso format
+function configFromISO(config) {
+    var i, l,
+        string = config._i,
+        match = extendedIsoRegex.exec(string) || basicIsoRegex.exec(string),
+        allowTime, dateFormat, timeFormat, tzFormat;
+
+    if (match) {
+        getParsingFlags(config).iso = true;
+
+        for (i = 0, l = isoDates.length; i < l; i++) {
+            if (isoDates[i][1].exec(match[1])) {
+                dateFormat = isoDates[i][0];
+                allowTime = isoDates[i][2] !== false;
+                break;
+            }
+        }
+        if (dateFormat == null) {
+            config._isValid = false;
+            return;
+        }
+        if (match[3]) {
+            for (i = 0, l = isoTimes.length; i < l; i++) {
+                if (isoTimes[i][1].exec(match[3])) {
+                    // match[2] should be 'T' or space
+                    timeFormat = (match[2] || ' ') + isoTimes[i][0];
+                    break;
+                }
+            }
+            if (timeFormat == null) {
+                config._isValid = false;
+                return;
+            }
+        }
+        if (!allowTime && timeFormat != null) {
+            config._isValid = false;
+            return;
+        }
+        if (match[4]) {
+            if (tzRegex.exec(match[4])) {
+                tzFormat = 'Z';
+            } else {
+                config._isValid = false;
+                return;
+            }
+        }
+        config._f = dateFormat + (timeFormat || '') + (tzFormat || '');
+        configFromStringAndFormat(config);
+    } else {
+        config._isValid = false;
+    }
+}
+
+// RFC 2822 regex: For details see https://tools.ietf.org/html/rfc2822#section-3.3
+var basicRfcRegex = /^((?:Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d?\d\s(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(?:\d\d)?\d\d\s)(\d\d:\d\d)(\:\d\d)?(\s(?:UT|GMT|[ECMP][SD]T|[A-IK-Za-ik-z]|[+-]\d{4}))$/;
+
+// date and time from ref 2822 format
+function configFromRFC2822(config) {
+    var string, match, dayFormat,
+        dateFormat, timeFormat, tzFormat;
+    var timezones = {
+        ' GMT': ' +0000',
+        ' EDT': ' -0400',
+        ' EST': ' -0500',
+        ' CDT': ' -0500',
+        ' CST': ' -0600',
+        ' MDT': ' -0600',
+        ' MST': ' -0700',
+        ' PDT': ' -0700',
+        ' PST': ' -0800'
+    };
+    var military = 'YXWVUTSRQPONZABCDEFGHIKLM';
+    var timezone, timezoneIndex;
+
+    string = config._i
+        .replace(/\([^\)]*\)|[\n\t]/g, ' ') // Remove comments and folding whitespace
+        .replace(/(\s\s+)/g, ' ') // Replace multiple-spaces with a single space
+        .replace(/^\s|\s$/g, ''); // Remove leading and trailing spaces
+    match = basicRfcRegex.exec(string);
+
+    if (match) {
+        dayFormat = match[1] ? 'ddd' + ((match[1].length === 5) ? ', ' : ' ') : '';
+        dateFormat = 'D MMM ' + ((match[2].length > 10) ? 'YYYY ' : 'YY ');
+        timeFormat = 'HH:mm' + (match[4] ? ':ss' : '');
+
+        // TODO: Replace the vanilla JS Date object with an indepentent day-of-week check.
+        if (match[1]) { // day of week given
+            var momentDate = new Date(match[2]);
+            var momentDay = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][momentDate.getDay()];
+
+            if (match[1].substr(0,3) !== momentDay) {
+                getParsingFlags(config).weekdayMismatch = true;
+                config._isValid = false;
+                return;
+            }
+        }
+
+        switch (match[5].length) {
+            case 2: // military
+                if (timezoneIndex === 0) {
+                    timezone = ' +0000';
+                } else {
+                    timezoneIndex = military.indexOf(match[5][1].toUpperCase()) - 12;
+                    timezone = ((timezoneIndex < 0) ? ' -' : ' +') +
+                        (('' + timezoneIndex).replace(/^-?/, '0')).match(/..$/)[0] + '00';
+                }
+                break;
+            case 4: // Zone
+                timezone = timezones[match[5]];
+                break;
+            default: // UT or +/-9999
+                timezone = timezones[' GMT'];
+        }
+        match[5] = timezone;
+        config._i = match.splice(1).join('');
+        tzFormat = ' ZZ';
+        config._f = dayFormat + dateFormat + timeFormat + tzFormat;
+        configFromStringAndFormat(config);
+        getParsingFlags(config).rfc2822 = true;
+    } else {
+        config._isValid = false;
+    }
+}
+
+// date from iso format or fallback
+function configFromString(config) {
+    var matched = aspNetJsonRegex.exec(config._i);
+
+    if (matched !== null) {
+        config._d = new Date(+matched[1]);
+        return;
+    }
+
+    configFromISO(config);
+    if (config._isValid === false) {
+        delete config._isValid;
+    } else {
+        return;
+    }
+
+    configFromRFC2822(config);
+    if (config._isValid === false) {
+        delete config._isValid;
+    } else {
+        return;
+    }
+
+    // Final attempt, use Input Fallback
+    hooks.createFromInputFallback(config);
+}
+
+hooks.createFromInputFallback = deprecate(
+    'value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), ' +
+    'which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are ' +
+    'discouraged and will be removed in an upcoming major release. Please refer to ' +
+    'http://momentjs.com/guides/#/warnings/js-date/ for more info.',
+    function (config) {
+        config._d = new Date(config._i + (config._useUTC ? ' UTC' : ''));
+    }
+);
+
+// Pick the first defined of two or three arguments.
+function defaults(a, b, c) {
+    if (a != null) {
+        return a;
+    }
+    if (b != null) {
+        return b;
+    }
+    return c;
+}
+
+function currentDateArray(config) {
+    // hooks is actually the exported moment object
+    var nowValue = new Date(hooks.now());
+    if (config._useUTC) {
+        return [nowValue.getUTCFullYear(), nowValue.getUTCMonth(), nowValue.getUTCDate()];
+    }
+    return [nowValue.getFullYear(), nowValue.getMonth(), nowValue.getDate()];
+}
+
+// convert an array to a date.
+// the array should mirror the parameters below
+// note: all values past the year are optional and will default to the lowest possible value.
+// [year, month, day , hour, minute, second, millisecond]
+function configFromArray (config) {
+    var i, date, input = [], currentDate, yearToUse;
+
+    if (config._d) {
+        return;
+    }
+
+    currentDate = currentDateArray(config);
+
+    //compute day of the year from weeks and weekdays
+    if (config._w && config._a[DATE] == null && config._a[MONTH] == null) {
+        dayOfYearFromWeekInfo(config);
+    }
+
+    //if the day of the year is set, figure out what it is
+    if (config._dayOfYear != null) {
+        yearToUse = defaults(config._a[YEAR], currentDate[YEAR]);
+
+        if (config._dayOfYear > daysInYear(yearToUse) || config._dayOfYear === 0) {
+            getParsingFlags(config)._overflowDayOfYear = true;
+        }
+
+        date = createUTCDate(yearToUse, 0, config._dayOfYear);
+        config._a[MONTH] = date.getUTCMonth();
+        config._a[DATE] = date.getUTCDate();
+    }
+
+    // Default to current date.
+    // * if no year, month, day of month are given, default to today
+    // * if day of month is given, default month and year
+    // * if month is given, default only year
+    // * if year is given, don't default anything
+    for (i = 0; i < 3 && config._a[i] == null; ++i) {
+        config._a[i] = input[i] = currentDate[i];
+    }
+
+    // Zero out whatever was not defaulted, including time
+    for (; i < 7; i++) {
+        config._a[i] = input[i] = (config._a[i] == null) ? (i === 2 ? 1 : 0) : config._a[i];
+    }
+
+    // Check for 24:00:00.000
+    if (config._a[HOUR] === 24 &&
+            config._a[MINUTE] === 0 &&
+            config._a[SECOND] === 0 &&
+            config._a[MILLISECOND] === 0) {
+        config._nextDay = true;
+        config._a[HOUR] = 0;
+    }
+
+    config._d = (config._useUTC ? createUTCDate : createDate).apply(null, input);
+    // Apply timezone offset from input. The actual utcOffset can be changed
+    // with parseZone.
+    if (config._tzm != null) {
+        config._d.setUTCMinutes(config._d.getUTCMinutes() - config._tzm);
+    }
+
+    if (config._nextDay) {
+        config._a[HOUR] = 24;
+    }
+}
+
+function dayOfYearFromWeekInfo(config) {
+    var w, weekYear, week, weekday, dow, doy, temp, weekdayOverflow;
+
+    w = config._w;
+    if (w.GG != null || w.W != null || w.E != null) {
+        dow = 1;
+        doy = 4;
+
+        // TODO: We need to take the current isoWeekYear, but that depends on
+        // how we interpret now (local, utc, fixed offset). So create
+        // a now version of current config (take local/utc/offset flags, and
+        // create now).
+        weekYear = defaults(w.GG, config._a[YEAR], weekOfYear(createLocal(), 1, 4).year);
+        week = defaults(w.W, 1);
+        weekday = defaults(w.E, 1);
+        if (weekday < 1 || weekday > 7) {
+            weekdayOverflow = true;
+        }
+    } else {
+        dow = config._locale._week.dow;
+        doy = config._locale._week.doy;
+
+        var curWeek = weekOfYear(createLocal(), dow, doy);
+
+        weekYear = defaults(w.gg, config._a[YEAR], curWeek.year);
+
+        // Default to current week.
+        week = defaults(w.w, curWeek.week);
+
+        if (w.d != null) {
+            // weekday -- low day numbers are considered next week
+            weekday = w.d;
+            if (weekday < 0 || weekday > 6) {
+                weekdayOverflow = true;
+            }
+        } else if (w.e != null) {
+            // local weekday -- counting starts from begining of week
+            weekday = w.e + dow;
+            if (w.e < 0 || w.e > 6) {
+                weekdayOverflow = true;
+            }
+        } else {
+            // default to begining of week
+            weekday = dow;
+        }
+    }
+    if (week < 1 || week > weeksInYear(weekYear, dow, doy)) {
+        getParsingFlags(config)._overflowWeeks = true;
+    } else if (weekdayOverflow != null) {
+        getParsingFlags(config)._overflowWeekday = true;
+    } else {
+        temp = dayOfYearFromWeeks(weekYear, week, weekday, dow, doy);
+        config._a[YEAR] = temp.year;
+        config._dayOfYear = temp.dayOfYear;
+    }
+}
+
+// constant that refers to the ISO standard
+hooks.ISO_8601 = function () {};
+
+// constant that refers to the RFC 2822 form
+hooks.RFC_2822 = function () {};
+
+// date from string and format string
+function configFromStringAndFormat(config) {
+    // TODO: Move this to another part of the creation flow to prevent circular deps
+    if (config._f === hooks.ISO_8601) {
+        configFromISO(config);
+        return;
+    }
+    if (config._f === hooks.RFC_2822) {
+        configFromRFC2822(config);
+        return;
+    }
+    config._a = [];
+    getParsingFlags(config).empty = true;
+
+    // This array is used to make a Date, either with `new Date` or `Date.UTC`
+    var string = '' + config._i,
+        i, parsedInput, tokens, token, skipped,
+        stringLength = string.length,
+        totalParsedInputLength = 0;
+
+    tokens = expandFormat(config._f, config._locale).match(formattingTokens) || [];
+
+    for (i = 0; i < tokens.length; i++) {
+        token = tokens[i];
+        parsedInput = (string.match(getParseRegexForToken(token, config)) || [])[0];
+        // console.log('token', token, 'parsedInput', parsedInput,
+        //         'regex', getParseRegexForToken(token, config));
+        if (parsedInput) {
+            skipped = string.substr(0, string.indexOf(parsedInput));
+            if (skipped.length > 0) {
+                getParsingFlags(config).unusedInput.push(skipped);
+            }
+            string = string.slice(string.indexOf(parsedInput) + parsedInput.length);
+            totalParsedInputLength += parsedInput.length;
+        }
+        // don't parse if it's not a known token
+        if (formatTokenFunctions[token]) {
+            if (parsedInput) {
+                getParsingFlags(config).empty = false;
+            }
+            else {
+                getParsingFlags(config).unusedTokens.push(token);
+            }
+            addTimeToArrayFromToken(token, parsedInput, config);
+        }
+        else if (config._strict && !parsedInput) {
+            getParsingFlags(config).unusedTokens.push(token);
+        }
+    }
+
+    // add remaining unparsed input length to the string
+    getParsingFlags(config).charsLeftOver = stringLength - totalParsedInputLength;
+    if (string.length > 0) {
+        getParsingFlags(config).unusedInput.push(string);
+    }
+
+    // clear _12h flag if hour is <= 12
+    if (config._a[HOUR] <= 12 &&
+        getParsingFlags(config).bigHour === true &&
+        config._a[HOUR] > 0) {
+        getParsingFlags(config).bigHour = undefined;
+    }
+
+    getParsingFlags(config).parsedDateParts = config._a.slice(0);
+    getParsingFlags(config).meridiem = config._meridiem;
+    // handle meridiem
+    config._a[HOUR] = meridiemFixWrap(config._locale, config._a[HOUR], config._meridiem);
+
+    configFromArray(config);
+    checkOverflow(config);
+}
+
+
+function meridiemFixWrap (locale, hour, meridiem) {
+    var isPm;
+
+    if (meridiem == null) {
+        // nothing to do
+        return hour;
+    }
+    if (locale.meridiemHour != null) {
+        return locale.meridiemHour(hour, meridiem);
+    } else if (locale.isPM != null) {
+        // Fallback
+        isPm = locale.isPM(meridiem);
+        if (isPm && hour < 12) {
+            hour += 12;
+        }
+        if (!isPm && hour === 12) {
+            hour = 0;
+        }
+        return hour;
+    } else {
+        // this is not supposed to happen
+        return hour;
+    }
+}
+
+// date from string and array of format strings
+function configFromStringAndArray(config) {
+    var tempConfig,
+        bestMoment,
+
+        scoreToBeat,
+        i,
+        currentScore;
+
+    if (config._f.length === 0) {
+        getParsingFlags(config).invalidFormat = true;
+        config._d = new Date(NaN);
+        return;
+    }
+
+    for (i = 0; i < config._f.length; i++) {
+        currentScore = 0;
+        tempConfig = copyConfig({}, config);
+        if (config._useUTC != null) {
+            tempConfig._useUTC = config._useUTC;
+        }
+        tempConfig._f = config._f[i];
+        configFromStringAndFormat(tempConfig);
+
+        if (!isValid(tempConfig)) {
+            continue;
+        }
+
+        // if there is any input that was not parsed add a penalty for that format
+        currentScore += getParsingFlags(tempConfig).charsLeftOver;
+
+        //or tokens
+        currentScore += getParsingFlags(tempConfig).unusedTokens.length * 10;
+
+        getParsingFlags(tempConfig).score = currentScore;
+
+        if (scoreToBeat == null || currentScore < scoreToBeat) {
+            scoreToBeat = currentScore;
+            bestMoment = tempConfig;
+        }
+    }
+
+    extend(config, bestMoment || tempConfig);
+}
+
+function configFromObject(config) {
+    if (config._d) {
+        return;
+    }
+
+    var i = normalizeObjectUnits(config._i);
+    config._a = map([i.year, i.month, i.day || i.date, i.hour, i.minute, i.second, i.millisecond], function (obj) {
+        return obj && parseInt(obj, 10);
+    });
+
+    configFromArray(config);
+}
+
+function createFromConfig (config) {
+    var res = new Moment(checkOverflow(prepareConfig(config)));
+    if (res._nextDay) {
+        // Adding is smart enough around DST
+        res.add(1, 'd');
+        res._nextDay = undefined;
+    }
+
+    return res;
+}
+
+function prepareConfig (config) {
+    var input = config._i,
+        format = config._f;
+
+    config._locale = config._locale || getLocale(config._l);
+
+    if (input === null || (format === undefined && input === '')) {
+        return createInvalid({nullInput: true});
+    }
+
+    if (typeof input === 'string') {
+        config._i = input = config._locale.preparse(input);
+    }
+
+    if (isMoment(input)) {
+        return new Moment(checkOverflow(input));
+    } else if (isDate(input)) {
+        config._d = input;
+    } else if (isArray(format)) {
+        configFromStringAndArray(config);
+    } else if (format) {
+        configFromStringAndFormat(config);
+    }  else {
+        configFromInput(config);
+    }
+
+    if (!isValid(config)) {
+        config._d = null;
+    }
+
+    return config;
+}
+
+function configFromInput(config) {
+    var input = config._i;
+    if (isUndefined(input)) {
+        config._d = new Date(hooks.now());
+    } else if (isDate(input)) {
+        config._d = new Date(input.valueOf());
+    } else if (typeof input === 'string') {
+        configFromString(config);
+    } else if (isArray(input)) {
+        config._a = map(input.slice(0), function (obj) {
+            return parseInt(obj, 10);
+        });
+        configFromArray(config);
+    } else if (isObject(input)) {
+        configFromObject(config);
+    } else if (isNumber(input)) {
+        // from milliseconds
+        config._d = new Date(input);
+    } else {
+        hooks.createFromInputFallback(config);
+    }
+}
+
+function createLocalOrUTC (input, format, locale, strict, isUTC) {
+    var c = {};
+
+    if (locale === true || locale === false) {
+        strict = locale;
+        locale = undefined;
+    }
+
+    if ((isObject(input) && isObjectEmpty(input)) ||
+            (isArray(input) && input.length === 0)) {
+        input = undefined;
+    }
+    // object construction must be done this way.
+    // https://github.com/moment/moment/issues/1423
+    c._isAMomentObject = true;
+    c._useUTC = c._isUTC = isUTC;
+    c._l = locale;
+    c._i = input;
+    c._f = format;
+    c._strict = strict;
+
+    return createFromConfig(c);
+}
+
+function createLocal (input, format, locale, strict) {
+    return createLocalOrUTC(input, format, locale, strict, false);
+}
+
+var prototypeMin = deprecate(
+    'moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/',
+    function () {
+        var other = createLocal.apply(null, arguments);
+        if (this.isValid() && other.isValid()) {
+            return other < this ? this : other;
+        } else {
+            return createInvalid();
+        }
+    }
+);
+
+var prototypeMax = deprecate(
+    'moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/',
+    function () {
+        var other = createLocal.apply(null, arguments);
+        if (this.isValid() && other.isValid()) {
+            return other > this ? this : other;
+        } else {
+            return createInvalid();
+        }
+    }
+);
+
+// Pick a moment m from moments so that m[fn](other) is true for all
+// other. This relies on the function fn to be transitive.
+//
+// moments should either be an array of moment objects or an array, whose
+// first element is an array of moment objects.
+function pickBy(fn, moments) {
+    var res, i;
+    if (moments.length === 1 && isArray(moments[0])) {
+        moments = moments[0];
+    }
+    if (!moments.length) {
+        return createLocal();
+    }
+    res = moments[0];
+    for (i = 1; i < moments.length; ++i) {
+        if (!moments[i].isValid() || moments[i][fn](res)) {
+            res = moments[i];
+        }
+    }
+    return res;
+}
+
+// TODO: Use [].sort instead?
+function min () {
+    var args = [].slice.call(arguments, 0);
+
+    return pickBy('isBefore', args);
+}
+
+function max () {
+    var args = [].slice.call(arguments, 0);
+
+    return pickBy('isAfter', args);
+}
+
+var now = function () {
+    return Date.now ? Date.now() : +(new Date());
+};
+
+var ordering = ['year', 'quarter', 'month', 'week', 'day', 'hour', 'minute', 'second', 'millisecond'];
+
+function isDurationValid(m) {
+    for (var key in m) {
+        if (!(ordering.indexOf(key) !== -1 && (m[key] == null || !isNaN(m[key])))) {
+            return false;
+        }
+    }
+
+    var unitHasDecimal = false;
+    for (var i = 0; i < ordering.length; ++i) {
+        if (m[ordering[i]]) {
+            if (unitHasDecimal) {
+                return false; // only allow non-integers for smallest unit
+            }
+            if (parseFloat(m[ordering[i]]) !== toInt(m[ordering[i]])) {
+                unitHasDecimal = true;
+            }
+        }
+    }
+
+    return true;
+}
+
+function isValid$1() {
+    return this._isValid;
+}
+
+function createInvalid$1() {
+    return createDuration(NaN);
+}
+
+function Duration (duration) {
+    var normalizedInput = normalizeObjectUnits(duration),
+        years = normalizedInput.year || 0,
+        quarters = normalizedInput.quarter || 0,
+        months = normalizedInput.month || 0,
+        weeks = normalizedInput.week || 0,
+        days = normalizedInput.day || 0,
+        hours = normalizedInput.hour || 0,
+        minutes = normalizedInput.minute || 0,
+        seconds = normalizedInput.second || 0,
+        milliseconds = normalizedInput.millisecond || 0;
+
+    this._isValid = isDurationValid(normalizedInput);
+
+    // representation for dateAddRemove
+    this._milliseconds = +milliseconds +
+        seconds * 1e3 + // 1000
+        minutes * 6e4 + // 1000 * 60
+        hours * 1000 * 60 * 60; //using 1000 * 60 * 60 instead of 36e5 to avoid floating point rounding errors https://github.com/moment/moment/issues/2978
+    // Because of dateAddRemove treats 24 hours as different from a
+    // day when working around DST, we need to store them separately
+    this._days = +days +
+        weeks * 7;
+    // It is impossible translate months into days without knowing
+    // which months you are are talking about, so we have to store
+    // it separately.
+    this._months = +months +
+        quarters * 3 +
+        years * 12;
+
+    this._data = {};
+
+    this._locale = getLocale();
+
+    this._bubble();
+}
+
+function isDuration (obj) {
+    return obj instanceof Duration;
+}
+
+function absRound (number) {
+    if (number < 0) {
+        return Math.round(-1 * number) * -1;
+    } else {
+        return Math.round(number);
+    }
+}
+
+// FORMATTING
+
+function offset (token, separator) {
+    addFormatToken(token, 0, 0, function () {
+        var offset = this.utcOffset();
+        var sign = '+';
+        if (offset < 0) {
+            offset = -offset;
+            sign = '-';
+        }
+        return sign + zeroFill(~~(offset / 60), 2) + separator + zeroFill(~~(offset) % 60, 2);
+    });
+}
+
+offset('Z', ':');
+offset('ZZ', '');
+
+// PARSING
+
+addRegexToken('Z',  matchShortOffset);
+addRegexToken('ZZ', matchShortOffset);
+addParseToken(['Z', 'ZZ'], function (input, array, config) {
+    config._useUTC = true;
+    config._tzm = offsetFromString(matchShortOffset, input);
+});
+
+// HELPERS
+
+// timezone chunker
+// '+10:00' > ['10',  '00']
+// '-1530'  > ['-15', '30']
+var chunkOffset = /([\+\-]|\d\d)/gi;
+
+function offsetFromString(matcher, string) {
+    var matches = (string || '').match(matcher);
+
+    if (matches === null) {
+        return null;
+    }
+
+    var chunk   = matches[matches.length - 1] || [];
+    var parts   = (chunk + '').match(chunkOffset) || ['-', 0, 0];
+    var minutes = +(parts[1] * 60) + toInt(parts[2]);
+
+    return minutes === 0 ?
+      0 :
+      parts[0] === '+' ? minutes : -minutes;
+}
+
+// Return a moment from input, that is local/utc/zone equivalent to model.
+function cloneWithOffset(input, model) {
+    var res, diff;
+    if (model._isUTC) {
+        res = model.clone();
+        diff = (isMoment(input) || isDate(input) ? input.valueOf() : createLocal(input).valueOf()) - res.valueOf();
+        // Use low-level api, because this fn is low-level api.
+        res._d.setTime(res._d.valueOf() + diff);
+        hooks.updateOffset(res, false);
+        return res;
+    } else {
+        return createLocal(input).local();
+    }
+}
+
+function getDateOffset (m) {
+    // On Firefox.24 Date#getTimezoneOffset returns a floating point.
+    // https://github.com/moment/moment/pull/1871
+    return -Math.round(m._d.getTimezoneOffset() / 15) * 15;
+}
+
+// HOOKS
+
+// This function will be called whenever a moment is mutated.
+// It is intended to keep the offset in sync with the timezone.
+hooks.updateOffset = function () {};
+
+// MOMENTS
+
+// keepLocalTime = true means only change the timezone, without
+// affecting the local hour. So 5:31:26 +0300 --[utcOffset(2, true)]-->
+// 5:31:26 +0200 It is possible that 5:31:26 doesn't exist with offset
+// +0200, so we adjust the time as needed, to be valid.
+//
+// Keeping the time actually adds/subtracts (one hour)
+// from the actual represented time. That is why we call updateOffset
+// a second time. In case it wants us to change the offset again
+// _changeInProgress == true case, then we have to adjust, because
+// there is no such time in the given timezone.
+function getSetOffset (input, keepLocalTime, keepMinutes) {
+    var offset = this._offset || 0,
+        localAdjust;
+    if (!this.isValid()) {
+        return input != null ? this : NaN;
+    }
+    if (input != null) {
+        if (typeof input === 'string') {
+            input = offsetFromString(matchShortOffset, input);
+            if (input === null) {
+                return this;
+            }
+        } else if (Math.abs(input) < 16 && !keepMinutes) {
+            input = input * 60;
+        }
+        if (!this._isUTC && keepLocalTime) {
+            localAdjust = getDateOffset(this);
+        }
+        this._offset = input;
+        this._isUTC = true;
+        if (localAdjust != null) {
+            this.add(localAdjust, 'm');
+        }
+        if (offset !== input) {
+            if (!keepLocalTime || this._changeInProgress) {
+                addSubtract(this, createDuration(input - offset, 'm'), 1, false);
+            } else if (!this._changeInProgress) {
+                this._changeInProgress = true;
+                hooks.updateOffset(this, true);
+                this._changeInProgress = null;
+            }
+        }
+        return this;
+    } else {
+        return this._isUTC ? offset : getDateOffset(this);
+    }
+}
+
+function getSetZone (input, keepLocalTime) {
+    if (input != null) {
+        if (typeof input !== 'string') {
+            input = -input;
+        }
+
+        this.utcOffset(input, keepLocalTime);
+
+        return this;
+    } else {
+        return -this.utcOffset();
+    }
+}
+
+function setOffsetToUTC (keepLocalTime) {
+    return this.utcOffset(0, keepLocalTime);
+}
+
+function setOffsetToLocal (keepLocalTime) {
+    if (this._isUTC) {
+        this.utcOffset(0, keepLocalTime);
+        this._isUTC = false;
+
+        if (keepLocalTime) {
+            this.subtract(getDateOffset(this), 'm');
+        }
+    }
+    return this;
+}
+
+function setOffsetToParsedOffset () {
+    if (this._tzm != null) {
+        this.utcOffset(this._tzm, false, true);
+    } else if (typeof this._i === 'string') {
+        var tZone = offsetFromString(matchOffset, this._i);
+        if (tZone != null) {
+            this.utcOffset(tZone);
+        }
+        else {
+            this.utcOffset(0, true);
+        }
+    }
+    return this;
+}
+
+function hasAlignedHourOffset (input) {
+    if (!this.isValid()) {
+        return false;
+    }
+    input = input ? createLocal(input).utcOffset() : 0;
+
+    return (this.utcOffset() - input) % 60 === 0;
+}
+
+function isDaylightSavingTime () {
+    return (
+        this.utcOffset() > this.clone().month(0).utcOffset() ||
+        this.utcOffset() > this.clone().month(5).utcOffset()
+    );
+}
+
+function isDaylightSavingTimeShifted () {
+    if (!isUndefined(this._isDSTShifted)) {
+        return this._isDSTShifted;
+    }
+
+    var c = {};
+
+    copyConfig(c, this);
+    c = prepareConfig(c);
+
+    if (c._a) {
+        var other = c._isUTC ? createUTC(c._a) : createLocal(c._a);
+        this._isDSTShifted = this.isValid() &&
+            compareArrays(c._a, other.toArray()) > 0;
+    } else {
+        this._isDSTShifted = false;
+    }
+
+    return this._isDSTShifted;
+}
+
+function isLocal () {
+    return this.isValid() ? !this._isUTC : false;
+}
+
+function isUtcOffset () {
+    return this.isValid() ? this._isUTC : false;
+}
+
+function isUtc () {
+    return this.isValid() ? this._isUTC && this._offset === 0 : false;
+}
+
+// ASP.NET json date format regex
+var aspNetRegex = /^(\-)?(?:(\d*)[. ])?(\d+)\:(\d+)(?:\:(\d+)(\.\d*)?)?$/;
+
+// from http://docs.closure-library.googlecode.com/git/closure_goog_date_date.js.source.html
+// somewhat more in line with 4.4.3.2 2004 spec, but allows decimal anywhere
+// and further modified to allow for strings containing both week and day
+var isoRegex = /^(-)?P(?:(-?[0-9,.]*)Y)?(?:(-?[0-9,.]*)M)?(?:(-?[0-9,.]*)W)?(?:(-?[0-9,.]*)D)?(?:T(?:(-?[0-9,.]*)H)?(?:(-?[0-9,.]*)M)?(?:(-?[0-9,.]*)S)?)?$/;
+
+function createDuration (input, key) {
+    var duration = input,
+        // matching against regexp is expensive, do it on demand
+        match = null,
+        sign,
+        ret,
+        diffRes;
+
+    if (isDuration(input)) {
+        duration = {
+            ms : input._milliseconds,
+            d  : input._days,
+            M  : input._months
+        };
+    } else if (isNumber(input)) {
+        duration = {};
+        if (key) {
+            duration[key] = input;
+        } else {
+            duration.milliseconds = input;
+        }
+    } else if (!!(match = aspNetRegex.exec(input))) {
+        sign = (match[1] === '-') ? -1 : 1;
+        duration = {
+            y  : 0,
+            d  : toInt(match[DATE])                         * sign,
+            h  : toInt(match[HOUR])                         * sign,
+            m  : toInt(match[MINUTE])                       * sign,
+            s  : toInt(match[SECOND])                       * sign,
+            ms : toInt(absRound(match[MILLISECOND] * 1000)) * sign // the millisecond decimal point is included in the match
+        };
+    } else if (!!(match = isoRegex.exec(input))) {
+        sign = (match[1] === '-') ? -1 : 1;
+        duration = {
+            y : parseIso(match[2], sign),
+            M : parseIso(match[3], sign),
+            w : parseIso(match[4], sign),
+            d : parseIso(match[5], sign),
+            h : parseIso(match[6], sign),
+            m : parseIso(match[7], sign),
+            s : parseIso(match[8], sign)
+        };
+    } else if (duration == null) {// checks for null or undefined
+        duration = {};
+    } else if (typeof duration === 'object' && ('from' in duration || 'to' in duration)) {
+        diffRes = momentsDifference(createLocal(duration.from), createLocal(duration.to));
+
+        duration = {};
+        duration.ms = diffRes.milliseconds;
+        duration.M = diffRes.months;
+    }
+
+    ret = new Duration(duration);
+
+    if (isDuration(input) && hasOwnProp(input, '_locale')) {
+        ret._locale = input._locale;
+    }
+
+    return ret;
+}
+
+createDuration.fn = Duration.prototype;
+createDuration.invalid = createInvalid$1;
+
+function parseIso (inp, sign) {
+    // We'd normally use ~~inp for this, but unfortunately it also
+    // converts floats to ints.
+    // inp may be undefined, so careful calling replace on it.
+    var res = inp && parseFloat(inp.replace(',', '.'));
+    // apply sign while we're at it
+    return (isNaN(res) ? 0 : res) * sign;
+}
+
+function positiveMomentsDifference(base, other) {
+    var res = {milliseconds: 0, months: 0};
+
+    res.months = other.month() - base.month() +
+        (other.year() - base.year()) * 12;
+    if (base.clone().add(res.months, 'M').isAfter(other)) {
+        --res.months;
+    }
+
+    res.milliseconds = +other - +(base.clone().add(res.months, 'M'));
+
+    return res;
+}
+
+function momentsDifference(base, other) {
+    var res;
+    if (!(base.isValid() && other.isValid())) {
+        return {milliseconds: 0, months: 0};
+    }
+
+    other = cloneWithOffset(other, base);
+    if (base.isBefore(other)) {
+        res = positiveMomentsDifference(base, other);
+    } else {
+        res = positiveMomentsDifference(other, base);
+        res.milliseconds = -res.milliseconds;
+        res.months = -res.months;
+    }
+
+    return res;
+}
+
+// TODO: remove 'name' arg after deprecation is removed
+function createAdder(direction, name) {
+    return function (val, period) {
+        var dur, tmp;
+        //invert the arguments, but complain about it
+        if (period !== null && !isNaN(+period)) {
+            deprecateSimple(name, 'moment().' + name  + '(period, number) is deprecated. Please use moment().' + name + '(number, period). ' +
+            'See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.');
+            tmp = val; val = period; period = tmp;
+        }
+
+        val = typeof val === 'string' ? +val : val;
+        dur = createDuration(val, period);
+        addSubtract(this, dur, direction);
+        return this;
+    };
+}
+
+function addSubtract (mom, duration, isAdding, updateOffset) {
+    var milliseconds = duration._milliseconds,
+        days = absRound(duration._days),
+        months = absRound(duration._months);
+
+    if (!mom.isValid()) {
+        // No op
+        return;
+    }
+
+    updateOffset = updateOffset == null ? true : updateOffset;
+
+    if (milliseconds) {
+        mom._d.setTime(mom._d.valueOf() + milliseconds * isAdding);
+    }
+    if (days) {
+        set$1(mom, 'Date', get(mom, 'Date') + days * isAdding);
+    }
+    if (months) {
+        setMonth(mom, get(mom, 'Month') + months * isAdding);
+    }
+    if (updateOffset) {
+        hooks.updateOffset(mom, days || months);
+    }
+}
+
+var add      = createAdder(1, 'add');
+var subtract = createAdder(-1, 'subtract');
+
+function getCalendarFormat(myMoment, now) {
+    var diff = myMoment.diff(now, 'days', true);
+    return diff < -6 ? 'sameElse' :
+            diff < -1 ? 'lastWeek' :
+            diff < 0 ? 'lastDay' :
+            diff < 1 ? 'sameDay' :
+            diff < 2 ? 'nextDay' :
+            diff < 7 ? 'nextWeek' : 'sameElse';
+}
+
+function calendar$1 (time, formats) {
+    // We want to compare the start of today, vs this.
+    // Getting start-of-today depends on whether we're local/utc/offset or not.
+    var now = time || createLocal(),
+        sod = cloneWithOffset(now, this).startOf('day'),
+        format = hooks.calendarFormat(this, sod) || 'sameElse';
+
+    var output = formats && (isFunction(formats[format]) ? formats[format].call(this, now) : formats[format]);
+
+    return this.format(output || this.localeData().calendar(format, this, createLocal(now)));
+}
+
+function clone () {
+    return new Moment(this);
+}
+
+function isAfter (input, units) {
+    var localInput = isMoment(input) ? input : createLocal(input);
+    if (!(this.isValid() && localInput.isValid())) {
+        return false;
+    }
+    units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+    if (units === 'millisecond') {
+        return this.valueOf() > localInput.valueOf();
+    } else {
+        return localInput.valueOf() < this.clone().startOf(units).valueOf();
+    }
+}
+
+function isBefore (input, units) {
+    var localInput = isMoment(input) ? input : createLocal(input);
+    if (!(this.isValid() && localInput.isValid())) {
+        return false;
+    }
+    units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+    if (units === 'millisecond') {
+        return this.valueOf() < localInput.valueOf();
+    } else {
+        return this.clone().endOf(units).valueOf() < localInput.valueOf();
+    }
+}
+
+function isBetween (from, to, units, inclusivity) {
+    inclusivity = inclusivity || '()';
+    return (inclusivity[0] === '(' ? this.isAfter(from, units) : !this.isBefore(from, units)) &&
+        (inclusivity[1] === ')' ? this.isBefore(to, units) : !this.isAfter(to, units));
+}
+
+function isSame (input, units) {
+    var localInput = isMoment(input) ? input : createLocal(input),
+        inputMs;
+    if (!(this.isValid() && localInput.isValid())) {
+        return false;
+    }
+    units = normalizeUnits(units || 'millisecond');
+    if (units === 'millisecond') {
+        return this.valueOf() === localInput.valueOf();
+    } else {
+        inputMs = localInput.valueOf();
+        return this.clone().startOf(units).valueOf() <= inputMs && inputMs <= this.clone().endOf(units).valueOf();
+    }
+}
+
+function isSameOrAfter (input, units) {
+    return this.isSame(input, units) || this.isAfter(input,units);
+}
+
+function isSameOrBefore (input, units) {
+    return this.isSame(input, units) || this.isBefore(input,units);
+}
+
+function diff (input, units, asFloat) {
+    var that,
+        zoneDelta,
+        delta, output;
+
+    if (!this.isValid()) {
+        return NaN;
+    }
+
+    that = cloneWithOffset(input, this);
+
+    if (!that.isValid()) {
+        return NaN;
+    }
+
+    zoneDelta = (that.utcOffset() - this.utcOffset()) * 6e4;
+
+    units = normalizeUnits(units);
+
+    if (units === 'year' || units === 'month' || units === 'quarter') {
+        output = monthDiff(this, that);
+        if (units === 'quarter') {
+            output = output / 3;
+        } else if (units === 'year') {
+            output = output / 12;
+        }
+    } else {
+        delta = this - that;
+        output = units === 'second' ? delta / 1e3 : // 1000
+            units === 'minute' ? delta / 6e4 : // 1000 * 60
+            units === 'hour' ? delta / 36e5 : // 1000 * 60 * 60
+            units === 'day' ? (delta - zoneDelta) / 864e5 : // 1000 * 60 * 60 * 24, negate dst
+            units === 'week' ? (delta - zoneDelta) / 6048e5 : // 1000 * 60 * 60 * 24 * 7, negate dst
+            delta;
+    }
+    return asFloat ? output : absFloor(output);
+}
+
+function monthDiff (a, b) {
+    // difference in months
+    var wholeMonthDiff = ((b.year() - a.year()) * 12) + (b.month() - a.month()),
+        // b is in (anchor - 1 month, anchor + 1 month)
+        anchor = a.clone().add(wholeMonthDiff, 'months'),
+        anchor2, adjust;
+
+    if (b - anchor < 0) {
+        anchor2 = a.clone().add(wholeMonthDiff - 1, 'months');
+        // linear across the month
+        adjust = (b - anchor) / (anchor - anchor2);
+    } else {
+        anchor2 = a.clone().add(wholeMonthDiff + 1, 'months');
+        // linear across the month
+        adjust = (b - anchor) / (anchor2 - anchor);
+    }
+
+    //check for negative zero, return zero if negative zero
+    return -(wholeMonthDiff + adjust) || 0;
+}
+
+hooks.defaultFormat = 'YYYY-MM-DDTHH:mm:ssZ';
+hooks.defaultFormatUtc = 'YYYY-MM-DDTHH:mm:ss[Z]';
+
+function toString () {
+    return this.clone().locale('en').format('ddd MMM DD YYYY HH:mm:ss [GMT]ZZ');
+}
+
+function toISOString() {
+    if (!this.isValid()) {
+        return null;
+    }
+    var m = this.clone().utc();
+    if (m.year() < 0 || m.year() > 9999) {
+        return formatMoment(m, 'YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]');
+    }
+    if (isFunction(Date.prototype.toISOString)) {
+        // native implementation is ~50x faster, use it when we can
+        return this.toDate().toISOString();
+    }
+    return formatMoment(m, 'YYYY-MM-DD[T]HH:mm:ss.SSS[Z]');
+}
+
+/**
+ * Return a human readable representation of a moment that can
+ * also be evaluated to get a new moment which is the same
+ *
+ * @link https://nodejs.org/dist/latest/docs/api/util.html#util_custom_inspect_function_on_objects
+ */
+function inspect () {
+    if (!this.isValid()) {
+        return 'moment.invalid(/* ' + this._i + ' */)';
+    }
+    var func = 'moment';
+    var zone = '';
+    if (!this.isLocal()) {
+        func = this.utcOffset() === 0 ? 'moment.utc' : 'moment.parseZone';
+        zone = 'Z';
+    }
+    var prefix = '[' + func + '("]';
+    var year = (0 <= this.year() && this.year() <= 9999) ? 'YYYY' : 'YYYYYY';
+    var datetime = '-MM-DD[T]HH:mm:ss.SSS';
+    var suffix = zone + '[")]';
+
+    return this.format(prefix + year + datetime + suffix);
+}
+
+function format (inputString) {
+    if (!inputString) {
+        inputString = this.isUtc() ? hooks.defaultFormatUtc : hooks.defaultFormat;
+    }
+    var output = formatMoment(this, inputString);
+    return this.localeData().postformat(output);
+}
+
+function from (time, withoutSuffix) {
+    if (this.isValid() &&
+            ((isMoment(time) && time.isValid()) ||
+             createLocal(time).isValid())) {
+        return createDuration({to: this, from: time}).locale(this.locale()).humanize(!withoutSuffix);
+    } else {
+        return this.localeData().invalidDate();
+    }
+}
+
+function fromNow (withoutSuffix) {
+    return this.from(createLocal(), withoutSuffix);
+}
+
+function to (time, withoutSuffix) {
+    if (this.isValid() &&
+            ((isMoment(time) && time.isValid()) ||
+             createLocal(time).isValid())) {
+        return createDuration({from: this, to: time}).locale(this.locale()).humanize(!withoutSuffix);
+    } else {
+        return this.localeData().invalidDate();
+    }
+}
+
+function toNow (withoutSuffix) {
+    return this.to(createLocal(), withoutSuffix);
+}
+
+// If passed a locale key, it will set the locale for this
+// instance.  Otherwise, it will return the locale configuration
+// variables for this instance.
+function locale (key) {
+    var newLocaleData;
+
+    if (key === undefined) {
+        return this._locale._abbr;
+    } else {
+        newLocaleData = getLocale(key);
+        if (newLocaleData != null) {
+            this._locale = newLocaleData;
+        }
+        return this;
+    }
+}
+
+var lang = deprecate(
+    'moment().lang() is deprecated. Instead, use moment().localeData() to get the language configuration. Use moment().locale() to change languages.',
+    function (key) {
+        if (key === undefined) {
+            return this.localeData();
+        } else {
+            return this.locale(key);
+        }
+    }
+);
+
+function localeData () {
+    return this._locale;
+}
+
+function startOf (units) {
+    units = normalizeUnits(units);
+    // the following switch intentionally omits break keywords
+    // to utilize falling through the cases.
+    switch (units) {
+        case 'year':
+            this.month(0);
+            /* falls through */
+        case 'quarter':
+        case 'month':
+            this.date(1);
+            /* falls through */
+        case 'week':
+        case 'isoWeek':
+        case 'day':
+        case 'date':
+            this.hours(0);
+            /* falls through */
+        case 'hour':
+            this.minutes(0);
+            /* falls through */
+        case 'minute':
+            this.seconds(0);
+            /* falls through */
+        case 'second':
+            this.milliseconds(0);
+    }
+
+    // weeks are a special case
+    if (units === 'week') {
+        this.weekday(0);
+    }
+    if (units === 'isoWeek') {
+        this.isoWeekday(1);
+    }
+
+    // quarters are also special
+    if (units === 'quarter') {
+        this.month(Math.floor(this.month() / 3) * 3);
+    }
+
+    return this;
+}
+
+function endOf (units) {
+    units = normalizeUnits(units);
+    if (units === undefined || units === 'millisecond') {
+        return this;
+    }
+
+    // 'date' is an alias for 'day', so it should be considered as such.
+    if (units === 'date') {
+        units = 'day';
+    }
+
+    return this.startOf(units).add(1, (units === 'isoWeek' ? 'week' : units)).subtract(1, 'ms');
+}
+
+function valueOf () {
+    return this._d.valueOf() - ((this._offset || 0) * 60000);
+}
+
+function unix () {
+    return Math.floor(this.valueOf() / 1000);
+}
+
+function toDate () {
+    return new Date(this.valueOf());
+}
+
+function toArray () {
+    var m = this;
+    return [m.year(), m.month(), m.date(), m.hour(), m.minute(), m.second(), m.millisecond()];
+}
+
+function toObject () {
+    var m = this;
+    return {
+        years: m.year(),
+        months: m.month(),
+        date: m.date(),
+        hours: m.hours(),
+        minutes: m.minutes(),
+        seconds: m.seconds(),
+        milliseconds: m.milliseconds()
+    };
+}
+
+function toJSON () {
+    // new Date(NaN).toJSON() === null
+    return this.isValid() ? this.toISOString() : null;
+}
+
+function isValid$2 () {
+    return isValid(this);
+}
+
+function parsingFlags () {
+    return extend({}, getParsingFlags(this));
+}
+
+function invalidAt () {
+    return getParsingFlags(this).overflow;
+}
+
+function creationData() {
+    return {
+        input: this._i,
+        format: this._f,
+        locale: this._locale,
+        isUTC: this._isUTC,
+        strict: this._strict
+    };
+}
+
+// FORMATTING
+
+addFormatToken(0, ['gg', 2], 0, function () {
+    return this.weekYear() % 100;
+});
+
+addFormatToken(0, ['GG', 2], 0, function () {
+    return this.isoWeekYear() % 100;
+});
+
+function addWeekYearFormatToken (token, getter) {
+    addFormatToken(0, [token, token.length], 0, getter);
+}
+
+addWeekYearFormatToken('gggg',     'weekYear');
+addWeekYearFormatToken('ggggg',    'weekYear');
+addWeekYearFormatToken('GGGG',  'isoWeekYear');
+addWeekYearFormatToken('GGGGG', 'isoWeekYear');
+
+// ALIASES
+
+addUnitAlias('weekYear', 'gg');
+addUnitAlias('isoWeekYear', 'GG');
+
+// PRIORITY
+
+addUnitPriority('weekYear', 1);
+addUnitPriority('isoWeekYear', 1);
+
+
+// PARSING
+
+addRegexToken('G',      matchSigned);
+addRegexToken('g',      matchSigned);
+addRegexToken('GG',     match1to2, match2);
+addRegexToken('gg',     match1to2, match2);
+addRegexToken('GGGG',   match1to4, match4);
+addRegexToken('gggg',   match1to4, match4);
+addRegexToken('GGGGG',  match1to6, match6);
+addRegexToken('ggggg',  match1to6, match6);
+
+addWeekParseToken(['gggg', 'ggggg', 'GGGG', 'GGGGG'], function (input, week, config, token) {
+    week[token.substr(0, 2)] = toInt(input);
+});
+
+addWeekParseToken(['gg', 'GG'], function (input, week, config, token) {
+    week[token] = hooks.parseTwoDigitYear(input);
+});
+
+// MOMENTS
+
+function getSetWeekYear (input) {
+    return getSetWeekYearHelper.call(this,
+            input,
+            this.week(),
+            this.weekday(),
+            this.localeData()._week.dow,
+            this.localeData()._week.doy);
+}
+
+function getSetISOWeekYear (input) {
+    return getSetWeekYearHelper.call(this,
+            input, this.isoWeek(), this.isoWeekday(), 1, 4);
+}
+
+function getISOWeeksInYear () {
+    return weeksInYear(this.year(), 1, 4);
+}
+
+function getWeeksInYear () {
+    var weekInfo = this.localeData()._week;
+    return weeksInYear(this.year(), weekInfo.dow, weekInfo.doy);
+}
+
+function getSetWeekYearHelper(input, week, weekday, dow, doy) {
+    var weeksTarget;
+    if (input == null) {
+        return weekOfYear(this, dow, doy).year;
+    } else {
+        weeksTarget = weeksInYear(input, dow, doy);
+        if (week > weeksTarget) {
+            week = weeksTarget;
+        }
+        return setWeekAll.call(this, input, week, weekday, dow, doy);
+    }
+}
+
+function setWeekAll(weekYear, week, weekday, dow, doy) {
+    var dayOfYearData = dayOfYearFromWeeks(weekYear, week, weekday, dow, doy),
+        date = createUTCDate(dayOfYearData.year, 0, dayOfYearData.dayOfYear);
+
+    this.year(date.getUTCFullYear());
+    this.month(date.getUTCMonth());
+    this.date(date.getUTCDate());
+    return this;
+}
+
+// FORMATTING
+
+addFormatToken('Q', 0, 'Qo', 'quarter');
+
+// ALIASES
+
+addUnitAlias('quarter', 'Q');
+
+// PRIORITY
+
+addUnitPriority('quarter', 7);
+
+// PARSING
+
+addRegexToken('Q', match1);
+addParseToken('Q', function (input, array) {
+    array[MONTH] = (toInt(input) - 1) * 3;
+});
+
+// MOMENTS
+
+function getSetQuarter (input) {
+    return input == null ? Math.ceil((this.month() + 1) / 3) : this.month((input - 1) * 3 + this.month() % 3);
+}
+
+// FORMATTING
+
+addFormatToken('D', ['DD', 2], 'Do', 'date');
+
+// ALIASES
+
+addUnitAlias('date', 'D');
+
+// PRIOROITY
+addUnitPriority('date', 9);
+
+// PARSING
+
+addRegexToken('D',  match1to2);
+addRegexToken('DD', match1to2, match2);
+addRegexToken('Do', function (isStrict, locale) {
+    // TODO: Remove "ordinalParse" fallback in next major release.
+    return isStrict ?
+      (locale._dayOfMonthOrdinalParse || locale._ordinalParse) :
+      locale._dayOfMonthOrdinalParseLenient;
+});
+
+addParseToken(['D', 'DD'], DATE);
+addParseToken('Do', function (input, array) {
+    array[DATE] = toInt(input.match(match1to2)[0], 10);
+});
+
+// MOMENTS
+
+var getSetDayOfMonth = makeGetSet('Date', true);
+
+// FORMATTING
+
+addFormatToken('DDD', ['DDDD', 3], 'DDDo', 'dayOfYear');
+
+// ALIASES
+
+addUnitAlias('dayOfYear', 'DDD');
+
+// PRIORITY
+addUnitPriority('dayOfYear', 4);
+
+// PARSING
+
+addRegexToken('DDD',  match1to3);
+addRegexToken('DDDD', match3);
+addParseToken(['DDD', 'DDDD'], function (input, array, config) {
+    config._dayOfYear = toInt(input);
+});
+
+// HELPERS
+
+// MOMENTS
+
+function getSetDayOfYear (input) {
+    var dayOfYear = Math.round((this.clone().startOf('day') - this.clone().startOf('year')) / 864e5) + 1;
+    return input == null ? dayOfYear : this.add((input - dayOfYear), 'd');
+}
+
+// FORMATTING
+
+addFormatToken('m', ['mm', 2], 0, 'minute');
+
+// ALIASES
+
+addUnitAlias('minute', 'm');
+
+// PRIORITY
+
+addUnitPriority('minute', 14);
+
+// PARSING
+
+addRegexToken('m',  match1to2);
+addRegexToken('mm', match1to2, match2);
+addParseToken(['m', 'mm'], MINUTE);
+
+// MOMENTS
+
+var getSetMinute = makeGetSet('Minutes', false);
+
+// FORMATTING
+
+addFormatToken('s', ['ss', 2], 0, 'second');
+
+// ALIASES
+
+addUnitAlias('second', 's');
+
+// PRIORITY
+
+addUnitPriority('second', 15);
+
+// PARSING
+
+addRegexToken('s',  match1to2);
+addRegexToken('ss', match1to2, match2);
+addParseToken(['s', 'ss'], SECOND);
+
+// MOMENTS
+
+var getSetSecond = makeGetSet('Seconds', false);
+
+// FORMATTING
+
+addFormatToken('S', 0, 0, function () {
+    return ~~(this.millisecond() / 100);
+});
+
+addFormatToken(0, ['SS', 2], 0, function () {
+    return ~~(this.millisecond() / 10);
+});
+
+addFormatToken(0, ['SSS', 3], 0, 'millisecond');
+addFormatToken(0, ['SSSS', 4], 0, function () {
+    return this.millisecond() * 10;
+});
+addFormatToken(0, ['SSSSS', 5], 0, function () {
+    return this.millisecond() * 100;
+});
+addFormatToken(0, ['SSSSSS', 6], 0, function () {
+    return this.millisecond() * 1000;
+});
+addFormatToken(0, ['SSSSSSS', 7], 0, function () {
+    return this.millisecond() * 10000;
+});
+addFormatToken(0, ['SSSSSSSS', 8], 0, function () {
+    return this.millisecond() * 100000;
+});
+addFormatToken(0, ['SSSSSSSSS', 9], 0, function () {
+    return this.millisecond() * 1000000;
+});
+
+
+// ALIASES
+
+addUnitAlias('millisecond', 'ms');
+
+// PRIORITY
+
+addUnitPriority('millisecond', 16);
+
+// PARSING
+
+addRegexToken('S',    match1to3, match1);
+addRegexToken('SS',   match1to3, match2);
+addRegexToken('SSS',  match1to3, match3);
+
+var token;
+for (token = 'SSSS'; token.length <= 9; token += 'S') {
+    addRegexToken(token, matchUnsigned);
+}
+
+function parseMs(input, array) {
+    array[MILLISECOND] = toInt(('0.' + input) * 1000);
+}
+
+for (token = 'S'; token.length <= 9; token += 'S') {
+    addParseToken(token, parseMs);
+}
+// MOMENTS
+
+var getSetMillisecond = makeGetSet('Milliseconds', false);
+
+// FORMATTING
+
+addFormatToken('z',  0, 0, 'zoneAbbr');
+addFormatToken('zz', 0, 0, 'zoneName');
+
+// MOMENTS
+
+function getZoneAbbr () {
+    return this._isUTC ? 'UTC' : '';
+}
+
+function getZoneName () {
+    return this._isUTC ? 'Coordinated Universal Time' : '';
+}
+
+var proto = Moment.prototype;
+
+proto.add               = add;
+proto.calendar          = calendar$1;
+proto.clone             = clone;
+proto.diff              = diff;
+proto.endOf             = endOf;
+proto.format            = format;
+proto.from              = from;
+proto.fromNow           = fromNow;
+proto.to                = to;
+proto.toNow             = toNow;
+proto.get               = stringGet;
+proto.invalidAt         = invalidAt;
+proto.isAfter           = isAfter;
+proto.isBefore          = isBefore;
+proto.isBetween         = isBetween;
+proto.isSame            = isSame;
+proto.isSameOrAfter     = isSameOrAfter;
+proto.isSameOrBefore    = isSameOrBefore;
+proto.isValid           = isValid$2;
+proto.lang              = lang;
+proto.locale            = locale;
+proto.localeData        = localeData;
+proto.max               = prototypeMax;
+proto.min               = prototypeMin;
+proto.parsingFlags      = parsingFlags;
+proto.set               = stringSet;
+proto.startOf           = startOf;
+proto.subtract          = subtract;
+proto.toArray           = toArray;
+proto.toObject          = toObject;
+proto.toDate            = toDate;
+proto.toISOString       = toISOString;
+proto.inspect           = inspect;
+proto.toJSON            = toJSON;
+proto.toString          = toString;
+proto.unix              = unix;
+proto.valueOf           = valueOf;
+proto.creationData      = creationData;
+
+// Year
+proto.year       = getSetYear;
+proto.isLeapYear = getIsLeapYear;
+
+// Week Year
+proto.weekYear    = getSetWeekYear;
+proto.isoWeekYear = getSetISOWeekYear;
+
+// Quarter
+proto.quarter = proto.quarters = getSetQuarter;
+
+// Month
+proto.month       = getSetMonth;
+proto.daysInMonth = getDaysInMonth;
+
+// Week
+proto.week           = proto.weeks        = getSetWeek;
+proto.isoWeek        = proto.isoWeeks     = getSetISOWeek;
+proto.weeksInYear    = getWeeksInYear;
+proto.isoWeeksInYear = getISOWeeksInYear;
+
+// Day
+proto.date       = getSetDayOfMonth;
+proto.day        = proto.days             = getSetDayOfWeek;
+proto.weekday    = getSetLocaleDayOfWeek;
+proto.isoWeekday = getSetISODayOfWeek;
+proto.dayOfYear  = getSetDayOfYear;
+
+// Hour
+proto.hour = proto.hours = getSetHour;
+
+// Minute
+proto.minute = proto.minutes = getSetMinute;
+
+// Second
+proto.second = proto.seconds = getSetSecond;
+
+// Millisecond
+proto.millisecond = proto.milliseconds = getSetMillisecond;
+
+// Offset
+proto.utcOffset            = getSetOffset;
+proto.utc                  = setOffsetToUTC;
+proto.local                = setOffsetToLocal;
+proto.parseZone            = setOffsetToParsedOffset;
+proto.hasAlignedHourOffset = hasAlignedHourOffset;
+proto.isDST                = isDaylightSavingTime;
+proto.isLocal              = isLocal;
+proto.isUtcOffset          = isUtcOffset;
+proto.isUtc                = isUtc;
+proto.isUTC                = isUtc;
+
+// Timezone
+proto.zoneAbbr = getZoneAbbr;
+proto.zoneName = getZoneName;
+
+// Deprecations
+proto.dates  = deprecate('dates accessor is deprecated. Use date instead.', getSetDayOfMonth);
+proto.months = deprecate('months accessor is deprecated. Use month instead', getSetMonth);
+proto.years  = deprecate('years accessor is deprecated. Use year instead', getSetYear);
+proto.zone   = deprecate('moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/', getSetZone);
+proto.isDSTShifted = deprecate('isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information', isDaylightSavingTimeShifted);
+
+function createUnix (input) {
+    return createLocal(input * 1000);
+}
+
+function createInZone () {
+    return createLocal.apply(null, arguments).parseZone();
+}
+
+function preParsePostFormat (string) {
+    return string;
+}
+
+var proto$1 = Locale.prototype;
+
+proto$1.calendar        = calendar;
+proto$1.longDateFormat  = longDateFormat;
+proto$1.invalidDate     = invalidDate;
+proto$1.ordinal         = ordinal;
+proto$1.preparse        = preParsePostFormat;
+proto$1.postformat      = preParsePostFormat;
+proto$1.relativeTime    = relativeTime;
+proto$1.pastFuture      = pastFuture;
+proto$1.set             = set;
+
+// Month
+proto$1.months            =        localeMonths;
+proto$1.monthsShort       =        localeMonthsShort;
+proto$1.monthsParse       =        localeMonthsParse;
+proto$1.monthsRegex       = monthsRegex;
+proto$1.monthsShortRegex  = monthsShortRegex;
+
+// Week
+proto$1.week = localeWeek;
+proto$1.firstDayOfYear = localeFirstDayOfYear;
+proto$1.firstDayOfWeek = localeFirstDayOfWeek;
+
+// Day of Week
+proto$1.weekdays       =        localeWeekdays;
+proto$1.weekdaysMin    =        localeWeekdaysMin;
+proto$1.weekdaysShort  =        localeWeekdaysShort;
+proto$1.weekdaysParse  =        localeWeekdaysParse;
+
+proto$1.weekdaysRegex       =        weekdaysRegex;
+proto$1.weekdaysShortRegex  =        weekdaysShortRegex;
+proto$1.weekdaysMinRegex    =        weekdaysMinRegex;
+
+// Hours
+proto$1.isPM = localeIsPM;
+proto$1.meridiem = localeMeridiem;
+
+function get$1 (format, index, field, setter) {
+    var locale = getLocale();
+    var utc = createUTC().set(setter, index);
+    return locale[field](utc, format);
+}
+
+function listMonthsImpl (format, index, field) {
+    if (isNumber(format)) {
+        index = format;
+        format = undefined;
+    }
+
+    format = format || '';
+
+    if (index != null) {
+        return get$1(format, index, field, 'month');
+    }
+
+    var i;
+    var out = [];
+    for (i = 0; i < 12; i++) {
+        out[i] = get$1(format, i, field, 'month');
+    }
+    return out;
+}
+
+// ()
+// (5)
+// (fmt, 5)
+// (fmt)
+// (true)
+// (true, 5)
+// (true, fmt, 5)
+// (true, fmt)
+function listWeekdaysImpl (localeSorted, format, index, field) {
+    if (typeof localeSorted === 'boolean') {
+        if (isNumber(format)) {
+            index = format;
+            format = undefined;
+        }
+
+        format = format || '';
+    } else {
+        format = localeSorted;
+        index = format;
+        localeSorted = false;
+
+        if (isNumber(format)) {
+            index = format;
+            format = undefined;
+        }
+
+        format = format || '';
+    }
+
+    var locale = getLocale(),
+        shift = localeSorted ? locale._week.dow : 0;
+
+    if (index != null) {
+        return get$1(format, (index + shift) % 7, field, 'day');
+    }
+
+    var i;
+    var out = [];
+    for (i = 0; i < 7; i++) {
+        out[i] = get$1(format, (i + shift) % 7, field, 'day');
+    }
+    return out;
+}
+
+function listMonths (format, index) {
+    return listMonthsImpl(format, index, 'months');
+}
+
+function listMonthsShort (format, index) {
+    return listMonthsImpl(format, index, 'monthsShort');
+}
+
+function listWeekdays (localeSorted, format, index) {
+    return listWeekdaysImpl(localeSorted, format, index, 'weekdays');
+}
+
+function listWeekdaysShort (localeSorted, format, index) {
+    return listWeekdaysImpl(localeSorted, format, index, 'weekdaysShort');
+}
+
+function listWeekdaysMin (localeSorted, format, index) {
+    return listWeekdaysImpl(localeSorted, format, index, 'weekdaysMin');
+}
+
+getSetGlobalLocale('en', {
+    dayOfMonthOrdinalParse: /\d{1,2}(th|st|nd|rd)/,
+    ordinal : function (number) {
+        var b = number % 10,
+            output = (toInt(number % 100 / 10) === 1) ? 'th' :
+            (b === 1) ? 'st' :
+            (b === 2) ? 'nd' :
+            (b === 3) ? 'rd' : 'th';
+        return number + output;
+    }
+});
+
+// Side effect imports
+hooks.lang = deprecate('moment.lang is deprecated. Use moment.locale instead.', getSetGlobalLocale);
+hooks.langData = deprecate('moment.langData is deprecated. Use moment.localeData instead.', getLocale);
+
+var mathAbs = Math.abs;
+
+function abs () {
+    var data           = this._data;
+
+    this._milliseconds = mathAbs(this._milliseconds);
+    this._days         = mathAbs(this._days);
+    this._months       = mathAbs(this._months);
+
+    data.milliseconds  = mathAbs(data.milliseconds);
+    data.seconds       = mathAbs(data.seconds);
+    data.minutes       = mathAbs(data.minutes);
+    data.hours         = mathAbs(data.hours);
+    data.months        = mathAbs(data.months);
+    data.years         = mathAbs(data.years);
+
+    return this;
+}
+
+function addSubtract$1 (duration, input, value, direction) {
+    var other = createDuration(input, value);
+
+    duration._milliseconds += direction * other._milliseconds;
+    duration._days         += direction * other._days;
+    duration._months       += direction * other._months;
+
+    return duration._bubble();
+}
+
+// supports only 2.0-style add(1, 's') or add(duration)
+function add$1 (input, value) {
+    return addSubtract$1(this, input, value, 1);
+}
+
+// supports only 2.0-style subtract(1, 's') or subtract(duration)
+function subtract$1 (input, value) {
+    return addSubtract$1(this, input, value, -1);
+}
+
+function absCeil (number) {
+    if (number < 0) {
+        return Math.floor(number);
+    } else {
+        return Math.ceil(number);
+    }
+}
+
+function bubble () {
+    var milliseconds = this._milliseconds;
+    var days         = this._days;
+    var months       = this._months;
+    var data         = this._data;
+    var seconds, minutes, hours, years, monthsFromDays;
+
+    // if we have a mix of positive and negative values, bubble down first
+    // check: https://github.com/moment/moment/issues/2166
+    if (!((milliseconds >= 0 && days >= 0 && months >= 0) ||
+            (milliseconds <= 0 && days <= 0 && months <= 0))) {
+        milliseconds += absCeil(monthsToDays(months) + days) * 864e5;
+        days = 0;
+        months = 0;
+    }
+
+    // The following code bubbles up values, see the tests for
+    // examples of what that means.
+    data.milliseconds = milliseconds % 1000;
+
+    seconds           = absFloor(milliseconds / 1000);
+    data.seconds      = seconds % 60;
+
+    minutes           = absFloor(seconds / 60);
+    data.minutes      = minutes % 60;
+
+    hours             = absFloor(minutes / 60);
+    data.hours        = hours % 24;
+
+    days += absFloor(hours / 24);
+
+    // convert days to months
+    monthsFromDays = absFloor(daysToMonths(days));
+    months += monthsFromDays;
+    days -= absCeil(monthsToDays(monthsFromDays));
+
+    // 12 months -> 1 year
+    years = absFloor(months / 12);
+    months %= 12;
+
+    data.days   = days;
+    data.months = months;
+    data.years  = years;
+
+    return this;
+}
+
+function daysToMonths (days) {
+    // 400 years have 146097 days (taking into account leap year rules)
+    // 400 years have 12 months === 4800
+    return days * 4800 / 146097;
+}
+
+function monthsToDays (months) {
+    // the reverse of daysToMonths
+    return months * 146097 / 4800;
+}
+
+function as (units) {
+    if (!this.isValid()) {
+        return NaN;
+    }
+    var days;
+    var months;
+    var milliseconds = this._milliseconds;
+
+    units = normalizeUnits(units);
+
+    if (units === 'month' || units === 'year') {
+        days   = this._days   + milliseconds / 864e5;
+        months = this._months + daysToMonths(days);
+        return units === 'month' ? months : months / 12;
+    } else {
+        // handle milliseconds separately because of floating point math errors (issue #1867)
+        days = this._days + Math.round(monthsToDays(this._months));
+        switch (units) {
+            case 'week'   : return days / 7     + milliseconds / 6048e5;
+            case 'day'    : return days         + milliseconds / 864e5;
+            case 'hour'   : return days * 24    + milliseconds / 36e5;
+            case 'minute' : return days * 1440  + milliseconds / 6e4;
+            case 'second' : return days * 86400 + milliseconds / 1000;
+            // Math.floor prevents floating point math errors here
+            case 'millisecond': return Math.floor(days * 864e5) + milliseconds;
+            default: throw new Error('Unknown unit ' + units);
+        }
+    }
+}
+
+// TODO: Use this.as('ms')?
+function valueOf$1 () {
+    if (!this.isValid()) {
+        return NaN;
+    }
+    return (
+        this._milliseconds +
+        this._days * 864e5 +
+        (this._months % 12) * 2592e6 +
+        toInt(this._months / 12) * 31536e6
+    );
+}
+
+function makeAs (alias) {
+    return function () {
+        return this.as(alias);
+    };
+}
+
+var asMilliseconds = makeAs('ms');
+var asSeconds      = makeAs('s');
+var asMinutes      = makeAs('m');
+var asHours        = makeAs('h');
+var asDays         = makeAs('d');
+var asWeeks        = makeAs('w');
+var asMonths       = makeAs('M');
+var asYears        = makeAs('y');
+
+function get$2 (units) {
+    units = normalizeUnits(units);
+    return this.isValid() ? this[units + 's']() : NaN;
+}
+
+function makeGetter(name) {
+    return function () {
+        return this.isValid() ? this._data[name] : NaN;
+    };
+}
+
+var milliseconds = makeGetter('milliseconds');
+var seconds      = makeGetter('seconds');
+var minutes      = makeGetter('minutes');
+var hours        = makeGetter('hours');
+var days         = makeGetter('days');
+var months       = makeGetter('months');
+var years        = makeGetter('years');
+
+function weeks () {
+    return absFloor(this.days() / 7);
+}
+
+var round = Math.round;
+var thresholds = {
+    ss: 44,         // a few seconds to seconds
+    s : 45,         // seconds to minute
+    m : 45,         // minutes to hour
+    h : 22,         // hours to day
+    d : 26,         // days to month
+    M : 11          // months to year
+};
+
+// helper function for moment.fn.from, moment.fn.fromNow, and moment.duration.fn.humanize
+function substituteTimeAgo(string, number, withoutSuffix, isFuture, locale) {
+    return locale.relativeTime(number || 1, !!withoutSuffix, string, isFuture);
+}
+
+function relativeTime$1 (posNegDuration, withoutSuffix, locale) {
+    var duration = createDuration(posNegDuration).abs();
+    var seconds  = round(duration.as('s'));
+    var minutes  = round(duration.as('m'));
+    var hours    = round(duration.as('h'));
+    var days     = round(duration.as('d'));
+    var months   = round(duration.as('M'));
+    var years    = round(duration.as('y'));
+
+    var a = seconds <= thresholds.ss && ['s', seconds]  ||
+            seconds < thresholds.s   && ['ss', seconds] ||
+            minutes <= 1             && ['m']           ||
+            minutes < thresholds.m   && ['mm', minutes] ||
+            hours   <= 1             && ['h']           ||
+            hours   < thresholds.h   && ['hh', hours]   ||
+            days    <= 1             && ['d']           ||
+            days    < thresholds.d   && ['dd', days]    ||
+            months  <= 1             && ['M']           ||
+            months  < thresholds.M   && ['MM', months]  ||
+            years   <= 1             && ['y']           || ['yy', years];
+
+    a[2] = withoutSuffix;
+    a[3] = +posNegDuration > 0;
+    a[4] = locale;
+    return substituteTimeAgo.apply(null, a);
+}
+
+// This function allows you to set the rounding function for relative time strings
+function getSetRelativeTimeRounding (roundingFunction) {
+    if (roundingFunction === undefined) {
+        return round;
+    }
+    if (typeof(roundingFunction) === 'function') {
+        round = roundingFunction;
+        return true;
+    }
+    return false;
+}
+
+// This function allows you to set a threshold for relative time strings
+function getSetRelativeTimeThreshold (threshold, limit) {
+    if (thresholds[threshold] === undefined) {
+        return false;
+    }
+    if (limit === undefined) {
+        return thresholds[threshold];
+    }
+    thresholds[threshold] = limit;
+    if (threshold === 's') {
+        thresholds.ss = limit - 1;
+    }
+    return true;
+}
+
+function humanize (withSuffix) {
+    if (!this.isValid()) {
+        return this.localeData().invalidDate();
+    }
+
+    var locale = this.localeData();
+    var output = relativeTime$1(this, !withSuffix, locale);
+
+    if (withSuffix) {
+        output = locale.pastFuture(+this, output);
+    }
+
+    return locale.postformat(output);
+}
+
+var abs$1 = Math.abs;
+
+function toISOString$1() {
+    // for ISO strings we do not use the normal bubbling rules:
+    //  * milliseconds bubble up until they become hours
+    //  * days do not bubble at all
+    //  * months bubble up until they become years
+    // This is because there is no context-free conversion between hours and days
+    // (think of clock changes)
+    // and also not between days and months (28-31 days per month)
+    if (!this.isValid()) {
+        return this.localeData().invalidDate();
+    }
+
+    var seconds = abs$1(this._milliseconds) / 1000;
+    var days         = abs$1(this._days);
+    var months       = abs$1(this._months);
+    var minutes, hours, years;
+
+    // 3600 seconds -> 60 minutes -> 1 hour
+    minutes           = absFloor(seconds / 60);
+    hours             = absFloor(minutes / 60);
+    seconds %= 60;
+    minutes %= 60;
+
+    // 12 months -> 1 year
+    years  = absFloor(months / 12);
+    months %= 12;
+
+
+    // inspired by https://github.com/dordille/moment-isoduration/blob/master/moment.isoduration.js
+    var Y = years;
+    var M = months;
+    var D = days;
+    var h = hours;
+    var m = minutes;
+    var s = seconds;
+    var total = this.asSeconds();
+
+    if (!total) {
+        // this is the same as C#'s (Noda) and python (isodate)...
+        // but not other JS (goog.date)
+        return 'P0D';
+    }
+
+    return (total < 0 ? '-' : '') +
+        'P' +
+        (Y ? Y + 'Y' : '') +
+        (M ? M + 'M' : '') +
+        (D ? D + 'D' : '') +
+        ((h || m || s) ? 'T' : '') +
+        (h ? h + 'H' : '') +
+        (m ? m + 'M' : '') +
+        (s ? s + 'S' : '');
+}
+
+var proto$2 = Duration.prototype;
+
+proto$2.isValid        = isValid$1;
+proto$2.abs            = abs;
+proto$2.add            = add$1;
+proto$2.subtract       = subtract$1;
+proto$2.as             = as;
+proto$2.asMilliseconds = asMilliseconds;
+proto$2.asSeconds      = asSeconds;
+proto$2.asMinutes      = asMinutes;
+proto$2.asHours        = asHours;
+proto$2.asDays         = asDays;
+proto$2.asWeeks        = asWeeks;
+proto$2.asMonths       = asMonths;
+proto$2.asYears        = asYears;
+proto$2.valueOf        = valueOf$1;
+proto$2._bubble        = bubble;
+proto$2.get            = get$2;
+proto$2.milliseconds   = milliseconds;
+proto$2.seconds        = seconds;
+proto$2.minutes        = minutes;
+proto$2.hours          = hours;
+proto$2.days           = days;
+proto$2.weeks          = weeks;
+proto$2.months         = months;
+proto$2.years          = years;
+proto$2.humanize       = humanize;
+proto$2.toISOString    = toISOString$1;
+proto$2.toString       = toISOString$1;
+proto$2.toJSON         = toISOString$1;
+proto$2.locale         = locale;
+proto$2.localeData     = localeData;
+
+// Deprecations
+proto$2.toIsoString = deprecate('toIsoString() is deprecated. Please use toISOString() instead (notice the capitals)', toISOString$1);
+proto$2.lang = lang;
+
+// Side effect imports
+
+// FORMATTING
+
+addFormatToken('X', 0, 0, 'unix');
+addFormatToken('x', 0, 0, 'valueOf');
+
+// PARSING
+
+addRegexToken('x', matchSigned);
+addRegexToken('X', matchTimestamp);
+addParseToken('X', function (input, array, config) {
+    config._d = new Date(parseFloat(input, 10) * 1000);
+});
+addParseToken('x', function (input, array, config) {
+    config._d = new Date(toInt(input));
+});
+
+// Side effect imports
+
+
+hooks.version = '2.18.1';
+
+setHookCallback(createLocal);
+
+hooks.fn                    = proto;
+hooks.min                   = min;
+hooks.max                   = max;
+hooks.now                   = now;
+hooks.utc                   = createUTC;
+hooks.unix                  = createUnix;
+hooks.months                = listMonths;
+hooks.isDate                = isDate;
+hooks.locale                = getSetGlobalLocale;
+hooks.invalid               = createInvalid;
+hooks.duration              = createDuration;
+hooks.isMoment              = isMoment;
+hooks.weekdays              = listWeekdays;
+hooks.parseZone             = createInZone;
+hooks.localeData            = getLocale;
+hooks.isDuration            = isDuration;
+hooks.monthsShort           = listMonthsShort;
+hooks.weekdaysMin           = listWeekdaysMin;
+hooks.defineLocale          = defineLocale;
+hooks.updateLocale          = updateLocale;
+hooks.locales               = listLocales;
+hooks.weekdaysShort         = listWeekdaysShort;
+hooks.normalizeUnits        = normalizeUnits;
+hooks.relativeTimeRounding = getSetRelativeTimeRounding;
+hooks.relativeTimeThreshold = getSetRelativeTimeThreshold;
+hooks.calendarFormat        = getCalendarFormat;
+hooks.prototype             = proto;
+
+return hooks;
+
+})));
+
+},{}],224:[function(require,module,exports){
 /**
  * Helpers.
  */
@@ -24496,7 +37505,7 @@ function plural(ms, n, name) {
   return Math.ceil(ms / n) + ' ' + name + 's'
 }
 
-},{}],125:[function(require,module,exports){
+},{}],225:[function(require,module,exports){
 module.exports = extractDescription
 
 // Extracts description from contents of a readme file in markdown format
@@ -24512,7 +37521,7 @@ function extractDescription (d) {
   return d.slice(s, e).join(' ').trim()
 }
 
-},{}],126:[function(require,module,exports){
+},{}],226:[function(require,module,exports){
 var semver = require("semver")
 var validateLicense = require('validate-npm-package-license');
 var hostedGitInfo = require("hosted-git-info")
@@ -24932,7 +37941,7 @@ function bugsTypos(bugs, warn) {
   })
 }
 
-},{"./extract_description":125,"./typos":129,"hosted-git-info":62,"is-builtin-module":71,"semver":190,"url":294,"validate-npm-package-license":300}],127:[function(require,module,exports){
+},{"./extract_description":225,"./typos":229,"hosted-git-info":150,"is-builtin-module":159,"semver":295,"url":416,"validate-npm-package-license":422}],227:[function(require,module,exports){
 var util = require("util")
 var messages = require("./warning_messages.json")
 
@@ -24957,7 +37966,7 @@ function makeTypoWarning (providedName, probableName, field) {
   return util.format(messages.typo, providedName, probableName)
 }
 
-},{"./warning_messages.json":130,"util":299}],128:[function(require,module,exports){
+},{"./warning_messages.json":230,"util":421}],228:[function(require,module,exports){
 module.exports = normalize
 
 var fixer = require("./fixer")
@@ -24998,7 +38007,7 @@ function ucFirst (string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-},{"./fixer":126,"./make_warning":127}],129:[function(require,module,exports){
+},{"./fixer":226,"./make_warning":227}],229:[function(require,module,exports){
 module.exports={
   "topLevel": {
     "dependancies": "dependencies"
@@ -25025,7 +38034,7 @@ module.exports={
   "script": { "server": "start", "tests": "test" }
 }
 
-},{}],130:[function(require,module,exports){
+},{}],230:[function(require,module,exports){
 module.exports={
   "repositories": "'repositories' (plural) Not supported. Please pick one as the 'repository' field"
   ,"missingRepository": "No repository field."
@@ -25058,7 +38067,7 @@ module.exports={
   ,"typo": "%s should probably be %s."
 }
 
-},{}],131:[function(require,module,exports){
+},{}],231:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -25150,7 +38159,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],132:[function(require,module,exports){
+},{}],232:[function(require,module,exports){
 'use strict';
 
 // modified from https://github.com/es-shims/es5-shim
@@ -25292,7 +38301,7 @@ keysShim.shim = function shimObjectKeys() {
 
 module.exports = keysShim;
 
-},{"./isArguments":133}],133:[function(require,module,exports){
+},{"./isArguments":233}],233:[function(require,module,exports){
 'use strict';
 
 var toStr = Object.prototype.toString;
@@ -25311,7 +38320,7 @@ module.exports = function isArguments(value) {
 	return isArgs;
 };
 
-},{}],134:[function(require,module,exports){
+},{}],234:[function(require,module,exports){
 var wrappy = require('wrappy')
 module.exports = wrappy(once)
 module.exports.strict = wrappy(onceStrict)
@@ -25355,7 +38364,7 @@ function onceStrict (fn) {
   return f
 }
 
-},{"wrappy":306}],135:[function(require,module,exports){
+},{"wrappy":428}],235:[function(require,module,exports){
 // Generated by LiveScript 1.5.0
 (function(){
   var ref$, id, find, sort, min, max, map, unlines, nameToRaw, dasherize, naturalJoin, wordwrap, getPreText, setHelpStyleDefaults, generateHelpForOption, generateHelp;
@@ -25604,7 +38613,7 @@ function onceStrict (fn) {
   }
 }).call(this);
 
-},{"./util":137,"prelude-ls":157,"wordwrap":138}],136:[function(require,module,exports){
+},{"./util":237,"prelude-ls":257,"wordwrap":238}],236:[function(require,module,exports){
 (function (process){
 // Generated by LiveScript 1.5.0
 (function(){
@@ -26073,7 +39082,7 @@ function onceStrict (fn) {
 }).call(this);
 
 }).call(this,require('_process'))
-},{"./help":135,"./util":137,"_process":159,"deep-is":38,"levn":112,"prelude-ls":157,"type-check":287}],137:[function(require,module,exports){
+},{"./help":235,"./util":237,"_process":259,"deep-is":110,"levn":204,"prelude-ls":257,"type-check":408}],237:[function(require,module,exports){
 // Generated by LiveScript 1.5.0
 (function(){
   var prelude, map, sortBy, fl, closestString, nameToRaw, dasherize, naturalJoin;
@@ -26129,7 +39138,7 @@ function onceStrict (fn) {
   };
 }).call(this);
 
-},{"fast-levenshtein":43,"prelude-ls":157}],138:[function(require,module,exports){
+},{"fast-levenshtein":130,"prelude-ls":257}],238:[function(require,module,exports){
 var wordwrap = module.exports = function (start, stop, params) {
     if (typeof start === 'object') {
         params = start;
@@ -26207,7 +39216,7 @@ wordwrap.hard = function (start, stop) {
     return wordwrap(start, stop, { mode : 'hard' });
 };
 
-},{}],139:[function(require,module,exports){
+},{}],239:[function(require,module,exports){
 exports.endianness = function () { return 'LE' };
 
 exports.hostname = function () {
@@ -26254,7 +39263,7 @@ exports.tmpdir = exports.tmpDir = function () {
 
 exports.EOL = '\n';
 
-},{}],140:[function(require,module,exports){
+},{}],240:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2015 Titus Wormer
@@ -26775,7 +39784,7 @@ function isWarning(code) {
   return false;
 }
 
-},{"character-entities":24,"character-entities-legacy":23,"character-reference-invalid":25,"has":59,"is-alphanumerical":68,"is-decimal":72,"is-hexadecimal":74}],141:[function(require,module,exports){
+},{"character-entities":28,"character-entities-legacy":27,"character-reference-invalid":29,"has":147,"is-alphanumerical":156,"is-decimal":162,"is-hexadecimal":164}],241:[function(require,module,exports){
 'use strict';
 var errorEx = require('error-ex');
 var fallback = require('./vendor/parse');
@@ -26812,7 +39821,7 @@ module.exports = function (x, reviver, filename) {
 	}
 };
 
-},{"./vendor/parse":142,"error-ex":40}],142:[function(require,module,exports){
+},{"./vendor/parse":242,"error-ex":115}],242:[function(require,module,exports){
 /*
  * Author: Alex Kocharin <alex@kocharin.ru>
  * GIT: https://github.com/rlidwka/jju
@@ -27566,7 +40575,7 @@ module.exports.tokenize = function tokenizeJSON(input, options) {
 }
 
 
-},{"./unicode":143}],143:[function(require,module,exports){
+},{"./unicode":243}],243:[function(require,module,exports){
 
 // This is autogenerated with esprima tools, see:
 // https://github.com/ariya/esprima/blob/master/esprima.js
@@ -27639,7 +40648,7 @@ module.exports.NonAsciiIdentifierStart = /[\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u
 
 module.exports.NonAsciiIdentifierPart = /[\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0300-\u0374\u0376\u0377\u037A-\u037D\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u0483-\u0487\u048A-\u0527\u0531-\u0556\u0559\u0561-\u0587\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7\u05D0-\u05EA\u05F0-\u05F2\u0610-\u061A\u0620-\u0669\u066E-\u06D3\u06D5-\u06DC\u06DF-\u06E8\u06EA-\u06FC\u06FF\u0710-\u074A\u074D-\u07B1\u07C0-\u07F5\u07FA\u0800-\u082D\u0840-\u085B\u08A0\u08A2-\u08AC\u08E4-\u08FE\u0900-\u0963\u0966-\u096F\u0971-\u0977\u0979-\u097F\u0981-\u0983\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BC-\u09C4\u09C7\u09C8\u09CB-\u09CE\u09D7\u09DC\u09DD\u09DF-\u09E3\u09E6-\u09F1\u0A01-\u0A03\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A3C\u0A3E-\u0A42\u0A47\u0A48\u0A4B-\u0A4D\u0A51\u0A59-\u0A5C\u0A5E\u0A66-\u0A75\u0A81-\u0A83\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABC-\u0AC5\u0AC7-\u0AC9\u0ACB-\u0ACD\u0AD0\u0AE0-\u0AE3\u0AE6-\u0AEF\u0B01-\u0B03\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3C-\u0B44\u0B47\u0B48\u0B4B-\u0B4D\u0B56\u0B57\u0B5C\u0B5D\u0B5F-\u0B63\u0B66-\u0B6F\u0B71\u0B82\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BBE-\u0BC2\u0BC6-\u0BC8\u0BCA-\u0BCD\u0BD0\u0BD7\u0BE6-\u0BEF\u0C01-\u0C03\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C33\u0C35-\u0C39\u0C3D-\u0C44\u0C46-\u0C48\u0C4A-\u0C4D\u0C55\u0C56\u0C58\u0C59\u0C60-\u0C63\u0C66-\u0C6F\u0C82\u0C83\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBC-\u0CC4\u0CC6-\u0CC8\u0CCA-\u0CCD\u0CD5\u0CD6\u0CDE\u0CE0-\u0CE3\u0CE6-\u0CEF\u0CF1\u0CF2\u0D02\u0D03\u0D05-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D-\u0D44\u0D46-\u0D48\u0D4A-\u0D4E\u0D57\u0D60-\u0D63\u0D66-\u0D6F\u0D7A-\u0D7F\u0D82\u0D83\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0DCA\u0DCF-\u0DD4\u0DD6\u0DD8-\u0DDF\u0DF2\u0DF3\u0E01-\u0E3A\u0E40-\u0E4E\u0E50-\u0E59\u0E81\u0E82\u0E84\u0E87\u0E88\u0E8A\u0E8D\u0E94-\u0E97\u0E99-\u0E9F\u0EA1-\u0EA3\u0EA5\u0EA7\u0EAA\u0EAB\u0EAD-\u0EB9\u0EBB-\u0EBD\u0EC0-\u0EC4\u0EC6\u0EC8-\u0ECD\u0ED0-\u0ED9\u0EDC-\u0EDF\u0F00\u0F18\u0F19\u0F20-\u0F29\u0F35\u0F37\u0F39\u0F3E-\u0F47\u0F49-\u0F6C\u0F71-\u0F84\u0F86-\u0F97\u0F99-\u0FBC\u0FC6\u1000-\u1049\u1050-\u109D\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u135D-\u135F\u1380-\u138F\u13A0-\u13F4\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16EE-\u16F0\u1700-\u170C\u170E-\u1714\u1720-\u1734\u1740-\u1753\u1760-\u176C\u176E-\u1770\u1772\u1773\u1780-\u17D3\u17D7\u17DC\u17DD\u17E0-\u17E9\u180B-\u180D\u1810-\u1819\u1820-\u1877\u1880-\u18AA\u18B0-\u18F5\u1900-\u191C\u1920-\u192B\u1930-\u193B\u1946-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u19D0-\u19D9\u1A00-\u1A1B\u1A20-\u1A5E\u1A60-\u1A7C\u1A7F-\u1A89\u1A90-\u1A99\u1AA7\u1B00-\u1B4B\u1B50-\u1B59\u1B6B-\u1B73\u1B80-\u1BF3\u1C00-\u1C37\u1C40-\u1C49\u1C4D-\u1C7D\u1CD0-\u1CD2\u1CD4-\u1CF6\u1D00-\u1DE6\u1DFC-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u200C\u200D\u203F\u2040\u2054\u2071\u207F\u2090-\u209C\u20D0-\u20DC\u20E1\u20E5-\u20F0\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2160-\u2188\u2C00-\u2C2E\u2C30-\u2C5E\u2C60-\u2CE4\u2CEB-\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D7F-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2DE0-\u2DFF\u2E2F\u3005-\u3007\u3021-\u302F\u3031-\u3035\u3038-\u303C\u3041-\u3096\u3099\u309A\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312D\u3131-\u318E\u31A0-\u31BA\u31F0-\u31FF\u3400-\u4DB5\u4E00-\u9FCC\uA000-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA62B\uA640-\uA66F\uA674-\uA67D\uA67F-\uA697\uA69F-\uA6F1\uA717-\uA71F\uA722-\uA788\uA78B-\uA78E\uA790-\uA793\uA7A0-\uA7AA\uA7F8-\uA827\uA840-\uA873\uA880-\uA8C4\uA8D0-\uA8D9\uA8E0-\uA8F7\uA8FB\uA900-\uA92D\uA930-\uA953\uA960-\uA97C\uA980-\uA9C0\uA9CF-\uA9D9\uAA00-\uAA36\uAA40-\uAA4D\uAA50-\uAA59\uAA60-\uAA76\uAA7A\uAA7B\uAA80-\uAAC2\uAADB-\uAADD\uAAE0-\uAAEF\uAAF2-\uAAF6\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uABC0-\uABEA\uABEC\uABED\uABF0-\uABF9\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE00-\uFE0F\uFE20-\uFE26\uFE33\uFE34\uFE4D-\uFE4F\uFE70-\uFE74\uFE76-\uFEFC\uFF10-\uFF19\uFF21-\uFF3A\uFF3F\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC]/
 
-},{}],144:[function(require,module,exports){
+},{}],244:[function(require,module,exports){
 (function (process){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -27867,7 +40876,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this,require('_process'))
-},{"_process":159}],145:[function(require,module,exports){
+},{"_process":259}],245:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -27891,7 +40900,7 @@ module.exports.posix = posix;
 module.exports.win32 = win32;
 
 }).call(this,require('_process'))
-},{"_process":159}],146:[function(require,module,exports){
+},{"_process":259}],246:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -27923,7 +40932,7 @@ function stripTrailingSep(thePath) {
 }
 
 }).call(this,require('_process'))
-},{"_process":159,"path":144}],147:[function(require,module,exports){
+},{"_process":259,"path":244}],247:[function(require,module,exports){
 // MIT © 2017 azu
 // and
 // https://github.com/eslint/eslint/blob/master/tests/lib/util/glob-util.js
@@ -28000,7 +41009,7 @@ function processPath(options) {
 }
 module.exports = processPath;
 
-},{"fs":15,"path":144,"shelljs":192}],148:[function(require,module,exports){
+},{"fs":19,"path":244,"shelljs":298}],248:[function(require,module,exports){
 'use strict';
 var fs = require('graceful-fs');
 var Promise = require('pinkie-promise');
@@ -28031,7 +41040,7 @@ exports.fileSync = typeSync.bind(null, 'statSync', 'isFile');
 exports.dirSync = typeSync.bind(null, 'statSync', 'isDirectory');
 exports.symlinkSync = typeSync.bind(null, 'lstatSync', 'isSymbolicLink');
 
-},{"graceful-fs":56,"pify":149,"pinkie-promise":150}],149:[function(require,module,exports){
+},{"graceful-fs":144,"pify":249,"pinkie-promise":250}],249:[function(require,module,exports){
 'use strict';
 
 var processFn = function (fn, P, opts) {
@@ -28101,12 +41110,12 @@ var pify = module.exports = function (obj, P, opts) {
 
 pify.all = pify;
 
-},{}],150:[function(require,module,exports){
+},{}],250:[function(require,module,exports){
 'use strict';
 
 module.exports = typeof Promise === 'function' ? Promise : require('pinkie');
 
-},{"pinkie":151}],151:[function(require,module,exports){
+},{"pinkie":251}],251:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -28402,7 +41411,7 @@ Promise.reject = function (reason) {
 module.exports = Promise;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],152:[function(require,module,exports){
+},{}],252:[function(require,module,exports){
 // Generated by LiveScript 1.4.0
 var apply, curry, flip, fix, over, memoize, slice$ = [].slice, toString$ = {}.toString;
 apply = curry$(function(f, list){
@@ -28468,7 +41477,7 @@ function curry$(f, bound){
   };
   return _curry();
 }
-},{}],153:[function(require,module,exports){
+},{}],253:[function(require,module,exports){
 // Generated by LiveScript 1.4.0
 var each, map, compact, filter, reject, partition, find, head, first, tail, last, initial, empty, reverse, unique, uniqueBy, fold, foldl, fold1, foldl1, foldr, foldr1, unfoldr, concat, concatMap, flatten, difference, intersection, union, countBy, groupBy, andList, orList, any, all, sort, sortWith, sortBy, sum, product, mean, average, maximum, minimum, maximumBy, minimumBy, scan, scanl, scan1, scanl1, scanr, scanr1, slice, take, drop, splitAt, takeWhile, dropWhile, span, breakList, zip, zipWith, zipAll, zipAllWith, at, elemIndex, elemIndices, findIndex, findIndices, toString$ = {}.toString, slice$ = [].slice;
 each = curry$(function(f, xs){
@@ -29155,7 +42164,7 @@ function compose$() {
   };
 }
 function not$(x){ return !x; }
-},{}],154:[function(require,module,exports){
+},{}],254:[function(require,module,exports){
 // Generated by LiveScript 1.4.0
 var max, min, negate, abs, signum, quot, rem, div, mod, recip, pi, tau, exp, sqrt, ln, pow, sin, tan, cos, asin, acos, atan, atan2, truncate, round, ceiling, floor, isItNaN, even, odd, gcd, lcm;
 max = curry$(function(x$, y$){
@@ -29286,7 +42295,7 @@ function curry$(f, bound){
   };
   return _curry();
 }
-},{}],155:[function(require,module,exports){
+},{}],255:[function(require,module,exports){
 // Generated by LiveScript 1.4.0
 var values, keys, pairsToObj, objToPairs, listsToObj, objToLists, empty, each, map, compact, filter, reject, partition, find;
 values = function(object){
@@ -29441,7 +42450,7 @@ function curry$(f, bound){
   };
   return _curry();
 }
-},{}],156:[function(require,module,exports){
+},{}],256:[function(require,module,exports){
 // Generated by LiveScript 1.4.0
 var split, join, lines, unlines, words, unwords, chars, unchars, reverse, repeat, capitalize, camelize, dasherize;
 split = curry$(function(sep, str){
@@ -29534,7 +42543,7 @@ function curry$(f, bound){
   };
   return _curry();
 }
-},{}],157:[function(require,module,exports){
+},{}],257:[function(require,module,exports){
 // Generated by LiveScript 1.4.0
 var Func, List, Obj, Str, Num, id, isType, replicate, prelude, toString$ = {}.toString;
 Func = require('./Func.js');
@@ -29713,7 +42722,7 @@ function curry$(f, bound){
   };
   return _curry();
 }
-},{"./Func.js":152,"./List.js":153,"./Num.js":154,"./Obj.js":155,"./Str.js":156}],158:[function(require,module,exports){
+},{"./Func.js":252,"./List.js":253,"./Num.js":254,"./Obj.js":255,"./Str.js":256}],258:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -29760,7 +42769,7 @@ function nextTick(fn, arg1, arg2, arg3) {
 }
 
 }).call(this,require('_process'))
-},{"_process":159}],159:[function(require,module,exports){
+},{"_process":259}],259:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -29946,7 +42955,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],160:[function(require,module,exports){
+},{}],260:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/punycode v1.4.1 by @mathias */
 ;(function(root) {
@@ -30483,7 +43492,7 @@ process.umask = function() { return 0; };
 }(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],161:[function(require,module,exports){
+},{}],261:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -30569,7 +43578,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],162:[function(require,module,exports){
+},{}],262:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -30656,13 +43665,13 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],163:[function(require,module,exports){
+},{}],263:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":161,"./encode":162}],164:[function(require,module,exports){
+},{"./decode":261,"./encode":262}],264:[function(require,module,exports){
 (function (process){
 // MIT © 2017 azu
 // MIT © Zoltan Kochan
@@ -30821,7 +43830,7 @@ function loadYAMLConfigFile(filePath, suppress) {
 }
 
 }).call(this,require('_process'))
-},{"_process":159,"debug":33,"fs":15,"js-yaml":80,"json5":110,"object-assign":131,"object-keys":132,"path":144,"path-exists":165,"require-uncached":187}],165:[function(require,module,exports){
+},{"_process":259,"debug":105,"fs":19,"js-yaml":172,"json5":202,"object-assign":231,"object-keys":232,"path":244,"path-exists":265,"require-uncached":292}],265:[function(require,module,exports){
 'use strict';
 var fs = require('fs');
 var Promise = require('pinkie-promise');
@@ -30847,7 +43856,7 @@ module.exports.sync = function (fp) {
 	}
 };
 
-},{"fs":15,"pinkie-promise":150}],166:[function(require,module,exports){
+},{"fs":19,"pinkie-promise":250}],266:[function(require,module,exports){
 'use strict';
 var path = require('path');
 var loadJsonFile = require('load-json-file');
@@ -30897,10 +43906,10 @@ module.exports.sync = function (fp, opts) {
 	return x;
 };
 
-},{"load-json-file":114,"normalize-package-data":128,"path":144,"path-type":148}],167:[function(require,module,exports){
+},{"load-json-file":206,"normalize-package-data":228,"path":244,"path-type":248}],267:[function(require,module,exports){
 module.exports = require("./lib/_stream_duplex.js")
 
-},{"./lib/_stream_duplex.js":168}],168:[function(require,module,exports){
+},{"./lib/_stream_duplex.js":268}],268:[function(require,module,exports){
 // a duplex stream is just a stream that is both readable and writable.
 // Since JS doesn't have multiple prototypal inheritance, this class
 // prototypally inherits from Readable, and then parasitically from
@@ -30976,7 +43985,7 @@ function forEach(xs, f) {
     f(xs[i], i);
   }
 }
-},{"./_stream_readable":170,"./_stream_writable":172,"core-util-is":31,"inherits":65,"process-nextick-args":158}],169:[function(require,module,exports){
+},{"./_stream_readable":270,"./_stream_writable":272,"core-util-is":103,"inherits":153,"process-nextick-args":258}],269:[function(require,module,exports){
 // a passthrough stream.
 // basically just the most minimal sort of Transform stream.
 // Every written chunk gets output as-is.
@@ -31003,7 +44012,7 @@ function PassThrough(options) {
 PassThrough.prototype._transform = function (chunk, encoding, cb) {
   cb(null, chunk);
 };
-},{"./_stream_transform":171,"core-util-is":31,"inherits":65}],170:[function(require,module,exports){
+},{"./_stream_transform":271,"core-util-is":103,"inherits":153}],270:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -31886,7 +44895,7 @@ function indexOf(xs, x) {
   return -1;
 }
 }).call(this,require('_process'))
-},{"./_stream_duplex":168,"_process":159,"buffer":16,"core-util-is":31,"events":41,"inherits":65,"isarray":79,"process-nextick-args":158,"string_decoder/":201,"util":14}],171:[function(require,module,exports){
+},{"./_stream_duplex":268,"_process":259,"buffer":20,"core-util-is":103,"events":128,"inherits":153,"isarray":171,"process-nextick-args":258,"string_decoder/":307,"util":18}],271:[function(require,module,exports){
 // a transform stream is a readable/writable stream where you do
 // something with the data.  Sometimes it's called a "filter",
 // but that's not a great name for it, since that implies a thing where
@@ -32067,7 +45076,7 @@ function done(stream, er) {
 
   return stream.push(null);
 }
-},{"./_stream_duplex":168,"core-util-is":31,"inherits":65}],172:[function(require,module,exports){
+},{"./_stream_duplex":268,"core-util-is":103,"inherits":153}],272:[function(require,module,exports){
 (function (process){
 // A bit simpler than readable streams.
 // Implement an async ._write(chunk, encoding, cb), and it'll handle all
@@ -32586,10 +45595,10 @@ function CorkedRequest(state) {
   };
 }
 }).call(this,require('_process'))
-},{"./_stream_duplex":168,"_process":159,"buffer":16,"core-util-is":31,"events":41,"inherits":65,"process-nextick-args":158,"util-deprecate":296}],173:[function(require,module,exports){
+},{"./_stream_duplex":268,"_process":259,"buffer":20,"core-util-is":103,"events":128,"inherits":153,"process-nextick-args":258,"util-deprecate":418}],273:[function(require,module,exports){
 module.exports = require("./lib/_stream_passthrough.js")
 
-},{"./lib/_stream_passthrough.js":169}],174:[function(require,module,exports){
+},{"./lib/_stream_passthrough.js":269}],274:[function(require,module,exports){
 var Stream = (function (){
   try {
     return require('st' + 'ream'); // hack to fix a circular dependency issue when used with browserify
@@ -32603,13 +45612,153 @@ exports.Duplex = require('./lib/_stream_duplex.js');
 exports.Transform = require('./lib/_stream_transform.js');
 exports.PassThrough = require('./lib/_stream_passthrough.js');
 
-},{"./lib/_stream_duplex.js":168,"./lib/_stream_passthrough.js":169,"./lib/_stream_readable.js":170,"./lib/_stream_transform.js":171,"./lib/_stream_writable.js":172}],175:[function(require,module,exports){
+},{"./lib/_stream_duplex.js":268,"./lib/_stream_passthrough.js":269,"./lib/_stream_readable.js":270,"./lib/_stream_transform.js":271,"./lib/_stream_writable.js":272}],275:[function(require,module,exports){
 module.exports = require("./lib/_stream_transform.js")
 
-},{"./lib/_stream_transform.js":171}],176:[function(require,module,exports){
+},{"./lib/_stream_transform.js":271}],276:[function(require,module,exports){
 module.exports = require("./lib/_stream_writable.js")
 
-},{"./lib/_stream_writable.js":172}],177:[function(require,module,exports){
+},{"./lib/_stream_writable.js":272}],277:[function(require,module,exports){
+'use strict';
+
+var toObject = Object;
+var TypeErr = TypeError;
+
+module.exports = function flags() {
+	if (this != null && this !== toObject(this)) {
+		throw new TypeErr('RegExp.prototype.flags getter called on non-object');
+	}
+	var result = '';
+	if (this.global) {
+		result += 'g';
+	}
+	if (this.ignoreCase) {
+		result += 'i';
+	}
+	if (this.multiline) {
+		result += 'm';
+	}
+	if (this.unicode) {
+		result += 'u';
+	}
+	if (this.sticky) {
+		result += 'y';
+	}
+	return result;
+};
+
+},{}],278:[function(require,module,exports){
+'use strict';
+
+var define = require('define-properties');
+
+var implementation = require('./implementation');
+var getPolyfill = require('./polyfill');
+var shim = require('./shim');
+
+var flagsBound = Function.call.bind(implementation);
+
+define(flagsBound, {
+	getPolyfill: getPolyfill,
+	implementation: implementation,
+	shim: shim
+});
+
+module.exports = flagsBound;
+
+},{"./implementation":277,"./polyfill":279,"./shim":280,"define-properties":111}],279:[function(require,module,exports){
+'use strict';
+
+var implementation = require('./implementation');
+
+var supportsDescriptors = require('define-properties').supportsDescriptors;
+var gOPD = Object.getOwnPropertyDescriptor;
+var TypeErr = TypeError;
+
+module.exports = function getPolyfill() {
+	if (!supportsDescriptors) {
+		throw new TypeErr('RegExp.prototype.flags requires a true ES5 environment that supports property descriptors');
+	}
+	if (/a/mig.flags === 'gim') {
+		var descriptor = gOPD(RegExp.prototype, 'flags');
+		if (descriptor && typeof descriptor.get === 'function') {
+			return descriptor.get;
+		}
+	}
+	return implementation;
+};
+
+},{"./implementation":277,"define-properties":111}],280:[function(require,module,exports){
+'use strict';
+
+var supportsDescriptors = require('define-properties').supportsDescriptors;
+var getPolyfill = require('./polyfill');
+var gOPD = Object.getOwnPropertyDescriptor;
+var defineProperty = Object.defineProperty;
+var TypeErr = TypeError;
+var getProto = Object.getPrototypeOf;
+var regex = /a/;
+
+module.exports = function shimFlags() {
+	if (!supportsDescriptors || !getProto) {
+		throw new TypeErr('RegExp.prototype.flags requires a true ES5 environment that supports property descriptors');
+	}
+	var polyfill = getPolyfill();
+	var proto = getProto(regex);
+	var descriptor = gOPD(proto, 'flags');
+	if (!descriptor || descriptor.get !== polyfill) {
+		defineProperty(proto, 'flags', {
+			configurable: true,
+			enumerable: false,
+			get: polyfill
+		});
+	}
+	return polyfill;
+};
+
+},{"./polyfill":279,"define-properties":111}],281:[function(require,module,exports){
+(function (global){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.regx = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = regx;
+var trailingComments = /\s+\/\/.*$/gm;
+var surroundingWhitespace = /^\s+|\s+$/gm;
+var literalNewlines = /[\r\n]/g;
+
+function regx(flags) {
+	return function (strings) {
+		for (var _len = arguments.length, values = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+			values[_key - 1] = arguments[_key];
+		}
+
+		function toPattern(pattern, rawString, i) {
+			var value = values[i];
+
+			if (value === null || value === undefined) {
+				return pattern + rawString;
+			}
+
+			if (value instanceof RegExp) {
+				value = value.source;
+			}
+
+			return pattern + rawString + value;
+		}
+
+		var compiledPattern = strings.raw.reduce(toPattern, '').replace(trailingComments, '').replace(surroundingWhitespace, '').replace(literalNewlines, '');
+
+		return new RegExp(compiledPattern, flags);
+	};
+}
+
+},{}]},{},[1])(1)
+});
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],282:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2015-2016 Titus Wormer
@@ -32641,7 +45790,7 @@ parse.Parser = Parser;
 /* Expose */
 module.exports = parse;
 
-},{"./lib/parser.js":181,"unherit":289}],178:[function(require,module,exports){
+},{"./lib/parser.js":286,"unherit":410}],283:[function(require,module,exports){
 module.exports=[
     "article",
     "header",
@@ -32695,7 +45844,7 @@ module.exports=[
     "style"
 ]
 
-},{}],179:[function(require,module,exports){
+},{}],284:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2015-2016 Titus Wormer
@@ -32718,7 +45867,7 @@ module.exports = {
     'breaks': false
 };
 
-},{}],180:[function(require,module,exports){
+},{}],285:[function(require,module,exports){
 module.exports={
   "default": [
     "\\",
@@ -32795,7 +45944,7 @@ module.exports={
   ]
 }
 
-},{}],181:[function(require,module,exports){
+},{}],286:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2015-2016 Titus Wormer
@@ -39115,7 +52264,7 @@ Parser.prototype.tokenizeFactory = tokenizeFactory;
 
 module.exports = Parser;
 
-},{"./block-elements.json":178,"./defaults.js":179,"./escapes.json":180,"collapse-white-space":28,"extend":42,"parse-entities":140,"repeat-string":186,"trim":279,"trim-trailing-lines":278,"unist-util-remove-position":292,"vfile-location":301}],182:[function(require,module,exports){
+},{"./block-elements.json":283,"./defaults.js":284,"./escapes.json":285,"collapse-white-space":100,"extend":129,"parse-entities":240,"repeat-string":291,"trim":400,"trim-trailing-lines":399,"unist-util-remove-position":413,"vfile-location":423}],287:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2015-2016 Titus Wormer
@@ -39147,7 +52296,7 @@ stringify.Compiler = Compiler;
 /* Expose. */
 module.exports = stringify;
 
-},{"./lib/compiler.js":183,"unherit":289}],183:[function(require,module,exports){
+},{"./lib/compiler.js":288,"unherit":410}],288:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2015-2016 Titus Wormer
@@ -41778,7 +54927,7 @@ compilerPrototype.compile = function (node) {
 
 module.exports = Compiler;
 
-},{"./defaults.js":184,"ccount":21,"extend":42,"longest-streak":115,"markdown-table":117,"parse-entities":140,"repeat-string":186,"stringify-entities":203}],184:[function(require,module,exports){
+},{"./defaults.js":289,"ccount":25,"extend":129,"longest-streak":207,"markdown-table":209,"parse-entities":240,"repeat-string":291,"stringify-entities":309}],289:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2015-2016 Titus Wormer
@@ -41812,7 +54961,7 @@ module.exports = {
     'emphasis': '_'
 };
 
-},{}],185:[function(require,module,exports){
+},{}],290:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2015-2016 Titus Wormer
@@ -41833,7 +54982,7 @@ var stringify = require('remark-stringify');
 /* Expose. */
 module.exports = unified().use(parse).use(stringify).abstract();
 
-},{"remark-parse":177,"remark-stringify":182,"unified":290}],186:[function(require,module,exports){
+},{"remark-parse":282,"remark-stringify":287,"unified":411}],291:[function(require,module,exports){
 /*!
  * repeat-string <https://github.com/jonschlinkert/repeat-string>
  *
@@ -41905,7 +55054,7 @@ function repeat(str, num) {
   return res;
 }
 
-},{}],187:[function(require,module,exports){
+},{}],292:[function(require,module,exports){
 'use strict';
 var path = require('path');
 var resolveFrom = require('resolve-from');
@@ -41936,7 +55085,7 @@ module.exports = function (moduleId) {
 	return require(filePath);
 };
 
-},{"caller-path":18,"path":144,"resolve-from":188}],188:[function(require,module,exports){
+},{"caller-path":22,"path":244,"resolve-from":293}],293:[function(require,module,exports){
 'use strict';
 var path = require('path');
 var Module = require('module');
@@ -41957,7 +55106,7 @@ module.exports = function (fromDir, moduleId) {
 	});
 };
 
-},{"module":15,"path":144}],189:[function(require,module,exports){
+},{"module":19,"path":244}],294:[function(require,module,exports){
 (function (process){
 module.exports = rimraf
 rimraf.sync = rimrafSync
@@ -42324,7 +55473,7 @@ function rmkidsSync (p, options) {
 }
 
 }).call(this,require('_process'))
-},{"_process":159,"assert":7,"fs":15,"glob":52,"path":144}],190:[function(require,module,exports){
+},{"_process":259,"assert":11,"fs":19,"glob":140,"path":244}],295:[function(require,module,exports){
 (function (process){
 exports = module.exports = SemVer;
 
@@ -43531,7 +56680,149 @@ function prerelease(version, loose) {
 }
 
 }).call(this,require('_process'))
-},{"_process":159}],191:[function(require,module,exports){
+},{"_process":259}],296:[function(require,module,exports){
+// LICENSE : MIT
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Syntax = undefined;
+exports.split = split;
+exports.createWhiteSpaceNode = createWhiteSpaceNode;
+exports.createSentenceNode = createSentenceNode;
+
+var _structuredSource = require("structured-source");
+
+var _structuredSource2 = _interopRequireDefault(_structuredSource);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var assert = require("assert");
+
+var defaultOptions = {
+    // charRegExp is deprecated
+    charRegExp: /[\.。\?\!？！]/,
+    // separator char list
+    separatorChars: [".", "。", "?", "!", "？", "！"],
+    newLineCharacters: "\n"
+};
+var Syntax = exports.Syntax = {
+    "WhiteSpace": "WhiteSpace",
+    "Sentence": "Sentence"
+};
+/**
+ * @param {string} text
+ * @param {{
+ *      charRegExp: ?Object,
+ *      separatorChars: ?string[],
+ *      newLineCharacters: ?String
+ *  }} options
+ * @returns {Array}
+ */
+function split(text) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    var charRegExp = options.charRegExp;
+    var separatorChars = options.separatorChars || defaultOptions.separatorChars;
+    assert(!(options.charRegExp && options.separatorChars), "should use either one `charRegExp` or `separatorChars`.\n" + "`charRegExp` is deprecated.");
+    /**
+     * Is the `char` separator symbol?
+     * @param {string} char
+     * @returns {boolean}
+     */
+    var testCharIsSeparator = function testCharIsSeparator(char) {
+        if (charRegExp) {
+            return charRegExp.test(char);
+        }
+        return separatorChars.indexOf(char) !== -1;
+    };
+    var newLineCharacters = options.newLineCharacters || defaultOptions.newLineCharacters;
+    var src = new _structuredSource2.default(text);
+    var createNode = function createNode(type, start, end) {
+        var range = [start, end];
+        var location = src.rangeToLocation(range);
+        var slicedText = text.slice(start, end);
+        var node = void 0;
+        if (type === Syntax.WhiteSpace) {
+            node = createWhiteSpaceNode(slicedText, location, range);
+        } else if (type === Syntax.Sentence) {
+            node = createSentenceNode(slicedText, location, range);
+        }
+        return node;
+    };
+    var results = [];
+    var startPoint = 0;
+    var currentIndex = 0;
+    var isSplitPoint = false;
+    var newLineCharactersLength = newLineCharacters.length;
+    for (; currentIndex < text.length; currentIndex++) {
+        var char = text[currentIndex];
+        var whiteTarget = text.slice(currentIndex, currentIndex + newLineCharactersLength);
+        if (whiteTarget === newLineCharacters) {
+            // (string)\n
+            if (startPoint !== currentIndex) {
+                results.push(createNode(Syntax.Sentence, startPoint, currentIndex));
+            }
+            for (var i = 0; i < newLineCharactersLength; i++) {
+                // string(\n)
+                var startIndex = currentIndex + i;
+                results.push(createNode(Syntax.WhiteSpace, startIndex, startIndex + 1));
+            }
+            // string\n|
+            startPoint = currentIndex + newLineCharactersLength;
+            isSplitPoint = false;
+        } else if (testCharIsSeparator(char)) {
+            isSplitPoint = true;
+        } else {
+            // why `else`
+            // it for support 。。。 pattern
+            if (isSplitPoint) {
+                results.push(createNode(Syntax.Sentence, startPoint, currentIndex));
+                // reset stat
+                startPoint = currentIndex;
+                isSplitPoint = false;
+            }
+        }
+    }
+
+    if (startPoint !== currentIndex) {
+        results.push(createNode(Syntax.Sentence, startPoint, currentIndex));
+    }
+    return results;
+}
+/**
+ * @param {string} text
+ * @param {Object} loc
+ * @param {number[]} range
+ * @returns {{type: string, raw: string, value: string, loc: Object, range: number[]}}
+ */
+function createWhiteSpaceNode(text, loc, range) {
+    return {
+        type: "WhiteSpace",
+        raw: text,
+        value: text,
+        loc: loc,
+        range: range
+    };
+}
+/**
+ * @param {string} text
+ * @param {Object} loc
+ * @param {number[]} range
+ * @returns {{type: string, raw: string, value: string, loc: Object, range: number[]}}
+ */
+function createSentenceNode(text, loc, range) {
+    return {
+        type: "Sentence",
+        raw: text,
+        value: text,
+        loc: loc,
+        range: range
+    };
+}
+
+},{"assert":11,"structured-source":311}],297:[function(require,module,exports){
 module.exports = [
   'cat',
   'cd',
@@ -43562,7 +56853,7 @@ module.exports = [
   'which',
 ];
 
-},{}],192:[function(require,module,exports){
+},{}],298:[function(require,module,exports){
 (function (process){
 //
 // ShellJS
@@ -43718,7 +57009,7 @@ exports.config = common.config;
 //@ ```
 
 }).call(this,require('_process'))
-},{"./commands":191,"./src/common":193,"./src/error":194,"_process":159}],193:[function(require,module,exports){
+},{"./commands":297,"./src/common":299,"./src/error":300,"_process":259}],299:[function(require,module,exports){
 (function (process){
 // Ignore warning about 'new String()'
 /* eslint no-new-wrappers: 0 */
@@ -44172,7 +57463,7 @@ function _register(name, implementation, wrapOptions) {
 exports.register = _register;
 
 }).call(this,require('_process'))
-},{"..":192,"_process":159,"fs":15,"glob":52,"os":139}],194:[function(require,module,exports){
+},{"..":298,"_process":259,"fs":19,"glob":140,"os":239}],300:[function(require,module,exports){
 var common = require('./common');
 
 //@
@@ -44188,7 +57479,7 @@ function error() {
 }
 module.exports = error;
 
-},{"./common":193}],195:[function(require,module,exports){
+},{"./common":299}],301:[function(require,module,exports){
 var licenseIDs = require('spdx-license-ids');
 
 function valid(string) {
@@ -44427,14 +57718,14 @@ module.exports = function(identifier) {
   return null;
 };
 
-},{"spdx-license-ids":198}],196:[function(require,module,exports){
+},{"spdx-license-ids":304}],302:[function(require,module,exports){
 var parser = require('./parser').parser
 
 module.exports = function (argument) {
   return parser.parse(argument)
 }
 
-},{"./parser":197}],197:[function(require,module,exports){
+},{"./parser":303}],303:[function(require,module,exports){
 (function (process){
 /* parser generated by jison 0.4.17 */
 /*
@@ -45795,7 +59086,7 @@ if (typeof module !== 'undefined' && require.main === module) {
 }
 
 }).call(this,require('_process'))
-},{"_process":159,"fs":15,"path":144}],198:[function(require,module,exports){
+},{"_process":259,"fs":19,"path":244}],304:[function(require,module,exports){
 module.exports=[
   "Glide",
   "Abstyles",
@@ -46131,7 +59422,7 @@ module.exports=[
   "WXwindows"
 ]
 
-},{}],199:[function(require,module,exports){
+},{}],305:[function(require,module,exports){
 "use strict";
 var dictionaryItems = require("technical-word-rules");
 var StructuredSource = require('structured-source');
@@ -46190,7 +59481,7 @@ module.exports = {
     spellCheckText: spellCheckText
 };
 
-},{"structured-source":205,"technical-word-rules":207}],200:[function(require,module,exports){
+},{"structured-source":311,"technical-word-rules":313}],306:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -46319,7 +59610,7 @@ Stream.prototype.pipe = function(dest, options) {
   return dest;
 };
 
-},{"events":41,"inherits":65,"readable-stream/duplex.js":167,"readable-stream/passthrough.js":173,"readable-stream/readable.js":174,"readable-stream/transform.js":175,"readable-stream/writable.js":176}],201:[function(require,module,exports){
+},{"events":128,"inherits":153,"readable-stream/duplex.js":267,"readable-stream/passthrough.js":273,"readable-stream/readable.js":274,"readable-stream/transform.js":275,"readable-stream/writable.js":276}],307:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -46542,7 +59833,7 @@ function base64DetectIncompleteChar(buffer) {
   this.charLength = this.charReceived ? 3 : 0;
 }
 
-},{"buffer":16}],202:[function(require,module,exports){
+},{"buffer":20}],308:[function(require,module,exports){
 module.exports=[
   "cent",
   "copy",
@@ -46554,7 +59845,7 @@ module.exports=[
   "times"
 ]
 
-},{}],203:[function(require,module,exports){
+},{}],309:[function(require,module,exports){
 'use strict';
 
 var entities = require('character-entities-html4');
@@ -46687,7 +59978,7 @@ function construct() {
   return chars;
 }
 
-},{"./dangerous.json":202,"character-entities-html4":22,"character-entities-legacy":23,"has":59,"is-alphanumerical":68,"is-hexadecimal":74}],204:[function(require,module,exports){
+},{"./dangerous.json":308,"character-entities-html4":26,"character-entities-legacy":27,"has":147,"is-alphanumerical":156,"is-hexadecimal":164}],310:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 var isUtf8 = require('is-utf8');
@@ -46708,7 +59999,7 @@ module.exports = function (x) {
 };
 
 }).call(this,{"isBuffer":require("../is-buffer/index.js")})
-},{"../is-buffer/index.js":70,"is-utf8":78}],205:[function(require,module,exports){
+},{"../is-buffer/index.js":158,"is-utf8":170}],311:[function(require,module,exports){
 "use strict";
 
 var StructuredSource = require('./structured-source.js')["default"];
@@ -46718,7 +60009,7 @@ module.exports = StructuredSource;
 
 /* vim: set sw=4 ts=4 et tw=80 : */
 
-},{"./structured-source.js":206}],206:[function(require,module,exports){
+},{"./structured-source.js":312}],312:[function(require,module,exports){
 "use strict";
 
 var _classProps = function (child, staticProps, instanceProps) {
@@ -46803,9 +60094,9 @@ var StructuredSource = (function () {
 
 exports["default"] = StructuredSource;
 
-},{"boundary":12}],207:[function(require,module,exports){
+},{"boundary":16}],313:[function(require,module,exports){
 module.exports=[{"pattern":"(\\d+年\\d+月\\d+日)\\s発売","expected":"$1発売"},{"pattern":"(?:(が)デフォルト有効)|(?:デフォルト有効(に))","expected":"$1デフォルトで有効$2"},{"pattern":"用に(な)","expected":"ように$1"},{"pattern":"など追加","expected":"などが追加"},{"pattern":"(?:の比較して)","expected":"を比較して"},{"pattern":"(?:新規開発終了)","expected":"新規開発を終了"},{"pattern":"どういう(?!こと)","expected":"どのような"},{"pattern":"\\bFundation\\b","expected":"Foundation"},{"pattern":"ライブライ","expected":"ライブラリ"},{"pattern":"\\bChronium\\b","expected":"Chromium"},{"pattern":"リリーう","expected":"リリース"},{"pattern":"propety","expected":"Property","flag":"i"},{"pattern":"Array Function","expected":"Arrow Function"},{"pattern":"今ままで","expected":"今まで"},{"pattern":"CoffeScript","expected":"CoffeeScript"},{"pattern":"対処方","expected":"対処法"},{"pattern":"行得る","expected":"行える"},{"pattern":"peformance","expected":"Performance","flag":"i"},{"pattern":"Workaound","expected":"Workaround"},{"pattern":"(?:Custome\\b)","expected":"Custom"},{"pattern":"oeprator","expected":"operator"},{"pattern":"サイトイン","expected":"サインイン"},{"pattern":"\\bwebpac(?!k)\\b","expected":"webpack"},{"pattern":"packge\\.json","expected":"package.json"},{"pattern":"\\b方定義\\b","expected":"型定義"},{"pattern":"クッキー|\\bCOOKIE\\b|\\bcookie\\b","expected":"Cookie"},{"pattern":"\\bWeb Socket\\b","expected":"WebSocket"},{"pattern":"(?:WEB([^(\\+DB)]))","expected":"Web$1"},{"pattern":"(?:([^\\/])ウェッブ)|(?:ウェッブ([^\\+]))","expected":"$1Web$2"},{"pattern":"ORマッ|O-Rマッ","expected":"O/Rマッ"},{"pattern":"O\\/Rマッパー|\\bORM\\b","expected":"O/Rマッパ"},{"pattern":"アィディア|アイディア|アィディア|アィデア","expected":"アイデア"},{"pattern":"アステリスク","expected":"アスタリスク"},{"pattern":"アーキテクチャー|アーキティクチャ","expected":"アーキテクチャ"},{"pattern":"\\bActivity\\b|アクティビティー","expected":"アクティビティ"},{"pattern":"アダプター","expected":"アダプタ"},{"pattern":"アノーテーション","expected":"アノテーション"},{"pattern":"\\bApplet\\b","expected":"アプレット"},{"pattern":"アニメーター","expected":"アニメータ"},{"pattern":"アンダーバー","expected":"アンダースコア"},{"pattern":"インストーラー","expected":"インストーラ"},{"pattern":"インスパイヤ","expected":"インスパイア"},{"pattern":"インタープリタ|インタプリター|インタープリター","expected":"インタプリタ"},{"pattern":"インデクス","expected":"インデックス"},{"pattern":"\\bIntent\\b","expected":"インテント"},{"pattern":"\\bWidget\\b|\\bwidget\\b","expected":"ウィジェット"},{"pattern":"ウイルス","expected":"ウィルス"},{"pattern":"ウインドウ","expected":"ウィンドウ"},{"pattern":"ウエア","expected":"ウェア"},{"pattern":"エディター","expected":"エディタ"},{"pattern":"エミッター","expected":"エミッタ"},{"pattern":"エンコーダー","expected":"エンコーダ"},{"pattern":"デコーダー","expected":"デコーダ"},{"pattern":"エミュレーター","expected":"エミュレータ"},{"pattern":"\\bEntity\\b|\\bentity\\b|エンティティー","expected":"エンティティ"},{"pattern":"エントリー","expected":"エントリ"},{"pattern":"オブション","expected":"オプション"},{"pattern":"カウンター","expected":"カウンタ"},{"pattern":"ガベージ・|ガーベジ|ガーベジ・|ガーベージ|ガーベージ・|ガーベッジ|ガーベッジ・","expected":"ガベージ"},{"pattern":"カテゴリー","expected":"カテゴリ"},{"pattern":"キャラクター","expected":"キャラクタ"},{"pattern":"\\bQueryString\\b|\\bQuery String\\b|クエリストリング|クエリーストリング","expected":"クエリ文字列"},{"pattern":"クエリー","expected":"クエリ"},{"pattern":"クライアント\\/サーバ|クライアント\\/サーバー|クライアント・サーバ|クライアント・サーバー|クライアントサーバ|クライアントサーバー","expected":"クライアント／サーバ"},{"pattern":"クラスター","expected":"クラスタ"},{"pattern":"グランド","expected":"グラウンド"},{"pattern":"クロージャー","expected":"クロージャ"},{"pattern":"クローラー","expected":"クローラ"},{"pattern":"ゲッター","expected":"ゲッタ"},{"pattern":"コピー＆ペースト|コピペ|コピーアンドペースト","expected":"コピー&ペースト"},{"pattern":"コミッター","expected":"コミッタ"},{"pattern":"コミニュ","expected":"コミュニ"},{"pattern":"コンストラクター","expected":"コンストラクタ"},{"pattern":"コンテクスト","expected":"コンテキスト"},{"pattern":"\\bContent provider\\b","expected":"コンテントプロバイダ"},{"pattern":"コンテナー","expected":"コンテナ"},{"pattern":"コンピューター","expected":"コンピュータ"},{"pattern":"コントローラー","expected":"コントローラ"},{"pattern":"サーバー","expected":"サーバ"},{"pattern":"\\bServlet\\b|\\bSERVLET\\b","expected":"サーブレット"},{"pattern":"サーブレット／JSP|サーブレット＆JSP|サーブレット&JSP","expected":"サーブレット/JSP"},{"pattern":"ジェネレーター","expected":"ジェネレータ"},{"pattern":"ジェネレイティブ","expected":"ジェネレーティブ"},{"pattern":"ジョブス","expected":"ジョブズ"},{"pattern":"\\bGeotag\\b|\\bgeotag\\b","expected":"ジオタグ"},{"pattern":"シュミレー","expected":"シミュレー"},{"pattern":"スカラー","expected":"スカラ"},{"pattern":"スタンドアロン","expected":"スタンドアローン"},{"pattern":"ストアード","expected":"ストアド"},{"pattern":"ストレッジ|ストレジ","expected":"ストレージ"},{"pattern":"セキュリティー","expected":"セキュリティ"},{"pattern":"\\bsession\\b|\\bSession\\b","expected":"セッション"},{"pattern":"セッター","expected":"セッタ"},{"pattern":"セレクター","expected":"セレクタ"},{"pattern":"([^経])ソフトウエア","expected":"$1ソフトウェア"},{"pattern":"ダイヤグラム","expected":"ダイアグラム"},{"pattern":"\\btimestamp\\b|\\bTimestamp\\b","expected":"タイムスタンプ"},{"pattern":"\\btweet\\b|\\bTweet\\b|ツィート","expected":"ツイート"},{"pattern":"ツリー・オブジェクト","expected":"ツリーオブジェクト"},{"pattern":"ツリー・エントリ","expected":"ツリーエントリ"},{"pattern":"ディレクタ(?!ー)","expected":"ディレクター"},{"pattern":"\\bData Services\\b","expected":"データサービス"},{"pattern":"\\bData Sync\\b","expected":"データ同期"},{"pattern":"チェーン","expected":"チェイン"},{"pattern":"\\bDisk\\b","expected":"ディスク"},{"pattern":"ディスパッチャー","expected":"ディスパッチャ"},{"pattern":"ディスプレー","expected":"ディスプレイ"},{"pattern":"ディレクトリー","expected":"ディレクトリ"},{"pattern":"テクノロジー","expected":"テクノロジ"},{"pattern":"デザイナー","expected":"デザイナ"},{"pattern":"デバック","expected":"デバッグ"},{"pattern":"既定|ディフォルト|デフォールト","expected":"デフォルト"},{"pattern":"デプロイメント","expected":"デプロイ"},{"pattern":"ディベロッパー|ディベロッパ|デベロッパー|ディヴェロッパ","expected":"デベロッパ"},{"pattern":"デリバリー","expected":"デリバリ"},{"pattern":"ドキュメンテーション","expected":"ドキュメント"},{"pattern":"ドライバー","expected":"ドライバ"},{"pattern":"ドラッグ・アンド・ドロップ|ドラッグアンドドロップ|ドラッグ＆ドロップ","expected":"ドラッグ&ドロップ"},{"pattern":"ハイパー・リンク","expected":"ハイパーリンク"},{"pattern":"パーサー|パーザー|パーザ","expected":"パーサ"},{"pattern":"\\bPermalink\\b|\\bpermalink\\b|\\bpermanent link\\b|パーマネントリンク","expected":"パーマリンク"},{"pattern":"バッファー","expected":"バッファ"},{"pattern":"([^\\w\\s])\\bpath\\b|([^\\w\\s])\\bPath\\b","expected":"$1パス"},{"pattern":"パタン","expected":"パターン"},{"pattern":"薔薇","expected":"バラ"},{"pattern":"バラエティー","expected":"バラエティ"},{"pattern":"パラメタ|パラメーター","expected":"パラメータ"},{"pattern":"バランサー","expected":"バランサ"},{"pattern":"ハンドラー","expected":"ハンドラ"},{"pattern":"hit率","expected":"ヒット率"},{"pattern":"ファイラー","expected":"ファイラ"},{"pattern":"ファクトリー","expected":"ファクトリ"},{"pattern":"フィーチャフォン","expected":"フィーチャーフォン"},{"pattern":"Webブラウザー?|WEBブラウザー?","expected":"ブラウザ"},{"pattern":"ブラウザー","expected":"ブラウザ"},{"pattern":"プライマリー","expected":"プライマリ"},{"pattern":"プラットホーム","expected":"プラットフォーム"},{"pattern":"プレフィクス|プリフィックス","expected":"プレフィックス"},{"pattern":"プレーヤ","expected":"プレイヤー"},{"pattern":"プレーヤー","expected":"プレーヤ"},{"pattern":"ブレイク","expected":"ブレーク"},{"pattern":"プレイン([^グ])","expected":"プレーン$1"},{"pattern":"プロパティー","expected":"プロパティ"},{"pattern":"ヘヴィ","expected":"ヘビー"},{"pattern":"レビュアー|レビュワー|レビュワ|レビューアー|レビューア|レビューワー|レビューワ","expected":"レビュア"},{"pattern":"ビューアー|ビューワー|ビューワ","expected":"ビューア"},{"pattern":"ファイアーウォール|ファイヤーウォール|ファイヤウォール|ファイヤーウオール","expected":"ファイアウォール"},{"pattern":"フィルター","expected":"フィルタ"},{"pattern":"フィクスチャー","expected":"フィクスチャ"},{"pattern":"フェイルオーバ(?!ー)|フェールオーバー|フェールオーバ","expected":"フェイルオーバー"},{"pattern":"フェイズ","expected":"フェーズ"},{"pattern":"フッター|フッダ","expected":"フッタ"},{"pattern":"プロクシ|プロクシー|プロキシー","expected":"プロキシ"},{"pattern":"プログラマー","expected":"プログラマ"},{"pattern":"プロシージャー","expected":"プロシージャ"},{"pattern":"\\bBroadcast receiver\\b","expected":"ブロードキャストレシーバ"},{"pattern":"プロバイダー","expected":"プロバイダ"},{"pattern":"ベンダ(?!ー)","expected":"ベンダー"},{"pattern":"ヘッダー|ヘッタ|ヘッター","expected":"ヘッダ"},{"pattern":"ベクター","expected":"ベクタ"},{"pattern":"ページャー","expected":"ページャ"},{"pattern":"ポインター","expected":"ポインタ"},{"pattern":"ポリモルフィズム|ポリモーフィズム|ポルモルフィズム","expected":"ポリモフィズム"},{"pattern":"マトリクス","expected":"マトリックス"},{"pattern":"マッピングツール|マッパー","expected":"マッパ"},{"pattern":"マネージメント","expected":"マネジメント"},{"pattern":"メーカ(?!ー)","expected":"メーカー"},{"pattern":"\\bML\\b","expected":"メーリングリスト"},{"pattern":"メタファー","expected":"メタファ"},{"pattern":"メモリー","expected":"メモリ"},{"pattern":"メインテナンス","expected":"メンテナンス"},{"pattern":"メンテナー","expected":"メンテナ"},{"pattern":"メンバ([^ー])","expected":"メンバー$1"},{"pattern":"リーダ([^ー])","expected":"リーダー$1"},{"pattern":"リジューム","expected":"レジューム"},{"pattern":"ユーザー","expected":"ユーザ"},{"pattern":"ユーティリティー","expected":"ユーティリティ"},{"pattern":"Unitテスト|単体テスト","expected":"ユニットテスト"},{"pattern":"ライブラリー","expected":"ライブラリ"},{"pattern":"ラッパー","expected":"ラッパ"},{"pattern":"デグレード|デグレ","expected":"リグレッション"},{"pattern":"リスナー","expected":"リスナ"},{"pattern":"\\bReverse Proxy\\b","expected":"リバースプロキシ"},{"pattern":"リファラー","expected":"リファラ"},{"pattern":"リポジトリー|レポジトリ|レポジトリー","expected":"リポジトリ"},{"pattern":"ルーター","expected":"ルータ"},{"pattern":"レジストリー","expected":"レジストリ"},{"pattern":"レイテンシー","expected":"レイテンシ"},{"pattern":"ローダー","expected":"ローダ"},{"pattern":"ワーカー","expected":"ワーカ"},{"pattern":"\\bOnetime URL\\b","expected":"ワンタイムURL"},{"pattern":"\\bQuad Core CPU\\b","expected":"クアッドコアCPU"},{"pattern":"クァッドコア|\\bQuad Core\\b|クァッドCore|Quadコア","expected":"クアッドコア"},{"pattern":"\\bDual Core CPU\\b","expected":"デュアルコアCPU"},{"pattern":"\\bDual Core\\b|デュアルCore|Dualコア","expected":"デュアルコア"},{"pattern":"マスター([^.])","expected":"マスタ$1"},{"pattern":"マスタ・スレーブ","expected":"マスタ／スレーブ"},{"pattern":"\\bBackup\\b([^.])","expected":"バックアップ$1"},{"pattern":"スレイブ([^.])|\\bSlave\\b([^.])","expected":"スレーブ$1"},{"pattern":"ディスクリプタ","expected":"記述子"},{"pattern":"アトリビュート","expected":"属性"},{"pattern":"エレメント","expected":"要素"},{"pattern":"\\bAction Controller\\b","expected":"ActionController"},{"pattern":"\\bAction Mailer\\b","expected":"ActionMailer"},{"pattern":"\\bAction Pack\\b","expected":"ActionPack"},{"pattern":"\\bAction Script\\b|アクションスクリプト","expected":"ActionScript"},{"pattern":"ActionScript([0-9])","expected":"ActionScript $1"},{"pattern":"\\bActionScriptVirtualMachine\\b|\\bActionScript VirtualMachine\\b","expected":"ActionScript Virtual Machine"},{"pattern":"\\bAction View\\b","expected":"ActionView"},{"pattern":"\\bActive Model\\b","expected":"ActiveModel"},{"pattern":"\\bActive Record\\b","expected":"ActiveRecord"},{"pattern":"\\bActive Resource\\b","expected":"ActiveResource"},{"pattern":"\\bActive Support\\b","expected":"ActiveSupport"},{"pattern":"\\bapache\\b|\\bApatch\\b|\\bapatch\\b","expected":"Apache"},{"pattern":"Apache([0-9])|Apatch([0-9])","expected":"Apache $1$2"},{"pattern":"ASP \\.NET","expected":"ASP.NET"},{"pattern":"ビーン","expected":"Bean"},{"pattern":"\\bBigTable\\b|\\bBig Table\\b|\\bBig table\\b","expected":"Bigtable"},{"pattern":"\\bCakePHP\\b","expected":"CakePHP","flag":"i"},{"pattern":"CakePHP([0-9])","expected":"CakePHP $1"},{"pattern":"\\bCapistorano\\b","expected":"Capistrano"},{"pattern":"Chromeウェブストア|Chrome Webストア","expected":"Chrome Web Store"},{"pattern":"\\bCygwin\\b","expected":"Cygwin","flag":"i"},{"pattern":"\\bDBFlute\\b","expected":"DBFlute","flag":"i"},{"pattern":"(?:([^\\/.])ディー・エヌ・エー)|(?:ディー・エヌ・エー([^\\/.]))","expected":"$1DeNA$2"},{"pattern":"(?:([^\\/.])ディーエヌエー)|(?:ディーエヌエー([^\\/.]))","expected":"$1DeNA$2"},{"pattern":"(?:([^\\/.])\\bDENA)|(?:DENA\\b([^\\/.]))","expected":"$1DeNA$2"},{"pattern":"\\bDreamWeaver\\b","expected":"Dreamweaver"},{"pattern":"\\beasy_install\\b","expected":"easy_install","flag":"i"},{"pattern":"\\bEclipse\\b","expected":"Eclipse","flag":"i"},{"pattern":"\\bECMA Script\\b","expected":"ECMAScript"},{"pattern":"\\bEJB-JARファイル\\b","expected":"EJB-JARファイル","flag":"i"},{"pattern":"\\bElisp\\b","expected":"Elisp","flag":"i"},{"pattern":"\\bLisp\\b","expected":"Lisp","flag":"i"},{"pattern":"\\bEmacs\\b","expected":"Emacs","flag":"i"},{"pattern":"Emacs([0-9])","expected":"Emacs $1"},{"pattern":"\\bEmacs Lisp\\b","expected":"Emacs Lisp","flag":"i"},{"pattern":"\\bEventMachine\\b","expected":"EventMachine","flag":"i"},{"pattern":"エクセル","expected":"Excel"},{"pattern":"(?:([^\\/.])\\bfacebook)|(?:facebook\\b([^\\/.]))","expected":"$1Facebook$2"},{"pattern":"\\bFirebug\\b","expected":"Firebug","flag":"i"},{"pattern":"\\bFireFox\\b|\\bFire Fox\\b|ファイアーフォックス|ファイヤーフォックス","expected":"Firefox"},{"pattern":"フラッシュ","expected":"Flash"},{"pattern":"\\bFlashLite\\b","expected":"Flash Lite"},{"pattern":"Flashプレイヤー|Flash プレイヤー|Flashプレーヤ|Flash プレーヤ|Flashプレーヤー|Flash プレーヤー|\\bFlashPlayer\\b","expected":"Flash Player"},{"pattern":"\\bFlash Platform\\b","expected":"Flashプラットフォーム"},{"pattern":"\\bFlexBuilder\\b","expected":"Flex Builder"},{"pattern":"\\bGoogleGears\\b|\\bGoogle Gears\\b","expected":"Gears"},{"pattern":"\\bGHCi\\b","expected":"GHCi","flag":"i"},{"pattern":"\\bGit\\b","expected":"Git","flag":"i"},{"pattern":"([^\\/\\.])\\bgithub\\b","expected":"$1GitHub"},{"pattern":"(?:([^\\/.@])\\bgmail)|(?:gmail\\b([^\\/.]))","expected":"$1Gmail$2"},{"pattern":"Googleガジェット","expected":"Google Gadget"},{"pattern":"\\bGoogle Map\\b|\\bGoogleMaps\\b|\\bGoogleMap\\b|Googleマップ","expected":"Google Maps"},{"pattern":"\\bGreaseMonkey\\b|\\bGrease monkey\\b|\\bGrease Monkey\\b","expected":"Greasemonkey"},{"pattern":"\\bgzip\\b","expected":"gzip","flag":"i"},{"pattern":"\\bHeartbeat\\b","expected":"Heartbeat","flag":"i"},{"pattern":"HTML 5","expected":"HTML5"},{"pattern":"HTML([0-4])","expected":"HTML $1"},{"pattern":"([^\\.\\s])\\bIO\\b","expected":"$1I/O"},{"pattern":"\\bImageMagick\\b","expected":"ImageMagick","flag":"i"},{"pattern":"Internet Explorer([0-9])","expected":"Internet Explorer $1"},{"pattern":"IE ([0-9])","expected":"IE$1"},{"pattern":"iノード","expected":"inode"},{"pattern":"\\biOS SDK\\b","expected":"iOS SDK","flag":"i"},{"pattern":"ISO\\-","expected":"ISO"},{"pattern":"ISO([0-9])","expected":"ISO $1"},{"pattern":"\\biPad\\b","expected":"iPad","flag":"i"},{"pattern":"\\biPhone\\b","expected":"iPhone","flag":"i"},{"pattern":"\\bJade\\b","expected":"Jade","flag":"i"},{"pattern":"\\bJARファイル\\b","expected":"JARファイル","flag":"i"},{"pattern":"Java([0-9])","expected":"Java $1"},{"pattern":"Java3D","expected":"Java 3D"},{"pattern":"\\bJavaEE\\b","expected":"Java EE"},{"pattern":"JavaEE([0-9])","expected":"Java EE $1"},{"pattern":"Java EE([0-9])","expected":"Java EE $1"},{"pattern":"\\bJavaSE\\b","expected":"Java SE"},{"pattern":"JavaSE([0-9])","expected":"Java SE $1"},{"pattern":"Java SE([0-9])","expected":"Java SE $1"},{"pattern":"\\bJavaBean\\b|\\bJava Bean\\b|\\bJava Beans\\b","expected":"JavaBeans"},{"pattern":"\\bJavadoc\\b","expected":"Javadoc","flag":"i"},{"pattern":"\\bJava Server Faces\\b","expected":"JavaServer Faces"},{"pattern":"\\bJava Server Pages\\b","expected":"JavaServer Pages"},{"pattern":"\\bJenkins\\b","expected":"Jenkins","flag":"i"},{"pattern":"JDK([0-9])","expected":"JDK $1"},{"pattern":"\\bJPEG\\b","expected":"JPEG","flag":"i"},{"pattern":"JSF([0-9])","expected":"JSF $1"},{"pattern":"JSP([0-9])","expected":"JSP $1"},{"pattern":"\\bJava VM\\b|\\bJavaVM\\b","expected":"JVM"},{"pattern":"Key-Value|キーバリュー|キー・バリュー|キー／バリュー","expected":"key-value"},{"pattern":"\\bKitchenSink\\b","expected":"KitchenSink","flag":"i"},{"pattern":"\\bKyotoCabinet\\b","expected":"Kyoto Cabinet"},{"pattern":"\\bKyotoTycoon\\b|Tokyo *Tycoon","expected":"Kyoto Tycoon"},{"pattern":"LL言語","expected":"LL"},{"pattern":"\\bMacOS\\b","expected":"Mac OS"},{"pattern":"\\bMacOSX\\b","expected":"Mac OS X"},{"pattern":"\\bMac Book\\b","expected":"MacBook"},{"pattern":"\\bMacPorts\\b","expected":"MacPorts","flag":"i"},{"pattern":"\\bMaven\\b","expected":"Maven","flag":"i"},{"pattern":"\\bMeCab\\b","expected":"MeCab","flag":"i"},{"pattern":"\\bmemcached\\b","expected":"memcached","flag":"i"},{"pattern":"(?:([^\\/.])マイクロソフト)|(?:マイクロソフト([^\\/.]))","expected":"$1Microsoft$2"},{"pattern":"(?:([^\\/.])\\bmicrosoft)|(?:microsoft\\b([^\\/.]))","expected":"$1Microsoft$2"},{"pattern":"\\bMigemo\\b","expected":"Migemo","flag":"i"},{"pattern":"\\bmixi\\b","expected":"mixi","flag":"i"},{"pattern":"\\bMongo DB\\b","expected":"MongoDB"},{"pattern":"\\bMySQL\\b","expected":"MySQL","flag":"i"},{"pattern":"Nagios([0-9])","expected":"Nagios $1"},{"pattern":"\\bnginx\\b","expected":"nginx","flag":"i"},{"pattern":"\\bNode.js\\b","expected":"Node.js","flag":"i"},{"pattern":"\\bOAuth\\b","expected":"OAuth","flag":"i"},{"pattern":"\\bOmniAuth\\b","expected":"OmniAuth","flag":"i"},{"pattern":"\\bOpen GL\\b","expected":"OpenGL"},{"pattern":"オペレーティングシステム","expected":"OS"},{"pattern":"パソコン","expected":"PC"},{"pattern":"\\bPentium IV\\b","expected":"Pentium 4"},{"pattern":"Pentium 2|Pentium2","expected":"Pentium II"},{"pattern":"Pentium 3|Pentium3","expected":"Pentium III"},{"pattern":"Perl([0-9])","expected":"Perl $1"},{"pattern":"\\bPerl\\b","expected":"Perl","flag":"i"},{"pattern":"\\bPhotoShop\\b|\\bphotoshop\\b|フォトショップ","expected":"Photoshop"},{"pattern":"PHP([0-9])","expected":"PHP $1"},{"pattern":"\\bPHPUnit\\b","expected":"PHPUnit","flag":"i"},{"pattern":"\\bping\\b","expected":"ping","flag":"i"},{"pattern":"\\bpip\\b","expected":"pip","flag":"i"},{"pattern":"\\bpixiv\\b","expected":"pixiv","flag":"i"},{"pattern":"\\bPOPFile\\b","expected":"POPFile","flag":"i"},{"pattern":"\\bPostScript\\b","expected":"PostScript","flag":"i"},{"pattern":"PostgreSQL([0-9])","expected":"PostgreSQL $1"},{"pattern":"\\bPython\\b","expected":"Python","flag":"i"},{"pattern":"\\bRADIUS\\b","expected":"RADIUS","flag":"i"},{"pattern":"Rails([0-9])","expected":"Rails $1"},{"pattern":"\\bRake\\b","expected":"Rake","flag":"i"},{"pattern":"\\bRedHat\\b|\\bRedhat\\b|\\bredhat\\b|\\bRedHad\\b|\\bRedhad\\b|\\bredhad\\b|レッドハット","expected":"Red Hat"},{"pattern":"\\bRedHatLinux\\b|\\bRedHat Linux\\b","expected":"Red Hat Linux"},{"pattern":"Red Hat Linux([0-9])|RedHatLinux([0-9])|RedHat Linux([0-9])","expected":"Red Hat Linux $1"},{"pattern":"\\bRedis\\b","expected":"Redis","flag":"i"},{"pattern":"\\bRELAX NG\\b","expected":"RELAX NG","flag":"i"},{"pattern":"RFC([0-9])","expected":"RFC $1"},{"pattern":"\\bRPC Services\\b","expected":"RPCサービス"},{"pattern":"\\bRuby\\b","expected":"Ruby","flag":"i"},{"pattern":"Ruby([0-9])","expected":"Ruby $1"},{"pattern":"\\bRuby On Rails\\b|\\bRoR\\b","expected":"Ruby on Rails"},{"pattern":"\\bRubyGems\\b","expected":"RubyGems","flag":"i"},{"pattern":"\\bRuby Gems\\b","expected":"RubyGems"},{"pattern":"SAML([0-9])","expected":"SAML $1"},{"pattern":"\\bScheme\\b","expected":"Scheme","flag":"i"},{"pattern":"Servlet([0-9])","expected":"Servlet $1"},{"pattern":"\\bSilverLight\\b|\\bSilver Light\\b","expected":"Silverlight"},{"pattern":"\\bSimpleTest\\b","expected":"SimpleTest","flag":"i"},{"pattern":"\\bSinatra\\b","expected":"Sinatra","flag":"i"},{"pattern":"\\bSkeedCast\\b","expected":"SkeedCast","flag":"i"},{"pattern":"(?:([^\\/.])スモールトーク)|(?:スモールトーク([^\\/.]))","expected":"$1Smalltalk$2"},{"pattern":"\\bSocket.IO\\b","expected":"Socket.IO","flag":"i"},{"pattern":"([^\\/.])\\bsourceforge\\b","expected":"$1SourceForge"},{"pattern":"\\bSpiderMonkey\\b","expected":"SpiderMonkey","flag":"i"},{"pattern":"SQL([0-9])","expected":"SQL $1"},{"pattern":"\\bSQLite\\b","expected":"SQLite","flag":"i"},{"pattern":"\\bSquid\\b","expected":"Squid","flag":"i"},{"pattern":"(?:([^\\/.])\\bSubVersion)|(?:SubVersion\\b([^\\/.]))","expected":"$1Subversion$2"},{"pattern":"(?:([^\\/.])\\bsubversion)|(?:subversion\\b([^\\/.]))","expected":"$1Subversion$2"},{"pattern":"\\bSun\\b","expected":"Sun","flag":"i"},{"pattern":"\\bSun RPC\\b","expected":"SunRPC"},{"pattern":"\\bSUSE\\b","expected":"SUSE","flag":"i"},{"pattern":"\\bSWFファイル\\b","expected":"SWFファイル","flag":"i"},{"pattern":"Symfony 2","expected":"Symfony2"},{"pattern":"Tomcat([0-9])","expected":"Tomcat $1"},{"pattern":"\\bTwitter\\b","expected":"Twitter","flag":"i"},{"pattern":"ツイッター","expected":"Twitter"},{"pattern":"\\bTokyoCabinet\\b","expected":"Tokyo Cabinet"},{"pattern":"\\bTokyoDystopia\\b|Kyoto *Dystopia","expected":"Tokyo Dystopia"},{"pattern":"\\bTokyoPromenade\\b|Kyoto *Promenade","expected":"Tokyo Promenade"},{"pattern":"\\bTokyoTyrant\\b|Kyoto *Tyrant","expected":"Tokyo Tyrant"},{"pattern":"\\bTriton\\b|\\btriton\\b|\\btritonn\\b","expected":"Tritonn"},{"pattern":"\\bubuntu\\b|\\bUbuntsu\\b|\\bubuntsu\\b|\\bUbuntu Linux\\b","expected":"Ubuntu"},{"pattern":"\\bunicode\\b|ユニコード","expected":"Unicode"},{"pattern":"\\bUnix\\b","expected":"UNIX"},{"pattern":"UTF8|UTF 8|utf8","expected":"UTF-8"},{"pattern":"vim([0-9])","expected":"Vim $1"},{"pattern":"\\bvim script\\b","expected":"Vimスクリプト"},{"pattern":"\\bVisualBasic\\b|\\bVB\\b","expected":"Visual Basic"},{"pattern":"Visual Studio\\.NET","expected":"Visual Studio .NET"},{"pattern":"\\bVMware\\b","expected":"VMware","flag":"i"},{"pattern":"\\bWARファイル\\b","expected":"WARファイル","flag":"i"},{"pattern":"\\bWebAPI\\b|\\bWEBAPI\\b|\\bWEB API\\b","expected":"Web API"},{"pattern":"\\bWebUI\\b","expected":"Web UI"},{"pattern":"\\bWeb Logic\\b","expected":"WebLogic"},{"pattern":"\\bWeb Sphere\\b","expected":"WebSphere"},{"pattern":"\\bWiFi\\b","expected":"Wi-Fi"},{"pattern":"Windows2000","expected":"Windows 2000"},{"pattern":"Windows Server 2000","expected":"Windows 2000 Server"},{"pattern":"Windows3\\.","expected":"Windows 3."},{"pattern":"Windows7","expected":"Windows 7"},{"pattern":"Windows95","expected":"Windows 95"},{"pattern":"Windows98","expected":"Windows 98"},{"pattern":"\\bWindowsMe\\b|\\bWindowsME\\b","expected":"Windows Me"},{"pattern":"\\bWindowsNT\\b","expected":"Windows NT"},{"pattern":"Windows 2003 Server","expected":"Windows Server 2003"},{"pattern":"Windows 2008 Server","expected":"Windows Server 2008"},{"pattern":"\\bWindowsVista\\b","expected":"Windows Vista"},{"pattern":"\\bWindowsXP\\b","expected":"Windows XP"},{"pattern":"([^ースォ])ワード","expected":"$1Word"},{"pattern":"\\bxAuth\\b","expected":"xAuth","flag":"i"},{"pattern":"\\bXcode\\b","expected":"Xcode","flag":"i"},{"pattern":"\\bXML Schema\\b","expected":"XML Schema","flag":"i"},{"pattern":"(?:\\bYAHOO\\b([^!.]))","expected":"Yahoo!$1"},{"pattern":"(?:ヤフー([^!.]))","expected":"Yahoo!$1"},{"pattern":"\\bYahooWidget\\b|Yahoo\\!Widget|Yahoo\\! Widget|\\bYahooGadget\\b|Yahoo\\!Gadget|Yahoo\\! Gadget","expected":"Yahoo!ウィジェット"},{"pattern":"\\bYoutube\\b|\\byoutube\\b","expected":"YouTube"},{"pattern":"\\bYSlow\\b","expected":"YSlow","flag":"i"},{"pattern":"\\bZIPファイル\\b","expected":"ZIPファイル","flag":"i"},{"pattern":"オライリージャパン([^・])|オライリー([^・])","expected":"オライリー・ジャパン$1"},{"pattern":"ソフトバンククリエイティブ","expected":"ソフトバンク クリエイティブ"},{"pattern":"ピアソンエデュケーション([^・])","expected":"ピアソン・エデュケーション$1"},{"pattern":"(?:([^\\/.])クイックウェブ)|(?:クイックウェブ([^\\/.]))","expected":"$1qwikWeb$2"},{"pattern":"(?:([^\\/.])クイックWeb)|(?:クイックWeb([^\\/.]))","expected":"$1qwikWeb$2"},{"pattern":"(?:([^.])C2ウィキ)|(?:C2ウィキ([^.]))","expected":"$1C2 Wiki$2"},{"pattern":"(?:([^.])サーチウィキ)|(?:サーチウィキ([^.]))","expected":"$1SearchWiki$2"},{"pattern":"(?:([^.])サーチWiki)|(?:サーチWiki([^.]))","expected":"$1SearchWiki$2"},{"pattern":"(?:([^.])メディアウィキ)|(?:メディアウィキ([^.]))","expected":"$1MediaWiki$2"},{"pattern":"(?:([^.])メディアWiki)|(?:メディアWiki([^.]))","expected":"$1MediaWiki$2"},{"pattern":"(?:([^.])ハイパーパール)|(?:ハイパーパール([^.]))","expected":"$1HyperPerl$2"},{"pattern":"(?:([^.])ヌーペディア)|(?:ヌーペディア([^.]))","expected":"$1Nupedia$2"},{"pattern":"(?:([^.])ユースモッドウィキ)|(?:ユースモッドウィキ([^.]))","expected":"$1UseModWiki$2"},{"pattern":"(?:([^.])ユースモッドWiki)|(?:ユースモッドWiki([^.]))","expected":"$1UseModWiki$2"},{"pattern":"(?:([^.])ティドリーウィキ)|(?:ティドリーウィキ([^.]))","expected":"$1TiddlyWiki$2"},{"pattern":"(?:([^.])ティドリーWiki)|(?:ティドリーWiki([^.]))","expected":"$1TiddlyWiki$2"},{"pattern":"(?:([^.])ミートボールウィキ)|(?:ミートボールウィキ([^.]))","expected":"$1MeatballWiki$2"},{"pattern":"(?:([^.])ミートボールWiki)|(?:ミートボールWiki([^.]))","expected":"$1MeatballWiki$2"},{"pattern":"(?:([^\\/.])ウィキウィキウェブ)|(?:ウィキウィキウェブ([^\\/.]))","expected":"$1WikiWikiWeb$2"},{"pattern":"(?:([^\\/.])ウィキウィキWeb)|(?:ウィキウィキWeb([^\\/.]))","expected":"$1WikiWikiWeb$2"},{"pattern":"(?:([^.])ウィキア)|(?:ウィキア([^.]))","expected":"$1Wikia$2"},{"pattern":"(?:([^.])Wikiア)|(?:Wikiア([^.]))","expected":"$1Wikia$2"},{"pattern":"(?:([^\\/.])ウィキメディア)|(?:ウィキメディア([^\\/.]))","expected":"$1Wikimedia$2"},{"pattern":"(?:([^\\/.])Wikiメディア)|(?:Wikiメディア([^\\/.]))","expected":"$1Wikimedia$2"},{"pattern":"(?:([^\\/.])\\bWikiPedia)|(?:WikiPedia\\b([^\\/.]))","expected":"$1Wikipedia$2"},{"pattern":"(?:([^\\/.])ウィキペディア)|(?:ウィキペディア([^\\/.]))","expected":"$1Wikipedia$2"},{"pattern":"(?:([^\\/.])Wikiベース)|(?:Wikiベース([^\\/.]))","expected":"$1WikiBase$2"},{"pattern":"(?:([^\\/.])ウィキベース)|(?:ウィキベース([^\\/.]))","expected":"$1WikiBase$2"},{"pattern":"(?:([^\\/.])\\bwiki)|(?:wiki\\b([^\\/.]))","expected":"$1Wiki$2"},{"pattern":"(?:([^\\/.])ウィキ)|(?:ウィキ([^\\/.]))","expected":"$1Wiki$2"},{"pattern":"Actionクラス","expected":"アクションクラス"},{"pattern":"\\bActionListener\\b|\\bAction Listener\\b|\\bActionListener\\b","expected":"アクションリスナ"},{"pattern":"Actionマッピング|\\bAction Mapping\\b","expected":"アクションマッピング"},{"pattern":"\\bActionFormBean\\b|\\bActionFormBeans\\b|\\bActionForm Bean\\b","expected":"アクションフォームBean"},{"pattern":"\\bAction Form\\b|\\bActionForm\\b","expected":"アクションフォーム"},{"pattern":"\\bActionServlet\\b|\\bAction Servlet\\b|Actionサーブレット","expected":"アクションサーブレット"},{"pattern":"\\bForm Bean\\b|フォームビーン","expected":"フォームBean"},{"pattern":"Requestオブジェクト","expected":"リクエストオブジェクト"},{"pattern":"Responseオブジェクト","expected":"レスポンスオブジェクト"},{"pattern":"Sessionオブジェクト","expected":"セッションオブジェクト"},{"pattern":"インタフェイス|インターフェイス|インターフェース|インターフェィス","expected":"インタフェース"},{"pattern":"Remoteインタフェース","expected":"リモートインタフェース"},{"pattern":"Homeインタフェース","expected":"ホームインタフェース"},{"pattern":"Localインタフェース","expected":"ローカルインタフェース"},{"pattern":"Serviceインタフェース","expected":"サービスインタフェース"},{"pattern":"\\bEntity Bean\\b|\\bentity bean\\b","expected":"エンティティBean"},{"pattern":"\\bsession bean\\b|\\bSession Bean\\b","expected":"セッションBean"},{"pattern":"%([^0123456789])","expected":"％$1"},{"pattern":"([ァ-ヶ])・","expected":"$1"},{"pattern":"・・・|･･･","expected":"…"},{"pattern":"――|─―|―─","expected":"──"},{"pattern":"！？","expected":"!?"},{"pattern":"？！","expected":"?!"},{"pattern":"！！","expected":"!!"},{"pattern":"？？","expected":"??"},{"pattern":"！？([^\\n\\s「」『』（）［］])","expected":"!? $1"},{"pattern":"\\!\\?([^\\n\\s「」『』（）［］])","expected":"!? $1"},{"pattern":"？！([^\\n\\s「」『』（）［］])","expected":"?! $1"},{"pattern":"\\?\\!([^\\n\\s「」『』（）［］])","expected":"?! $1"},{"pattern":"？？([^\\n\\s「」『』（）［］])","expected":"?? $1"},{"pattern":"\\?\\?([^\\n\\s「」『』（）［］])","expected":"?? $1"},{"pattern":"！([^\\n\\s「」『』（）［］])","expected":"！ $1"},{"pattern":"？([^\\n\\s「」『』（）［］★])","expected":"？ $1"},{"pattern":"([0-9])x([0-9])","expected":"$1×$2"},{"pattern":"⑩|10．","expected":"（10）"},{"pattern":"①|1．","expected":"（1）"},{"pattern":"②|2．","expected":"（2）"},{"pattern":"③|3．","expected":"（3）"},{"pattern":"④|4．","expected":"（4）"},{"pattern":"⑤|5．","expected":"（5）"},{"pattern":"⑥|6．","expected":"（6）"},{"pattern":"⑦|7．","expected":"（7）"},{"pattern":"⑧|8．","expected":"（8）"},{"pattern":"⑨|9．","expected":"（9）"},{"pattern":"Ⅳ","expected":"IV"},{"pattern":"ⅳ","expected":"iv"},{"pattern":"Ⅵ","expected":"VI"},{"pattern":"ⅵ","expected":"vi"},{"pattern":"Ⅶ","expected":"VII"},{"pattern":"ⅶ","expected":"vii"},{"pattern":"Ⅷ","expected":"VIII"},{"pattern":"ⅷ","expected":"viii"},{"pattern":"Ⅸ","expected":"IX"},{"pattern":"ⅸ","expected":"ix"},{"pattern":"（|（","expected":"（"},{"pattern":"） | ）","expected":"）"},{"pattern":"．（|。（","expected":"（"},{"pattern":"。）","expected":"）。"},{"pattern":"、）","expected":"）、"},{"pattern":"）(\\n)","expected":"）。$1"},{"pattern":"｢","expected":"「"},{"pattern":"｣","expected":"」"},{"pattern":"」、「","expected":"」「"},{"pattern":"。」","expected":"」"},{"pattern":"([\\d十百千万])Mバイト|([\\d十百千万])メガバイト","expected":"$1MB"},{"pattern":"([\\d十百千万])Gバイト|([\\d十百千万])ギガバイト","expected":"$1GB"},{"pattern":"([\\d十百千万])Kバイト|([\\d十百千万])キロバイト","expected":"$1KB"},{"pattern":"([\\d十百千万])Tバイト|([\\d十百千万])テラバイト","expected":"$1TB"},{"pattern":"([\\d十百千万])Pバイト|([\\d十百千万])ペタバイト","expected":"$1PB"},{"pattern":"([\\d十百千万])\\bpx\\b|([\\d十百千万])\\bpixel\\b","expected":"$1ピクセル"},{"pattern":"([\\d十百千万])\\bbit\\b|([\\d十百千万])\\bBit\\b","expected":"$1ビット"},{"pattern":"([\\d十百千万])\\bKbps\\b","expected":"$1kbps"},{"pattern":"([\\d十百千万])\\bKHz\\b|([\\d十百千万])\\bKhz\\b|([\\d十百千万])\\bkhz\\b|([\\d十百千万])\\bKHZ\\b|([\\d十百千万])\\bkHZ\\b","expected":"$1kHz"},{"pattern":"([\\d十百千万])\\bhz\\b|([\\d十百千万])\\bHZ\\b","expected":"$1Hz"},{"pattern":"\\bFluxbox\\b","expected":"Flexbox"},{"pattern":"[PpＰｐ][OoＯｏ][SsＳｓ][TtＴｔ][CcＣｃ][SsＳｓ][SsＳｓ]","expected":"PostCSS"},{"pattern":"(?:ECMAScript([0-9]+)|ECMA Script([0-9]+))","expected":"ECMAScript $1"},{"pattern":"ECMA標準","expected":"Ecma標準"},{"pattern":"\\bES next\\b","expected":"ES.next"},{"pattern":"[EeＥｅ][SsＳｓ][6６] [CcＣｃ][LlＬｌ][AaＡａ][SsＳｓ][SsＳｓ][EeＥｅ][SsＳｓ]","expected":"ES6 Classes"},{"pattern":"(?:WebComponents|web components|Web components)","expected":"Web Components"},{"pattern":"\\blocalstorage\\b","expected":"localStorage"},{"pattern":"\\bsession storage\\b|\\bsessionstorage\\b","expected":"sessionStorage"},{"pattern":"\\bHTML Import\\b","expected":"HTML Imports"},{"pattern":"\\b[JjＪｊ][AaＡａ][VvＶｖ][AaＡａ][SsＳｓ][CcＣｃ][RrＲｒ][IiＩｉ][PpＰｐ][TtＴｔ]\\b","expected":"JavaScript"},{"pattern":"\\bJava Script\\b","expected":"JavaScript","flag":"i"},{"pattern":"(?:pointer event|pointer events)","expected":"Pointer Events"},{"pattern":"(?:Touch Event|Touch Events)","expected":"Touch Events"},{"pattern":"(?:WebAudio API|Web AudioAPI|Web Audio API)","expected":"Web Audio API"},{"pattern":"[SsＳｓ][EeＥｅ][RrＲｒ][VvＶｖ][IiＩｉ][CcＣｃ][EeＥｅ] [WwＷｗ][OoＯｏ][RrＲｒ][KkＫｋ][EeＥｅ][RrＲｒ]","expected":"Service Worker"},{"pattern":"(?:Template Strings|TemplateStrings)","expected":"Template Strings"},{"pattern":".js([.0-9]+)","expected":".js $1"},{"pattern":"[TtＴｔ][OoＯｏ][DdＤｄ][OoＯｏ][MmＭｍ][VvＶｖ][CcＣｃ]","expected":"TodoMVC"},{"pattern":"(?:Source Map|SourceMap)","expected":"Source Map"},{"pattern":"\\bVirtualDOM\\b|\\bVirtualDom\\b","expected":"Virtual DOM"},{"pattern":"(?:jquery(?!-))","expected":"jQuery"},{"pattern":"(?:redux(?!-))","expected":"Redux"},{"pattern":"[UuＵｕ][NnＮｎ][DdＤｄ][EeＥｅ][RrＲｒ][SsＳｓ][CcＣｃ][OoＯｏ][RrＲｒ][EeＥｅ].[JjＪｊ][SsＳｓ]","expected":"Underscore.js"},{"pattern":"\\b[AaＡａ][NnＮｎ][GgＧｇ][UuＵｕ][LlＬｌ][AaＡａ][RrＲｒ]\\b","expected":"Angular"},{"pattern":"(?:Angular\\.js|angularjs)","expected":"AngularJS"},{"pattern":"[EeＥｅ][MmＭｍ][BbＢｂ][EeＥｅ][RrＲｒ].[JjＪｊ][SsＳｓ]","expected":"Ember.js"},{"pattern":"(?:EmberJS)","expected":"Ember.js"},{"pattern":"[LlＬｌ][EeＥｅ][AaＡａ][NnＮｎ][PpＰｐ][UuＵｕ][BbＢｂ]","expected":"Leanpub"},{"pattern":"[OoＯｏ][RrＲｒ][EeＥｅ][IiＩｉ][LlＬｌ][LlＬｌ][YyＹｙ]","expected":"Oreilly"},{"pattern":"(?:SauceLabs)","expected":"Sauce Labs"},{"pattern":"(?:TravisCI)","expected":"Travis CI"},{"pattern":"(?:HTML5Rocks|HTML5Rock)","expected":"HTML5 Rocks"},{"pattern":"([0-9\\.]+)EAP","expected":"$1 EAP"},{"pattern":"\\bWebDriver\\b","expected":"WebDriver","flag":"i"},{"pattern":"Virtual machine","expected":"Virtual Machine"},{"pattern":"(?:([^\\-\\w])webkit)","expected":"$1WebKit"},{"pattern":"[OoＯｏ][CcＣｃ][AaＡａ][MmＭｍ][LlＬｌ]","expected":"OCaml"},{"pattern":"[WwＷｗ][IiＩｉ][NnＮｎ][DdＤｄ][OoＯｏ][WwＷｗ][SsＳｓ]","expected":"Windows"}]
-},{}],208:[function(require,module,exports){
+},{}],314:[function(require,module,exports){
 (function (process,__dirname){
 // LICENSE : MIT
 "use strict";
@@ -46851,7 +60142,7 @@ function createFormatter(options) {
 }
 module.exports = createFormatter;
 }).call(this,require('_process'),"/node_modules/textlint-formatter/lib")
-},{"_process":159,"assert":7,"fs":15,"path":144,"try-resolve":281}],209:[function(require,module,exports){
+},{"_process":259,"assert":11,"fs":19,"path":244,"try-resolve":402}],315:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -46900,7 +60191,7 @@ var MarkdownProcessor = function () {
 exports.default = MarkdownProcessor;
 module.exports = exports['default'];
 
-},{"markdown-to-ast":119}],210:[function(require,module,exports){
+},{"markdown-to-ast":211}],316:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -46912,7 +60203,7 @@ exports.default = {
 };
 module.exports = exports['default'];
 
-},{"./MarkdownProcessor":209}],211:[function(require,module,exports){
+},{"./MarkdownProcessor":315}],317:[function(require,module,exports){
 /* eslint-disable no-unused-vars */
 // LICENSE : MIT
 "use strict";
@@ -46960,7 +60251,7 @@ var TextProcessor = exports.TextProcessor = function () {
     return TextProcessor;
 }();
 
-},{"txt-to-ast":283}],212:[function(require,module,exports){
+},{"txt-to-ast":404}],318:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -46970,7 +60261,156 @@ module.exports = {
     Processor: _TextProcessor.TextProcessor
 };
 
-},{"./TextProcessor":211}],213:[function(require,module,exports){
+},{"./TextProcessor":317}],319:[function(require,module,exports){
+// MIT © 2016 azu
+"use strict";
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var chrono = require("chrono-node");
+var moment = require('moment');
+/**
+ * from chrono tags
+ * TODO: get more primitive way
+ * @type {[RegExp]}
+ */
+var supportedLang = [[/^EN/i, "en"], [/^JP/i, "ja"], [/^ES/i, "es"], [/^FR/i, "fr"], [/^ZH/i, "zh"]];
+/**
+ * text should be includes number
+ * @param {Object} chronoDate
+ * @returns {boolean}
+ */
+var textIncludesNumber = function textIncludesNumber(chronoDate) {
+    return (/[0-9０-９]/.test(chronoDate.text)
+    );
+};
+var yearMonthDayShouldKnownValues = function yearMonthDayShouldKnownValues(chronoDate) {
+    if (!chronoDate.start) {
+        return false;
+    }
+    // year-month-day should known value
+    // if have not anyone, not report as error
+    var kV = chronoDate.start.knownValues;
+    return kV.year !== undefined && kV.month !== undefined && kV.day !== undefined;
+};
+/**
+ * detect lang and return language string
+ * @param {string[]} tags
+ * @param {string} [preferLang]
+ * @returns {string|null}
+ */
+var detectLang = function detectLang(tags, preferLang) {
+    if (preferLang) {
+        return preferLang;
+    }
+    var targetLangs = supportedLang.filter(function (_ref) {
+        var _ref2 = _slicedToArray(_ref, 1),
+            langRegExp = _ref2[0];
+
+        return tags.some(function (tag) {
+            return langRegExp.test(tag);
+        });
+    });
+    if (targetLangs.length === 0) {
+        return null;
+    }
+    var selectedLang = targetLangs[0];
+    return selectedLang[1];
+};
+/**
+ *
+ * @param context
+ * @param {Object} [config]
+ */
+function reporter(context) {
+    var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    var preferLang = config.lang;
+    var Syntax = context.Syntax,
+        RuleError = context.RuleError,
+        report = context.report,
+        fixer = context.fixer,
+        getSource = context.getSource;
+
+    if (typeof Intl === "undefined") {
+        throw new Error("Not support your Node.js/browser. should be use latest version.");
+    }
+
+    return _defineProperty({}, Syntax.Str, function (node) {
+        var text = getSource(node);
+        var chronoDates = chrono.parse(text);
+        // ignore "今日" text
+        // ignore not valid data
+        var filteredChronoDates = chronoDates.filter(textIncludesNumber).filter(yearMonthDayShouldKnownValues);
+        filteredChronoDates.forEach(function (chronoDate) {
+            var lang = detectLang(Object.keys(chronoDate.tags), preferLang);
+            if (!lang) {
+                // not found lang
+                return;
+            }
+            // get weekday from actual date string
+            var kV = chronoDate.start.knownValues;
+            var $moment = void 0;
+            try {
+                $moment = moment(kV.year + "-" + kV.month + "-" + kV.day, "YYYY-MM-DD", lang);
+            } catch (error) {
+                report(node, new RuleError("Maybe textlint-rule-date-weekday-mismatch options was wrong language. lang: " + lang));
+                // parse error is ignore
+                return;
+            }
+            if (!$moment.isValid()) {
+                return;
+            }
+            // get (weekday)
+            var startOfPairSymbol = chronoDate.text.length + chronoDate.index;
+            var slicedText = text.slice(startOfPairSymbol);
+            // (match) or （match）
+            var match = slicedText.match(/^(\s*?[(（])([^(（)]+)([)）])/);
+            if (!match) {
+                return;
+            }
+            var actualDateText = match[0];
+            var actualTextAll = "" + chronoDate.text + actualDateText;
+            var pairStartSymbol = match[1]; // ( and padding-left
+            var pairEndSymbol = match[3]; // )
+            var maybeWeekdayText = match[2].trim(); // weekday
+            // 2016年12月30日                  (金曜日)
+            //       ^               ^        ^
+            // chronoDate.index  match.index  pairStartSymbol.length
+            var paddingIndex = startOfPairSymbol + match.index + pairStartSymbol.length;
+            // format http://momentjs.com/docs/#/parsing/string-format/
+            var weekdayPatterns = [
+            // date-format , symbols
+            ["dd", moment.localeData(lang).weekdaysMin()], ["ddd", moment.localeData(lang).weekdaysShort()], ["dddd", moment.localeData(lang).weekdays()]];
+            weekdayPatterns.forEach(function (_ref3) {
+                var _ref4 = _slicedToArray(_ref3, 2),
+                    format = _ref4[0],
+                    symbols = _ref4[1];
+
+                if (symbols.indexOf(maybeWeekdayText) === -1) {
+                    return;
+                }
+                // e.g.) "Friday"
+                var expectedWeekday = $moment.format(format);
+                if (maybeWeekdayText !== expectedWeekday) {
+                    var fix = fixer.replaceTextRange([paddingIndex, paddingIndex + expectedWeekday.length], expectedWeekday);
+                    report(node, new RuleError(actualTextAll + " mismatch weekday.\n" + actualTextAll + " => " + chronoDate.text + pairStartSymbol + expectedWeekday + pairEndSymbol, {
+                        index: paddingIndex,
+                        fix: fix
+                    }));
+                }
+            });
+        });
+    });
+}
+module.exports = {
+    linter: reporter,
+    fixer: reporter
+};
+
+},{"chrono-node":32,"moment":223}],320:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -47098,7 +60538,7 @@ var IgnoreNodeManger = function () {
 
 exports.default = IgnoreNodeManger;
 
-},{"unist-util-visit":293}],214:[function(require,module,exports){
+},{"unist-util-visit":414}],321:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -47117,7 +60557,7 @@ module.exports = {
     RuleHelper: _textlintRuleHelper2.default
 };
 
-},{"./IgnoreNodeManger":213,"./textlint-rule-helper":215}],215:[function(require,module,exports){
+},{"./IgnoreNodeManger":320,"./textlint-rule-helper":322}],322:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 /**
@@ -47193,7 +60633,384 @@ var RuleHelper = function () {
 
 exports.default = RuleHelper;
 
-},{}],216:[function(require,module,exports){
+},{}],323:[function(require,module,exports){
+// LICENSE : MIT
+"use strict";
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var RuleHelper = require("textlint-rule-helper").RuleHelper;
+var japaneseRegExp = /(?:[々〇〻\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]|[\uD840-\uD87F][\uDC00-\uDFFF]|[ぁ-んァ-ヶ])/;
+/***
+ * 典型的な句点のパターン
+ * これは`periodMark`と交換しても違和感がないものを登録
+ * @type {RegExp}
+ */
+var classicPeriodMarkPattern = /[。\.]/;
+var checkEndsWithPeriod = require("check-ends-with-period");
+var defaultOptions = {
+    // 優先する句点文字
+    periodMark: "。",
+    // 句点文字として許可する文字列の配列
+    // 例外として許可したい文字列を設定する
+    // `periodMark`に指定したものは自動的に許可リストに加わる
+    allowPeriodMarks: [],
+    // 末尾に絵文字を置くことを許可するか
+    allowEmojiAtEnd: false,
+    // 句点で終わって無い場合に`periodMark`を--fix時に追加するかどうか
+    // デフォルトでは自動的に追加しない
+    forceAppendPeriod: false
+};
+var reporter = function reporter(context) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var Syntax = context.Syntax,
+        RuleError = context.RuleError,
+        report = context.report,
+        fixer = context.fixer,
+        getSource = context.getSource;
+
+    var helper = new RuleHelper(context);
+    // 優先する句点記号
+    var preferPeriodMark = options.periodMark || defaultOptions.periodMark;
+    // 優先する句点記号は常に句点として許可される
+    var allowPeriodMarks = (options.allowPeriodMarks || defaultOptions.allowPeriodMarks).concat(preferPeriodMark);
+    var allowEmojiAtEnd = options.allowEmojiAtEnd !== undefined ? options.allowEmojiAtEnd : defaultOptions.allowEmojiAtEnd;
+    var forceAppendPeriod = options.forceAppendPeriod !== undefined ? options.forceAppendPeriod : defaultOptions.forceAppendPeriod;
+
+    var ignoredNodeTypes = [Syntax.ListItem, Syntax.Link, Syntax.Code, Syntax.Image, Syntax.BlockQuote, Syntax.Emphasis];
+    return _defineProperty({}, Syntax.Paragraph, function (node) {
+        if (helper.isChildNode(node, ignoredNodeTypes)) {
+            return;
+        }
+        var lastNode = node.children[node.children.length - 1];
+        if (lastNode === undefined || lastNode.type !== Syntax.Str) {
+            return;
+        }
+        var lastStrText = getSource(lastNode);
+        if (lastStrText.length === 0) {
+            return;
+        }
+        // 日本語が含まれていない文章は無視する
+        if (!japaneseRegExp.test(lastStrText)) {
+            return;
+        }
+
+        var _checkEndsWithPeriod = checkEndsWithPeriod(lastStrText, {
+            periodMarks: allowPeriodMarks,
+            allowEmoji: allowEmojiAtEnd
+        }),
+            valid = _checkEndsWithPeriod.valid,
+            periodMark = _checkEndsWithPeriod.periodMark,
+            index = _checkEndsWithPeriod.index;
+        // 問題が無い場合は何もしない
+
+
+        if (valid) {
+            return;
+        }
+        // 文末がスペースである場合はスペースを削除する
+        if (/\s/.test(periodMark)) {
+            report(lastNode, new RuleError("\u6587\u672B\u304C\"" + preferPeriodMark + "\"\u3067\u7D42\u308F\u3063\u3066\u3044\u307E\u305B\u3093\u3002\u672B\u5C3E\u306B\u4E0D\u8981\u306A\u30B9\u30DA\u30FC\u30B9\u304C\u3042\u308A\u307E\u3059\u3002", {
+                index: index,
+                fix: fixer.replaceTextRange([index, index + periodMark.length], "")
+            }));
+            return;
+        }
+        // 典型的なパターンは自動的に`preferPeriodMark`に置き換える
+        // 例) "." であるなら "。"に変換
+        if (classicPeriodMarkPattern.test(periodMark)) {
+            report(lastNode, new RuleError("\u6587\u672B\u304C\"" + preferPeriodMark + "\"\u3067\u7D42\u308F\u3063\u3066\u3044\u307E\u305B\u3093\u3002", {
+                index: index,
+                fix: fixer.replaceTextRange([index, index + preferPeriodMark.length], preferPeriodMark)
+            }));
+        } else {
+            // 句点を忘れているパターン
+            if (forceAppendPeriod) {
+                // `forceAppendPeriod`のオプションがtrueならば、自動で句点を追加する。
+                report(lastNode, new RuleError("\u6587\u672B\u304C\"" + preferPeriodMark + "\"\u3067\u7D42\u308F\u3063\u3066\u3044\u307E\u305B\u3093\u3002", {
+                    index: index,
+                    fix: fixer.replaceTextRange([index + 1, index + 1], preferPeriodMark)
+                }));
+            } else {
+                report(lastNode, new RuleError("\u6587\u672B\u304C\"" + preferPeriodMark + "\"\u3067\u7D42\u308F\u3063\u3066\u3044\u307E\u305B\u3093\u3002", {
+                    index: index
+                }));
+            }
+        }
+    });
+};
+
+module.exports = {
+    linter: reporter,
+    fixer: reporter
+};
+
+},{"check-ends-with-period":31,"textlint-rule-helper":325}],324:[function(require,module,exports){
+// LICENSE : MIT
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var visit = require('unist-util-visit');
+/**
+ * Ignore node manager that manager ignored ranges.
+ *
+ */
+
+var IgnoreNodeManager = function () {
+    function IgnoreNodeManager() {
+        _classCallCheck(this, IgnoreNodeManager);
+
+        /**
+         * @type {[number,number][]}
+         * @private
+         */
+        this._ignoredRangeList = [];
+    }
+
+    /**
+     * |.......|
+     * ^       ^
+     * Ignored Range
+     *
+     *    |........|
+     *    ^
+     *  index
+     * @param {number} index
+     * @returns {boolean}
+     */
+
+
+    _createClass(IgnoreNodeManager, [{
+        key: "isIgnoredIndex",
+        value: function isIgnoredIndex(index) {
+            return this._ignoredRangeList.some(function (range) {
+                var _range = _slicedToArray(range, 2);
+
+                var start = _range[0];
+                var end = _range[1];
+
+                return start <= index && index <= end;
+            });
+        }
+
+        /**
+         * @param {[number, number]} aRange
+         * @returns {boolean}
+         */
+
+    }, {
+        key: "isIgnoredRange",
+        value: function isIgnoredRange(aRange) {
+            var index = aRange[0];
+            return this.isIgnoredIndex(index);
+        }
+
+        /**
+         * @param {Object} node
+         * @returns {boolean}
+         */
+
+    }, {
+        key: "isIgnored",
+        value: function isIgnored(node) {
+            var index = node.index;
+            return this.isIgnoredIndex(index);
+        }
+
+        /**
+         * add node to ignore range list
+         * @param {TxtNode} node
+         */
+
+    }, {
+        key: "ignore",
+        value: function ignore(node) {
+            this.ignoreRange(node.range);
+        }
+
+        /**
+         * add range to ignore range list
+         * @param {[number, number]} range
+         */
+
+    }, {
+        key: "ignoreRange",
+        value: function ignoreRange(range) {
+            this._ignoredRangeList.push(range);
+        }
+
+        /**
+         * ignore children node of `node`,
+         * if the children node has the type that is included in `ignoredNodeTypes`.
+         * @param {TxtNode} targetNode
+         * @param {string[]} ignoredNodeTypes
+         */
+
+    }, {
+        key: "ignoreChildrenByTypes",
+        value: function ignoreChildrenByTypes(targetNode, ignoredNodeTypes) {
+            var _this = this;
+
+            visit(targetNode, function (visitedNode) {
+                if (ignoredNodeTypes.indexOf(visitedNode.type) !== -1) {
+                    _this.ignore(visitedNode);
+                }
+            });
+        }
+    }]);
+
+    return IgnoreNodeManager;
+}();
+
+exports.default = IgnoreNodeManager;
+
+},{"unist-util-visit":414}],325:[function(require,module,exports){
+// LICENSE : MIT
+"use strict";
+
+var _textlintRuleHelper = require("./textlint-rule-helper");
+
+var _textlintRuleHelper2 = _interopRequireDefault(_textlintRuleHelper);
+
+var _IgnoreNodeManager = require("./IgnoreNodeManager");
+
+var _IgnoreNodeManager2 = _interopRequireDefault(_IgnoreNodeManager);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = {
+    IgnoreNodeManager: _IgnoreNodeManager2.default,
+    RuleHelper: _textlintRuleHelper2.default
+};
+
+},{"./IgnoreNodeManager":324,"./textlint-rule-helper":326}],326:[function(require,module,exports){
+arguments[4][322][0].apply(exports,arguments)
+},{"dup":322}],327:[function(require,module,exports){
+// MIT © 2017 azu
+"use strict";
+
+var _templateObject = _taggedTemplateLiteral(["", "", "", ""], ["", "", "", ""]);
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var escapeStringRegexp = require('escape-string-regexp');
+var matchCaptureGroupAll = require("match-index").matchCaptureGroupAll;
+var regx = require("regx").default;
+// IME的に入力されそうな文字列
+// 日本語 + 記号
+var japaneseRegExp = /(?:[々〇〻\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]|[\uD840-\uD87F]|[\uFF00-\uFFEF]|[\uDC00-\uDFFF]|[ぁ-んァ-ヶー。、・−])/;
+// 半角/全角のアルファベットの正規表現
+var alphabetPattern = /([a-zA-Zａ-ｚＡ-Ｚ])/;
+/**
+ * 不自然なアルファベットの正規表現
+ * @type {RegExp}
+ */
+var unnaturalPattern = regx("g")(_templateObject, japaneseRegExp, alphabetPattern, japaneseRegExp);
+/***
+ * 不自然なアルファベットのグループを返す
+ * @param {string} text
+ * @returns {MatchCaptureGroup[]}
+ */
+var matchUnnaturalAlphabet = function matchUnnaturalAlphabet(text) {
+    return matchCaptureGroupAll(text, unnaturalPattern);
+};
+
+/**
+ * if actual is in the `exceptGroups`, return true
+ * @param {MatchCaptureGroup[]} exceptGroups
+ * @param {MatchCaptureGroup} actual
+ * @returns {boolean}
+ */
+var isIgnoredRange = function isIgnoredRange(exceptGroups, actual) {
+    return exceptGroups.some(function (_ref) {
+        var text = _ref.text,
+            index = _ref.index;
+
+        var endIndex = index + text.length;
+        return index <= actual.index && actual.index <= endIndex;
+    });
+};
+/***
+ *
+ * @param {string} input
+ * @param {string[]} allowAlphabets
+ * @returns {MatchCaptureGroup[]}
+ */
+var createIgnoreRanges = function createIgnoreRanges(input, allowAlphabets) {
+    // str -> RegExp
+    var patterns = allowAlphabets.map(function (allowWord) {
+        if (!allowWord) {
+            return (/^$/
+            );
+        }
+        if (allowWord[0] === "/" && allowWord[allowWord.length - 1] === "/") {
+            var regExpString = allowWord.slice(1, allowWord.length - 1);
+            return new RegExp("(" + regExpString + ")", "g");
+        }
+        var escapeString = escapeStringRegexp(allowWord);
+        return new RegExp("(" + escapeString + ")", "g");
+    });
+    return patterns.reduce(function (total, pattern) {
+        return total.concat(matchCaptureGroupAll(input, pattern));
+    }, []);
+};
+
+/**
+ * ビルトインの無視するリスト
+ * @type {[*]}
+ */
+var builtInCommonAllow = ["/[a-zA-Zａ-ｚＡ-Ｚ]言語/", "/[x-zX-Z]座標/", "/[x-zX-Z]軸/", "Eメール"];
+var defaultOptions = {
+    // 無視するアルファベット
+    // 例) ["X"]
+    // デフォルトでは母音とnを除外
+    "allow": ["a", "i", "u", "e", "o", "n"],
+    // ビルトインの典型例を除外するかどうか
+    // 例) C言語
+    "allowCommonCase": true
+};
+var report = function report(context) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var Syntax = context.Syntax,
+        RuleError = context.RuleError,
+        report = context.report,
+        getSource = context.getSource;
+
+    var allowAlphabets = options.allow || defaultOptions.allow;
+    var allowCommonCase = options.allowCommonCase !== undefined ? options.allowCommonCase : defaultOptions.allowCommonCase;
+    var allow = allowCommonCase ? allowAlphabets.concat(builtInCommonAllow) : allowAlphabets;
+    return _defineProperty({}, Syntax.Str, function (node) {
+        var text = getSource(node);
+        var ignoreMatch = createIgnoreRanges(text, allow);
+        matchUnnaturalAlphabet(text).forEach(function (actual) {
+            var text = actual.text,
+                index = actual.index;
+            // 無視する単語を含んでいるなら無視
+
+            if (isIgnoredRange(ignoreMatch, actual)) {
+                return;
+            }
+            report(node, new RuleError("\u4E0D\u81EA\u7136\u306A\u30A2\u30EB\u30D5\u30A1\u30D9\u30C3\u30C8\u304C\u3042\u308A\u307E\u3059: " + text, {
+                index: index
+            }));
+        });
+    });
+};
+
+module.exports = report;
+
+},{"escape-string-regexp":127,"match-index":213,"regx":281}],328:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 Object.defineProperty(exports, "__esModule", {
@@ -47286,7 +61103,7 @@ exports["default"] = function (context) {
 
 module.exports = exports["default"];
 
-},{"object-assign":131,"textlint-rule-helper":214}],217:[function(require,module,exports){
+},{"object-assign":231,"textlint-rule-helper":321}],329:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 Object.defineProperty(exports, "__esModule", {
@@ -47379,7 +61196,140 @@ function noMixDearuDesumasu(context) {
 
 module.exports = exports["default"];
 
-},{"analyze-desumasu-dearu":3,"textlint-rule-helper":214}],218:[function(require,module,exports){
+},{"analyze-desumasu-dearu":3,"textlint-rule-helper":321}],330:[function(require,module,exports){
+// MIT © 2017 azu
+"use strict";
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var RuleHelper = require("textlint-rule-helper").RuleHelper;
+var matchCaptureGroupAll = require("match-index").matchCaptureGroupAll;
+var moji = require("moji");
+function toHankaku(string) {
+    return moji(string).convert('ZE', 'HE').toString();
+}
+function toZenakaku(string) {
+    return moji(string).convert('HE', 'ZE').toString();
+}
+var defaultOptions = {
+    // "全角" or "半角"
+    "prefer": "半角"
+};
+
+var zenkakuOnly = function zenkakuOnly(_ref) {
+    var report = _ref.report,
+        RuleError = _ref.RuleError,
+        fixer = _ref.fixer;
+
+    return function checkZenkaku(node, text) {
+        var matchRegExp = /([a-zA-Z]+)/;
+        matchCaptureGroupAll(text, matchRegExp).forEach(function (match) {
+            var index = match.index,
+                text = match.text;
+
+            report(node, new RuleError("アルファベットは「全角」で表記します。", {
+                index: index,
+                fix: fixer.replaceTextRange([index, index + text.length], toZenakaku(text))
+            }));
+        });
+    };
+};
+var hankakuOnly = function hankakuOnly(_ref2) {
+    var report = _ref2.report,
+        RuleError = _ref2.RuleError,
+        fixer = _ref2.fixer;
+
+    return function checkZenkaku(node, text) {
+        var matchRegExp = /([ａ-ｚＡ-Ｚ]+)/;
+        matchCaptureGroupAll(text, matchRegExp).forEach(function (match) {
+            var index = match.index,
+                text = match.text;
+
+            report(node, new RuleError("アルファベットは「半角」で表記します。", {
+                index: index,
+                fix: fixer.replaceTextRange([index, index + text.length], toHankaku(text))
+            }));
+        });
+    };
+};
+function reporter(context) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var Syntax = context.Syntax,
+        RuleError = context.RuleError,
+        report = context.report,
+        fixer = context.fixer,
+        getSource = context.getSource;
+
+    var prefer = options.prefer || defaultOptions.prefer;
+    var helper = new RuleHelper(context);
+    var checkText = prefer === "半角" ? hankakuOnly({ report: report, RuleError: RuleError, fixer: fixer }) : zenkakuOnly({ report: report, RuleError: RuleError, fixer: fixer });
+    return _defineProperty({}, Syntax.Str, function (node) {
+        if (helper.isChildNode(node, [Syntax.Link, Syntax.Image, Syntax.BlockQuote, Syntax.Emphasis])) {
+            return;
+        }
+        var text = getSource(node);
+        checkText(node, text);
+    });
+}
+module.exports = {
+    linter: reporter,
+    fixer: reporter
+};
+
+},{"match-index":213,"moji":221,"textlint-rule-helper":332}],331:[function(require,module,exports){
+arguments[4][324][0].apply(exports,arguments)
+},{"dup":324,"unist-util-visit":414}],332:[function(require,module,exports){
+arguments[4][325][0].apply(exports,arguments)
+},{"./IgnoreNodeManager":331,"./textlint-rule-helper":333,"dup":325}],333:[function(require,module,exports){
+arguments[4][322][0].apply(exports,arguments)
+},{"dup":322}],334:[function(require,module,exports){
+// LICENSE : MIT
+"use strict";
+
+var _textlintRuleHelper = require("textlint-rule-helper");
+
+var _matchIndex = require("match-index");
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var unorm = require("unorm");
+function reporter(context) {
+    var Syntax = context.Syntax;
+    var RuleError = context.RuleError;
+    var report = context.report;
+    var fixer = context.fixer;
+    var getSource = context.getSource;
+
+    var helper = new _textlintRuleHelper.RuleHelper(context);
+    return _defineProperty({}, Syntax.Str, function (node) {
+        if (helper.isChildNode(node, [Syntax.Link, Syntax.Image, Syntax.BlockQuote, Syntax.Emphasis])) {
+            return;
+        }
+        var text = getSource(node);
+        (0, _matchIndex.matchCaptureGroupAll)(text, /([\u309b\u309c\u309a\u3099])/g).forEach(function (_ref) {
+            var index = _ref.index;
+
+            if (index === 0) {
+                return;
+            }
+            // \u309b\u309c => \u309a\u3099
+            var dakutenChars = text.slice(index - 1, index + 1);
+            var nfdlized = dakutenChars.replace("゛", "゙").replace("゜", "゚");
+            var expectedText = unorm.nfc(nfdlized);
+            var ruleError = new RuleError("Disallow to use NFD(well-known as UTF8-MAC 濁点): \"" + dakutenChars + "\" => \"" + expectedText + "\"", {
+                index: index,
+                fix: fixer.replaceTextRange([index - 1, index + 1], expectedText)
+            });
+            report(node, ruleError);
+        });
+    });
+}
+module.exports = {
+    linter: reporter,
+    fixer: reporter
+};
+
+},{"match-index":213,"textlint-rule-helper":321,"unorm":415}],335:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 Object.defineProperty(exports, "__esModule", {
@@ -47431,7 +61381,83 @@ module.exports = exports["default"];
     - [ ] Todo
 */
 
-},{"textlint-rule-helper":214}],219:[function(require,module,exports){
+},{"textlint-rule-helper":321}],336:[function(require,module,exports){
+// LICENSE : MIT
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function (context) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    var maxLength = options.max || defaultOptions.max;
+    var helper = new _textlintRuleHelper.RuleHelper(context);
+    var Syntax = context.Syntax,
+        RuleError = context.RuleError,
+        report = context.report;
+    // toPlainText
+
+    return _defineProperty({}, Syntax.Paragraph, function (node) {
+        if (helper.isChildNode(node, [Syntax.BlockQuote])) {
+            return;
+        }
+        // If a single Link node in the paragraph node, should be ignore the link length
+        var isChildrenSingleLinkNode = node.children.length === 1 && node.children[0].type === Syntax.Link;
+        if (isChildrenSingleLinkNode) {
+            return;
+        }
+        var text = (0, _mdastUtilToString2.default)(node);
+        // empty break line == split sentence
+        var sentences = (0, _sentenceSplitter.split)(text, {
+            newLineCharacters: "\n\n"
+        });
+        sentences.forEach(function (sentence) {
+            // TODO: should trim()?
+            var sentenceText = sentence.value;
+            // larger than > 100
+            if (sentenceText.length > maxLength) {
+                var currentLine = node.loc.start.line;
+                var addedLine = isStartWithNewLine(sentenceText) ? sentence.loc.start.line // \n string
+                : sentence.loc.start.line - 1; // string
+                var paddingLine = Math.max(addedLine, 0);
+                var paddingIndex = sentence.range[0];
+                report(node, new RuleError("Line " + (currentLine + paddingLine) + " exceeds the maximum line length of " + maxLength + ".", {
+                    index: paddingIndex
+                }));
+            }
+        });
+    });
+};
+
+var _sentenceSplitter = require("sentence-splitter");
+
+var _mdastUtilToString = require("mdast-util-to-string");
+
+var _mdastUtilToString2 = _interopRequireDefault(_mdastUtilToString);
+
+var _textlintRuleHelper = require("textlint-rule-helper");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var isStartWithNewLine = function isStartWithNewLine(text) {
+    return text && text.charAt(0) === "\n";
+};
+var defaultOptions = {
+    max: 100
+};
+module.exports = exports["default"];
+
+},{"mdast-util-to-string":215,"sentence-splitter":296,"textlint-rule-helper":338}],337:[function(require,module,exports){
+arguments[4][324][0].apply(exports,arguments)
+},{"dup":324,"unist-util-visit":414}],338:[function(require,module,exports){
+arguments[4][325][0].apply(exports,arguments)
+},{"./IgnoreNodeManager":337,"./textlint-rule-helper":339,"dup":325}],339:[function(require,module,exports){
+arguments[4][322][0].apply(exports,arguments)
+},{"dup":322}],340:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 var RuleHelper = require("textlint-rule-helper").RuleHelper;
@@ -47466,7 +61492,7 @@ module.exports = {
     fixer: reporter
 };
 
-},{"spellcheck-technical-word":199,"textlint-rule-helper":214}],220:[function(require,module,exports){
+},{"spellcheck-technical-word":305,"textlint-rule-helper":321}],341:[function(require,module,exports){
 (function (process){
 // LICENSE : MIT
 "use strict";
@@ -47656,7 +61682,7 @@ var cli = {
 module.exports = cli;
 
 }).call(this,require('_process'))
-},{"../package.json":276,"./config/config":223,"./config/config-initializer":221,"./fixer/textlint-fixer":248,"./options":256,"./textfix-engine":265,"./textlint-engine":267,"./util/logger":272,"_process":159,"bluebird":11,"debug":33,"fs":15,"mkdirp":123,"path":144}],221:[function(require,module,exports){
+},{"../package.json":397,"./config/config":344,"./config/config-initializer":342,"./fixer/textlint-fixer":369,"./options":377,"./textfix-engine":386,"./textlint-engine":388,"./util/logger":393,"_process":259,"bluebird":15,"debug":105,"fs":19,"mkdirp":217,"path":244}],342:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -47757,7 +61783,7 @@ var init = {
 };
 module.exports = init;
 
-},{"../config/config":223,"../util/logger":272,"bluebird":11,"fs":15,"is-file":73,"object-assign":131,"path":144,"read-pkg":166}],222:[function(require,module,exports){
+},{"../config/config":344,"../util/logger":393,"bluebird":15,"fs":19,"is-file":163,"object-assign":231,"path":244,"read-pkg":266}],343:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -47787,7 +61813,7 @@ function load(configFilePath, _ref) {
     });
 }
 
-},{"interop-require":66,"rc-config-loader":164}],223:[function(require,module,exports){
+},{"interop-require":154,"rc-config-loader":264}],344:[function(require,module,exports){
 (function (process){
 // LICENSE : MIT
 "use strict";
@@ -48223,7 +62249,7 @@ var Config = function () {
 module.exports = Config;
 
 }).call(this,require('_process'))
-},{"../../package.json":276,"../engine/textlint-module-resolver":243,"../util/config-util":269,"./config-loader":222,"./plugin-loader":224,"./preset-loader":225,"./separate-by-config-option":226,"_process":159,"assert":7,"fs":15,"md5":121,"object-assign":131,"path":144,"unique-concat":291}],224:[function(require,module,exports){
+},{"../../package.json":397,"../engine/textlint-module-resolver":364,"../util/config-util":390,"./config-loader":343,"./plugin-loader":345,"./preset-loader":346,"./separate-by-config-option":347,"_process":259,"assert":11,"fs":19,"md5":214,"object-assign":231,"path":244,"unique-concat":412}],345:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -48302,7 +62328,7 @@ function loadAvailableExtensions() {
     return availableExtensions;
 }
 
-},{"../engine/textlint-module-mapper":242,"assert":7,"debug":33,"interop-require":66,"object-assign":131}],225:[function(require,module,exports){
+},{"../engine/textlint-module-mapper":363,"assert":11,"debug":105,"interop-require":154,"object-assign":231}],346:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -48368,7 +62394,7 @@ function findRulesAndConfig() {
     return presetRulesConfig;
 }
 
-},{"../engine/textlint-module-mapper":242,"interop-require":66,"object-assign":131}],226:[function(require,module,exports){
+},{"../engine/textlint-module-mapper":363,"interop-require":154,"object-assign":231}],347:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -48422,7 +62448,7 @@ function separateAvailableOrDisable(rulesConfig) {
     return ruleOf;
 }
 
-},{"../util/config-util":269}],227:[function(require,module,exports){
+},{"../util/config-util":390}],348:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -48483,7 +62509,7 @@ function FilterRuleContext(_ref) {
   this.getSource = sourceCode.getSource.bind(sourceCode);
 }
 
-},{"assert":7}],228:[function(require,module,exports){
+},{"assert":11}],349:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -48587,7 +62613,7 @@ function RuleContext(_ref) {
   this.fixer = new (_ruleFixer || _load_ruleFixer()).default();
 }
 
-},{"../fixer/rule-fixer":245,"../shared/rule-severity":257,"../shared/type/SeverityLevel":259,"./rule-error":231,"assert":7}],229:[function(require,module,exports){
+},{"../fixer/rule-fixer":366,"../shared/rule-severity":378,"../shared/type/SeverityLevel":380,"./rule-error":352,"assert":11}],350:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -48704,7 +62730,7 @@ function getFilter(ruleCreator) {
     throw new Error("Not found filter function in the ruleCreator");
 }
 
-},{}],230:[function(require,module,exports){
+},{}],351:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -48889,7 +62915,7 @@ var RuleCreatorSet = function () {
 
 exports.default = RuleCreatorSet;
 
-},{"./rule-creator-helper":229,"deep-equal":35,"map-like":116}],231:[function(require,module,exports){
+},{"./rule-creator-helper":350,"deep-equal":107,"map-like":208}],352:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 /**
@@ -48962,7 +62988,7 @@ var RuleError = function () {
 
 module.exports = RuleError;
 
-},{}],232:[function(require,module,exports){
+},{}],353:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49126,7 +63152,7 @@ var SourceCode = function () {
 
 exports.default = SourceCode;
 
-},{"../shared/type/TextLintNodeType":260,"assert":7,"structured-source":205}],233:[function(require,module,exports){
+},{"../shared/type/TextLintNodeType":381,"assert":11,"structured-source":311}],354:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -49321,7 +63347,7 @@ var SourceLocation = function () {
 
 exports.default = SourceLocation;
 
-},{"../util/throw-log":274,"assert":7,"object-assign":131}],234:[function(require,module,exports){
+},{"../util/throw-log":395,"assert":11,"object-assign":231}],355:[function(require,module,exports){
 // MIT © 2016 azu
 "use strict";
 
@@ -49433,7 +63459,7 @@ var ExecuteFileBackerManager = function () {
 
 exports.default = ExecuteFileBackerManager;
 
-},{"bluebird":11}],235:[function(require,module,exports){
+},{"bluebird":15}],356:[function(require,module,exports){
 // MIT © 2016 azu
 "use strict";
 /* eslint-disable */
@@ -49491,7 +63517,7 @@ var AbstractBacker = function () {
 
 exports.default = AbstractBacker;
 
-},{}],236:[function(require,module,exports){
+},{}],357:[function(require,module,exports){
 // MIT © 2016 azu
 "use strict";
 
@@ -49614,7 +63640,7 @@ var CacheBacker = function (_AbstractBacker) {
 
 exports.default = CacheBacker;
 
-},{"./abstruct-backer":235,"debug":33,"file-entry-cache":44}],237:[function(require,module,exports){
+},{"./abstruct-backer":356,"debug":105,"file-entry-cache":131}],358:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -49660,7 +63686,7 @@ var ProcessorMap = function (_MapLike) {
 
 exports.default = ProcessorMap;
 
-},{"map-like":116}],238:[function(require,module,exports){
+},{"map-like":208}],359:[function(require,module,exports){
 (function (process,__dirname){
 "use strict";
 
@@ -49699,7 +63725,7 @@ function loadFromDir(rulesDir) {
 }
 
 }).call(this,require('_process'),"/node_modules/textlint/lib/engine")
-},{"_process":159,"fs":15,"interop-require":66,"path":144}],239:[function(require,module,exports){
+},{"_process":259,"fs":19,"interop-require":154,"path":244}],360:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -49801,7 +63827,7 @@ var RuleMap = function (_MapLike) {
 
 exports.default = RuleMap;
 
-},{"map-like":116}],240:[function(require,module,exports){
+},{"map-like":208}],361:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -50217,7 +64243,7 @@ var TextLintEngineCore = function () {
 
 exports.default = TextLintEngineCore;
 
-},{"../config/config":223,"../shared/type/SeverityLevel":259,"../util/find-util":270,"./../textlint-core":266,"./execute-file-backer-manager":234,"./execute-file-backers/cache-backer":236,"./processor-map":237,"./rule-map":239,"./textlint-module-loader":241,"debug":33,"path":144,"textlint-formatter":208}],241:[function(require,module,exports){
+},{"../config/config":344,"../shared/type/SeverityLevel":380,"../util/find-util":391,"./../textlint-core":387,"./execute-file-backer-manager":355,"./execute-file-backers/cache-backer":357,"./processor-map":358,"./rule-map":360,"./textlint-module-loader":362,"debug":105,"path":244,"textlint-formatter":314}],362:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -50507,7 +64533,7 @@ var TextLintModuleLoader = function (_EventEmitter) {
 
 exports.default = TextLintModuleLoader;
 
-},{"../util/config-util":269,"../util/logger":272,"./rule-loader":238,"./textlint-module-mapper":242,"./textlint-module-resolver":243,"debug":33,"events":41,"interop-require":66,"is-file":73}],242:[function(require,module,exports){
+},{"../util/config-util":390,"../util/logger":393,"./rule-loader":359,"./textlint-module-mapper":363,"./textlint-module-resolver":364,"debug":105,"events":128,"interop-require":154,"is-file":163}],363:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 /**
@@ -50576,7 +64602,7 @@ var TextLintModuleMapper = function () {
 
 exports.default = TextLintModuleMapper;
 
-},{}],243:[function(require,module,exports){
+},{}],364:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -50777,7 +64803,7 @@ var TextLintModuleResolver = function () {
 
 exports.default = TextLintModuleResolver;
 
-},{"assert":7,"path":144,"try-resolve":281}],244:[function(require,module,exports){
+},{"assert":11,"path":244,"try-resolve":402}],365:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -50938,7 +64964,7 @@ var FixerProcessor = function () {
 
 exports.default = FixerProcessor;
 
-},{"../core/source-code":232,"../fixer/source-code-fixer":246,"../task/fixer-task":261,"../task/task-runner":263,"assert":7,"debug":33}],245:[function(require,module,exports){
+},{"../core/source-code":353,"../fixer/source-code-fixer":367,"../task/fixer-task":382,"../task/task-runner":384,"assert":11,"debug":105}],366:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -51139,7 +65165,7 @@ var RuleFixer = function () {
 
 exports.default = RuleFixer;
 
-},{"assert":7}],246:[function(require,module,exports){
+},{"assert":11}],367:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -51317,7 +65343,7 @@ var SourceCodeFixer = function () {
 
 exports.default = SourceCodeFixer;
 
-},{"../core/source-code":232,"debug":33}],247:[function(require,module,exports){
+},{"../core/source-code":353,"debug":105}],368:[function(require,module,exports){
 (function (process,__dirname){
 // LICENSE : MIT
 "use strict";
@@ -51364,7 +65390,7 @@ function createFormatter(formatterConfig) {
 }
 
 }).call(this,require('_process'),"/node_modules/textlint/lib/fixer")
-},{"_process":159,"debug":33,"fs":15,"interop-require":66,"is-file":73,"path":144,"try-resolve":281}],248:[function(require,module,exports){
+},{"_process":259,"debug":105,"fs":19,"interop-require":154,"is-file":163,"path":244,"try-resolve":402}],369:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -51417,7 +65443,7 @@ var TextLintFixer = function () {
 
 exports.default = TextLintFixer;
 
-},{"bluebird":11,"fs":15}],249:[function(require,module,exports){
+},{"bluebird":15,"fs":19}],370:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -51509,7 +65535,7 @@ module.exports = {
     _logger: _throwLog || _load_throwLog()
 };
 
-},{"./cli":220,"./shared/type/MessageType":258,"./shared/type/SeverityLevel":259,"./shared/type/TextLintNodeType":260,"./textfix-engine":265,"./textlint":268,"./textlint-core":266,"./textlint-engine":267,"./util/throw-log":274}],250:[function(require,module,exports){
+},{"./cli":341,"./shared/type/MessageType":379,"./shared/type/SeverityLevel":380,"./shared/type/TextLintNodeType":381,"./textfix-engine":386,"./textlint":389,"./textlint-core":387,"./textlint-engine":388,"./util/throw-log":395}],371:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -51603,7 +65629,7 @@ var LinterProcessor = function () {
 
 exports.default = LinterProcessor;
 
-},{"../task/linter-task":262,"../task/task-runner":263,"assert":7}],251:[function(require,module,exports){
+},{"../task/linter-task":383,"../task/task-runner":384,"assert":11}],372:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -51666,7 +65692,7 @@ var MessageProcessManager = function () {
 
 exports.default = MessageProcessManager;
 
-},{}],252:[function(require,module,exports){
+},{}],373:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 /**
@@ -51697,7 +65723,7 @@ function filterDuplicatedMessages() {
     });
 }
 
-},{}],253:[function(require,module,exports){
+},{}],374:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -51760,7 +65786,7 @@ function filterMessages() {
     });
 }
 
-},{"../shared/type/MessageType":258}],254:[function(require,module,exports){
+},{"../shared/type/MessageType":379}],375:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -51814,7 +65840,7 @@ function createSeverityFilter(config) {
     }
 }
 
-},{"../shared/type/SeverityLevel":259}],255:[function(require,module,exports){
+},{"../shared/type/SeverityLevel":380}],376:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 /**
@@ -51839,7 +65865,7 @@ function sortByLineColumn(messages) {
     });
 }
 
-},{}],256:[function(require,module,exports){
+},{}],377:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -51967,7 +65993,7 @@ exports.default = optionator({
     }]
 });
 
-},{"optionator":136}],257:[function(require,module,exports){
+},{"optionator":236}],378:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -52006,7 +66032,7 @@ function getSeverity(ruleConfig) {
     return (_SeverityLevel || _load_SeverityLevel()).default.error;
 }
 
-},{"./type/SeverityLevel":259,"assert":7}],258:[function(require,module,exports){
+},{"./type/SeverityLevel":380,"assert":11}],379:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -52024,7 +66050,7 @@ exports.default = {
   "ignore": "ignore"
 };
 
-},{}],259:[function(require,module,exports){
+},{}],380:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 /**
@@ -52043,7 +66069,7 @@ exports.default = {
   "error": 2
 };
 
-},{}],260:[function(require,module,exports){
+},{}],381:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 /**
@@ -52079,7 +66105,7 @@ var TextLintNodeType = {
 };
 exports.default = TextLintNodeType;
 
-},{}],261:[function(require,module,exports){
+},{}],382:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -52211,7 +66237,7 @@ var TextLintCoreTask = function (_CoreTask) {
 
 exports.default = TextLintCoreTask;
 
-},{"../core/filter-rule-context":227,"../core/rule-context":228,"../core/rule-creator-helper":229,"./textlint-core-task":264,"debug":33}],262:[function(require,module,exports){
+},{"../core/filter-rule-context":348,"../core/rule-context":349,"../core/rule-creator-helper":350,"./textlint-core-task":385,"debug":105}],383:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -52343,7 +66369,7 @@ var TextLintCoreTask = function (_CoreTask) {
 
 exports.default = TextLintCoreTask;
 
-},{"../core/filter-rule-context":227,"../core/rule-context":228,"../core/rule-creator-helper":229,"./textlint-core-task":264,"debug":33}],263:[function(require,module,exports){
+},{"../core/filter-rule-context":348,"../core/rule-context":349,"../core/rule-creator-helper":350,"./textlint-core-task":385,"debug":105}],384:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -52399,7 +66425,7 @@ var TaskRunner = function () {
 
 exports.default = TaskRunner;
 
-},{"./textlint-core-task":264}],264:[function(require,module,exports){
+},{"./textlint-core-task":385}],385:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -52672,7 +66698,7 @@ var TextLintCoreTask = function (_EventEmitter) {
 
 exports.default = TextLintCoreTask;
 
-},{"../core/rule-error":231,"../core/source-location":233,"../shared/type/MessageType":258,"./../util/timing":275,"assert":7,"carrack":20,"debug":33,"events":41,"txt-ast-traverse":282}],265:[function(require,module,exports){
+},{"../core/rule-error":352,"../core/source-location":354,"../shared/type/MessageType":379,"./../util/timing":396,"assert":11,"carrack":24,"debug":105,"events":128,"txt-ast-traverse":403}],386:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -52756,7 +66782,7 @@ function TextFixEngine(config) {
 
 exports.default = TextFixEngine;
 
-},{"./engine/textlint-engine-core":240,"./fixer/textfix-formatter":247}],266:[function(require,module,exports){
+},{"./engine/textlint-engine-core":361,"./fixer/textfix-formatter":368}],387:[function(require,module,exports){
 (function (process){
 // LICENSE : MIT
 "use strict";
@@ -53153,7 +67179,7 @@ var TextlintCore = function () {
 exports.default = TextlintCore;
 
 }).call(this,require('_process'))
-},{"./core/rule-creator-set":230,"./core/source-code":232,"./fixer/fixer-processor":244,"./linter/linter-processor":250,"./messages/MessageProcessManager":251,"./messages/filter-duplicated-process":252,"./messages/filter-ignored-process":253,"./messages/filter-severity-process":254,"./messages/sort-messages-process":255,"./util/fs-promise":271,"./util/proccesor-helper":273,"_process":159,"assert":7,"path":144,"textlint-plugin-markdown":210,"textlint-plugin-text":212}],267:[function(require,module,exports){
+},{"./core/rule-creator-set":351,"./core/source-code":353,"./fixer/fixer-processor":365,"./linter/linter-processor":371,"./messages/MessageProcessManager":372,"./messages/filter-duplicated-process":373,"./messages/filter-ignored-process":374,"./messages/filter-severity-process":375,"./messages/sort-messages-process":376,"./util/fs-promise":392,"./util/proccesor-helper":394,"_process":259,"assert":11,"path":244,"textlint-plugin-markdown":316,"textlint-plugin-text":318}],388:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -53233,7 +67259,7 @@ function TextLintEngine(config) {
 
 exports.default = TextLintEngine;
 
-},{"./engine/textlint-engine-core":240,"textlint-formatter":208}],268:[function(require,module,exports){
+},{"./engine/textlint-engine-core":361,"textlint-formatter":314}],389:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 /*
@@ -53286,7 +67312,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // singleton instance
 var api = new (_textlintCore || _load_textlintCore()).default();exports.default = api;
 
-},{"./textlint-core":266}],269:[function(require,module,exports){
+},{"./textlint-core":387}],390:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -53315,7 +67341,7 @@ function isPresetRuleKey(key) {
     return false;
 }
 
-},{}],270:[function(require,module,exports){
+},{}],391:[function(require,module,exports){
 (function (process){
 // LICENSE : MIT
 "use strict";
@@ -53404,7 +67430,7 @@ function separateByAvailability(files) {
 }
 
 }).call(this,require('_process'))
-},{"_process":159,"fs":15,"glob":52,"path":144,"path-to-glob-pattern":147,"shelljs":192}],271:[function(require,module,exports){
+},{"_process":259,"fs":19,"glob":140,"path":244,"path-to-glob-pattern":247,"shelljs":298}],392:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -53425,7 +67451,7 @@ function readFile(filePath) {
     });
 }
 
-},{"bluebird":11,"fs":15}],272:[function(require,module,exports){
+},{"bluebird":15,"fs":19}],393:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -53481,7 +67507,7 @@ var Logger = function () {
 
 exports.default = Logger;
 
-},{}],273:[function(require,module,exports){
+},{}],394:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -53519,7 +67545,7 @@ function getProcessorMatchExtension(processors, ext) {
     return null;
 }
 
-},{"assert":7}],274:[function(require,module,exports){
+},{"assert":11}],395:[function(require,module,exports){
 (function (process){
 // LICENSE : MIT
 "use strict";
@@ -53573,7 +67599,7 @@ function throwIfTesting(message) {
 }
 
 }).call(this,require('_process'))
-},{"_process":159}],275:[function(require,module,exports){
+},{"_process":259}],396:[function(require,module,exports){
 (function (process){
 /**
  * @fileoverview Tracks performance of individual rules.
@@ -53709,7 +67735,7 @@ module.exports = function () {
 }();
 
 }).call(this,require('_process'))
-},{"./logger":272,"_process":159}],276:[function(require,module,exports){
+},{"./logger":393,"_process":259}],397:[function(require,module,exports){
 module.exports={
   "name": "textlint",
   "description": "The pluggable linting tool for text and markdown.",
@@ -53815,7 +67841,7 @@ module.exports={
   }
 }
 
-},{}],277:[function(require,module,exports){
+},{}],398:[function(require,module,exports){
 var traverse = module.exports = function (obj) {
     return new Traverse(obj);
 };
@@ -54131,7 +68157,7 @@ var hasOwnProperty = Object.hasOwnProperty || function (obj, key) {
     return key in obj;
 };
 
-},{}],278:[function(require,module,exports){
+},{}],399:[function(require,module,exports){
 'use strict';
 
 module.exports = trimTrailingLines;
@@ -54148,7 +68174,7 @@ function trimTrailingLines(value) {
   return val.slice(0, index + 1);
 }
 
-},{}],279:[function(require,module,exports){
+},{}],400:[function(require,module,exports){
 
 exports = module.exports = trim;
 
@@ -54164,7 +68190,7 @@ exports.right = function(str){
   return str.replace(/\s*$/, '');
 };
 
-},{}],280:[function(require,module,exports){
+},{}],401:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2016 Titus Wormer
@@ -54342,7 +68368,7 @@ function wrap(fn, next) {
   }
 }
 
-},{}],281:[function(require,module,exports){
+},{}],402:[function(require,module,exports){
 (function (process){
 var Module = require("module");
 
@@ -54373,7 +68399,7 @@ resolve.relative = function (loc) {
 };
 
 }).call(this,require('_process'))
-},{"_process":159,"module":15}],282:[function(require,module,exports){
+},{"_process":259,"module":19}],403:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 var _prototypeProperties = function (child, staticProps, instanceProps) {
@@ -54568,14 +68594,14 @@ exports.traverse = traverse;
 exports.VisitorOption = VisitorOption;
 
 
-},{}],283:[function(require,module,exports){
+},{}],404:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 module.exports = {
     parse: require("./lib/plaintext-parser"),
     Syntax: require("./lib/plaintext-syntax")
 };
-},{"./lib/plaintext-parser":284,"./lib/plaintext-syntax":285}],284:[function(require,module,exports){
+},{"./lib/plaintext-parser":405,"./lib/plaintext-syntax":406}],405:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 var Syntax = require("./plaintext-syntax");
@@ -54733,7 +68759,7 @@ function parse(text) {
     };
 }
 module.exports = parse;
-},{"./plaintext-syntax":285}],285:[function(require,module,exports){
+},{"./plaintext-syntax":406}],406:[function(require,module,exports){
 // LICENSE : MIT
 "use strict";
 
@@ -54745,7 +68771,7 @@ var exports = {
     'Break': 'Break' // must
 };
 module.exports = exports;
-},{}],286:[function(require,module,exports){
+},{}],407:[function(require,module,exports){
 // Generated by LiveScript 1.4.0
 (function(){
   var ref$, any, all, isItNaN, types, defaultType, customTypes, toString$ = {}.toString;
@@ -54873,7 +68899,7 @@ module.exports = exports;
   };
 }).call(this);
 
-},{"prelude-ls":157}],287:[function(require,module,exports){
+},{"prelude-ls":257}],408:[function(require,module,exports){
 // Generated by LiveScript 1.4.0
 (function(){
   var VERSION, parseType, parsedTypeCheck, typeCheck;
@@ -54891,7 +68917,7 @@ module.exports = exports;
   };
 }).call(this);
 
-},{"./check":286,"./parse-type":288}],288:[function(require,module,exports){
+},{"./check":407,"./parse-type":409}],409:[function(require,module,exports){
 // Generated by LiveScript 1.4.0
 (function(){
   var identifierRegex, tokenRegex;
@@ -55089,7 +69115,7 @@ module.exports = exports;
   }
 }).call(this);
 
-},{}],289:[function(require,module,exports){
+},{}],410:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2015 Titus Wormer
@@ -55158,7 +69184,7 @@ function unherit(Super) {
   }
 }
 
-},{"inherits":65,"xtend":308}],290:[function(require,module,exports){
+},{"inherits":153,"xtend":430}],411:[function(require,module,exports){
 (function (global){
 /**
  * @author Titus Wormer
@@ -55799,7 +69825,7 @@ function isParser(parser) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"bail":8,"events":41,"extend":42,"has":59,"once":134,"trough":280,"vfile":302}],291:[function(require,module,exports){
+},{"bail":12,"events":128,"extend":129,"has":147,"once":234,"trough":401,"vfile":424}],412:[function(require,module,exports){
 'use strict';
 
 /**
@@ -55834,7 +69860,7 @@ var go = module.exports = function uniqueConcat(arr1, arr2, identity) {
   return Object.keys(mergedHash).map(function (key) { return mergedHash[key]; });
 };
 
-},{}],292:[function(require,module,exports){
+},{}],413:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2016 Titus Wormer
@@ -55878,7 +69904,7 @@ function soft(node) {
   node.position = undefined;
 }
 
-},{"unist-util-visit":293}],293:[function(require,module,exports){
+},{"unist-util-visit":414}],414:[function(require,module,exports){
 'use strict';
 
 /* Expose. */
@@ -55935,7 +69961,451 @@ function visit(tree, type, visitor, reverse) {
   }
 }
 
-},{}],294:[function(require,module,exports){
+},{}],415:[function(require,module,exports){
+(function (root) {
+   "use strict";
+
+/***** unorm.js *****/
+
+/*
+ * UnicodeNormalizer 1.0.0
+ * Copyright (c) 2008 Matsuza
+ * Dual licensed under the MIT (MIT-LICENSE.txt) and GPL (GPL-LICENSE.txt) licenses.
+ * $Date: 2008-06-05 16:44:17 +0200 (Thu, 05 Jun 2008) $
+ * $Rev: 13309 $
+ */
+
+   var DEFAULT_FEATURE = [null, 0, {}];
+   var CACHE_THRESHOLD = 10;
+   var SBase = 0xAC00, LBase = 0x1100, VBase = 0x1161, TBase = 0x11A7, LCount = 19, VCount = 21, TCount = 28;
+   var NCount = VCount * TCount; // 588
+   var SCount = LCount * NCount; // 11172
+
+   var UChar = function(cp, feature){
+      this.codepoint = cp;
+      this.feature = feature;
+   };
+
+   // Strategies
+   var cache = {};
+   var cacheCounter = [];
+   for (var i = 0; i <= 0xFF; ++i){
+      cacheCounter[i] = 0;
+   }
+
+   function fromCache(next, cp, needFeature){
+      var ret = cache[cp];
+      if(!ret){
+         ret = next(cp, needFeature);
+         if(!!ret.feature && ++cacheCounter[(cp >> 8) & 0xFF] > CACHE_THRESHOLD){
+            cache[cp] = ret;
+         }
+      }
+      return ret;
+   }
+
+   function fromData(next, cp, needFeature){
+      var hash = cp & 0xFF00;
+      var dunit = UChar.udata[hash] || {};
+      var f = dunit[cp];
+      return f ? new UChar(cp, f) : new UChar(cp, DEFAULT_FEATURE);
+   }
+   function fromCpOnly(next, cp, needFeature){
+      return !!needFeature ? next(cp, needFeature) : new UChar(cp, null);
+   }
+   function fromRuleBasedJamo(next, cp, needFeature){
+      var j;
+      if(cp < LBase || (LBase + LCount <= cp && cp < SBase) || (SBase + SCount < cp)){
+         return next(cp, needFeature);
+      }
+      if(LBase <= cp && cp < LBase + LCount){
+         var c = {};
+         var base = (cp - LBase) * VCount;
+         for (j = 0; j < VCount; ++j){
+            c[VBase + j] = SBase + TCount * (j + base);
+         }
+         return new UChar(cp, [,,c]);
+      }
+
+      var SIndex = cp - SBase;
+      var TIndex = SIndex % TCount;
+      var feature = [];
+      if(TIndex !== 0){
+         feature[0] = [SBase + SIndex - TIndex, TBase + TIndex];
+      } else {
+         feature[0] = [LBase + Math.floor(SIndex / NCount), VBase + Math.floor((SIndex % NCount) / TCount)];
+         feature[2] = {};
+         for (j = 1; j < TCount; ++j){
+            feature[2][TBase + j] = cp + j;
+         }
+      }
+      return new UChar(cp, feature);
+   }
+   function fromCpFilter(next, cp, needFeature){
+      return cp < 60 || 13311 < cp && cp < 42607 ? new UChar(cp, DEFAULT_FEATURE) : next(cp, needFeature);
+   }
+
+   var strategies = [fromCpFilter, fromCache, fromCpOnly, fromRuleBasedJamo, fromData];
+
+   UChar.fromCharCode = strategies.reduceRight(function (next, strategy) {
+      return function (cp, needFeature) {
+         return strategy(next, cp, needFeature);
+      };
+   }, null);
+
+   UChar.isHighSurrogate = function(cp){
+      return cp >= 0xD800 && cp <= 0xDBFF;
+   };
+   UChar.isLowSurrogate = function(cp){
+      return cp >= 0xDC00 && cp <= 0xDFFF;
+   };
+
+   UChar.prototype.prepFeature = function(){
+      if(!this.feature){
+         this.feature = UChar.fromCharCode(this.codepoint, true).feature;
+      }
+   };
+
+   UChar.prototype.toString = function(){
+      if(this.codepoint < 0x10000){
+         return String.fromCharCode(this.codepoint);
+      } else {
+         var x = this.codepoint - 0x10000;
+         return String.fromCharCode(Math.floor(x / 0x400) + 0xD800, x % 0x400 + 0xDC00);
+      }
+   };
+
+   UChar.prototype.getDecomp = function(){
+      this.prepFeature();
+      return this.feature[0] || null;
+   };
+
+   UChar.prototype.isCompatibility = function(){
+      this.prepFeature();
+      return !!this.feature[1] && (this.feature[1] & (1 << 8));
+   };
+   UChar.prototype.isExclude = function(){
+      this.prepFeature();
+      return !!this.feature[1] && (this.feature[1] & (1 << 9));
+   };
+   UChar.prototype.getCanonicalClass = function(){
+      this.prepFeature();
+      return !!this.feature[1] ? (this.feature[1] & 0xff) : 0;
+   };
+   UChar.prototype.getComposite = function(following){
+      this.prepFeature();
+      if(!this.feature[2]){
+         return null;
+      }
+      var cp = this.feature[2][following.codepoint];
+      return cp ? UChar.fromCharCode(cp) : null;
+   };
+
+   var UCharIterator = function(str){
+      this.str = str;
+      this.cursor = 0;
+   };
+   UCharIterator.prototype.next = function(){
+      if(!!this.str && this.cursor < this.str.length){
+         var cp = this.str.charCodeAt(this.cursor++);
+         var d;
+         if(UChar.isHighSurrogate(cp) && this.cursor < this.str.length && UChar.isLowSurrogate((d = this.str.charCodeAt(this.cursor)))){
+            cp = (cp - 0xD800) * 0x400 + (d -0xDC00) + 0x10000;
+            ++this.cursor;
+         }
+         return UChar.fromCharCode(cp);
+      } else {
+         this.str = null;
+         return null;
+      }
+   };
+
+   var RecursDecompIterator = function(it, cano){
+      this.it = it;
+      this.canonical = cano;
+      this.resBuf = [];
+   };
+
+   RecursDecompIterator.prototype.next = function(){
+      function recursiveDecomp(cano, uchar){
+         var decomp = uchar.getDecomp();
+         if(!!decomp && !(cano && uchar.isCompatibility())){
+            var ret = [];
+            for(var i = 0; i < decomp.length; ++i){
+               var a = recursiveDecomp(cano, UChar.fromCharCode(decomp[i]));
+                ret = ret.concat(a);
+            }
+            return ret;
+         } else {
+            return [uchar];
+         }
+      }
+      if(this.resBuf.length === 0){
+         var uchar = this.it.next();
+         if(!uchar){
+            return null;
+         }
+         this.resBuf = recursiveDecomp(this.canonical, uchar);
+      }
+      return this.resBuf.shift();
+   };
+
+   var DecompIterator = function(it){
+      this.it = it;
+      this.resBuf = [];
+   };
+
+   DecompIterator.prototype.next = function(){
+      var cc;
+      if(this.resBuf.length === 0){
+         do{
+            var uchar = this.it.next();
+            if(!uchar){
+               break;
+            }
+            cc = uchar.getCanonicalClass();
+            var inspt = this.resBuf.length;
+            if(cc !== 0){
+               for(; inspt > 0; --inspt){
+                  var uchar2 = this.resBuf[inspt - 1];
+                  var cc2 = uchar2.getCanonicalClass();
+                  if(cc2 <= cc){
+                     break;
+                  }
+               }
+            }
+            this.resBuf.splice(inspt, 0, uchar);
+         } while(cc !== 0);
+      }
+      return this.resBuf.shift();
+   };
+
+   var CompIterator = function(it){
+      this.it = it;
+      this.procBuf = [];
+      this.resBuf = [];
+      this.lastClass = null;
+   };
+
+   CompIterator.prototype.next = function(){
+      while(this.resBuf.length === 0){
+         var uchar = this.it.next();
+         if(!uchar){
+            this.resBuf = this.procBuf;
+            this.procBuf = [];
+            break;
+         }
+         if(this.procBuf.length === 0){
+            this.lastClass = uchar.getCanonicalClass();
+            this.procBuf.push(uchar);
+         } else {
+            var starter = this.procBuf[0];
+            var composite = starter.getComposite(uchar);
+            var cc = uchar.getCanonicalClass();
+            if(!!composite && (this.lastClass < cc || this.lastClass === 0)){
+               this.procBuf[0] = composite;
+            } else {
+               if(cc === 0){
+                  this.resBuf = this.procBuf;
+                  this.procBuf = [];
+               }
+               this.lastClass = cc;
+               this.procBuf.push(uchar);
+            }
+         }
+      }
+      return this.resBuf.shift();
+   };
+
+   var createIterator = function(mode, str){
+      switch(mode){
+         case "NFD":
+            return new DecompIterator(new RecursDecompIterator(new UCharIterator(str), true));
+         case "NFKD":
+            return new DecompIterator(new RecursDecompIterator(new UCharIterator(str), false));
+         case "NFC":
+            return new CompIterator(new DecompIterator(new RecursDecompIterator(new UCharIterator(str), true)));
+         case "NFKC":
+            return new CompIterator(new DecompIterator(new RecursDecompIterator(new UCharIterator(str), false)));
+      }
+      throw mode + " is invalid";
+   };
+   var normalize = function(mode, str){
+      var it = createIterator(mode, str);
+      var ret = "";
+      var uchar;
+      while(!!(uchar = it.next())){
+         ret += uchar.toString();
+      }
+      return ret;
+   };
+
+   /* API functions */
+   function nfd(str){
+      return normalize("NFD", str);
+   }
+
+   function nfkd(str){
+      return normalize("NFKD", str);
+   }
+
+   function nfc(str){
+      return normalize("NFC", str);
+   }
+
+   function nfkc(str){
+      return normalize("NFKC", str);
+   }
+
+/* Unicode data */
+UChar.udata={
+0:{60:[,,{824:8814}],61:[,,{824:8800}],62:[,,{824:8815}],65:[,,{768:192,769:193,770:194,771:195,772:256,774:258,775:550,776:196,777:7842,778:197,780:461,783:512,785:514,803:7840,805:7680,808:260}],66:[,,{775:7682,803:7684,817:7686}],67:[,,{769:262,770:264,775:266,780:268,807:199}],68:[,,{775:7690,780:270,803:7692,807:7696,813:7698,817:7694}],69:[,,{768:200,769:201,770:202,771:7868,772:274,774:276,775:278,776:203,777:7866,780:282,783:516,785:518,803:7864,807:552,808:280,813:7704,816:7706}],70:[,,{775:7710}],71:[,,{769:500,770:284,772:7712,774:286,775:288,780:486,807:290}],72:[,,{770:292,775:7714,776:7718,780:542,803:7716,807:7720,814:7722}],73:[,,{768:204,769:205,770:206,771:296,772:298,774:300,775:304,776:207,777:7880,780:463,783:520,785:522,803:7882,808:302,816:7724}],74:[,,{770:308}],75:[,,{769:7728,780:488,803:7730,807:310,817:7732}],76:[,,{769:313,780:317,803:7734,807:315,813:7740,817:7738}],77:[,,{769:7742,775:7744,803:7746}],78:[,,{768:504,769:323,771:209,775:7748,780:327,803:7750,807:325,813:7754,817:7752}],79:[,,{768:210,769:211,770:212,771:213,772:332,774:334,775:558,776:214,777:7886,779:336,780:465,783:524,785:526,795:416,803:7884,808:490}],80:[,,{769:7764,775:7766}],82:[,,{769:340,775:7768,780:344,783:528,785:530,803:7770,807:342,817:7774}],83:[,,{769:346,770:348,775:7776,780:352,803:7778,806:536,807:350}],84:[,,{775:7786,780:356,803:7788,806:538,807:354,813:7792,817:7790}],85:[,,{768:217,769:218,770:219,771:360,772:362,774:364,776:220,777:7910,778:366,779:368,780:467,783:532,785:534,795:431,803:7908,804:7794,808:370,813:7798,816:7796}],86:[,,{771:7804,803:7806}],87:[,,{768:7808,769:7810,770:372,775:7814,776:7812,803:7816}],88:[,,{775:7818,776:7820}],89:[,,{768:7922,769:221,770:374,771:7928,772:562,775:7822,776:376,777:7926,803:7924}],90:[,,{769:377,770:7824,775:379,780:381,803:7826,817:7828}],97:[,,{768:224,769:225,770:226,771:227,772:257,774:259,775:551,776:228,777:7843,778:229,780:462,783:513,785:515,803:7841,805:7681,808:261}],98:[,,{775:7683,803:7685,817:7687}],99:[,,{769:263,770:265,775:267,780:269,807:231}],100:[,,{775:7691,780:271,803:7693,807:7697,813:7699,817:7695}],101:[,,{768:232,769:233,770:234,771:7869,772:275,774:277,775:279,776:235,777:7867,780:283,783:517,785:519,803:7865,807:553,808:281,813:7705,816:7707}],102:[,,{775:7711}],103:[,,{769:501,770:285,772:7713,774:287,775:289,780:487,807:291}],104:[,,{770:293,775:7715,776:7719,780:543,803:7717,807:7721,814:7723,817:7830}],105:[,,{768:236,769:237,770:238,771:297,772:299,774:301,776:239,777:7881,780:464,783:521,785:523,803:7883,808:303,816:7725}],106:[,,{770:309,780:496}],107:[,,{769:7729,780:489,803:7731,807:311,817:7733}],108:[,,{769:314,780:318,803:7735,807:316,813:7741,817:7739}],109:[,,{769:7743,775:7745,803:7747}],110:[,,{768:505,769:324,771:241,775:7749,780:328,803:7751,807:326,813:7755,817:7753}],111:[,,{768:242,769:243,770:244,771:245,772:333,774:335,775:559,776:246,777:7887,779:337,780:466,783:525,785:527,795:417,803:7885,808:491}],112:[,,{769:7765,775:7767}],114:[,,{769:341,775:7769,780:345,783:529,785:531,803:7771,807:343,817:7775}],115:[,,{769:347,770:349,775:7777,780:353,803:7779,806:537,807:351}],116:[,,{775:7787,776:7831,780:357,803:7789,806:539,807:355,813:7793,817:7791}],117:[,,{768:249,769:250,770:251,771:361,772:363,774:365,776:252,777:7911,778:367,779:369,780:468,783:533,785:535,795:432,803:7909,804:7795,808:371,813:7799,816:7797}],118:[,,{771:7805,803:7807}],119:[,,{768:7809,769:7811,770:373,775:7815,776:7813,778:7832,803:7817}],120:[,,{775:7819,776:7821}],121:[,,{768:7923,769:253,770:375,771:7929,772:563,775:7823,776:255,777:7927,778:7833,803:7925}],122:[,,{769:378,770:7825,775:380,780:382,803:7827,817:7829}],160:[[32],256],168:[[32,776],256,{768:8173,769:901,834:8129}],170:[[97],256],175:[[32,772],256],178:[[50],256],179:[[51],256],180:[[32,769],256],181:[[956],256],184:[[32,807],256],185:[[49],256],186:[[111],256],188:[[49,8260,52],256],189:[[49,8260,50],256],190:[[51,8260,52],256],192:[[65,768]],193:[[65,769]],194:[[65,770],,{768:7846,769:7844,771:7850,777:7848}],195:[[65,771]],196:[[65,776],,{772:478}],197:[[65,778],,{769:506}],198:[,,{769:508,772:482}],199:[[67,807],,{769:7688}],200:[[69,768]],201:[[69,769]],202:[[69,770],,{768:7872,769:7870,771:7876,777:7874}],203:[[69,776]],204:[[73,768]],205:[[73,769]],206:[[73,770]],207:[[73,776],,{769:7726}],209:[[78,771]],210:[[79,768]],211:[[79,769]],212:[[79,770],,{768:7890,769:7888,771:7894,777:7892}],213:[[79,771],,{769:7756,772:556,776:7758}],214:[[79,776],,{772:554}],216:[,,{769:510}],217:[[85,768]],218:[[85,769]],219:[[85,770]],220:[[85,776],,{768:475,769:471,772:469,780:473}],221:[[89,769]],224:[[97,768]],225:[[97,769]],226:[[97,770],,{768:7847,769:7845,771:7851,777:7849}],227:[[97,771]],228:[[97,776],,{772:479}],229:[[97,778],,{769:507}],230:[,,{769:509,772:483}],231:[[99,807],,{769:7689}],232:[[101,768]],233:[[101,769]],234:[[101,770],,{768:7873,769:7871,771:7877,777:7875}],235:[[101,776]],236:[[105,768]],237:[[105,769]],238:[[105,770]],239:[[105,776],,{769:7727}],241:[[110,771]],242:[[111,768]],243:[[111,769]],244:[[111,770],,{768:7891,769:7889,771:7895,777:7893}],245:[[111,771],,{769:7757,772:557,776:7759}],246:[[111,776],,{772:555}],248:[,,{769:511}],249:[[117,768]],250:[[117,769]],251:[[117,770]],252:[[117,776],,{768:476,769:472,772:470,780:474}],253:[[121,769]],255:[[121,776]]},
+256:{256:[[65,772]],257:[[97,772]],258:[[65,774],,{768:7856,769:7854,771:7860,777:7858}],259:[[97,774],,{768:7857,769:7855,771:7861,777:7859}],260:[[65,808]],261:[[97,808]],262:[[67,769]],263:[[99,769]],264:[[67,770]],265:[[99,770]],266:[[67,775]],267:[[99,775]],268:[[67,780]],269:[[99,780]],270:[[68,780]],271:[[100,780]],274:[[69,772],,{768:7700,769:7702}],275:[[101,772],,{768:7701,769:7703}],276:[[69,774]],277:[[101,774]],278:[[69,775]],279:[[101,775]],280:[[69,808]],281:[[101,808]],282:[[69,780]],283:[[101,780]],284:[[71,770]],285:[[103,770]],286:[[71,774]],287:[[103,774]],288:[[71,775]],289:[[103,775]],290:[[71,807]],291:[[103,807]],292:[[72,770]],293:[[104,770]],296:[[73,771]],297:[[105,771]],298:[[73,772]],299:[[105,772]],300:[[73,774]],301:[[105,774]],302:[[73,808]],303:[[105,808]],304:[[73,775]],306:[[73,74],256],307:[[105,106],256],308:[[74,770]],309:[[106,770]],310:[[75,807]],311:[[107,807]],313:[[76,769]],314:[[108,769]],315:[[76,807]],316:[[108,807]],317:[[76,780]],318:[[108,780]],319:[[76,183],256],320:[[108,183],256],323:[[78,769]],324:[[110,769]],325:[[78,807]],326:[[110,807]],327:[[78,780]],328:[[110,780]],329:[[700,110],256],332:[[79,772],,{768:7760,769:7762}],333:[[111,772],,{768:7761,769:7763}],334:[[79,774]],335:[[111,774]],336:[[79,779]],337:[[111,779]],340:[[82,769]],341:[[114,769]],342:[[82,807]],343:[[114,807]],344:[[82,780]],345:[[114,780]],346:[[83,769],,{775:7780}],347:[[115,769],,{775:7781}],348:[[83,770]],349:[[115,770]],350:[[83,807]],351:[[115,807]],352:[[83,780],,{775:7782}],353:[[115,780],,{775:7783}],354:[[84,807]],355:[[116,807]],356:[[84,780]],357:[[116,780]],360:[[85,771],,{769:7800}],361:[[117,771],,{769:7801}],362:[[85,772],,{776:7802}],363:[[117,772],,{776:7803}],364:[[85,774]],365:[[117,774]],366:[[85,778]],367:[[117,778]],368:[[85,779]],369:[[117,779]],370:[[85,808]],371:[[117,808]],372:[[87,770]],373:[[119,770]],374:[[89,770]],375:[[121,770]],376:[[89,776]],377:[[90,769]],378:[[122,769]],379:[[90,775]],380:[[122,775]],381:[[90,780]],382:[[122,780]],383:[[115],256,{775:7835}],416:[[79,795],,{768:7900,769:7898,771:7904,777:7902,803:7906}],417:[[111,795],,{768:7901,769:7899,771:7905,777:7903,803:7907}],431:[[85,795],,{768:7914,769:7912,771:7918,777:7916,803:7920}],432:[[117,795],,{768:7915,769:7913,771:7919,777:7917,803:7921}],439:[,,{780:494}],452:[[68,381],256],453:[[68,382],256],454:[[100,382],256],455:[[76,74],256],456:[[76,106],256],457:[[108,106],256],458:[[78,74],256],459:[[78,106],256],460:[[110,106],256],461:[[65,780]],462:[[97,780]],463:[[73,780]],464:[[105,780]],465:[[79,780]],466:[[111,780]],467:[[85,780]],468:[[117,780]],469:[[220,772]],470:[[252,772]],471:[[220,769]],472:[[252,769]],473:[[220,780]],474:[[252,780]],475:[[220,768]],476:[[252,768]],478:[[196,772]],479:[[228,772]],480:[[550,772]],481:[[551,772]],482:[[198,772]],483:[[230,772]],486:[[71,780]],487:[[103,780]],488:[[75,780]],489:[[107,780]],490:[[79,808],,{772:492}],491:[[111,808],,{772:493}],492:[[490,772]],493:[[491,772]],494:[[439,780]],495:[[658,780]],496:[[106,780]],497:[[68,90],256],498:[[68,122],256],499:[[100,122],256],500:[[71,769]],501:[[103,769]],504:[[78,768]],505:[[110,768]],506:[[197,769]],507:[[229,769]],508:[[198,769]],509:[[230,769]],510:[[216,769]],511:[[248,769]],66045:[,220]},
+512:{512:[[65,783]],513:[[97,783]],514:[[65,785]],515:[[97,785]],516:[[69,783]],517:[[101,783]],518:[[69,785]],519:[[101,785]],520:[[73,783]],521:[[105,783]],522:[[73,785]],523:[[105,785]],524:[[79,783]],525:[[111,783]],526:[[79,785]],527:[[111,785]],528:[[82,783]],529:[[114,783]],530:[[82,785]],531:[[114,785]],532:[[85,783]],533:[[117,783]],534:[[85,785]],535:[[117,785]],536:[[83,806]],537:[[115,806]],538:[[84,806]],539:[[116,806]],542:[[72,780]],543:[[104,780]],550:[[65,775],,{772:480}],551:[[97,775],,{772:481}],552:[[69,807],,{774:7708}],553:[[101,807],,{774:7709}],554:[[214,772]],555:[[246,772]],556:[[213,772]],557:[[245,772]],558:[[79,775],,{772:560}],559:[[111,775],,{772:561}],560:[[558,772]],561:[[559,772]],562:[[89,772]],563:[[121,772]],658:[,,{780:495}],688:[[104],256],689:[[614],256],690:[[106],256],691:[[114],256],692:[[633],256],693:[[635],256],694:[[641],256],695:[[119],256],696:[[121],256],728:[[32,774],256],729:[[32,775],256],730:[[32,778],256],731:[[32,808],256],732:[[32,771],256],733:[[32,779],256],736:[[611],256],737:[[108],256],738:[[115],256],739:[[120],256],740:[[661],256],66272:[,220]},
+768:{768:[,230],769:[,230],770:[,230],771:[,230],772:[,230],773:[,230],774:[,230],775:[,230],776:[,230,{769:836}],777:[,230],778:[,230],779:[,230],780:[,230],781:[,230],782:[,230],783:[,230],784:[,230],785:[,230],786:[,230],787:[,230],788:[,230],789:[,232],790:[,220],791:[,220],792:[,220],793:[,220],794:[,232],795:[,216],796:[,220],797:[,220],798:[,220],799:[,220],800:[,220],801:[,202],802:[,202],803:[,220],804:[,220],805:[,220],806:[,220],807:[,202],808:[,202],809:[,220],810:[,220],811:[,220],812:[,220],813:[,220],814:[,220],815:[,220],816:[,220],817:[,220],818:[,220],819:[,220],820:[,1],821:[,1],822:[,1],823:[,1],824:[,1],825:[,220],826:[,220],827:[,220],828:[,220],829:[,230],830:[,230],831:[,230],832:[[768],230],833:[[769],230],834:[,230],835:[[787],230],836:[[776,769],230],837:[,240],838:[,230],839:[,220],840:[,220],841:[,220],842:[,230],843:[,230],844:[,230],845:[,220],846:[,220],848:[,230],849:[,230],850:[,230],851:[,220],852:[,220],853:[,220],854:[,220],855:[,230],856:[,232],857:[,220],858:[,220],859:[,230],860:[,233],861:[,234],862:[,234],863:[,233],864:[,234],865:[,234],866:[,233],867:[,230],868:[,230],869:[,230],870:[,230],871:[,230],872:[,230],873:[,230],874:[,230],875:[,230],876:[,230],877:[,230],878:[,230],879:[,230],884:[[697]],890:[[32,837],256],894:[[59]],900:[[32,769],256],901:[[168,769]],902:[[913,769]],903:[[183]],904:[[917,769]],905:[[919,769]],906:[[921,769]],908:[[927,769]],910:[[933,769]],911:[[937,769]],912:[[970,769]],913:[,,{768:8122,769:902,772:8121,774:8120,787:7944,788:7945,837:8124}],917:[,,{768:8136,769:904,787:7960,788:7961}],919:[,,{768:8138,769:905,787:7976,788:7977,837:8140}],921:[,,{768:8154,769:906,772:8153,774:8152,776:938,787:7992,788:7993}],927:[,,{768:8184,769:908,787:8008,788:8009}],929:[,,{788:8172}],933:[,,{768:8170,769:910,772:8169,774:8168,776:939,788:8025}],937:[,,{768:8186,769:911,787:8040,788:8041,837:8188}],938:[[921,776]],939:[[933,776]],940:[[945,769],,{837:8116}],941:[[949,769]],942:[[951,769],,{837:8132}],943:[[953,769]],944:[[971,769]],945:[,,{768:8048,769:940,772:8113,774:8112,787:7936,788:7937,834:8118,837:8115}],949:[,,{768:8050,769:941,787:7952,788:7953}],951:[,,{768:8052,769:942,787:7968,788:7969,834:8134,837:8131}],953:[,,{768:8054,769:943,772:8145,774:8144,776:970,787:7984,788:7985,834:8150}],959:[,,{768:8056,769:972,787:8000,788:8001}],961:[,,{787:8164,788:8165}],965:[,,{768:8058,769:973,772:8161,774:8160,776:971,787:8016,788:8017,834:8166}],969:[,,{768:8060,769:974,787:8032,788:8033,834:8182,837:8179}],970:[[953,776],,{768:8146,769:912,834:8151}],971:[[965,776],,{768:8162,769:944,834:8167}],972:[[959,769]],973:[[965,769]],974:[[969,769],,{837:8180}],976:[[946],256],977:[[952],256],978:[[933],256,{769:979,776:980}],979:[[978,769]],980:[[978,776]],981:[[966],256],982:[[960],256],1008:[[954],256],1009:[[961],256],1010:[[962],256],1012:[[920],256],1013:[[949],256],1017:[[931],256],66422:[,230],66423:[,230],66424:[,230],66425:[,230],66426:[,230]},
+1024:{1024:[[1045,768]],1025:[[1045,776]],1027:[[1043,769]],1030:[,,{776:1031}],1031:[[1030,776]],1036:[[1050,769]],1037:[[1048,768]],1038:[[1059,774]],1040:[,,{774:1232,776:1234}],1043:[,,{769:1027}],1045:[,,{768:1024,774:1238,776:1025}],1046:[,,{774:1217,776:1244}],1047:[,,{776:1246}],1048:[,,{768:1037,772:1250,774:1049,776:1252}],1049:[[1048,774]],1050:[,,{769:1036}],1054:[,,{776:1254}],1059:[,,{772:1262,774:1038,776:1264,779:1266}],1063:[,,{776:1268}],1067:[,,{776:1272}],1069:[,,{776:1260}],1072:[,,{774:1233,776:1235}],1075:[,,{769:1107}],1077:[,,{768:1104,774:1239,776:1105}],1078:[,,{774:1218,776:1245}],1079:[,,{776:1247}],1080:[,,{768:1117,772:1251,774:1081,776:1253}],1081:[[1080,774]],1082:[,,{769:1116}],1086:[,,{776:1255}],1091:[,,{772:1263,774:1118,776:1265,779:1267}],1095:[,,{776:1269}],1099:[,,{776:1273}],1101:[,,{776:1261}],1104:[[1077,768]],1105:[[1077,776]],1107:[[1075,769]],1110:[,,{776:1111}],1111:[[1110,776]],1116:[[1082,769]],1117:[[1080,768]],1118:[[1091,774]],1140:[,,{783:1142}],1141:[,,{783:1143}],1142:[[1140,783]],1143:[[1141,783]],1155:[,230],1156:[,230],1157:[,230],1158:[,230],1159:[,230],1217:[[1046,774]],1218:[[1078,774]],1232:[[1040,774]],1233:[[1072,774]],1234:[[1040,776]],1235:[[1072,776]],1238:[[1045,774]],1239:[[1077,774]],1240:[,,{776:1242}],1241:[,,{776:1243}],1242:[[1240,776]],1243:[[1241,776]],1244:[[1046,776]],1245:[[1078,776]],1246:[[1047,776]],1247:[[1079,776]],1250:[[1048,772]],1251:[[1080,772]],1252:[[1048,776]],1253:[[1080,776]],1254:[[1054,776]],1255:[[1086,776]],1256:[,,{776:1258}],1257:[,,{776:1259}],1258:[[1256,776]],1259:[[1257,776]],1260:[[1069,776]],1261:[[1101,776]],1262:[[1059,772]],1263:[[1091,772]],1264:[[1059,776]],1265:[[1091,776]],1266:[[1059,779]],1267:[[1091,779]],1268:[[1063,776]],1269:[[1095,776]],1272:[[1067,776]],1273:[[1099,776]]},
+1280:{1415:[[1381,1410],256],1425:[,220],1426:[,230],1427:[,230],1428:[,230],1429:[,230],1430:[,220],1431:[,230],1432:[,230],1433:[,230],1434:[,222],1435:[,220],1436:[,230],1437:[,230],1438:[,230],1439:[,230],1440:[,230],1441:[,230],1442:[,220],1443:[,220],1444:[,220],1445:[,220],1446:[,220],1447:[,220],1448:[,230],1449:[,230],1450:[,220],1451:[,230],1452:[,230],1453:[,222],1454:[,228],1455:[,230],1456:[,10],1457:[,11],1458:[,12],1459:[,13],1460:[,14],1461:[,15],1462:[,16],1463:[,17],1464:[,18],1465:[,19],1466:[,19],1467:[,20],1468:[,21],1469:[,22],1471:[,23],1473:[,24],1474:[,25],1476:[,230],1477:[,220],1479:[,18]},
+1536:{1552:[,230],1553:[,230],1554:[,230],1555:[,230],1556:[,230],1557:[,230],1558:[,230],1559:[,230],1560:[,30],1561:[,31],1562:[,32],1570:[[1575,1619]],1571:[[1575,1620]],1572:[[1608,1620]],1573:[[1575,1621]],1574:[[1610,1620]],1575:[,,{1619:1570,1620:1571,1621:1573}],1608:[,,{1620:1572}],1610:[,,{1620:1574}],1611:[,27],1612:[,28],1613:[,29],1614:[,30],1615:[,31],1616:[,32],1617:[,33],1618:[,34],1619:[,230],1620:[,230],1621:[,220],1622:[,220],1623:[,230],1624:[,230],1625:[,230],1626:[,230],1627:[,230],1628:[,220],1629:[,230],1630:[,230],1631:[,220],1648:[,35],1653:[[1575,1652],256],1654:[[1608,1652],256],1655:[[1735,1652],256],1656:[[1610,1652],256],1728:[[1749,1620]],1729:[,,{1620:1730}],1730:[[1729,1620]],1746:[,,{1620:1747}],1747:[[1746,1620]],1749:[,,{1620:1728}],1750:[,230],1751:[,230],1752:[,230],1753:[,230],1754:[,230],1755:[,230],1756:[,230],1759:[,230],1760:[,230],1761:[,230],1762:[,230],1763:[,220],1764:[,230],1767:[,230],1768:[,230],1770:[,220],1771:[,230],1772:[,230],1773:[,220]},
+1792:{1809:[,36],1840:[,230],1841:[,220],1842:[,230],1843:[,230],1844:[,220],1845:[,230],1846:[,230],1847:[,220],1848:[,220],1849:[,220],1850:[,230],1851:[,220],1852:[,220],1853:[,230],1854:[,220],1855:[,230],1856:[,230],1857:[,230],1858:[,220],1859:[,230],1860:[,220],1861:[,230],1862:[,220],1863:[,230],1864:[,220],1865:[,230],1866:[,230],2027:[,230],2028:[,230],2029:[,230],2030:[,230],2031:[,230],2032:[,230],2033:[,230],2034:[,220],2035:[,230]},
+2048:{2070:[,230],2071:[,230],2072:[,230],2073:[,230],2075:[,230],2076:[,230],2077:[,230],2078:[,230],2079:[,230],2080:[,230],2081:[,230],2082:[,230],2083:[,230],2085:[,230],2086:[,230],2087:[,230],2089:[,230],2090:[,230],2091:[,230],2092:[,230],2093:[,230],2137:[,220],2138:[,220],2139:[,220],2276:[,230],2277:[,230],2278:[,220],2279:[,230],2280:[,230],2281:[,220],2282:[,230],2283:[,230],2284:[,230],2285:[,220],2286:[,220],2287:[,220],2288:[,27],2289:[,28],2290:[,29],2291:[,230],2292:[,230],2293:[,230],2294:[,220],2295:[,230],2296:[,230],2297:[,220],2298:[,220],2299:[,230],2300:[,230],2301:[,230],2302:[,230],2303:[,230]},
+2304:{2344:[,,{2364:2345}],2345:[[2344,2364]],2352:[,,{2364:2353}],2353:[[2352,2364]],2355:[,,{2364:2356}],2356:[[2355,2364]],2364:[,7],2381:[,9],2385:[,230],2386:[,220],2387:[,230],2388:[,230],2392:[[2325,2364],512],2393:[[2326,2364],512],2394:[[2327,2364],512],2395:[[2332,2364],512],2396:[[2337,2364],512],2397:[[2338,2364],512],2398:[[2347,2364],512],2399:[[2351,2364],512],2492:[,7],2503:[,,{2494:2507,2519:2508}],2507:[[2503,2494]],2508:[[2503,2519]],2509:[,9],2524:[[2465,2492],512],2525:[[2466,2492],512],2527:[[2479,2492],512]},
+2560:{2611:[[2610,2620],512],2614:[[2616,2620],512],2620:[,7],2637:[,9],2649:[[2582,2620],512],2650:[[2583,2620],512],2651:[[2588,2620],512],2654:[[2603,2620],512],2748:[,7],2765:[,9],68109:[,220],68111:[,230],68152:[,230],68153:[,1],68154:[,220],68159:[,9],68325:[,230],68326:[,220]},
+2816:{2876:[,7],2887:[,,{2878:2891,2902:2888,2903:2892}],2888:[[2887,2902]],2891:[[2887,2878]],2892:[[2887,2903]],2893:[,9],2908:[[2849,2876],512],2909:[[2850,2876],512],2962:[,,{3031:2964}],2964:[[2962,3031]],3014:[,,{3006:3018,3031:3020}],3015:[,,{3006:3019}],3018:[[3014,3006]],3019:[[3015,3006]],3020:[[3014,3031]],3021:[,9]},
+3072:{3142:[,,{3158:3144}],3144:[[3142,3158]],3149:[,9],3157:[,84],3158:[,91],3260:[,7],3263:[,,{3285:3264}],3264:[[3263,3285]],3270:[,,{3266:3274,3285:3271,3286:3272}],3271:[[3270,3285]],3272:[[3270,3286]],3274:[[3270,3266],,{3285:3275}],3275:[[3274,3285]],3277:[,9]},
+3328:{3398:[,,{3390:3402,3415:3404}],3399:[,,{3390:3403}],3402:[[3398,3390]],3403:[[3399,3390]],3404:[[3398,3415]],3405:[,9],3530:[,9],3545:[,,{3530:3546,3535:3548,3551:3550}],3546:[[3545,3530]],3548:[[3545,3535],,{3530:3549}],3549:[[3548,3530]],3550:[[3545,3551]]},
+3584:{3635:[[3661,3634],256],3640:[,103],3641:[,103],3642:[,9],3656:[,107],3657:[,107],3658:[,107],3659:[,107],3763:[[3789,3762],256],3768:[,118],3769:[,118],3784:[,122],3785:[,122],3786:[,122],3787:[,122],3804:[[3755,3737],256],3805:[[3755,3745],256]},
+3840:{3852:[[3851],256],3864:[,220],3865:[,220],3893:[,220],3895:[,220],3897:[,216],3907:[[3906,4023],512],3917:[[3916,4023],512],3922:[[3921,4023],512],3927:[[3926,4023],512],3932:[[3931,4023],512],3945:[[3904,4021],512],3953:[,129],3954:[,130],3955:[[3953,3954],512],3956:[,132],3957:[[3953,3956],512],3958:[[4018,3968],512],3959:[[4018,3969],256],3960:[[4019,3968],512],3961:[[4019,3969],256],3962:[,130],3963:[,130],3964:[,130],3965:[,130],3968:[,130],3969:[[3953,3968],512],3970:[,230],3971:[,230],3972:[,9],3974:[,230],3975:[,230],3987:[[3986,4023],512],3997:[[3996,4023],512],4002:[[4001,4023],512],4007:[[4006,4023],512],4012:[[4011,4023],512],4025:[[3984,4021],512],4038:[,220]},
+4096:{4133:[,,{4142:4134}],4134:[[4133,4142]],4151:[,7],4153:[,9],4154:[,9],4237:[,220],4348:[[4316],256],69702:[,9],69759:[,9],69785:[,,{69818:69786}],69786:[[69785,69818]],69787:[,,{69818:69788}],69788:[[69787,69818]],69797:[,,{69818:69803}],69803:[[69797,69818]],69817:[,9],69818:[,7]},
+4352:{69888:[,230],69889:[,230],69890:[,230],69934:[[69937,69927]],69935:[[69938,69927]],69937:[,,{69927:69934}],69938:[,,{69927:69935}],69939:[,9],69940:[,9],70003:[,7],70080:[,9]},
+4608:{70197:[,9],70198:[,7],70377:[,7],70378:[,9]},
+4864:{4957:[,230],4958:[,230],4959:[,230],70460:[,7],70471:[,,{70462:70475,70487:70476}],70475:[[70471,70462]],70476:[[70471,70487]],70477:[,9],70502:[,230],70503:[,230],70504:[,230],70505:[,230],70506:[,230],70507:[,230],70508:[,230],70512:[,230],70513:[,230],70514:[,230],70515:[,230],70516:[,230]},
+5120:{70841:[,,{70832:70844,70842:70843,70845:70846}],70843:[[70841,70842]],70844:[[70841,70832]],70846:[[70841,70845]],70850:[,9],70851:[,7]},
+5376:{71096:[,,{71087:71098}],71097:[,,{71087:71099}],71098:[[71096,71087]],71099:[[71097,71087]],71103:[,9],71104:[,7]},
+5632:{71231:[,9],71350:[,9],71351:[,7]},
+5888:{5908:[,9],5940:[,9],6098:[,9],6109:[,230]},
+6144:{6313:[,228]},
+6400:{6457:[,222],6458:[,230],6459:[,220]},
+6656:{6679:[,230],6680:[,220],6752:[,9],6773:[,230],6774:[,230],6775:[,230],6776:[,230],6777:[,230],6778:[,230],6779:[,230],6780:[,230],6783:[,220],6832:[,230],6833:[,230],6834:[,230],6835:[,230],6836:[,230],6837:[,220],6838:[,220],6839:[,220],6840:[,220],6841:[,220],6842:[,220],6843:[,230],6844:[,230],6845:[,220]},
+6912:{6917:[,,{6965:6918}],6918:[[6917,6965]],6919:[,,{6965:6920}],6920:[[6919,6965]],6921:[,,{6965:6922}],6922:[[6921,6965]],6923:[,,{6965:6924}],6924:[[6923,6965]],6925:[,,{6965:6926}],6926:[[6925,6965]],6929:[,,{6965:6930}],6930:[[6929,6965]],6964:[,7],6970:[,,{6965:6971}],6971:[[6970,6965]],6972:[,,{6965:6973}],6973:[[6972,6965]],6974:[,,{6965:6976}],6975:[,,{6965:6977}],6976:[[6974,6965]],6977:[[6975,6965]],6978:[,,{6965:6979}],6979:[[6978,6965]],6980:[,9],7019:[,230],7020:[,220],7021:[,230],7022:[,230],7023:[,230],7024:[,230],7025:[,230],7026:[,230],7027:[,230],7082:[,9],7083:[,9],7142:[,7],7154:[,9],7155:[,9]},
+7168:{7223:[,7],7376:[,230],7377:[,230],7378:[,230],7380:[,1],7381:[,220],7382:[,220],7383:[,220],7384:[,220],7385:[,220],7386:[,230],7387:[,230],7388:[,220],7389:[,220],7390:[,220],7391:[,220],7392:[,230],7394:[,1],7395:[,1],7396:[,1],7397:[,1],7398:[,1],7399:[,1],7400:[,1],7405:[,220],7412:[,230],7416:[,230],7417:[,230]},
+7424:{7468:[[65],256],7469:[[198],256],7470:[[66],256],7472:[[68],256],7473:[[69],256],7474:[[398],256],7475:[[71],256],7476:[[72],256],7477:[[73],256],7478:[[74],256],7479:[[75],256],7480:[[76],256],7481:[[77],256],7482:[[78],256],7484:[[79],256],7485:[[546],256],7486:[[80],256],7487:[[82],256],7488:[[84],256],7489:[[85],256],7490:[[87],256],7491:[[97],256],7492:[[592],256],7493:[[593],256],7494:[[7426],256],7495:[[98],256],7496:[[100],256],7497:[[101],256],7498:[[601],256],7499:[[603],256],7500:[[604],256],7501:[[103],256],7503:[[107],256],7504:[[109],256],7505:[[331],256],7506:[[111],256],7507:[[596],256],7508:[[7446],256],7509:[[7447],256],7510:[[112],256],7511:[[116],256],7512:[[117],256],7513:[[7453],256],7514:[[623],256],7515:[[118],256],7516:[[7461],256],7517:[[946],256],7518:[[947],256],7519:[[948],256],7520:[[966],256],7521:[[967],256],7522:[[105],256],7523:[[114],256],7524:[[117],256],7525:[[118],256],7526:[[946],256],7527:[[947],256],7528:[[961],256],7529:[[966],256],7530:[[967],256],7544:[[1085],256],7579:[[594],256],7580:[[99],256],7581:[[597],256],7582:[[240],256],7583:[[604],256],7584:[[102],256],7585:[[607],256],7586:[[609],256],7587:[[613],256],7588:[[616],256],7589:[[617],256],7590:[[618],256],7591:[[7547],256],7592:[[669],256],7593:[[621],256],7594:[[7557],256],7595:[[671],256],7596:[[625],256],7597:[[624],256],7598:[[626],256],7599:[[627],256],7600:[[628],256],7601:[[629],256],7602:[[632],256],7603:[[642],256],7604:[[643],256],7605:[[427],256],7606:[[649],256],7607:[[650],256],7608:[[7452],256],7609:[[651],256],7610:[[652],256],7611:[[122],256],7612:[[656],256],7613:[[657],256],7614:[[658],256],7615:[[952],256],7616:[,230],7617:[,230],7618:[,220],7619:[,230],7620:[,230],7621:[,230],7622:[,230],7623:[,230],7624:[,230],7625:[,230],7626:[,220],7627:[,230],7628:[,230],7629:[,234],7630:[,214],7631:[,220],7632:[,202],7633:[,230],7634:[,230],7635:[,230],7636:[,230],7637:[,230],7638:[,230],7639:[,230],7640:[,230],7641:[,230],7642:[,230],7643:[,230],7644:[,230],7645:[,230],7646:[,230],7647:[,230],7648:[,230],7649:[,230],7650:[,230],7651:[,230],7652:[,230],7653:[,230],7654:[,230],7655:[,230],7656:[,230],7657:[,230],7658:[,230],7659:[,230],7660:[,230],7661:[,230],7662:[,230],7663:[,230],7664:[,230],7665:[,230],7666:[,230],7667:[,230],7668:[,230],7669:[,230],7676:[,233],7677:[,220],7678:[,230],7679:[,220]},
+7680:{7680:[[65,805]],7681:[[97,805]],7682:[[66,775]],7683:[[98,775]],7684:[[66,803]],7685:[[98,803]],7686:[[66,817]],7687:[[98,817]],7688:[[199,769]],7689:[[231,769]],7690:[[68,775]],7691:[[100,775]],7692:[[68,803]],7693:[[100,803]],7694:[[68,817]],7695:[[100,817]],7696:[[68,807]],7697:[[100,807]],7698:[[68,813]],7699:[[100,813]],7700:[[274,768]],7701:[[275,768]],7702:[[274,769]],7703:[[275,769]],7704:[[69,813]],7705:[[101,813]],7706:[[69,816]],7707:[[101,816]],7708:[[552,774]],7709:[[553,774]],7710:[[70,775]],7711:[[102,775]],7712:[[71,772]],7713:[[103,772]],7714:[[72,775]],7715:[[104,775]],7716:[[72,803]],7717:[[104,803]],7718:[[72,776]],7719:[[104,776]],7720:[[72,807]],7721:[[104,807]],7722:[[72,814]],7723:[[104,814]],7724:[[73,816]],7725:[[105,816]],7726:[[207,769]],7727:[[239,769]],7728:[[75,769]],7729:[[107,769]],7730:[[75,803]],7731:[[107,803]],7732:[[75,817]],7733:[[107,817]],7734:[[76,803],,{772:7736}],7735:[[108,803],,{772:7737}],7736:[[7734,772]],7737:[[7735,772]],7738:[[76,817]],7739:[[108,817]],7740:[[76,813]],7741:[[108,813]],7742:[[77,769]],7743:[[109,769]],7744:[[77,775]],7745:[[109,775]],7746:[[77,803]],7747:[[109,803]],7748:[[78,775]],7749:[[110,775]],7750:[[78,803]],7751:[[110,803]],7752:[[78,817]],7753:[[110,817]],7754:[[78,813]],7755:[[110,813]],7756:[[213,769]],7757:[[245,769]],7758:[[213,776]],7759:[[245,776]],7760:[[332,768]],7761:[[333,768]],7762:[[332,769]],7763:[[333,769]],7764:[[80,769]],7765:[[112,769]],7766:[[80,775]],7767:[[112,775]],7768:[[82,775]],7769:[[114,775]],7770:[[82,803],,{772:7772}],7771:[[114,803],,{772:7773}],7772:[[7770,772]],7773:[[7771,772]],7774:[[82,817]],7775:[[114,817]],7776:[[83,775]],7777:[[115,775]],7778:[[83,803],,{775:7784}],7779:[[115,803],,{775:7785}],7780:[[346,775]],7781:[[347,775]],7782:[[352,775]],7783:[[353,775]],7784:[[7778,775]],7785:[[7779,775]],7786:[[84,775]],7787:[[116,775]],7788:[[84,803]],7789:[[116,803]],7790:[[84,817]],7791:[[116,817]],7792:[[84,813]],7793:[[116,813]],7794:[[85,804]],7795:[[117,804]],7796:[[85,816]],7797:[[117,816]],7798:[[85,813]],7799:[[117,813]],7800:[[360,769]],7801:[[361,769]],7802:[[362,776]],7803:[[363,776]],7804:[[86,771]],7805:[[118,771]],7806:[[86,803]],7807:[[118,803]],7808:[[87,768]],7809:[[119,768]],7810:[[87,769]],7811:[[119,769]],7812:[[87,776]],7813:[[119,776]],7814:[[87,775]],7815:[[119,775]],7816:[[87,803]],7817:[[119,803]],7818:[[88,775]],7819:[[120,775]],7820:[[88,776]],7821:[[120,776]],7822:[[89,775]],7823:[[121,775]],7824:[[90,770]],7825:[[122,770]],7826:[[90,803]],7827:[[122,803]],7828:[[90,817]],7829:[[122,817]],7830:[[104,817]],7831:[[116,776]],7832:[[119,778]],7833:[[121,778]],7834:[[97,702],256],7835:[[383,775]],7840:[[65,803],,{770:7852,774:7862}],7841:[[97,803],,{770:7853,774:7863}],7842:[[65,777]],7843:[[97,777]],7844:[[194,769]],7845:[[226,769]],7846:[[194,768]],7847:[[226,768]],7848:[[194,777]],7849:[[226,777]],7850:[[194,771]],7851:[[226,771]],7852:[[7840,770]],7853:[[7841,770]],7854:[[258,769]],7855:[[259,769]],7856:[[258,768]],7857:[[259,768]],7858:[[258,777]],7859:[[259,777]],7860:[[258,771]],7861:[[259,771]],7862:[[7840,774]],7863:[[7841,774]],7864:[[69,803],,{770:7878}],7865:[[101,803],,{770:7879}],7866:[[69,777]],7867:[[101,777]],7868:[[69,771]],7869:[[101,771]],7870:[[202,769]],7871:[[234,769]],7872:[[202,768]],7873:[[234,768]],7874:[[202,777]],7875:[[234,777]],7876:[[202,771]],7877:[[234,771]],7878:[[7864,770]],7879:[[7865,770]],7880:[[73,777]],7881:[[105,777]],7882:[[73,803]],7883:[[105,803]],7884:[[79,803],,{770:7896}],7885:[[111,803],,{770:7897}],7886:[[79,777]],7887:[[111,777]],7888:[[212,769]],7889:[[244,769]],7890:[[212,768]],7891:[[244,768]],7892:[[212,777]],7893:[[244,777]],7894:[[212,771]],7895:[[244,771]],7896:[[7884,770]],7897:[[7885,770]],7898:[[416,769]],7899:[[417,769]],7900:[[416,768]],7901:[[417,768]],7902:[[416,777]],7903:[[417,777]],7904:[[416,771]],7905:[[417,771]],7906:[[416,803]],7907:[[417,803]],7908:[[85,803]],7909:[[117,803]],7910:[[85,777]],7911:[[117,777]],7912:[[431,769]],7913:[[432,769]],7914:[[431,768]],7915:[[432,768]],7916:[[431,777]],7917:[[432,777]],7918:[[431,771]],7919:[[432,771]],7920:[[431,803]],7921:[[432,803]],7922:[[89,768]],7923:[[121,768]],7924:[[89,803]],7925:[[121,803]],7926:[[89,777]],7927:[[121,777]],7928:[[89,771]],7929:[[121,771]]},
+7936:{7936:[[945,787],,{768:7938,769:7940,834:7942,837:8064}],7937:[[945,788],,{768:7939,769:7941,834:7943,837:8065}],7938:[[7936,768],,{837:8066}],7939:[[7937,768],,{837:8067}],7940:[[7936,769],,{837:8068}],7941:[[7937,769],,{837:8069}],7942:[[7936,834],,{837:8070}],7943:[[7937,834],,{837:8071}],7944:[[913,787],,{768:7946,769:7948,834:7950,837:8072}],7945:[[913,788],,{768:7947,769:7949,834:7951,837:8073}],7946:[[7944,768],,{837:8074}],7947:[[7945,768],,{837:8075}],7948:[[7944,769],,{837:8076}],7949:[[7945,769],,{837:8077}],7950:[[7944,834],,{837:8078}],7951:[[7945,834],,{837:8079}],7952:[[949,787],,{768:7954,769:7956}],7953:[[949,788],,{768:7955,769:7957}],7954:[[7952,768]],7955:[[7953,768]],7956:[[7952,769]],7957:[[7953,769]],7960:[[917,787],,{768:7962,769:7964}],7961:[[917,788],,{768:7963,769:7965}],7962:[[7960,768]],7963:[[7961,768]],7964:[[7960,769]],7965:[[7961,769]],7968:[[951,787],,{768:7970,769:7972,834:7974,837:8080}],7969:[[951,788],,{768:7971,769:7973,834:7975,837:8081}],7970:[[7968,768],,{837:8082}],7971:[[7969,768],,{837:8083}],7972:[[7968,769],,{837:8084}],7973:[[7969,769],,{837:8085}],7974:[[7968,834],,{837:8086}],7975:[[7969,834],,{837:8087}],7976:[[919,787],,{768:7978,769:7980,834:7982,837:8088}],7977:[[919,788],,{768:7979,769:7981,834:7983,837:8089}],7978:[[7976,768],,{837:8090}],7979:[[7977,768],,{837:8091}],7980:[[7976,769],,{837:8092}],7981:[[7977,769],,{837:8093}],7982:[[7976,834],,{837:8094}],7983:[[7977,834],,{837:8095}],7984:[[953,787],,{768:7986,769:7988,834:7990}],7985:[[953,788],,{768:7987,769:7989,834:7991}],7986:[[7984,768]],7987:[[7985,768]],7988:[[7984,769]],7989:[[7985,769]],7990:[[7984,834]],7991:[[7985,834]],7992:[[921,787],,{768:7994,769:7996,834:7998}],7993:[[921,788],,{768:7995,769:7997,834:7999}],7994:[[7992,768]],7995:[[7993,768]],7996:[[7992,769]],7997:[[7993,769]],7998:[[7992,834]],7999:[[7993,834]],8000:[[959,787],,{768:8002,769:8004}],8001:[[959,788],,{768:8003,769:8005}],8002:[[8000,768]],8003:[[8001,768]],8004:[[8000,769]],8005:[[8001,769]],8008:[[927,787],,{768:8010,769:8012}],8009:[[927,788],,{768:8011,769:8013}],8010:[[8008,768]],8011:[[8009,768]],8012:[[8008,769]],8013:[[8009,769]],8016:[[965,787],,{768:8018,769:8020,834:8022}],8017:[[965,788],,{768:8019,769:8021,834:8023}],8018:[[8016,768]],8019:[[8017,768]],8020:[[8016,769]],8021:[[8017,769]],8022:[[8016,834]],8023:[[8017,834]],8025:[[933,788],,{768:8027,769:8029,834:8031}],8027:[[8025,768]],8029:[[8025,769]],8031:[[8025,834]],8032:[[969,787],,{768:8034,769:8036,834:8038,837:8096}],8033:[[969,788],,{768:8035,769:8037,834:8039,837:8097}],8034:[[8032,768],,{837:8098}],8035:[[8033,768],,{837:8099}],8036:[[8032,769],,{837:8100}],8037:[[8033,769],,{837:8101}],8038:[[8032,834],,{837:8102}],8039:[[8033,834],,{837:8103}],8040:[[937,787],,{768:8042,769:8044,834:8046,837:8104}],8041:[[937,788],,{768:8043,769:8045,834:8047,837:8105}],8042:[[8040,768],,{837:8106}],8043:[[8041,768],,{837:8107}],8044:[[8040,769],,{837:8108}],8045:[[8041,769],,{837:8109}],8046:[[8040,834],,{837:8110}],8047:[[8041,834],,{837:8111}],8048:[[945,768],,{837:8114}],8049:[[940]],8050:[[949,768]],8051:[[941]],8052:[[951,768],,{837:8130}],8053:[[942]],8054:[[953,768]],8055:[[943]],8056:[[959,768]],8057:[[972]],8058:[[965,768]],8059:[[973]],8060:[[969,768],,{837:8178}],8061:[[974]],8064:[[7936,837]],8065:[[7937,837]],8066:[[7938,837]],8067:[[7939,837]],8068:[[7940,837]],8069:[[7941,837]],8070:[[7942,837]],8071:[[7943,837]],8072:[[7944,837]],8073:[[7945,837]],8074:[[7946,837]],8075:[[7947,837]],8076:[[7948,837]],8077:[[7949,837]],8078:[[7950,837]],8079:[[7951,837]],8080:[[7968,837]],8081:[[7969,837]],8082:[[7970,837]],8083:[[7971,837]],8084:[[7972,837]],8085:[[7973,837]],8086:[[7974,837]],8087:[[7975,837]],8088:[[7976,837]],8089:[[7977,837]],8090:[[7978,837]],8091:[[7979,837]],8092:[[7980,837]],8093:[[7981,837]],8094:[[7982,837]],8095:[[7983,837]],8096:[[8032,837]],8097:[[8033,837]],8098:[[8034,837]],8099:[[8035,837]],8100:[[8036,837]],8101:[[8037,837]],8102:[[8038,837]],8103:[[8039,837]],8104:[[8040,837]],8105:[[8041,837]],8106:[[8042,837]],8107:[[8043,837]],8108:[[8044,837]],8109:[[8045,837]],8110:[[8046,837]],8111:[[8047,837]],8112:[[945,774]],8113:[[945,772]],8114:[[8048,837]],8115:[[945,837]],8116:[[940,837]],8118:[[945,834],,{837:8119}],8119:[[8118,837]],8120:[[913,774]],8121:[[913,772]],8122:[[913,768]],8123:[[902]],8124:[[913,837]],8125:[[32,787],256],8126:[[953]],8127:[[32,787],256,{768:8141,769:8142,834:8143}],8128:[[32,834],256],8129:[[168,834]],8130:[[8052,837]],8131:[[951,837]],8132:[[942,837]],8134:[[951,834],,{837:8135}],8135:[[8134,837]],8136:[[917,768]],8137:[[904]],8138:[[919,768]],8139:[[905]],8140:[[919,837]],8141:[[8127,768]],8142:[[8127,769]],8143:[[8127,834]],8144:[[953,774]],8145:[[953,772]],8146:[[970,768]],8147:[[912]],8150:[[953,834]],8151:[[970,834]],8152:[[921,774]],8153:[[921,772]],8154:[[921,768]],8155:[[906]],8157:[[8190,768]],8158:[[8190,769]],8159:[[8190,834]],8160:[[965,774]],8161:[[965,772]],8162:[[971,768]],8163:[[944]],8164:[[961,787]],8165:[[961,788]],8166:[[965,834]],8167:[[971,834]],8168:[[933,774]],8169:[[933,772]],8170:[[933,768]],8171:[[910]],8172:[[929,788]],8173:[[168,768]],8174:[[901]],8175:[[96]],8178:[[8060,837]],8179:[[969,837]],8180:[[974,837]],8182:[[969,834],,{837:8183}],8183:[[8182,837]],8184:[[927,768]],8185:[[908]],8186:[[937,768]],8187:[[911]],8188:[[937,837]],8189:[[180]],8190:[[32,788],256,{768:8157,769:8158,834:8159}]},
+8192:{8192:[[8194]],8193:[[8195]],8194:[[32],256],8195:[[32],256],8196:[[32],256],8197:[[32],256],8198:[[32],256],8199:[[32],256],8200:[[32],256],8201:[[32],256],8202:[[32],256],8209:[[8208],256],8215:[[32,819],256],8228:[[46],256],8229:[[46,46],256],8230:[[46,46,46],256],8239:[[32],256],8243:[[8242,8242],256],8244:[[8242,8242,8242],256],8246:[[8245,8245],256],8247:[[8245,8245,8245],256],8252:[[33,33],256],8254:[[32,773],256],8263:[[63,63],256],8264:[[63,33],256],8265:[[33,63],256],8279:[[8242,8242,8242,8242],256],8287:[[32],256],8304:[[48],256],8305:[[105],256],8308:[[52],256],8309:[[53],256],8310:[[54],256],8311:[[55],256],8312:[[56],256],8313:[[57],256],8314:[[43],256],8315:[[8722],256],8316:[[61],256],8317:[[40],256],8318:[[41],256],8319:[[110],256],8320:[[48],256],8321:[[49],256],8322:[[50],256],8323:[[51],256],8324:[[52],256],8325:[[53],256],8326:[[54],256],8327:[[55],256],8328:[[56],256],8329:[[57],256],8330:[[43],256],8331:[[8722],256],8332:[[61],256],8333:[[40],256],8334:[[41],256],8336:[[97],256],8337:[[101],256],8338:[[111],256],8339:[[120],256],8340:[[601],256],8341:[[104],256],8342:[[107],256],8343:[[108],256],8344:[[109],256],8345:[[110],256],8346:[[112],256],8347:[[115],256],8348:[[116],256],8360:[[82,115],256],8400:[,230],8401:[,230],8402:[,1],8403:[,1],8404:[,230],8405:[,230],8406:[,230],8407:[,230],8408:[,1],8409:[,1],8410:[,1],8411:[,230],8412:[,230],8417:[,230],8421:[,1],8422:[,1],8423:[,230],8424:[,220],8425:[,230],8426:[,1],8427:[,1],8428:[,220],8429:[,220],8430:[,220],8431:[,220],8432:[,230]},
+8448:{8448:[[97,47,99],256],8449:[[97,47,115],256],8450:[[67],256],8451:[[176,67],256],8453:[[99,47,111],256],8454:[[99,47,117],256],8455:[[400],256],8457:[[176,70],256],8458:[[103],256],8459:[[72],256],8460:[[72],256],8461:[[72],256],8462:[[104],256],8463:[[295],256],8464:[[73],256],8465:[[73],256],8466:[[76],256],8467:[[108],256],8469:[[78],256],8470:[[78,111],256],8473:[[80],256],8474:[[81],256],8475:[[82],256],8476:[[82],256],8477:[[82],256],8480:[[83,77],256],8481:[[84,69,76],256],8482:[[84,77],256],8484:[[90],256],8486:[[937]],8488:[[90],256],8490:[[75]],8491:[[197]],8492:[[66],256],8493:[[67],256],8495:[[101],256],8496:[[69],256],8497:[[70],256],8499:[[77],256],8500:[[111],256],8501:[[1488],256],8502:[[1489],256],8503:[[1490],256],8504:[[1491],256],8505:[[105],256],8507:[[70,65,88],256],8508:[[960],256],8509:[[947],256],8510:[[915],256],8511:[[928],256],8512:[[8721],256],8517:[[68],256],8518:[[100],256],8519:[[101],256],8520:[[105],256],8521:[[106],256],8528:[[49,8260,55],256],8529:[[49,8260,57],256],8530:[[49,8260,49,48],256],8531:[[49,8260,51],256],8532:[[50,8260,51],256],8533:[[49,8260,53],256],8534:[[50,8260,53],256],8535:[[51,8260,53],256],8536:[[52,8260,53],256],8537:[[49,8260,54],256],8538:[[53,8260,54],256],8539:[[49,8260,56],256],8540:[[51,8260,56],256],8541:[[53,8260,56],256],8542:[[55,8260,56],256],8543:[[49,8260],256],8544:[[73],256],8545:[[73,73],256],8546:[[73,73,73],256],8547:[[73,86],256],8548:[[86],256],8549:[[86,73],256],8550:[[86,73,73],256],8551:[[86,73,73,73],256],8552:[[73,88],256],8553:[[88],256],8554:[[88,73],256],8555:[[88,73,73],256],8556:[[76],256],8557:[[67],256],8558:[[68],256],8559:[[77],256],8560:[[105],256],8561:[[105,105],256],8562:[[105,105,105],256],8563:[[105,118],256],8564:[[118],256],8565:[[118,105],256],8566:[[118,105,105],256],8567:[[118,105,105,105],256],8568:[[105,120],256],8569:[[120],256],8570:[[120,105],256],8571:[[120,105,105],256],8572:[[108],256],8573:[[99],256],8574:[[100],256],8575:[[109],256],8585:[[48,8260,51],256],8592:[,,{824:8602}],8594:[,,{824:8603}],8596:[,,{824:8622}],8602:[[8592,824]],8603:[[8594,824]],8622:[[8596,824]],8653:[[8656,824]],8654:[[8660,824]],8655:[[8658,824]],8656:[,,{824:8653}],8658:[,,{824:8655}],8660:[,,{824:8654}]},
+8704:{8707:[,,{824:8708}],8708:[[8707,824]],8712:[,,{824:8713}],8713:[[8712,824]],8715:[,,{824:8716}],8716:[[8715,824]],8739:[,,{824:8740}],8740:[[8739,824]],8741:[,,{824:8742}],8742:[[8741,824]],8748:[[8747,8747],256],8749:[[8747,8747,8747],256],8751:[[8750,8750],256],8752:[[8750,8750,8750],256],8764:[,,{824:8769}],8769:[[8764,824]],8771:[,,{824:8772}],8772:[[8771,824]],8773:[,,{824:8775}],8775:[[8773,824]],8776:[,,{824:8777}],8777:[[8776,824]],8781:[,,{824:8813}],8800:[[61,824]],8801:[,,{824:8802}],8802:[[8801,824]],8804:[,,{824:8816}],8805:[,,{824:8817}],8813:[[8781,824]],8814:[[60,824]],8815:[[62,824]],8816:[[8804,824]],8817:[[8805,824]],8818:[,,{824:8820}],8819:[,,{824:8821}],8820:[[8818,824]],8821:[[8819,824]],8822:[,,{824:8824}],8823:[,,{824:8825}],8824:[[8822,824]],8825:[[8823,824]],8826:[,,{824:8832}],8827:[,,{824:8833}],8828:[,,{824:8928}],8829:[,,{824:8929}],8832:[[8826,824]],8833:[[8827,824]],8834:[,,{824:8836}],8835:[,,{824:8837}],8836:[[8834,824]],8837:[[8835,824]],8838:[,,{824:8840}],8839:[,,{824:8841}],8840:[[8838,824]],8841:[[8839,824]],8849:[,,{824:8930}],8850:[,,{824:8931}],8866:[,,{824:8876}],8872:[,,{824:8877}],8873:[,,{824:8878}],8875:[,,{824:8879}],8876:[[8866,824]],8877:[[8872,824]],8878:[[8873,824]],8879:[[8875,824]],8882:[,,{824:8938}],8883:[,,{824:8939}],8884:[,,{824:8940}],8885:[,,{824:8941}],8928:[[8828,824]],8929:[[8829,824]],8930:[[8849,824]],8931:[[8850,824]],8938:[[8882,824]],8939:[[8883,824]],8940:[[8884,824]],8941:[[8885,824]]},
+8960:{9001:[[12296]],9002:[[12297]]},
+9216:{9312:[[49],256],9313:[[50],256],9314:[[51],256],9315:[[52],256],9316:[[53],256],9317:[[54],256],9318:[[55],256],9319:[[56],256],9320:[[57],256],9321:[[49,48],256],9322:[[49,49],256],9323:[[49,50],256],9324:[[49,51],256],9325:[[49,52],256],9326:[[49,53],256],9327:[[49,54],256],9328:[[49,55],256],9329:[[49,56],256],9330:[[49,57],256],9331:[[50,48],256],9332:[[40,49,41],256],9333:[[40,50,41],256],9334:[[40,51,41],256],9335:[[40,52,41],256],9336:[[40,53,41],256],9337:[[40,54,41],256],9338:[[40,55,41],256],9339:[[40,56,41],256],9340:[[40,57,41],256],9341:[[40,49,48,41],256],9342:[[40,49,49,41],256],9343:[[40,49,50,41],256],9344:[[40,49,51,41],256],9345:[[40,49,52,41],256],9346:[[40,49,53,41],256],9347:[[40,49,54,41],256],9348:[[40,49,55,41],256],9349:[[40,49,56,41],256],9350:[[40,49,57,41],256],9351:[[40,50,48,41],256],9352:[[49,46],256],9353:[[50,46],256],9354:[[51,46],256],9355:[[52,46],256],9356:[[53,46],256],9357:[[54,46],256],9358:[[55,46],256],9359:[[56,46],256],9360:[[57,46],256],9361:[[49,48,46],256],9362:[[49,49,46],256],9363:[[49,50,46],256],9364:[[49,51,46],256],9365:[[49,52,46],256],9366:[[49,53,46],256],9367:[[49,54,46],256],9368:[[49,55,46],256],9369:[[49,56,46],256],9370:[[49,57,46],256],9371:[[50,48,46],256],9372:[[40,97,41],256],9373:[[40,98,41],256],9374:[[40,99,41],256],9375:[[40,100,41],256],9376:[[40,101,41],256],9377:[[40,102,41],256],9378:[[40,103,41],256],9379:[[40,104,41],256],9380:[[40,105,41],256],9381:[[40,106,41],256],9382:[[40,107,41],256],9383:[[40,108,41],256],9384:[[40,109,41],256],9385:[[40,110,41],256],9386:[[40,111,41],256],9387:[[40,112,41],256],9388:[[40,113,41],256],9389:[[40,114,41],256],9390:[[40,115,41],256],9391:[[40,116,41],256],9392:[[40,117,41],256],9393:[[40,118,41],256],9394:[[40,119,41],256],9395:[[40,120,41],256],9396:[[40,121,41],256],9397:[[40,122,41],256],9398:[[65],256],9399:[[66],256],9400:[[67],256],9401:[[68],256],9402:[[69],256],9403:[[70],256],9404:[[71],256],9405:[[72],256],9406:[[73],256],9407:[[74],256],9408:[[75],256],9409:[[76],256],9410:[[77],256],9411:[[78],256],9412:[[79],256],9413:[[80],256],9414:[[81],256],9415:[[82],256],9416:[[83],256],9417:[[84],256],9418:[[85],256],9419:[[86],256],9420:[[87],256],9421:[[88],256],9422:[[89],256],9423:[[90],256],9424:[[97],256],9425:[[98],256],9426:[[99],256],9427:[[100],256],9428:[[101],256],9429:[[102],256],9430:[[103],256],9431:[[104],256],9432:[[105],256],9433:[[106],256],9434:[[107],256],9435:[[108],256],9436:[[109],256],9437:[[110],256],9438:[[111],256],9439:[[112],256],9440:[[113],256],9441:[[114],256],9442:[[115],256],9443:[[116],256],9444:[[117],256],9445:[[118],256],9446:[[119],256],9447:[[120],256],9448:[[121],256],9449:[[122],256],9450:[[48],256]},
+10752:{10764:[[8747,8747,8747,8747],256],10868:[[58,58,61],256],10869:[[61,61],256],10870:[[61,61,61],256],10972:[[10973,824],512]},
+11264:{11388:[[106],256],11389:[[86],256],11503:[,230],11504:[,230],11505:[,230]},
+11520:{11631:[[11617],256],11647:[,9],11744:[,230],11745:[,230],11746:[,230],11747:[,230],11748:[,230],11749:[,230],11750:[,230],11751:[,230],11752:[,230],11753:[,230],11754:[,230],11755:[,230],11756:[,230],11757:[,230],11758:[,230],11759:[,230],11760:[,230],11761:[,230],11762:[,230],11763:[,230],11764:[,230],11765:[,230],11766:[,230],11767:[,230],11768:[,230],11769:[,230],11770:[,230],11771:[,230],11772:[,230],11773:[,230],11774:[,230],11775:[,230]},
+11776:{11935:[[27597],256],12019:[[40863],256]},
+12032:{12032:[[19968],256],12033:[[20008],256],12034:[[20022],256],12035:[[20031],256],12036:[[20057],256],12037:[[20101],256],12038:[[20108],256],12039:[[20128],256],12040:[[20154],256],12041:[[20799],256],12042:[[20837],256],12043:[[20843],256],12044:[[20866],256],12045:[[20886],256],12046:[[20907],256],12047:[[20960],256],12048:[[20981],256],12049:[[20992],256],12050:[[21147],256],12051:[[21241],256],12052:[[21269],256],12053:[[21274],256],12054:[[21304],256],12055:[[21313],256],12056:[[21340],256],12057:[[21353],256],12058:[[21378],256],12059:[[21430],256],12060:[[21448],256],12061:[[21475],256],12062:[[22231],256],12063:[[22303],256],12064:[[22763],256],12065:[[22786],256],12066:[[22794],256],12067:[[22805],256],12068:[[22823],256],12069:[[22899],256],12070:[[23376],256],12071:[[23424],256],12072:[[23544],256],12073:[[23567],256],12074:[[23586],256],12075:[[23608],256],12076:[[23662],256],12077:[[23665],256],12078:[[24027],256],12079:[[24037],256],12080:[[24049],256],12081:[[24062],256],12082:[[24178],256],12083:[[24186],256],12084:[[24191],256],12085:[[24308],256],12086:[[24318],256],12087:[[24331],256],12088:[[24339],256],12089:[[24400],256],12090:[[24417],256],12091:[[24435],256],12092:[[24515],256],12093:[[25096],256],12094:[[25142],256],12095:[[25163],256],12096:[[25903],256],12097:[[25908],256],12098:[[25991],256],12099:[[26007],256],12100:[[26020],256],12101:[[26041],256],12102:[[26080],256],12103:[[26085],256],12104:[[26352],256],12105:[[26376],256],12106:[[26408],256],12107:[[27424],256],12108:[[27490],256],12109:[[27513],256],12110:[[27571],256],12111:[[27595],256],12112:[[27604],256],12113:[[27611],256],12114:[[27663],256],12115:[[27668],256],12116:[[27700],256],12117:[[28779],256],12118:[[29226],256],12119:[[29238],256],12120:[[29243],256],12121:[[29247],256],12122:[[29255],256],12123:[[29273],256],12124:[[29275],256],12125:[[29356],256],12126:[[29572],256],12127:[[29577],256],12128:[[29916],256],12129:[[29926],256],12130:[[29976],256],12131:[[29983],256],12132:[[29992],256],12133:[[30000],256],12134:[[30091],256],12135:[[30098],256],12136:[[30326],256],12137:[[30333],256],12138:[[30382],256],12139:[[30399],256],12140:[[30446],256],12141:[[30683],256],12142:[[30690],256],12143:[[30707],256],12144:[[31034],256],12145:[[31160],256],12146:[[31166],256],12147:[[31348],256],12148:[[31435],256],12149:[[31481],256],12150:[[31859],256],12151:[[31992],256],12152:[[32566],256],12153:[[32593],256],12154:[[32650],256],12155:[[32701],256],12156:[[32769],256],12157:[[32780],256],12158:[[32786],256],12159:[[32819],256],12160:[[32895],256],12161:[[32905],256],12162:[[33251],256],12163:[[33258],256],12164:[[33267],256],12165:[[33276],256],12166:[[33292],256],12167:[[33307],256],12168:[[33311],256],12169:[[33390],256],12170:[[33394],256],12171:[[33400],256],12172:[[34381],256],12173:[[34411],256],12174:[[34880],256],12175:[[34892],256],12176:[[34915],256],12177:[[35198],256],12178:[[35211],256],12179:[[35282],256],12180:[[35328],256],12181:[[35895],256],12182:[[35910],256],12183:[[35925],256],12184:[[35960],256],12185:[[35997],256],12186:[[36196],256],12187:[[36208],256],12188:[[36275],256],12189:[[36523],256],12190:[[36554],256],12191:[[36763],256],12192:[[36784],256],12193:[[36789],256],12194:[[37009],256],12195:[[37193],256],12196:[[37318],256],12197:[[37324],256],12198:[[37329],256],12199:[[38263],256],12200:[[38272],256],12201:[[38428],256],12202:[[38582],256],12203:[[38585],256],12204:[[38632],256],12205:[[38737],256],12206:[[38750],256],12207:[[38754],256],12208:[[38761],256],12209:[[38859],256],12210:[[38893],256],12211:[[38899],256],12212:[[38913],256],12213:[[39080],256],12214:[[39131],256],12215:[[39135],256],12216:[[39318],256],12217:[[39321],256],12218:[[39340],256],12219:[[39592],256],12220:[[39640],256],12221:[[39647],256],12222:[[39717],256],12223:[[39727],256],12224:[[39730],256],12225:[[39740],256],12226:[[39770],256],12227:[[40165],256],12228:[[40565],256],12229:[[40575],256],12230:[[40613],256],12231:[[40635],256],12232:[[40643],256],12233:[[40653],256],12234:[[40657],256],12235:[[40697],256],12236:[[40701],256],12237:[[40718],256],12238:[[40723],256],12239:[[40736],256],12240:[[40763],256],12241:[[40778],256],12242:[[40786],256],12243:[[40845],256],12244:[[40860],256],12245:[[40864],256]},
+12288:{12288:[[32],256],12330:[,218],12331:[,228],12332:[,232],12333:[,222],12334:[,224],12335:[,224],12342:[[12306],256],12344:[[21313],256],12345:[[21316],256],12346:[[21317],256],12358:[,,{12441:12436}],12363:[,,{12441:12364}],12364:[[12363,12441]],12365:[,,{12441:12366}],12366:[[12365,12441]],12367:[,,{12441:12368}],12368:[[12367,12441]],12369:[,,{12441:12370}],12370:[[12369,12441]],12371:[,,{12441:12372}],12372:[[12371,12441]],12373:[,,{12441:12374}],12374:[[12373,12441]],12375:[,,{12441:12376}],12376:[[12375,12441]],12377:[,,{12441:12378}],12378:[[12377,12441]],12379:[,,{12441:12380}],12380:[[12379,12441]],12381:[,,{12441:12382}],12382:[[12381,12441]],12383:[,,{12441:12384}],12384:[[12383,12441]],12385:[,,{12441:12386}],12386:[[12385,12441]],12388:[,,{12441:12389}],12389:[[12388,12441]],12390:[,,{12441:12391}],12391:[[12390,12441]],12392:[,,{12441:12393}],12393:[[12392,12441]],12399:[,,{12441:12400,12442:12401}],12400:[[12399,12441]],12401:[[12399,12442]],12402:[,,{12441:12403,12442:12404}],12403:[[12402,12441]],12404:[[12402,12442]],12405:[,,{12441:12406,12442:12407}],12406:[[12405,12441]],12407:[[12405,12442]],12408:[,,{12441:12409,12442:12410}],12409:[[12408,12441]],12410:[[12408,12442]],12411:[,,{12441:12412,12442:12413}],12412:[[12411,12441]],12413:[[12411,12442]],12436:[[12358,12441]],12441:[,8],12442:[,8],12443:[[32,12441],256],12444:[[32,12442],256],12445:[,,{12441:12446}],12446:[[12445,12441]],12447:[[12424,12426],256],12454:[,,{12441:12532}],12459:[,,{12441:12460}],12460:[[12459,12441]],12461:[,,{12441:12462}],12462:[[12461,12441]],12463:[,,{12441:12464}],12464:[[12463,12441]],12465:[,,{12441:12466}],12466:[[12465,12441]],12467:[,,{12441:12468}],12468:[[12467,12441]],12469:[,,{12441:12470}],12470:[[12469,12441]],12471:[,,{12441:12472}],12472:[[12471,12441]],12473:[,,{12441:12474}],12474:[[12473,12441]],12475:[,,{12441:12476}],12476:[[12475,12441]],12477:[,,{12441:12478}],12478:[[12477,12441]],12479:[,,{12441:12480}],12480:[[12479,12441]],12481:[,,{12441:12482}],12482:[[12481,12441]],12484:[,,{12441:12485}],12485:[[12484,12441]],12486:[,,{12441:12487}],12487:[[12486,12441]],12488:[,,{12441:12489}],12489:[[12488,12441]],12495:[,,{12441:12496,12442:12497}],12496:[[12495,12441]],12497:[[12495,12442]],12498:[,,{12441:12499,12442:12500}],12499:[[12498,12441]],12500:[[12498,12442]],12501:[,,{12441:12502,12442:12503}],12502:[[12501,12441]],12503:[[12501,12442]],12504:[,,{12441:12505,12442:12506}],12505:[[12504,12441]],12506:[[12504,12442]],12507:[,,{12441:12508,12442:12509}],12508:[[12507,12441]],12509:[[12507,12442]],12527:[,,{12441:12535}],12528:[,,{12441:12536}],12529:[,,{12441:12537}],12530:[,,{12441:12538}],12532:[[12454,12441]],12535:[[12527,12441]],12536:[[12528,12441]],12537:[[12529,12441]],12538:[[12530,12441]],12541:[,,{12441:12542}],12542:[[12541,12441]],12543:[[12467,12488],256]},
+12544:{12593:[[4352],256],12594:[[4353],256],12595:[[4522],256],12596:[[4354],256],12597:[[4524],256],12598:[[4525],256],12599:[[4355],256],12600:[[4356],256],12601:[[4357],256],12602:[[4528],256],12603:[[4529],256],12604:[[4530],256],12605:[[4531],256],12606:[[4532],256],12607:[[4533],256],12608:[[4378],256],12609:[[4358],256],12610:[[4359],256],12611:[[4360],256],12612:[[4385],256],12613:[[4361],256],12614:[[4362],256],12615:[[4363],256],12616:[[4364],256],12617:[[4365],256],12618:[[4366],256],12619:[[4367],256],12620:[[4368],256],12621:[[4369],256],12622:[[4370],256],12623:[[4449],256],12624:[[4450],256],12625:[[4451],256],12626:[[4452],256],12627:[[4453],256],12628:[[4454],256],12629:[[4455],256],12630:[[4456],256],12631:[[4457],256],12632:[[4458],256],12633:[[4459],256],12634:[[4460],256],12635:[[4461],256],12636:[[4462],256],12637:[[4463],256],12638:[[4464],256],12639:[[4465],256],12640:[[4466],256],12641:[[4467],256],12642:[[4468],256],12643:[[4469],256],12644:[[4448],256],12645:[[4372],256],12646:[[4373],256],12647:[[4551],256],12648:[[4552],256],12649:[[4556],256],12650:[[4558],256],12651:[[4563],256],12652:[[4567],256],12653:[[4569],256],12654:[[4380],256],12655:[[4573],256],12656:[[4575],256],12657:[[4381],256],12658:[[4382],256],12659:[[4384],256],12660:[[4386],256],12661:[[4387],256],12662:[[4391],256],12663:[[4393],256],12664:[[4395],256],12665:[[4396],256],12666:[[4397],256],12667:[[4398],256],12668:[[4399],256],12669:[[4402],256],12670:[[4406],256],12671:[[4416],256],12672:[[4423],256],12673:[[4428],256],12674:[[4593],256],12675:[[4594],256],12676:[[4439],256],12677:[[4440],256],12678:[[4441],256],12679:[[4484],256],12680:[[4485],256],12681:[[4488],256],12682:[[4497],256],12683:[[4498],256],12684:[[4500],256],12685:[[4510],256],12686:[[4513],256],12690:[[19968],256],12691:[[20108],256],12692:[[19977],256],12693:[[22235],256],12694:[[19978],256],12695:[[20013],256],12696:[[19979],256],12697:[[30002],256],12698:[[20057],256],12699:[[19993],256],12700:[[19969],256],12701:[[22825],256],12702:[[22320],256],12703:[[20154],256]},
+12800:{12800:[[40,4352,41],256],12801:[[40,4354,41],256],12802:[[40,4355,41],256],12803:[[40,4357,41],256],12804:[[40,4358,41],256],12805:[[40,4359,41],256],12806:[[40,4361,41],256],12807:[[40,4363,41],256],12808:[[40,4364,41],256],12809:[[40,4366,41],256],12810:[[40,4367,41],256],12811:[[40,4368,41],256],12812:[[40,4369,41],256],12813:[[40,4370,41],256],12814:[[40,4352,4449,41],256],12815:[[40,4354,4449,41],256],12816:[[40,4355,4449,41],256],12817:[[40,4357,4449,41],256],12818:[[40,4358,4449,41],256],12819:[[40,4359,4449,41],256],12820:[[40,4361,4449,41],256],12821:[[40,4363,4449,41],256],12822:[[40,4364,4449,41],256],12823:[[40,4366,4449,41],256],12824:[[40,4367,4449,41],256],12825:[[40,4368,4449,41],256],12826:[[40,4369,4449,41],256],12827:[[40,4370,4449,41],256],12828:[[40,4364,4462,41],256],12829:[[40,4363,4457,4364,4453,4523,41],256],12830:[[40,4363,4457,4370,4462,41],256],12832:[[40,19968,41],256],12833:[[40,20108,41],256],12834:[[40,19977,41],256],12835:[[40,22235,41],256],12836:[[40,20116,41],256],12837:[[40,20845,41],256],12838:[[40,19971,41],256],12839:[[40,20843,41],256],12840:[[40,20061,41],256],12841:[[40,21313,41],256],12842:[[40,26376,41],256],12843:[[40,28779,41],256],12844:[[40,27700,41],256],12845:[[40,26408,41],256],12846:[[40,37329,41],256],12847:[[40,22303,41],256],12848:[[40,26085,41],256],12849:[[40,26666,41],256],12850:[[40,26377,41],256],12851:[[40,31038,41],256],12852:[[40,21517,41],256],12853:[[40,29305,41],256],12854:[[40,36001,41],256],12855:[[40,31069,41],256],12856:[[40,21172,41],256],12857:[[40,20195,41],256],12858:[[40,21628,41],256],12859:[[40,23398,41],256],12860:[[40,30435,41],256],12861:[[40,20225,41],256],12862:[[40,36039,41],256],12863:[[40,21332,41],256],12864:[[40,31085,41],256],12865:[[40,20241,41],256],12866:[[40,33258,41],256],12867:[[40,33267,41],256],12868:[[21839],256],12869:[[24188],256],12870:[[25991],256],12871:[[31631],256],12880:[[80,84,69],256],12881:[[50,49],256],12882:[[50,50],256],12883:[[50,51],256],12884:[[50,52],256],12885:[[50,53],256],12886:[[50,54],256],12887:[[50,55],256],12888:[[50,56],256],12889:[[50,57],256],12890:[[51,48],256],12891:[[51,49],256],12892:[[51,50],256],12893:[[51,51],256],12894:[[51,52],256],12895:[[51,53],256],12896:[[4352],256],12897:[[4354],256],12898:[[4355],256],12899:[[4357],256],12900:[[4358],256],12901:[[4359],256],12902:[[4361],256],12903:[[4363],256],12904:[[4364],256],12905:[[4366],256],12906:[[4367],256],12907:[[4368],256],12908:[[4369],256],12909:[[4370],256],12910:[[4352,4449],256],12911:[[4354,4449],256],12912:[[4355,4449],256],12913:[[4357,4449],256],12914:[[4358,4449],256],12915:[[4359,4449],256],12916:[[4361,4449],256],12917:[[4363,4449],256],12918:[[4364,4449],256],12919:[[4366,4449],256],12920:[[4367,4449],256],12921:[[4368,4449],256],12922:[[4369,4449],256],12923:[[4370,4449],256],12924:[[4366,4449,4535,4352,4457],256],12925:[[4364,4462,4363,4468],256],12926:[[4363,4462],256],12928:[[19968],256],12929:[[20108],256],12930:[[19977],256],12931:[[22235],256],12932:[[20116],256],12933:[[20845],256],12934:[[19971],256],12935:[[20843],256],12936:[[20061],256],12937:[[21313],256],12938:[[26376],256],12939:[[28779],256],12940:[[27700],256],12941:[[26408],256],12942:[[37329],256],12943:[[22303],256],12944:[[26085],256],12945:[[26666],256],12946:[[26377],256],12947:[[31038],256],12948:[[21517],256],12949:[[29305],256],12950:[[36001],256],12951:[[31069],256],12952:[[21172],256],12953:[[31192],256],12954:[[30007],256],12955:[[22899],256],12956:[[36969],256],12957:[[20778],256],12958:[[21360],256],12959:[[27880],256],12960:[[38917],256],12961:[[20241],256],12962:[[20889],256],12963:[[27491],256],12964:[[19978],256],12965:[[20013],256],12966:[[19979],256],12967:[[24038],256],12968:[[21491],256],12969:[[21307],256],12970:[[23447],256],12971:[[23398],256],12972:[[30435],256],12973:[[20225],256],12974:[[36039],256],12975:[[21332],256],12976:[[22812],256],12977:[[51,54],256],12978:[[51,55],256],12979:[[51,56],256],12980:[[51,57],256],12981:[[52,48],256],12982:[[52,49],256],12983:[[52,50],256],12984:[[52,51],256],12985:[[52,52],256],12986:[[52,53],256],12987:[[52,54],256],12988:[[52,55],256],12989:[[52,56],256],12990:[[52,57],256],12991:[[53,48],256],12992:[[49,26376],256],12993:[[50,26376],256],12994:[[51,26376],256],12995:[[52,26376],256],12996:[[53,26376],256],12997:[[54,26376],256],12998:[[55,26376],256],12999:[[56,26376],256],13000:[[57,26376],256],13001:[[49,48,26376],256],13002:[[49,49,26376],256],13003:[[49,50,26376],256],13004:[[72,103],256],13005:[[101,114,103],256],13006:[[101,86],256],13007:[[76,84,68],256],13008:[[12450],256],13009:[[12452],256],13010:[[12454],256],13011:[[12456],256],13012:[[12458],256],13013:[[12459],256],13014:[[12461],256],13015:[[12463],256],13016:[[12465],256],13017:[[12467],256],13018:[[12469],256],13019:[[12471],256],13020:[[12473],256],13021:[[12475],256],13022:[[12477],256],13023:[[12479],256],13024:[[12481],256],13025:[[12484],256],13026:[[12486],256],13027:[[12488],256],13028:[[12490],256],13029:[[12491],256],13030:[[12492],256],13031:[[12493],256],13032:[[12494],256],13033:[[12495],256],13034:[[12498],256],13035:[[12501],256],13036:[[12504],256],13037:[[12507],256],13038:[[12510],256],13039:[[12511],256],13040:[[12512],256],13041:[[12513],256],13042:[[12514],256],13043:[[12516],256],13044:[[12518],256],13045:[[12520],256],13046:[[12521],256],13047:[[12522],256],13048:[[12523],256],13049:[[12524],256],13050:[[12525],256],13051:[[12527],256],13052:[[12528],256],13053:[[12529],256],13054:[[12530],256]},
+13056:{13056:[[12450,12497,12540,12488],256],13057:[[12450,12523,12501,12449],256],13058:[[12450,12531,12506,12450],256],13059:[[12450,12540,12523],256],13060:[[12452,12491,12531,12464],256],13061:[[12452,12531,12481],256],13062:[[12454,12457,12531],256],13063:[[12456,12473,12463,12540,12489],256],13064:[[12456,12540,12459,12540],256],13065:[[12458,12531,12473],256],13066:[[12458,12540,12512],256],13067:[[12459,12452,12522],256],13068:[[12459,12521,12483,12488],256],13069:[[12459,12525,12522,12540],256],13070:[[12460,12525,12531],256],13071:[[12460,12531,12510],256],13072:[[12462,12460],256],13073:[[12462,12491,12540],256],13074:[[12461,12517,12522,12540],256],13075:[[12462,12523,12480,12540],256],13076:[[12461,12525],256],13077:[[12461,12525,12464,12521,12512],256],13078:[[12461,12525,12513,12540,12488,12523],256],13079:[[12461,12525,12527,12483,12488],256],13080:[[12464,12521,12512],256],13081:[[12464,12521,12512,12488,12531],256],13082:[[12463,12523,12476,12452,12525],256],13083:[[12463,12525,12540,12493],256],13084:[[12465,12540,12473],256],13085:[[12467,12523,12490],256],13086:[[12467,12540,12509],256],13087:[[12469,12452,12463,12523],256],13088:[[12469,12531,12481,12540,12512],256],13089:[[12471,12522,12531,12464],256],13090:[[12475,12531,12481],256],13091:[[12475,12531,12488],256],13092:[[12480,12540,12473],256],13093:[[12487,12471],256],13094:[[12489,12523],256],13095:[[12488,12531],256],13096:[[12490,12494],256],13097:[[12494,12483,12488],256],13098:[[12495,12452,12484],256],13099:[[12497,12540,12475,12531,12488],256],13100:[[12497,12540,12484],256],13101:[[12496,12540,12524,12523],256],13102:[[12500,12450,12473,12488,12523],256],13103:[[12500,12463,12523],256],13104:[[12500,12467],256],13105:[[12499,12523],256],13106:[[12501,12449,12521,12483,12489],256],13107:[[12501,12451,12540,12488],256],13108:[[12502,12483,12471,12455,12523],256],13109:[[12501,12521,12531],256],13110:[[12504,12463,12479,12540,12523],256],13111:[[12506,12477],256],13112:[[12506,12491,12498],256],13113:[[12504,12523,12484],256],13114:[[12506,12531,12473],256],13115:[[12506,12540,12472],256],13116:[[12505,12540,12479],256],13117:[[12509,12452,12531,12488],256],13118:[[12508,12523,12488],256],13119:[[12507,12531],256],13120:[[12509,12531,12489],256],13121:[[12507,12540,12523],256],13122:[[12507,12540,12531],256],13123:[[12510,12452,12463,12525],256],13124:[[12510,12452,12523],256],13125:[[12510,12483,12495],256],13126:[[12510,12523,12463],256],13127:[[12510,12531,12471,12519,12531],256],13128:[[12511,12463,12525,12531],256],13129:[[12511,12522],256],13130:[[12511,12522,12496,12540,12523],256],13131:[[12513,12460],256],13132:[[12513,12460,12488,12531],256],13133:[[12513,12540,12488,12523],256],13134:[[12516,12540,12489],256],13135:[[12516,12540,12523],256],13136:[[12518,12450,12531],256],13137:[[12522,12483,12488,12523],256],13138:[[12522,12521],256],13139:[[12523,12500,12540],256],13140:[[12523,12540,12502,12523],256],13141:[[12524,12512],256],13142:[[12524,12531,12488,12466,12531],256],13143:[[12527,12483,12488],256],13144:[[48,28857],256],13145:[[49,28857],256],13146:[[50,28857],256],13147:[[51,28857],256],13148:[[52,28857],256],13149:[[53,28857],256],13150:[[54,28857],256],13151:[[55,28857],256],13152:[[56,28857],256],13153:[[57,28857],256],13154:[[49,48,28857],256],13155:[[49,49,28857],256],13156:[[49,50,28857],256],13157:[[49,51,28857],256],13158:[[49,52,28857],256],13159:[[49,53,28857],256],13160:[[49,54,28857],256],13161:[[49,55,28857],256],13162:[[49,56,28857],256],13163:[[49,57,28857],256],13164:[[50,48,28857],256],13165:[[50,49,28857],256],13166:[[50,50,28857],256],13167:[[50,51,28857],256],13168:[[50,52,28857],256],13169:[[104,80,97],256],13170:[[100,97],256],13171:[[65,85],256],13172:[[98,97,114],256],13173:[[111,86],256],13174:[[112,99],256],13175:[[100,109],256],13176:[[100,109,178],256],13177:[[100,109,179],256],13178:[[73,85],256],13179:[[24179,25104],256],13180:[[26157,21644],256],13181:[[22823,27491],256],13182:[[26126,27835],256],13183:[[26666,24335,20250,31038],256],13184:[[112,65],256],13185:[[110,65],256],13186:[[956,65],256],13187:[[109,65],256],13188:[[107,65],256],13189:[[75,66],256],13190:[[77,66],256],13191:[[71,66],256],13192:[[99,97,108],256],13193:[[107,99,97,108],256],13194:[[112,70],256],13195:[[110,70],256],13196:[[956,70],256],13197:[[956,103],256],13198:[[109,103],256],13199:[[107,103],256],13200:[[72,122],256],13201:[[107,72,122],256],13202:[[77,72,122],256],13203:[[71,72,122],256],13204:[[84,72,122],256],13205:[[956,8467],256],13206:[[109,8467],256],13207:[[100,8467],256],13208:[[107,8467],256],13209:[[102,109],256],13210:[[110,109],256],13211:[[956,109],256],13212:[[109,109],256],13213:[[99,109],256],13214:[[107,109],256],13215:[[109,109,178],256],13216:[[99,109,178],256],13217:[[109,178],256],13218:[[107,109,178],256],13219:[[109,109,179],256],13220:[[99,109,179],256],13221:[[109,179],256],13222:[[107,109,179],256],13223:[[109,8725,115],256],13224:[[109,8725,115,178],256],13225:[[80,97],256],13226:[[107,80,97],256],13227:[[77,80,97],256],13228:[[71,80,97],256],13229:[[114,97,100],256],13230:[[114,97,100,8725,115],256],13231:[[114,97,100,8725,115,178],256],13232:[[112,115],256],13233:[[110,115],256],13234:[[956,115],256],13235:[[109,115],256],13236:[[112,86],256],13237:[[110,86],256],13238:[[956,86],256],13239:[[109,86],256],13240:[[107,86],256],13241:[[77,86],256],13242:[[112,87],256],13243:[[110,87],256],13244:[[956,87],256],13245:[[109,87],256],13246:[[107,87],256],13247:[[77,87],256],13248:[[107,937],256],13249:[[77,937],256],13250:[[97,46,109,46],256],13251:[[66,113],256],13252:[[99,99],256],13253:[[99,100],256],13254:[[67,8725,107,103],256],13255:[[67,111,46],256],13256:[[100,66],256],13257:[[71,121],256],13258:[[104,97],256],13259:[[72,80],256],13260:[[105,110],256],13261:[[75,75],256],13262:[[75,77],256],13263:[[107,116],256],13264:[[108,109],256],13265:[[108,110],256],13266:[[108,111,103],256],13267:[[108,120],256],13268:[[109,98],256],13269:[[109,105,108],256],13270:[[109,111,108],256],13271:[[80,72],256],13272:[[112,46,109,46],256],13273:[[80,80,77],256],13274:[[80,82],256],13275:[[115,114],256],13276:[[83,118],256],13277:[[87,98],256],13278:[[86,8725,109],256],13279:[[65,8725,109],256],13280:[[49,26085],256],13281:[[50,26085],256],13282:[[51,26085],256],13283:[[52,26085],256],13284:[[53,26085],256],13285:[[54,26085],256],13286:[[55,26085],256],13287:[[56,26085],256],13288:[[57,26085],256],13289:[[49,48,26085],256],13290:[[49,49,26085],256],13291:[[49,50,26085],256],13292:[[49,51,26085],256],13293:[[49,52,26085],256],13294:[[49,53,26085],256],13295:[[49,54,26085],256],13296:[[49,55,26085],256],13297:[[49,56,26085],256],13298:[[49,57,26085],256],13299:[[50,48,26085],256],13300:[[50,49,26085],256],13301:[[50,50,26085],256],13302:[[50,51,26085],256],13303:[[50,52,26085],256],13304:[[50,53,26085],256],13305:[[50,54,26085],256],13306:[[50,55,26085],256],13307:[[50,56,26085],256],13308:[[50,57,26085],256],13309:[[51,48,26085],256],13310:[[51,49,26085],256],13311:[[103,97,108],256]},
+27136:{92912:[,1],92913:[,1],92914:[,1],92915:[,1],92916:[,1]},
+27392:{92976:[,230],92977:[,230],92978:[,230],92979:[,230],92980:[,230],92981:[,230],92982:[,230]},
+42496:{42607:[,230],42612:[,230],42613:[,230],42614:[,230],42615:[,230],42616:[,230],42617:[,230],42618:[,230],42619:[,230],42620:[,230],42621:[,230],42652:[[1098],256],42653:[[1100],256],42655:[,230],42736:[,230],42737:[,230]},
+42752:{42864:[[42863],256],43000:[[294],256],43001:[[339],256]},
+43008:{43014:[,9],43204:[,9],43232:[,230],43233:[,230],43234:[,230],43235:[,230],43236:[,230],43237:[,230],43238:[,230],43239:[,230],43240:[,230],43241:[,230],43242:[,230],43243:[,230],43244:[,230],43245:[,230],43246:[,230],43247:[,230],43248:[,230],43249:[,230]},
+43264:{43307:[,220],43308:[,220],43309:[,220],43347:[,9],43443:[,7],43456:[,9]},
+43520:{43696:[,230],43698:[,230],43699:[,230],43700:[,220],43703:[,230],43704:[,230],43710:[,230],43711:[,230],43713:[,230],43766:[,9]},
+43776:{43868:[[42791],256],43869:[[43831],256],43870:[[619],256],43871:[[43858],256],44013:[,9]},
+48128:{113822:[,1]},
+53504:{119134:[[119127,119141],512],119135:[[119128,119141],512],119136:[[119135,119150],512],119137:[[119135,119151],512],119138:[[119135,119152],512],119139:[[119135,119153],512],119140:[[119135,119154],512],119141:[,216],119142:[,216],119143:[,1],119144:[,1],119145:[,1],119149:[,226],119150:[,216],119151:[,216],119152:[,216],119153:[,216],119154:[,216],119163:[,220],119164:[,220],119165:[,220],119166:[,220],119167:[,220],119168:[,220],119169:[,220],119170:[,220],119173:[,230],119174:[,230],119175:[,230],119176:[,230],119177:[,230],119178:[,220],119179:[,220],119210:[,230],119211:[,230],119212:[,230],119213:[,230],119227:[[119225,119141],512],119228:[[119226,119141],512],119229:[[119227,119150],512],119230:[[119228,119150],512],119231:[[119227,119151],512],119232:[[119228,119151],512]},
+53760:{119362:[,230],119363:[,230],119364:[,230]},
+54272:{119808:[[65],256],119809:[[66],256],119810:[[67],256],119811:[[68],256],119812:[[69],256],119813:[[70],256],119814:[[71],256],119815:[[72],256],119816:[[73],256],119817:[[74],256],119818:[[75],256],119819:[[76],256],119820:[[77],256],119821:[[78],256],119822:[[79],256],119823:[[80],256],119824:[[81],256],119825:[[82],256],119826:[[83],256],119827:[[84],256],119828:[[85],256],119829:[[86],256],119830:[[87],256],119831:[[88],256],119832:[[89],256],119833:[[90],256],119834:[[97],256],119835:[[98],256],119836:[[99],256],119837:[[100],256],119838:[[101],256],119839:[[102],256],119840:[[103],256],119841:[[104],256],119842:[[105],256],119843:[[106],256],119844:[[107],256],119845:[[108],256],119846:[[109],256],119847:[[110],256],119848:[[111],256],119849:[[112],256],119850:[[113],256],119851:[[114],256],119852:[[115],256],119853:[[116],256],119854:[[117],256],119855:[[118],256],119856:[[119],256],119857:[[120],256],119858:[[121],256],119859:[[122],256],119860:[[65],256],119861:[[66],256],119862:[[67],256],119863:[[68],256],119864:[[69],256],119865:[[70],256],119866:[[71],256],119867:[[72],256],119868:[[73],256],119869:[[74],256],119870:[[75],256],119871:[[76],256],119872:[[77],256],119873:[[78],256],119874:[[79],256],119875:[[80],256],119876:[[81],256],119877:[[82],256],119878:[[83],256],119879:[[84],256],119880:[[85],256],119881:[[86],256],119882:[[87],256],119883:[[88],256],119884:[[89],256],119885:[[90],256],119886:[[97],256],119887:[[98],256],119888:[[99],256],119889:[[100],256],119890:[[101],256],119891:[[102],256],119892:[[103],256],119894:[[105],256],119895:[[106],256],119896:[[107],256],119897:[[108],256],119898:[[109],256],119899:[[110],256],119900:[[111],256],119901:[[112],256],119902:[[113],256],119903:[[114],256],119904:[[115],256],119905:[[116],256],119906:[[117],256],119907:[[118],256],119908:[[119],256],119909:[[120],256],119910:[[121],256],119911:[[122],256],119912:[[65],256],119913:[[66],256],119914:[[67],256],119915:[[68],256],119916:[[69],256],119917:[[70],256],119918:[[71],256],119919:[[72],256],119920:[[73],256],119921:[[74],256],119922:[[75],256],119923:[[76],256],119924:[[77],256],119925:[[78],256],119926:[[79],256],119927:[[80],256],119928:[[81],256],119929:[[82],256],119930:[[83],256],119931:[[84],256],119932:[[85],256],119933:[[86],256],119934:[[87],256],119935:[[88],256],119936:[[89],256],119937:[[90],256],119938:[[97],256],119939:[[98],256],119940:[[99],256],119941:[[100],256],119942:[[101],256],119943:[[102],256],119944:[[103],256],119945:[[104],256],119946:[[105],256],119947:[[106],256],119948:[[107],256],119949:[[108],256],119950:[[109],256],119951:[[110],256],119952:[[111],256],119953:[[112],256],119954:[[113],256],119955:[[114],256],119956:[[115],256],119957:[[116],256],119958:[[117],256],119959:[[118],256],119960:[[119],256],119961:[[120],256],119962:[[121],256],119963:[[122],256],119964:[[65],256],119966:[[67],256],119967:[[68],256],119970:[[71],256],119973:[[74],256],119974:[[75],256],119977:[[78],256],119978:[[79],256],119979:[[80],256],119980:[[81],256],119982:[[83],256],119983:[[84],256],119984:[[85],256],119985:[[86],256],119986:[[87],256],119987:[[88],256],119988:[[89],256],119989:[[90],256],119990:[[97],256],119991:[[98],256],119992:[[99],256],119993:[[100],256],119995:[[102],256],119997:[[104],256],119998:[[105],256],119999:[[106],256],120000:[[107],256],120001:[[108],256],120002:[[109],256],120003:[[110],256],120005:[[112],256],120006:[[113],256],120007:[[114],256],120008:[[115],256],120009:[[116],256],120010:[[117],256],120011:[[118],256],120012:[[119],256],120013:[[120],256],120014:[[121],256],120015:[[122],256],120016:[[65],256],120017:[[66],256],120018:[[67],256],120019:[[68],256],120020:[[69],256],120021:[[70],256],120022:[[71],256],120023:[[72],256],120024:[[73],256],120025:[[74],256],120026:[[75],256],120027:[[76],256],120028:[[77],256],120029:[[78],256],120030:[[79],256],120031:[[80],256],120032:[[81],256],120033:[[82],256],120034:[[83],256],120035:[[84],256],120036:[[85],256],120037:[[86],256],120038:[[87],256],120039:[[88],256],120040:[[89],256],120041:[[90],256],120042:[[97],256],120043:[[98],256],120044:[[99],256],120045:[[100],256],120046:[[101],256],120047:[[102],256],120048:[[103],256],120049:[[104],256],120050:[[105],256],120051:[[106],256],120052:[[107],256],120053:[[108],256],120054:[[109],256],120055:[[110],256],120056:[[111],256],120057:[[112],256],120058:[[113],256],120059:[[114],256],120060:[[115],256],120061:[[116],256],120062:[[117],256],120063:[[118],256]},
+54528:{120064:[[119],256],120065:[[120],256],120066:[[121],256],120067:[[122],256],120068:[[65],256],120069:[[66],256],120071:[[68],256],120072:[[69],256],120073:[[70],256],120074:[[71],256],120077:[[74],256],120078:[[75],256],120079:[[76],256],120080:[[77],256],120081:[[78],256],120082:[[79],256],120083:[[80],256],120084:[[81],256],120086:[[83],256],120087:[[84],256],120088:[[85],256],120089:[[86],256],120090:[[87],256],120091:[[88],256],120092:[[89],256],120094:[[97],256],120095:[[98],256],120096:[[99],256],120097:[[100],256],120098:[[101],256],120099:[[102],256],120100:[[103],256],120101:[[104],256],120102:[[105],256],120103:[[106],256],120104:[[107],256],120105:[[108],256],120106:[[109],256],120107:[[110],256],120108:[[111],256],120109:[[112],256],120110:[[113],256],120111:[[114],256],120112:[[115],256],120113:[[116],256],120114:[[117],256],120115:[[118],256],120116:[[119],256],120117:[[120],256],120118:[[121],256],120119:[[122],256],120120:[[65],256],120121:[[66],256],120123:[[68],256],120124:[[69],256],120125:[[70],256],120126:[[71],256],120128:[[73],256],120129:[[74],256],120130:[[75],256],120131:[[76],256],120132:[[77],256],120134:[[79],256],120138:[[83],256],120139:[[84],256],120140:[[85],256],120141:[[86],256],120142:[[87],256],120143:[[88],256],120144:[[89],256],120146:[[97],256],120147:[[98],256],120148:[[99],256],120149:[[100],256],120150:[[101],256],120151:[[102],256],120152:[[103],256],120153:[[104],256],120154:[[105],256],120155:[[106],256],120156:[[107],256],120157:[[108],256],120158:[[109],256],120159:[[110],256],120160:[[111],256],120161:[[112],256],120162:[[113],256],120163:[[114],256],120164:[[115],256],120165:[[116],256],120166:[[117],256],120167:[[118],256],120168:[[119],256],120169:[[120],256],120170:[[121],256],120171:[[122],256],120172:[[65],256],120173:[[66],256],120174:[[67],256],120175:[[68],256],120176:[[69],256],120177:[[70],256],120178:[[71],256],120179:[[72],256],120180:[[73],256],120181:[[74],256],120182:[[75],256],120183:[[76],256],120184:[[77],256],120185:[[78],256],120186:[[79],256],120187:[[80],256],120188:[[81],256],120189:[[82],256],120190:[[83],256],120191:[[84],256],120192:[[85],256],120193:[[86],256],120194:[[87],256],120195:[[88],256],120196:[[89],256],120197:[[90],256],120198:[[97],256],120199:[[98],256],120200:[[99],256],120201:[[100],256],120202:[[101],256],120203:[[102],256],120204:[[103],256],120205:[[104],256],120206:[[105],256],120207:[[106],256],120208:[[107],256],120209:[[108],256],120210:[[109],256],120211:[[110],256],120212:[[111],256],120213:[[112],256],120214:[[113],256],120215:[[114],256],120216:[[115],256],120217:[[116],256],120218:[[117],256],120219:[[118],256],120220:[[119],256],120221:[[120],256],120222:[[121],256],120223:[[122],256],120224:[[65],256],120225:[[66],256],120226:[[67],256],120227:[[68],256],120228:[[69],256],120229:[[70],256],120230:[[71],256],120231:[[72],256],120232:[[73],256],120233:[[74],256],120234:[[75],256],120235:[[76],256],120236:[[77],256],120237:[[78],256],120238:[[79],256],120239:[[80],256],120240:[[81],256],120241:[[82],256],120242:[[83],256],120243:[[84],256],120244:[[85],256],120245:[[86],256],120246:[[87],256],120247:[[88],256],120248:[[89],256],120249:[[90],256],120250:[[97],256],120251:[[98],256],120252:[[99],256],120253:[[100],256],120254:[[101],256],120255:[[102],256],120256:[[103],256],120257:[[104],256],120258:[[105],256],120259:[[106],256],120260:[[107],256],120261:[[108],256],120262:[[109],256],120263:[[110],256],120264:[[111],256],120265:[[112],256],120266:[[113],256],120267:[[114],256],120268:[[115],256],120269:[[116],256],120270:[[117],256],120271:[[118],256],120272:[[119],256],120273:[[120],256],120274:[[121],256],120275:[[122],256],120276:[[65],256],120277:[[66],256],120278:[[67],256],120279:[[68],256],120280:[[69],256],120281:[[70],256],120282:[[71],256],120283:[[72],256],120284:[[73],256],120285:[[74],256],120286:[[75],256],120287:[[76],256],120288:[[77],256],120289:[[78],256],120290:[[79],256],120291:[[80],256],120292:[[81],256],120293:[[82],256],120294:[[83],256],120295:[[84],256],120296:[[85],256],120297:[[86],256],120298:[[87],256],120299:[[88],256],120300:[[89],256],120301:[[90],256],120302:[[97],256],120303:[[98],256],120304:[[99],256],120305:[[100],256],120306:[[101],256],120307:[[102],256],120308:[[103],256],120309:[[104],256],120310:[[105],256],120311:[[106],256],120312:[[107],256],120313:[[108],256],120314:[[109],256],120315:[[110],256],120316:[[111],256],120317:[[112],256],120318:[[113],256],120319:[[114],256]},
+54784:{120320:[[115],256],120321:[[116],256],120322:[[117],256],120323:[[118],256],120324:[[119],256],120325:[[120],256],120326:[[121],256],120327:[[122],256],120328:[[65],256],120329:[[66],256],120330:[[67],256],120331:[[68],256],120332:[[69],256],120333:[[70],256],120334:[[71],256],120335:[[72],256],120336:[[73],256],120337:[[74],256],120338:[[75],256],120339:[[76],256],120340:[[77],256],120341:[[78],256],120342:[[79],256],120343:[[80],256],120344:[[81],256],120345:[[82],256],120346:[[83],256],120347:[[84],256],120348:[[85],256],120349:[[86],256],120350:[[87],256],120351:[[88],256],120352:[[89],256],120353:[[90],256],120354:[[97],256],120355:[[98],256],120356:[[99],256],120357:[[100],256],120358:[[101],256],120359:[[102],256],120360:[[103],256],120361:[[104],256],120362:[[105],256],120363:[[106],256],120364:[[107],256],120365:[[108],256],120366:[[109],256],120367:[[110],256],120368:[[111],256],120369:[[112],256],120370:[[113],256],120371:[[114],256],120372:[[115],256],120373:[[116],256],120374:[[117],256],120375:[[118],256],120376:[[119],256],120377:[[120],256],120378:[[121],256],120379:[[122],256],120380:[[65],256],120381:[[66],256],120382:[[67],256],120383:[[68],256],120384:[[69],256],120385:[[70],256],120386:[[71],256],120387:[[72],256],120388:[[73],256],120389:[[74],256],120390:[[75],256],120391:[[76],256],120392:[[77],256],120393:[[78],256],120394:[[79],256],120395:[[80],256],120396:[[81],256],120397:[[82],256],120398:[[83],256],120399:[[84],256],120400:[[85],256],120401:[[86],256],120402:[[87],256],120403:[[88],256],120404:[[89],256],120405:[[90],256],120406:[[97],256],120407:[[98],256],120408:[[99],256],120409:[[100],256],120410:[[101],256],120411:[[102],256],120412:[[103],256],120413:[[104],256],120414:[[105],256],120415:[[106],256],120416:[[107],256],120417:[[108],256],120418:[[109],256],120419:[[110],256],120420:[[111],256],120421:[[112],256],120422:[[113],256],120423:[[114],256],120424:[[115],256],120425:[[116],256],120426:[[117],256],120427:[[118],256],120428:[[119],256],120429:[[120],256],120430:[[121],256],120431:[[122],256],120432:[[65],256],120433:[[66],256],120434:[[67],256],120435:[[68],256],120436:[[69],256],120437:[[70],256],120438:[[71],256],120439:[[72],256],120440:[[73],256],120441:[[74],256],120442:[[75],256],120443:[[76],256],120444:[[77],256],120445:[[78],256],120446:[[79],256],120447:[[80],256],120448:[[81],256],120449:[[82],256],120450:[[83],256],120451:[[84],256],120452:[[85],256],120453:[[86],256],120454:[[87],256],120455:[[88],256],120456:[[89],256],120457:[[90],256],120458:[[97],256],120459:[[98],256],120460:[[99],256],120461:[[100],256],120462:[[101],256],120463:[[102],256],120464:[[103],256],120465:[[104],256],120466:[[105],256],120467:[[106],256],120468:[[107],256],120469:[[108],256],120470:[[109],256],120471:[[110],256],120472:[[111],256],120473:[[112],256],120474:[[113],256],120475:[[114],256],120476:[[115],256],120477:[[116],256],120478:[[117],256],120479:[[118],256],120480:[[119],256],120481:[[120],256],120482:[[121],256],120483:[[122],256],120484:[[305],256],120485:[[567],256],120488:[[913],256],120489:[[914],256],120490:[[915],256],120491:[[916],256],120492:[[917],256],120493:[[918],256],120494:[[919],256],120495:[[920],256],120496:[[921],256],120497:[[922],256],120498:[[923],256],120499:[[924],256],120500:[[925],256],120501:[[926],256],120502:[[927],256],120503:[[928],256],120504:[[929],256],120505:[[1012],256],120506:[[931],256],120507:[[932],256],120508:[[933],256],120509:[[934],256],120510:[[935],256],120511:[[936],256],120512:[[937],256],120513:[[8711],256],120514:[[945],256],120515:[[946],256],120516:[[947],256],120517:[[948],256],120518:[[949],256],120519:[[950],256],120520:[[951],256],120521:[[952],256],120522:[[953],256],120523:[[954],256],120524:[[955],256],120525:[[956],256],120526:[[957],256],120527:[[958],256],120528:[[959],256],120529:[[960],256],120530:[[961],256],120531:[[962],256],120532:[[963],256],120533:[[964],256],120534:[[965],256],120535:[[966],256],120536:[[967],256],120537:[[968],256],120538:[[969],256],120539:[[8706],256],120540:[[1013],256],120541:[[977],256],120542:[[1008],256],120543:[[981],256],120544:[[1009],256],120545:[[982],256],120546:[[913],256],120547:[[914],256],120548:[[915],256],120549:[[916],256],120550:[[917],256],120551:[[918],256],120552:[[919],256],120553:[[920],256],120554:[[921],256],120555:[[922],256],120556:[[923],256],120557:[[924],256],120558:[[925],256],120559:[[926],256],120560:[[927],256],120561:[[928],256],120562:[[929],256],120563:[[1012],256],120564:[[931],256],120565:[[932],256],120566:[[933],256],120567:[[934],256],120568:[[935],256],120569:[[936],256],120570:[[937],256],120571:[[8711],256],120572:[[945],256],120573:[[946],256],120574:[[947],256],120575:[[948],256]},
+55040:{120576:[[949],256],120577:[[950],256],120578:[[951],256],120579:[[952],256],120580:[[953],256],120581:[[954],256],120582:[[955],256],120583:[[956],256],120584:[[957],256],120585:[[958],256],120586:[[959],256],120587:[[960],256],120588:[[961],256],120589:[[962],256],120590:[[963],256],120591:[[964],256],120592:[[965],256],120593:[[966],256],120594:[[967],256],120595:[[968],256],120596:[[969],256],120597:[[8706],256],120598:[[1013],256],120599:[[977],256],120600:[[1008],256],120601:[[981],256],120602:[[1009],256],120603:[[982],256],120604:[[913],256],120605:[[914],256],120606:[[915],256],120607:[[916],256],120608:[[917],256],120609:[[918],256],120610:[[919],256],120611:[[920],256],120612:[[921],256],120613:[[922],256],120614:[[923],256],120615:[[924],256],120616:[[925],256],120617:[[926],256],120618:[[927],256],120619:[[928],256],120620:[[929],256],120621:[[1012],256],120622:[[931],256],120623:[[932],256],120624:[[933],256],120625:[[934],256],120626:[[935],256],120627:[[936],256],120628:[[937],256],120629:[[8711],256],120630:[[945],256],120631:[[946],256],120632:[[947],256],120633:[[948],256],120634:[[949],256],120635:[[950],256],120636:[[951],256],120637:[[952],256],120638:[[953],256],120639:[[954],256],120640:[[955],256],120641:[[956],256],120642:[[957],256],120643:[[958],256],120644:[[959],256],120645:[[960],256],120646:[[961],256],120647:[[962],256],120648:[[963],256],120649:[[964],256],120650:[[965],256],120651:[[966],256],120652:[[967],256],120653:[[968],256],120654:[[969],256],120655:[[8706],256],120656:[[1013],256],120657:[[977],256],120658:[[1008],256],120659:[[981],256],120660:[[1009],256],120661:[[982],256],120662:[[913],256],120663:[[914],256],120664:[[915],256],120665:[[916],256],120666:[[917],256],120667:[[918],256],120668:[[919],256],120669:[[920],256],120670:[[921],256],120671:[[922],256],120672:[[923],256],120673:[[924],256],120674:[[925],256],120675:[[926],256],120676:[[927],256],120677:[[928],256],120678:[[929],256],120679:[[1012],256],120680:[[931],256],120681:[[932],256],120682:[[933],256],120683:[[934],256],120684:[[935],256],120685:[[936],256],120686:[[937],256],120687:[[8711],256],120688:[[945],256],120689:[[946],256],120690:[[947],256],120691:[[948],256],120692:[[949],256],120693:[[950],256],120694:[[951],256],120695:[[952],256],120696:[[953],256],120697:[[954],256],120698:[[955],256],120699:[[956],256],120700:[[957],256],120701:[[958],256],120702:[[959],256],120703:[[960],256],120704:[[961],256],120705:[[962],256],120706:[[963],256],120707:[[964],256],120708:[[965],256],120709:[[966],256],120710:[[967],256],120711:[[968],256],120712:[[969],256],120713:[[8706],256],120714:[[1013],256],120715:[[977],256],120716:[[1008],256],120717:[[981],256],120718:[[1009],256],120719:[[982],256],120720:[[913],256],120721:[[914],256],120722:[[915],256],120723:[[916],256],120724:[[917],256],120725:[[918],256],120726:[[919],256],120727:[[920],256],120728:[[921],256],120729:[[922],256],120730:[[923],256],120731:[[924],256],120732:[[925],256],120733:[[926],256],120734:[[927],256],120735:[[928],256],120736:[[929],256],120737:[[1012],256],120738:[[931],256],120739:[[932],256],120740:[[933],256],120741:[[934],256],120742:[[935],256],120743:[[936],256],120744:[[937],256],120745:[[8711],256],120746:[[945],256],120747:[[946],256],120748:[[947],256],120749:[[948],256],120750:[[949],256],120751:[[950],256],120752:[[951],256],120753:[[952],256],120754:[[953],256],120755:[[954],256],120756:[[955],256],120757:[[956],256],120758:[[957],256],120759:[[958],256],120760:[[959],256],120761:[[960],256],120762:[[961],256],120763:[[962],256],120764:[[963],256],120765:[[964],256],120766:[[965],256],120767:[[966],256],120768:[[967],256],120769:[[968],256],120770:[[969],256],120771:[[8706],256],120772:[[1013],256],120773:[[977],256],120774:[[1008],256],120775:[[981],256],120776:[[1009],256],120777:[[982],256],120778:[[988],256],120779:[[989],256],120782:[[48],256],120783:[[49],256],120784:[[50],256],120785:[[51],256],120786:[[52],256],120787:[[53],256],120788:[[54],256],120789:[[55],256],120790:[[56],256],120791:[[57],256],120792:[[48],256],120793:[[49],256],120794:[[50],256],120795:[[51],256],120796:[[52],256],120797:[[53],256],120798:[[54],256],120799:[[55],256],120800:[[56],256],120801:[[57],256],120802:[[48],256],120803:[[49],256],120804:[[50],256],120805:[[51],256],120806:[[52],256],120807:[[53],256],120808:[[54],256],120809:[[55],256],120810:[[56],256],120811:[[57],256],120812:[[48],256],120813:[[49],256],120814:[[50],256],120815:[[51],256],120816:[[52],256],120817:[[53],256],120818:[[54],256],120819:[[55],256],120820:[[56],256],120821:[[57],256],120822:[[48],256],120823:[[49],256],120824:[[50],256],120825:[[51],256],120826:[[52],256],120827:[[53],256],120828:[[54],256],120829:[[55],256],120830:[[56],256],120831:[[57],256]},
+59392:{125136:[,220],125137:[,220],125138:[,220],125139:[,220],125140:[,220],125141:[,220],125142:[,220]},
+60928:{126464:[[1575],256],126465:[[1576],256],126466:[[1580],256],126467:[[1583],256],126469:[[1608],256],126470:[[1586],256],126471:[[1581],256],126472:[[1591],256],126473:[[1610],256],126474:[[1603],256],126475:[[1604],256],126476:[[1605],256],126477:[[1606],256],126478:[[1587],256],126479:[[1593],256],126480:[[1601],256],126481:[[1589],256],126482:[[1602],256],126483:[[1585],256],126484:[[1588],256],126485:[[1578],256],126486:[[1579],256],126487:[[1582],256],126488:[[1584],256],126489:[[1590],256],126490:[[1592],256],126491:[[1594],256],126492:[[1646],256],126493:[[1722],256],126494:[[1697],256],126495:[[1647],256],126497:[[1576],256],126498:[[1580],256],126500:[[1607],256],126503:[[1581],256],126505:[[1610],256],126506:[[1603],256],126507:[[1604],256],126508:[[1605],256],126509:[[1606],256],126510:[[1587],256],126511:[[1593],256],126512:[[1601],256],126513:[[1589],256],126514:[[1602],256],126516:[[1588],256],126517:[[1578],256],126518:[[1579],256],126519:[[1582],256],126521:[[1590],256],126523:[[1594],256],126530:[[1580],256],126535:[[1581],256],126537:[[1610],256],126539:[[1604],256],126541:[[1606],256],126542:[[1587],256],126543:[[1593],256],126545:[[1589],256],126546:[[1602],256],126548:[[1588],256],126551:[[1582],256],126553:[[1590],256],126555:[[1594],256],126557:[[1722],256],126559:[[1647],256],126561:[[1576],256],126562:[[1580],256],126564:[[1607],256],126567:[[1581],256],126568:[[1591],256],126569:[[1610],256],126570:[[1603],256],126572:[[1605],256],126573:[[1606],256],126574:[[1587],256],126575:[[1593],256],126576:[[1601],256],126577:[[1589],256],126578:[[1602],256],126580:[[1588],256],126581:[[1578],256],126582:[[1579],256],126583:[[1582],256],126585:[[1590],256],126586:[[1592],256],126587:[[1594],256],126588:[[1646],256],126590:[[1697],256],126592:[[1575],256],126593:[[1576],256],126594:[[1580],256],126595:[[1583],256],126596:[[1607],256],126597:[[1608],256],126598:[[1586],256],126599:[[1581],256],126600:[[1591],256],126601:[[1610],256],126603:[[1604],256],126604:[[1605],256],126605:[[1606],256],126606:[[1587],256],126607:[[1593],256],126608:[[1601],256],126609:[[1589],256],126610:[[1602],256],126611:[[1585],256],126612:[[1588],256],126613:[[1578],256],126614:[[1579],256],126615:[[1582],256],126616:[[1584],256],126617:[[1590],256],126618:[[1592],256],126619:[[1594],256],126625:[[1576],256],126626:[[1580],256],126627:[[1583],256],126629:[[1608],256],126630:[[1586],256],126631:[[1581],256],126632:[[1591],256],126633:[[1610],256],126635:[[1604],256],126636:[[1605],256],126637:[[1606],256],126638:[[1587],256],126639:[[1593],256],126640:[[1601],256],126641:[[1589],256],126642:[[1602],256],126643:[[1585],256],126644:[[1588],256],126645:[[1578],256],126646:[[1579],256],126647:[[1582],256],126648:[[1584],256],126649:[[1590],256],126650:[[1592],256],126651:[[1594],256]},
+61696:{127232:[[48,46],256],127233:[[48,44],256],127234:[[49,44],256],127235:[[50,44],256],127236:[[51,44],256],127237:[[52,44],256],127238:[[53,44],256],127239:[[54,44],256],127240:[[55,44],256],127241:[[56,44],256],127242:[[57,44],256],127248:[[40,65,41],256],127249:[[40,66,41],256],127250:[[40,67,41],256],127251:[[40,68,41],256],127252:[[40,69,41],256],127253:[[40,70,41],256],127254:[[40,71,41],256],127255:[[40,72,41],256],127256:[[40,73,41],256],127257:[[40,74,41],256],127258:[[40,75,41],256],127259:[[40,76,41],256],127260:[[40,77,41],256],127261:[[40,78,41],256],127262:[[40,79,41],256],127263:[[40,80,41],256],127264:[[40,81,41],256],127265:[[40,82,41],256],127266:[[40,83,41],256],127267:[[40,84,41],256],127268:[[40,85,41],256],127269:[[40,86,41],256],127270:[[40,87,41],256],127271:[[40,88,41],256],127272:[[40,89,41],256],127273:[[40,90,41],256],127274:[[12308,83,12309],256],127275:[[67],256],127276:[[82],256],127277:[[67,68],256],127278:[[87,90],256],127280:[[65],256],127281:[[66],256],127282:[[67],256],127283:[[68],256],127284:[[69],256],127285:[[70],256],127286:[[71],256],127287:[[72],256],127288:[[73],256],127289:[[74],256],127290:[[75],256],127291:[[76],256],127292:[[77],256],127293:[[78],256],127294:[[79],256],127295:[[80],256],127296:[[81],256],127297:[[82],256],127298:[[83],256],127299:[[84],256],127300:[[85],256],127301:[[86],256],127302:[[87],256],127303:[[88],256],127304:[[89],256],127305:[[90],256],127306:[[72,86],256],127307:[[77,86],256],127308:[[83,68],256],127309:[[83,83],256],127310:[[80,80,86],256],127311:[[87,67],256],127338:[[77,67],256],127339:[[77,68],256],127376:[[68,74],256]},
+61952:{127488:[[12411,12363],256],127489:[[12467,12467],256],127490:[[12469],256],127504:[[25163],256],127505:[[23383],256],127506:[[21452],256],127507:[[12487],256],127508:[[20108],256],127509:[[22810],256],127510:[[35299],256],127511:[[22825],256],127512:[[20132],256],127513:[[26144],256],127514:[[28961],256],127515:[[26009],256],127516:[[21069],256],127517:[[24460],256],127518:[[20877],256],127519:[[26032],256],127520:[[21021],256],127521:[[32066],256],127522:[[29983],256],127523:[[36009],256],127524:[[22768],256],127525:[[21561],256],127526:[[28436],256],127527:[[25237],256],127528:[[25429],256],127529:[[19968],256],127530:[[19977],256],127531:[[36938],256],127532:[[24038],256],127533:[[20013],256],127534:[[21491],256],127535:[[25351],256],127536:[[36208],256],127537:[[25171],256],127538:[[31105],256],127539:[[31354],256],127540:[[21512],256],127541:[[28288],256],127542:[[26377],256],127543:[[26376],256],127544:[[30003],256],127545:[[21106],256],127546:[[21942],256],127552:[[12308,26412,12309],256],127553:[[12308,19977,12309],256],127554:[[12308,20108,12309],256],127555:[[12308,23433,12309],256],127556:[[12308,28857,12309],256],127557:[[12308,25171,12309],256],127558:[[12308,30423,12309],256],127559:[[12308,21213,12309],256],127560:[[12308,25943,12309],256],127568:[[24471],256],127569:[[21487],256]},
+63488:{194560:[[20029]],194561:[[20024]],194562:[[20033]],194563:[[131362]],194564:[[20320]],194565:[[20398]],194566:[[20411]],194567:[[20482]],194568:[[20602]],194569:[[20633]],194570:[[20711]],194571:[[20687]],194572:[[13470]],194573:[[132666]],194574:[[20813]],194575:[[20820]],194576:[[20836]],194577:[[20855]],194578:[[132380]],194579:[[13497]],194580:[[20839]],194581:[[20877]],194582:[[132427]],194583:[[20887]],194584:[[20900]],194585:[[20172]],194586:[[20908]],194587:[[20917]],194588:[[168415]],194589:[[20981]],194590:[[20995]],194591:[[13535]],194592:[[21051]],194593:[[21062]],194594:[[21106]],194595:[[21111]],194596:[[13589]],194597:[[21191]],194598:[[21193]],194599:[[21220]],194600:[[21242]],194601:[[21253]],194602:[[21254]],194603:[[21271]],194604:[[21321]],194605:[[21329]],194606:[[21338]],194607:[[21363]],194608:[[21373]],194609:[[21375]],194610:[[21375]],194611:[[21375]],194612:[[133676]],194613:[[28784]],194614:[[21450]],194615:[[21471]],194616:[[133987]],194617:[[21483]],194618:[[21489]],194619:[[21510]],194620:[[21662]],194621:[[21560]],194622:[[21576]],194623:[[21608]],194624:[[21666]],194625:[[21750]],194626:[[21776]],194627:[[21843]],194628:[[21859]],194629:[[21892]],194630:[[21892]],194631:[[21913]],194632:[[21931]],194633:[[21939]],194634:[[21954]],194635:[[22294]],194636:[[22022]],194637:[[22295]],194638:[[22097]],194639:[[22132]],194640:[[20999]],194641:[[22766]],194642:[[22478]],194643:[[22516]],194644:[[22541]],194645:[[22411]],194646:[[22578]],194647:[[22577]],194648:[[22700]],194649:[[136420]],194650:[[22770]],194651:[[22775]],194652:[[22790]],194653:[[22810]],194654:[[22818]],194655:[[22882]],194656:[[136872]],194657:[[136938]],194658:[[23020]],194659:[[23067]],194660:[[23079]],194661:[[23000]],194662:[[23142]],194663:[[14062]],194664:[[14076]],194665:[[23304]],194666:[[23358]],194667:[[23358]],194668:[[137672]],194669:[[23491]],194670:[[23512]],194671:[[23527]],194672:[[23539]],194673:[[138008]],194674:[[23551]],194675:[[23558]],194676:[[24403]],194677:[[23586]],194678:[[14209]],194679:[[23648]],194680:[[23662]],194681:[[23744]],194682:[[23693]],194683:[[138724]],194684:[[23875]],194685:[[138726]],194686:[[23918]],194687:[[23915]],194688:[[23932]],194689:[[24033]],194690:[[24034]],194691:[[14383]],194692:[[24061]],194693:[[24104]],194694:[[24125]],194695:[[24169]],194696:[[14434]],194697:[[139651]],194698:[[14460]],194699:[[24240]],194700:[[24243]],194701:[[24246]],194702:[[24266]],194703:[[172946]],194704:[[24318]],194705:[[140081]],194706:[[140081]],194707:[[33281]],194708:[[24354]],194709:[[24354]],194710:[[14535]],194711:[[144056]],194712:[[156122]],194713:[[24418]],194714:[[24427]],194715:[[14563]],194716:[[24474]],194717:[[24525]],194718:[[24535]],194719:[[24569]],194720:[[24705]],194721:[[14650]],194722:[[14620]],194723:[[24724]],194724:[[141012]],194725:[[24775]],194726:[[24904]],194727:[[24908]],194728:[[24910]],194729:[[24908]],194730:[[24954]],194731:[[24974]],194732:[[25010]],194733:[[24996]],194734:[[25007]],194735:[[25054]],194736:[[25074]],194737:[[25078]],194738:[[25104]],194739:[[25115]],194740:[[25181]],194741:[[25265]],194742:[[25300]],194743:[[25424]],194744:[[142092]],194745:[[25405]],194746:[[25340]],194747:[[25448]],194748:[[25475]],194749:[[25572]],194750:[[142321]],194751:[[25634]],194752:[[25541]],194753:[[25513]],194754:[[14894]],194755:[[25705]],194756:[[25726]],194757:[[25757]],194758:[[25719]],194759:[[14956]],194760:[[25935]],194761:[[25964]],194762:[[143370]],194763:[[26083]],194764:[[26360]],194765:[[26185]],194766:[[15129]],194767:[[26257]],194768:[[15112]],194769:[[15076]],194770:[[20882]],194771:[[20885]],194772:[[26368]],194773:[[26268]],194774:[[32941]],194775:[[17369]],194776:[[26391]],194777:[[26395]],194778:[[26401]],194779:[[26462]],194780:[[26451]],194781:[[144323]],194782:[[15177]],194783:[[26618]],194784:[[26501]],194785:[[26706]],194786:[[26757]],194787:[[144493]],194788:[[26766]],194789:[[26655]],194790:[[26900]],194791:[[15261]],194792:[[26946]],194793:[[27043]],194794:[[27114]],194795:[[27304]],194796:[[145059]],194797:[[27355]],194798:[[15384]],194799:[[27425]],194800:[[145575]],194801:[[27476]],194802:[[15438]],194803:[[27506]],194804:[[27551]],194805:[[27578]],194806:[[27579]],194807:[[146061]],194808:[[138507]],194809:[[146170]],194810:[[27726]],194811:[[146620]],194812:[[27839]],194813:[[27853]],194814:[[27751]],194815:[[27926]]},
+63744:{63744:[[35912]],63745:[[26356]],63746:[[36554]],63747:[[36040]],63748:[[28369]],63749:[[20018]],63750:[[21477]],63751:[[40860]],63752:[[40860]],63753:[[22865]],63754:[[37329]],63755:[[21895]],63756:[[22856]],63757:[[25078]],63758:[[30313]],63759:[[32645]],63760:[[34367]],63761:[[34746]],63762:[[35064]],63763:[[37007]],63764:[[27138]],63765:[[27931]],63766:[[28889]],63767:[[29662]],63768:[[33853]],63769:[[37226]],63770:[[39409]],63771:[[20098]],63772:[[21365]],63773:[[27396]],63774:[[29211]],63775:[[34349]],63776:[[40478]],63777:[[23888]],63778:[[28651]],63779:[[34253]],63780:[[35172]],63781:[[25289]],63782:[[33240]],63783:[[34847]],63784:[[24266]],63785:[[26391]],63786:[[28010]],63787:[[29436]],63788:[[37070]],63789:[[20358]],63790:[[20919]],63791:[[21214]],63792:[[25796]],63793:[[27347]],63794:[[29200]],63795:[[30439]],63796:[[32769]],63797:[[34310]],63798:[[34396]],63799:[[36335]],63800:[[38706]],63801:[[39791]],63802:[[40442]],63803:[[30860]],63804:[[31103]],63805:[[32160]],63806:[[33737]],63807:[[37636]],63808:[[40575]],63809:[[35542]],63810:[[22751]],63811:[[24324]],63812:[[31840]],63813:[[32894]],63814:[[29282]],63815:[[30922]],63816:[[36034]],63817:[[38647]],63818:[[22744]],63819:[[23650]],63820:[[27155]],63821:[[28122]],63822:[[28431]],63823:[[32047]],63824:[[32311]],63825:[[38475]],63826:[[21202]],63827:[[32907]],63828:[[20956]],63829:[[20940]],63830:[[31260]],63831:[[32190]],63832:[[33777]],63833:[[38517]],63834:[[35712]],63835:[[25295]],63836:[[27138]],63837:[[35582]],63838:[[20025]],63839:[[23527]],63840:[[24594]],63841:[[29575]],63842:[[30064]],63843:[[21271]],63844:[[30971]],63845:[[20415]],63846:[[24489]],63847:[[19981]],63848:[[27852]],63849:[[25976]],63850:[[32034]],63851:[[21443]],63852:[[22622]],63853:[[30465]],63854:[[33865]],63855:[[35498]],63856:[[27578]],63857:[[36784]],63858:[[27784]],63859:[[25342]],63860:[[33509]],63861:[[25504]],63862:[[30053]],63863:[[20142]],63864:[[20841]],63865:[[20937]],63866:[[26753]],63867:[[31975]],63868:[[33391]],63869:[[35538]],63870:[[37327]],63871:[[21237]],63872:[[21570]],63873:[[22899]],63874:[[24300]],63875:[[26053]],63876:[[28670]],63877:[[31018]],63878:[[38317]],63879:[[39530]],63880:[[40599]],63881:[[40654]],63882:[[21147]],63883:[[26310]],63884:[[27511]],63885:[[36706]],63886:[[24180]],63887:[[24976]],63888:[[25088]],63889:[[25754]],63890:[[28451]],63891:[[29001]],63892:[[29833]],63893:[[31178]],63894:[[32244]],63895:[[32879]],63896:[[36646]],63897:[[34030]],63898:[[36899]],63899:[[37706]],63900:[[21015]],63901:[[21155]],63902:[[21693]],63903:[[28872]],63904:[[35010]],63905:[[35498]],63906:[[24265]],63907:[[24565]],63908:[[25467]],63909:[[27566]],63910:[[31806]],63911:[[29557]],63912:[[20196]],63913:[[22265]],63914:[[23527]],63915:[[23994]],63916:[[24604]],63917:[[29618]],63918:[[29801]],63919:[[32666]],63920:[[32838]],63921:[[37428]],63922:[[38646]],63923:[[38728]],63924:[[38936]],63925:[[20363]],63926:[[31150]],63927:[[37300]],63928:[[38584]],63929:[[24801]],63930:[[20102]],63931:[[20698]],63932:[[23534]],63933:[[23615]],63934:[[26009]],63935:[[27138]],63936:[[29134]],63937:[[30274]],63938:[[34044]],63939:[[36988]],63940:[[40845]],63941:[[26248]],63942:[[38446]],63943:[[21129]],63944:[[26491]],63945:[[26611]],63946:[[27969]],63947:[[28316]],63948:[[29705]],63949:[[30041]],63950:[[30827]],63951:[[32016]],63952:[[39006]],63953:[[20845]],63954:[[25134]],63955:[[38520]],63956:[[20523]],63957:[[23833]],63958:[[28138]],63959:[[36650]],63960:[[24459]],63961:[[24900]],63962:[[26647]],63963:[[29575]],63964:[[38534]],63965:[[21033]],63966:[[21519]],63967:[[23653]],63968:[[26131]],63969:[[26446]],63970:[[26792]],63971:[[27877]],63972:[[29702]],63973:[[30178]],63974:[[32633]],63975:[[35023]],63976:[[35041]],63977:[[37324]],63978:[[38626]],63979:[[21311]],63980:[[28346]],63981:[[21533]],63982:[[29136]],63983:[[29848]],63984:[[34298]],63985:[[38563]],63986:[[40023]],63987:[[40607]],63988:[[26519]],63989:[[28107]],63990:[[33256]],63991:[[31435]],63992:[[31520]],63993:[[31890]],63994:[[29376]],63995:[[28825]],63996:[[35672]],63997:[[20160]],63998:[[33590]],63999:[[21050]],194816:[[27966]],194817:[[28023]],194818:[[27969]],194819:[[28009]],194820:[[28024]],194821:[[28037]],194822:[[146718]],194823:[[27956]],194824:[[28207]],194825:[[28270]],194826:[[15667]],194827:[[28363]],194828:[[28359]],194829:[[147153]],194830:[[28153]],194831:[[28526]],194832:[[147294]],194833:[[147342]],194834:[[28614]],194835:[[28729]],194836:[[28702]],194837:[[28699]],194838:[[15766]],194839:[[28746]],194840:[[28797]],194841:[[28791]],194842:[[28845]],194843:[[132389]],194844:[[28997]],194845:[[148067]],194846:[[29084]],194847:[[148395]],194848:[[29224]],194849:[[29237]],194850:[[29264]],194851:[[149000]],194852:[[29312]],194853:[[29333]],194854:[[149301]],194855:[[149524]],194856:[[29562]],194857:[[29579]],194858:[[16044]],194859:[[29605]],194860:[[16056]],194861:[[16056]],194862:[[29767]],194863:[[29788]],194864:[[29809]],194865:[[29829]],194866:[[29898]],194867:[[16155]],194868:[[29988]],194869:[[150582]],194870:[[30014]],194871:[[150674]],194872:[[30064]],194873:[[139679]],194874:[[30224]],194875:[[151457]],194876:[[151480]],194877:[[151620]],194878:[[16380]],194879:[[16392]],194880:[[30452]],194881:[[151795]],194882:[[151794]],194883:[[151833]],194884:[[151859]],194885:[[30494]],194886:[[30495]],194887:[[30495]],194888:[[30538]],194889:[[16441]],194890:[[30603]],194891:[[16454]],194892:[[16534]],194893:[[152605]],194894:[[30798]],194895:[[30860]],194896:[[30924]],194897:[[16611]],194898:[[153126]],194899:[[31062]],194900:[[153242]],194901:[[153285]],194902:[[31119]],194903:[[31211]],194904:[[16687]],194905:[[31296]],194906:[[31306]],194907:[[31311]],194908:[[153980]],194909:[[154279]],194910:[[154279]],194911:[[31470]],194912:[[16898]],194913:[[154539]],194914:[[31686]],194915:[[31689]],194916:[[16935]],194917:[[154752]],194918:[[31954]],194919:[[17056]],194920:[[31976]],194921:[[31971]],194922:[[32000]],194923:[[155526]],194924:[[32099]],194925:[[17153]],194926:[[32199]],194927:[[32258]],194928:[[32325]],194929:[[17204]],194930:[[156200]],194931:[[156231]],194932:[[17241]],194933:[[156377]],194934:[[32634]],194935:[[156478]],194936:[[32661]],194937:[[32762]],194938:[[32773]],194939:[[156890]],194940:[[156963]],194941:[[32864]],194942:[[157096]],194943:[[32880]],194944:[[144223]],194945:[[17365]],194946:[[32946]],194947:[[33027]],194948:[[17419]],194949:[[33086]],194950:[[23221]],194951:[[157607]],194952:[[157621]],194953:[[144275]],194954:[[144284]],194955:[[33281]],194956:[[33284]],194957:[[36766]],194958:[[17515]],194959:[[33425]],194960:[[33419]],194961:[[33437]],194962:[[21171]],194963:[[33457]],194964:[[33459]],194965:[[33469]],194966:[[33510]],194967:[[158524]],194968:[[33509]],194969:[[33565]],194970:[[33635]],194971:[[33709]],194972:[[33571]],194973:[[33725]],194974:[[33767]],194975:[[33879]],194976:[[33619]],194977:[[33738]],194978:[[33740]],194979:[[33756]],194980:[[158774]],194981:[[159083]],194982:[[158933]],194983:[[17707]],194984:[[34033]],194985:[[34035]],194986:[[34070]],194987:[[160714]],194988:[[34148]],194989:[[159532]],194990:[[17757]],194991:[[17761]],194992:[[159665]],194993:[[159954]],194994:[[17771]],194995:[[34384]],194996:[[34396]],194997:[[34407]],194998:[[34409]],194999:[[34473]],195000:[[34440]],195001:[[34574]],195002:[[34530]],195003:[[34681]],195004:[[34600]],195005:[[34667]],195006:[[34694]],195007:[[17879]],195008:[[34785]],195009:[[34817]],195010:[[17913]],195011:[[34912]],195012:[[34915]],195013:[[161383]],195014:[[35031]],195015:[[35038]],195016:[[17973]],195017:[[35066]],195018:[[13499]],195019:[[161966]],195020:[[162150]],195021:[[18110]],195022:[[18119]],195023:[[35488]],195024:[[35565]],195025:[[35722]],195026:[[35925]],195027:[[162984]],195028:[[36011]],195029:[[36033]],195030:[[36123]],195031:[[36215]],195032:[[163631]],195033:[[133124]],195034:[[36299]],195035:[[36284]],195036:[[36336]],195037:[[133342]],195038:[[36564]],195039:[[36664]],195040:[[165330]],195041:[[165357]],195042:[[37012]],195043:[[37105]],195044:[[37137]],195045:[[165678]],195046:[[37147]],195047:[[37432]],195048:[[37591]],195049:[[37592]],195050:[[37500]],195051:[[37881]],195052:[[37909]],195053:[[166906]],195054:[[38283]],195055:[[18837]],195056:[[38327]],195057:[[167287]],195058:[[18918]],195059:[[38595]],195060:[[23986]],195061:[[38691]],195062:[[168261]],195063:[[168474]],195064:[[19054]],195065:[[19062]],195066:[[38880]],195067:[[168970]],195068:[[19122]],195069:[[169110]],195070:[[38923]],195071:[[38923]]},
+64000:{64000:[[20999]],64001:[[24230]],64002:[[25299]],64003:[[31958]],64004:[[23429]],64005:[[27934]],64006:[[26292]],64007:[[36667]],64008:[[34892]],64009:[[38477]],64010:[[35211]],64011:[[24275]],64012:[[20800]],64013:[[21952]],64016:[[22618]],64018:[[26228]],64021:[[20958]],64022:[[29482]],64023:[[30410]],64024:[[31036]],64025:[[31070]],64026:[[31077]],64027:[[31119]],64028:[[38742]],64029:[[31934]],64030:[[32701]],64032:[[34322]],64034:[[35576]],64037:[[36920]],64038:[[37117]],64042:[[39151]],64043:[[39164]],64044:[[39208]],64045:[[40372]],64046:[[37086]],64047:[[38583]],64048:[[20398]],64049:[[20711]],64050:[[20813]],64051:[[21193]],64052:[[21220]],64053:[[21329]],64054:[[21917]],64055:[[22022]],64056:[[22120]],64057:[[22592]],64058:[[22696]],64059:[[23652]],64060:[[23662]],64061:[[24724]],64062:[[24936]],64063:[[24974]],64064:[[25074]],64065:[[25935]],64066:[[26082]],64067:[[26257]],64068:[[26757]],64069:[[28023]],64070:[[28186]],64071:[[28450]],64072:[[29038]],64073:[[29227]],64074:[[29730]],64075:[[30865]],64076:[[31038]],64077:[[31049]],64078:[[31048]],64079:[[31056]],64080:[[31062]],64081:[[31069]],64082:[[31117]],64083:[[31118]],64084:[[31296]],64085:[[31361]],64086:[[31680]],64087:[[32244]],64088:[[32265]],64089:[[32321]],64090:[[32626]],64091:[[32773]],64092:[[33261]],64093:[[33401]],64094:[[33401]],64095:[[33879]],64096:[[35088]],64097:[[35222]],64098:[[35585]],64099:[[35641]],64100:[[36051]],64101:[[36104]],64102:[[36790]],64103:[[36920]],64104:[[38627]],64105:[[38911]],64106:[[38971]],64107:[[24693]],64108:[[148206]],64109:[[33304]],64112:[[20006]],64113:[[20917]],64114:[[20840]],64115:[[20352]],64116:[[20805]],64117:[[20864]],64118:[[21191]],64119:[[21242]],64120:[[21917]],64121:[[21845]],64122:[[21913]],64123:[[21986]],64124:[[22618]],64125:[[22707]],64126:[[22852]],64127:[[22868]],64128:[[23138]],64129:[[23336]],64130:[[24274]],64131:[[24281]],64132:[[24425]],64133:[[24493]],64134:[[24792]],64135:[[24910]],64136:[[24840]],64137:[[24974]],64138:[[24928]],64139:[[25074]],64140:[[25140]],64141:[[25540]],64142:[[25628]],64143:[[25682]],64144:[[25942]],64145:[[26228]],64146:[[26391]],64147:[[26395]],64148:[[26454]],64149:[[27513]],64150:[[27578]],64151:[[27969]],64152:[[28379]],64153:[[28363]],64154:[[28450]],64155:[[28702]],64156:[[29038]],64157:[[30631]],64158:[[29237]],64159:[[29359]],64160:[[29482]],64161:[[29809]],64162:[[29958]],64163:[[30011]],64164:[[30237]],64165:[[30239]],64166:[[30410]],64167:[[30427]],64168:[[30452]],64169:[[30538]],64170:[[30528]],64171:[[30924]],64172:[[31409]],64173:[[31680]],64174:[[31867]],64175:[[32091]],64176:[[32244]],64177:[[32574]],64178:[[32773]],64179:[[33618]],64180:[[33775]],64181:[[34681]],64182:[[35137]],64183:[[35206]],64184:[[35222]],64185:[[35519]],64186:[[35576]],64187:[[35531]],64188:[[35585]],64189:[[35582]],64190:[[35565]],64191:[[35641]],64192:[[35722]],64193:[[36104]],64194:[[36664]],64195:[[36978]],64196:[[37273]],64197:[[37494]],64198:[[38524]],64199:[[38627]],64200:[[38742]],64201:[[38875]],64202:[[38911]],64203:[[38923]],64204:[[38971]],64205:[[39698]],64206:[[40860]],64207:[[141386]],64208:[[141380]],64209:[[144341]],64210:[[15261]],64211:[[16408]],64212:[[16441]],64213:[[152137]],64214:[[154832]],64215:[[163539]],64216:[[40771]],64217:[[40846]],195072:[[38953]],195073:[[169398]],195074:[[39138]],195075:[[19251]],195076:[[39209]],195077:[[39335]],195078:[[39362]],195079:[[39422]],195080:[[19406]],195081:[[170800]],195082:[[39698]],195083:[[40000]],195084:[[40189]],195085:[[19662]],195086:[[19693]],195087:[[40295]],195088:[[172238]],195089:[[19704]],195090:[[172293]],195091:[[172558]],195092:[[172689]],195093:[[40635]],195094:[[19798]],195095:[[40697]],195096:[[40702]],195097:[[40709]],195098:[[40719]],195099:[[40726]],195100:[[40763]],195101:[[173568]]},
+64256:{64256:[[102,102],256],64257:[[102,105],256],64258:[[102,108],256],64259:[[102,102,105],256],64260:[[102,102,108],256],64261:[[383,116],256],64262:[[115,116],256],64275:[[1396,1398],256],64276:[[1396,1381],256],64277:[[1396,1387],256],64278:[[1406,1398],256],64279:[[1396,1389],256],64285:[[1497,1460],512],64286:[,26],64287:[[1522,1463],512],64288:[[1506],256],64289:[[1488],256],64290:[[1491],256],64291:[[1492],256],64292:[[1499],256],64293:[[1500],256],64294:[[1501],256],64295:[[1512],256],64296:[[1514],256],64297:[[43],256],64298:[[1513,1473],512],64299:[[1513,1474],512],64300:[[64329,1473],512],64301:[[64329,1474],512],64302:[[1488,1463],512],64303:[[1488,1464],512],64304:[[1488,1468],512],64305:[[1489,1468],512],64306:[[1490,1468],512],64307:[[1491,1468],512],64308:[[1492,1468],512],64309:[[1493,1468],512],64310:[[1494,1468],512],64312:[[1496,1468],512],64313:[[1497,1468],512],64314:[[1498,1468],512],64315:[[1499,1468],512],64316:[[1500,1468],512],64318:[[1502,1468],512],64320:[[1504,1468],512],64321:[[1505,1468],512],64323:[[1507,1468],512],64324:[[1508,1468],512],64326:[[1510,1468],512],64327:[[1511,1468],512],64328:[[1512,1468],512],64329:[[1513,1468],512],64330:[[1514,1468],512],64331:[[1493,1465],512],64332:[[1489,1471],512],64333:[[1499,1471],512],64334:[[1508,1471],512],64335:[[1488,1500],256],64336:[[1649],256],64337:[[1649],256],64338:[[1659],256],64339:[[1659],256],64340:[[1659],256],64341:[[1659],256],64342:[[1662],256],64343:[[1662],256],64344:[[1662],256],64345:[[1662],256],64346:[[1664],256],64347:[[1664],256],64348:[[1664],256],64349:[[1664],256],64350:[[1658],256],64351:[[1658],256],64352:[[1658],256],64353:[[1658],256],64354:[[1663],256],64355:[[1663],256],64356:[[1663],256],64357:[[1663],256],64358:[[1657],256],64359:[[1657],256],64360:[[1657],256],64361:[[1657],256],64362:[[1700],256],64363:[[1700],256],64364:[[1700],256],64365:[[1700],256],64366:[[1702],256],64367:[[1702],256],64368:[[1702],256],64369:[[1702],256],64370:[[1668],256],64371:[[1668],256],64372:[[1668],256],64373:[[1668],256],64374:[[1667],256],64375:[[1667],256],64376:[[1667],256],64377:[[1667],256],64378:[[1670],256],64379:[[1670],256],64380:[[1670],256],64381:[[1670],256],64382:[[1671],256],64383:[[1671],256],64384:[[1671],256],64385:[[1671],256],64386:[[1677],256],64387:[[1677],256],64388:[[1676],256],64389:[[1676],256],64390:[[1678],256],64391:[[1678],256],64392:[[1672],256],64393:[[1672],256],64394:[[1688],256],64395:[[1688],256],64396:[[1681],256],64397:[[1681],256],64398:[[1705],256],64399:[[1705],256],64400:[[1705],256],64401:[[1705],256],64402:[[1711],256],64403:[[1711],256],64404:[[1711],256],64405:[[1711],256],64406:[[1715],256],64407:[[1715],256],64408:[[1715],256],64409:[[1715],256],64410:[[1713],256],64411:[[1713],256],64412:[[1713],256],64413:[[1713],256],64414:[[1722],256],64415:[[1722],256],64416:[[1723],256],64417:[[1723],256],64418:[[1723],256],64419:[[1723],256],64420:[[1728],256],64421:[[1728],256],64422:[[1729],256],64423:[[1729],256],64424:[[1729],256],64425:[[1729],256],64426:[[1726],256],64427:[[1726],256],64428:[[1726],256],64429:[[1726],256],64430:[[1746],256],64431:[[1746],256],64432:[[1747],256],64433:[[1747],256],64467:[[1709],256],64468:[[1709],256],64469:[[1709],256],64470:[[1709],256],64471:[[1735],256],64472:[[1735],256],64473:[[1734],256],64474:[[1734],256],64475:[[1736],256],64476:[[1736],256],64477:[[1655],256],64478:[[1739],256],64479:[[1739],256],64480:[[1733],256],64481:[[1733],256],64482:[[1737],256],64483:[[1737],256],64484:[[1744],256],64485:[[1744],256],64486:[[1744],256],64487:[[1744],256],64488:[[1609],256],64489:[[1609],256],64490:[[1574,1575],256],64491:[[1574,1575],256],64492:[[1574,1749],256],64493:[[1574,1749],256],64494:[[1574,1608],256],64495:[[1574,1608],256],64496:[[1574,1735],256],64497:[[1574,1735],256],64498:[[1574,1734],256],64499:[[1574,1734],256],64500:[[1574,1736],256],64501:[[1574,1736],256],64502:[[1574,1744],256],64503:[[1574,1744],256],64504:[[1574,1744],256],64505:[[1574,1609],256],64506:[[1574,1609],256],64507:[[1574,1609],256],64508:[[1740],256],64509:[[1740],256],64510:[[1740],256],64511:[[1740],256]},
+64512:{64512:[[1574,1580],256],64513:[[1574,1581],256],64514:[[1574,1605],256],64515:[[1574,1609],256],64516:[[1574,1610],256],64517:[[1576,1580],256],64518:[[1576,1581],256],64519:[[1576,1582],256],64520:[[1576,1605],256],64521:[[1576,1609],256],64522:[[1576,1610],256],64523:[[1578,1580],256],64524:[[1578,1581],256],64525:[[1578,1582],256],64526:[[1578,1605],256],64527:[[1578,1609],256],64528:[[1578,1610],256],64529:[[1579,1580],256],64530:[[1579,1605],256],64531:[[1579,1609],256],64532:[[1579,1610],256],64533:[[1580,1581],256],64534:[[1580,1605],256],64535:[[1581,1580],256],64536:[[1581,1605],256],64537:[[1582,1580],256],64538:[[1582,1581],256],64539:[[1582,1605],256],64540:[[1587,1580],256],64541:[[1587,1581],256],64542:[[1587,1582],256],64543:[[1587,1605],256],64544:[[1589,1581],256],64545:[[1589,1605],256],64546:[[1590,1580],256],64547:[[1590,1581],256],64548:[[1590,1582],256],64549:[[1590,1605],256],64550:[[1591,1581],256],64551:[[1591,1605],256],64552:[[1592,1605],256],64553:[[1593,1580],256],64554:[[1593,1605],256],64555:[[1594,1580],256],64556:[[1594,1605],256],64557:[[1601,1580],256],64558:[[1601,1581],256],64559:[[1601,1582],256],64560:[[1601,1605],256],64561:[[1601,1609],256],64562:[[1601,1610],256],64563:[[1602,1581],256],64564:[[1602,1605],256],64565:[[1602,1609],256],64566:[[1602,1610],256],64567:[[1603,1575],256],64568:[[1603,1580],256],64569:[[1603,1581],256],64570:[[1603,1582],256],64571:[[1603,1604],256],64572:[[1603,1605],256],64573:[[1603,1609],256],64574:[[1603,1610],256],64575:[[1604,1580],256],64576:[[1604,1581],256],64577:[[1604,1582],256],64578:[[1604,1605],256],64579:[[1604,1609],256],64580:[[1604,1610],256],64581:[[1605,1580],256],64582:[[1605,1581],256],64583:[[1605,1582],256],64584:[[1605,1605],256],64585:[[1605,1609],256],64586:[[1605,1610],256],64587:[[1606,1580],256],64588:[[1606,1581],256],64589:[[1606,1582],256],64590:[[1606,1605],256],64591:[[1606,1609],256],64592:[[1606,1610],256],64593:[[1607,1580],256],64594:[[1607,1605],256],64595:[[1607,1609],256],64596:[[1607,1610],256],64597:[[1610,1580],256],64598:[[1610,1581],256],64599:[[1610,1582],256],64600:[[1610,1605],256],64601:[[1610,1609],256],64602:[[1610,1610],256],64603:[[1584,1648],256],64604:[[1585,1648],256],64605:[[1609,1648],256],64606:[[32,1612,1617],256],64607:[[32,1613,1617],256],64608:[[32,1614,1617],256],64609:[[32,1615,1617],256],64610:[[32,1616,1617],256],64611:[[32,1617,1648],256],64612:[[1574,1585],256],64613:[[1574,1586],256],64614:[[1574,1605],256],64615:[[1574,1606],256],64616:[[1574,1609],256],64617:[[1574,1610],256],64618:[[1576,1585],256],64619:[[1576,1586],256],64620:[[1576,1605],256],64621:[[1576,1606],256],64622:[[1576,1609],256],64623:[[1576,1610],256],64624:[[1578,1585],256],64625:[[1578,1586],256],64626:[[1578,1605],256],64627:[[1578,1606],256],64628:[[1578,1609],256],64629:[[1578,1610],256],64630:[[1579,1585],256],64631:[[1579,1586],256],64632:[[1579,1605],256],64633:[[1579,1606],256],64634:[[1579,1609],256],64635:[[1579,1610],256],64636:[[1601,1609],256],64637:[[1601,1610],256],64638:[[1602,1609],256],64639:[[1602,1610],256],64640:[[1603,1575],256],64641:[[1603,1604],256],64642:[[1603,1605],256],64643:[[1603,1609],256],64644:[[1603,1610],256],64645:[[1604,1605],256],64646:[[1604,1609],256],64647:[[1604,1610],256],64648:[[1605,1575],256],64649:[[1605,1605],256],64650:[[1606,1585],256],64651:[[1606,1586],256],64652:[[1606,1605],256],64653:[[1606,1606],256],64654:[[1606,1609],256],64655:[[1606,1610],256],64656:[[1609,1648],256],64657:[[1610,1585],256],64658:[[1610,1586],256],64659:[[1610,1605],256],64660:[[1610,1606],256],64661:[[1610,1609],256],64662:[[1610,1610],256],64663:[[1574,1580],256],64664:[[1574,1581],256],64665:[[1574,1582],256],64666:[[1574,1605],256],64667:[[1574,1607],256],64668:[[1576,1580],256],64669:[[1576,1581],256],64670:[[1576,1582],256],64671:[[1576,1605],256],64672:[[1576,1607],256],64673:[[1578,1580],256],64674:[[1578,1581],256],64675:[[1578,1582],256],64676:[[1578,1605],256],64677:[[1578,1607],256],64678:[[1579,1605],256],64679:[[1580,1581],256],64680:[[1580,1605],256],64681:[[1581,1580],256],64682:[[1581,1605],256],64683:[[1582,1580],256],64684:[[1582,1605],256],64685:[[1587,1580],256],64686:[[1587,1581],256],64687:[[1587,1582],256],64688:[[1587,1605],256],64689:[[1589,1581],256],64690:[[1589,1582],256],64691:[[1589,1605],256],64692:[[1590,1580],256],64693:[[1590,1581],256],64694:[[1590,1582],256],64695:[[1590,1605],256],64696:[[1591,1581],256],64697:[[1592,1605],256],64698:[[1593,1580],256],64699:[[1593,1605],256],64700:[[1594,1580],256],64701:[[1594,1605],256],64702:[[1601,1580],256],64703:[[1601,1581],256],64704:[[1601,1582],256],64705:[[1601,1605],256],64706:[[1602,1581],256],64707:[[1602,1605],256],64708:[[1603,1580],256],64709:[[1603,1581],256],64710:[[1603,1582],256],64711:[[1603,1604],256],64712:[[1603,1605],256],64713:[[1604,1580],256],64714:[[1604,1581],256],64715:[[1604,1582],256],64716:[[1604,1605],256],64717:[[1604,1607],256],64718:[[1605,1580],256],64719:[[1605,1581],256],64720:[[1605,1582],256],64721:[[1605,1605],256],64722:[[1606,1580],256],64723:[[1606,1581],256],64724:[[1606,1582],256],64725:[[1606,1605],256],64726:[[1606,1607],256],64727:[[1607,1580],256],64728:[[1607,1605],256],64729:[[1607,1648],256],64730:[[1610,1580],256],64731:[[1610,1581],256],64732:[[1610,1582],256],64733:[[1610,1605],256],64734:[[1610,1607],256],64735:[[1574,1605],256],64736:[[1574,1607],256],64737:[[1576,1605],256],64738:[[1576,1607],256],64739:[[1578,1605],256],64740:[[1578,1607],256],64741:[[1579,1605],256],64742:[[1579,1607],256],64743:[[1587,1605],256],64744:[[1587,1607],256],64745:[[1588,1605],256],64746:[[1588,1607],256],64747:[[1603,1604],256],64748:[[1603,1605],256],64749:[[1604,1605],256],64750:[[1606,1605],256],64751:[[1606,1607],256],64752:[[1610,1605],256],64753:[[1610,1607],256],64754:[[1600,1614,1617],256],64755:[[1600,1615,1617],256],64756:[[1600,1616,1617],256],64757:[[1591,1609],256],64758:[[1591,1610],256],64759:[[1593,1609],256],64760:[[1593,1610],256],64761:[[1594,1609],256],64762:[[1594,1610],256],64763:[[1587,1609],256],64764:[[1587,1610],256],64765:[[1588,1609],256],64766:[[1588,1610],256],64767:[[1581,1609],256]},
+64768:{64768:[[1581,1610],256],64769:[[1580,1609],256],64770:[[1580,1610],256],64771:[[1582,1609],256],64772:[[1582,1610],256],64773:[[1589,1609],256],64774:[[1589,1610],256],64775:[[1590,1609],256],64776:[[1590,1610],256],64777:[[1588,1580],256],64778:[[1588,1581],256],64779:[[1588,1582],256],64780:[[1588,1605],256],64781:[[1588,1585],256],64782:[[1587,1585],256],64783:[[1589,1585],256],64784:[[1590,1585],256],64785:[[1591,1609],256],64786:[[1591,1610],256],64787:[[1593,1609],256],64788:[[1593,1610],256],64789:[[1594,1609],256],64790:[[1594,1610],256],64791:[[1587,1609],256],64792:[[1587,1610],256],64793:[[1588,1609],256],64794:[[1588,1610],256],64795:[[1581,1609],256],64796:[[1581,1610],256],64797:[[1580,1609],256],64798:[[1580,1610],256],64799:[[1582,1609],256],64800:[[1582,1610],256],64801:[[1589,1609],256],64802:[[1589,1610],256],64803:[[1590,1609],256],64804:[[1590,1610],256],64805:[[1588,1580],256],64806:[[1588,1581],256],64807:[[1588,1582],256],64808:[[1588,1605],256],64809:[[1588,1585],256],64810:[[1587,1585],256],64811:[[1589,1585],256],64812:[[1590,1585],256],64813:[[1588,1580],256],64814:[[1588,1581],256],64815:[[1588,1582],256],64816:[[1588,1605],256],64817:[[1587,1607],256],64818:[[1588,1607],256],64819:[[1591,1605],256],64820:[[1587,1580],256],64821:[[1587,1581],256],64822:[[1587,1582],256],64823:[[1588,1580],256],64824:[[1588,1581],256],64825:[[1588,1582],256],64826:[[1591,1605],256],64827:[[1592,1605],256],64828:[[1575,1611],256],64829:[[1575,1611],256],64848:[[1578,1580,1605],256],64849:[[1578,1581,1580],256],64850:[[1578,1581,1580],256],64851:[[1578,1581,1605],256],64852:[[1578,1582,1605],256],64853:[[1578,1605,1580],256],64854:[[1578,1605,1581],256],64855:[[1578,1605,1582],256],64856:[[1580,1605,1581],256],64857:[[1580,1605,1581],256],64858:[[1581,1605,1610],256],64859:[[1581,1605,1609],256],64860:[[1587,1581,1580],256],64861:[[1587,1580,1581],256],64862:[[1587,1580,1609],256],64863:[[1587,1605,1581],256],64864:[[1587,1605,1581],256],64865:[[1587,1605,1580],256],64866:[[1587,1605,1605],256],64867:[[1587,1605,1605],256],64868:[[1589,1581,1581],256],64869:[[1589,1581,1581],256],64870:[[1589,1605,1605],256],64871:[[1588,1581,1605],256],64872:[[1588,1581,1605],256],64873:[[1588,1580,1610],256],64874:[[1588,1605,1582],256],64875:[[1588,1605,1582],256],64876:[[1588,1605,1605],256],64877:[[1588,1605,1605],256],64878:[[1590,1581,1609],256],64879:[[1590,1582,1605],256],64880:[[1590,1582,1605],256],64881:[[1591,1605,1581],256],64882:[[1591,1605,1581],256],64883:[[1591,1605,1605],256],64884:[[1591,1605,1610],256],64885:[[1593,1580,1605],256],64886:[[1593,1605,1605],256],64887:[[1593,1605,1605],256],64888:[[1593,1605,1609],256],64889:[[1594,1605,1605],256],64890:[[1594,1605,1610],256],64891:[[1594,1605,1609],256],64892:[[1601,1582,1605],256],64893:[[1601,1582,1605],256],64894:[[1602,1605,1581],256],64895:[[1602,1605,1605],256],64896:[[1604,1581,1605],256],64897:[[1604,1581,1610],256],64898:[[1604,1581,1609],256],64899:[[1604,1580,1580],256],64900:[[1604,1580,1580],256],64901:[[1604,1582,1605],256],64902:[[1604,1582,1605],256],64903:[[1604,1605,1581],256],64904:[[1604,1605,1581],256],64905:[[1605,1581,1580],256],64906:[[1605,1581,1605],256],64907:[[1605,1581,1610],256],64908:[[1605,1580,1581],256],64909:[[1605,1580,1605],256],64910:[[1605,1582,1580],256],64911:[[1605,1582,1605],256],64914:[[1605,1580,1582],256],64915:[[1607,1605,1580],256],64916:[[1607,1605,1605],256],64917:[[1606,1581,1605],256],64918:[[1606,1581,1609],256],64919:[[1606,1580,1605],256],64920:[[1606,1580,1605],256],64921:[[1606,1580,1609],256],64922:[[1606,1605,1610],256],64923:[[1606,1605,1609],256],64924:[[1610,1605,1605],256],64925:[[1610,1605,1605],256],64926:[[1576,1582,1610],256],64927:[[1578,1580,1610],256],64928:[[1578,1580,1609],256],64929:[[1578,1582,1610],256],64930:[[1578,1582,1609],256],64931:[[1578,1605,1610],256],64932:[[1578,1605,1609],256],64933:[[1580,1605,1610],256],64934:[[1580,1581,1609],256],64935:[[1580,1605,1609],256],64936:[[1587,1582,1609],256],64937:[[1589,1581,1610],256],64938:[[1588,1581,1610],256],64939:[[1590,1581,1610],256],64940:[[1604,1580,1610],256],64941:[[1604,1605,1610],256],64942:[[1610,1581,1610],256],64943:[[1610,1580,1610],256],64944:[[1610,1605,1610],256],64945:[[1605,1605,1610],256],64946:[[1602,1605,1610],256],64947:[[1606,1581,1610],256],64948:[[1602,1605,1581],256],64949:[[1604,1581,1605],256],64950:[[1593,1605,1610],256],64951:[[1603,1605,1610],256],64952:[[1606,1580,1581],256],64953:[[1605,1582,1610],256],64954:[[1604,1580,1605],256],64955:[[1603,1605,1605],256],64956:[[1604,1580,1605],256],64957:[[1606,1580,1581],256],64958:[[1580,1581,1610],256],64959:[[1581,1580,1610],256],64960:[[1605,1580,1610],256],64961:[[1601,1605,1610],256],64962:[[1576,1581,1610],256],64963:[[1603,1605,1605],256],64964:[[1593,1580,1605],256],64965:[[1589,1605,1605],256],64966:[[1587,1582,1610],256],64967:[[1606,1580,1610],256],65008:[[1589,1604,1746],256],65009:[[1602,1604,1746],256],65010:[[1575,1604,1604,1607],256],65011:[[1575,1603,1576,1585],256],65012:[[1605,1581,1605,1583],256],65013:[[1589,1604,1593,1605],256],65014:[[1585,1587,1608,1604],256],65015:[[1593,1604,1610,1607],256],65016:[[1608,1587,1604,1605],256],65017:[[1589,1604,1609],256],65018:[[1589,1604,1609,32,1575,1604,1604,1607,32,1593,1604,1610,1607,32,1608,1587,1604,1605],256],65019:[[1580,1604,32,1580,1604,1575,1604,1607],256],65020:[[1585,1740,1575,1604],256]},
+65024:{65040:[[44],256],65041:[[12289],256],65042:[[12290],256],65043:[[58],256],65044:[[59],256],65045:[[33],256],65046:[[63],256],65047:[[12310],256],65048:[[12311],256],65049:[[8230],256],65056:[,230],65057:[,230],65058:[,230],65059:[,230],65060:[,230],65061:[,230],65062:[,230],65063:[,220],65064:[,220],65065:[,220],65066:[,220],65067:[,220],65068:[,220],65069:[,220],65072:[[8229],256],65073:[[8212],256],65074:[[8211],256],65075:[[95],256],65076:[[95],256],65077:[[40],256],65078:[[41],256],65079:[[123],256],65080:[[125],256],65081:[[12308],256],65082:[[12309],256],65083:[[12304],256],65084:[[12305],256],65085:[[12298],256],65086:[[12299],256],65087:[[12296],256],65088:[[12297],256],65089:[[12300],256],65090:[[12301],256],65091:[[12302],256],65092:[[12303],256],65095:[[91],256],65096:[[93],256],65097:[[8254],256],65098:[[8254],256],65099:[[8254],256],65100:[[8254],256],65101:[[95],256],65102:[[95],256],65103:[[95],256],65104:[[44],256],65105:[[12289],256],65106:[[46],256],65108:[[59],256],65109:[[58],256],65110:[[63],256],65111:[[33],256],65112:[[8212],256],65113:[[40],256],65114:[[41],256],65115:[[123],256],65116:[[125],256],65117:[[12308],256],65118:[[12309],256],65119:[[35],256],65120:[[38],256],65121:[[42],256],65122:[[43],256],65123:[[45],256],65124:[[60],256],65125:[[62],256],65126:[[61],256],65128:[[92],256],65129:[[36],256],65130:[[37],256],65131:[[64],256],65136:[[32,1611],256],65137:[[1600,1611],256],65138:[[32,1612],256],65140:[[32,1613],256],65142:[[32,1614],256],65143:[[1600,1614],256],65144:[[32,1615],256],65145:[[1600,1615],256],65146:[[32,1616],256],65147:[[1600,1616],256],65148:[[32,1617],256],65149:[[1600,1617],256],65150:[[32,1618],256],65151:[[1600,1618],256],65152:[[1569],256],65153:[[1570],256],65154:[[1570],256],65155:[[1571],256],65156:[[1571],256],65157:[[1572],256],65158:[[1572],256],65159:[[1573],256],65160:[[1573],256],65161:[[1574],256],65162:[[1574],256],65163:[[1574],256],65164:[[1574],256],65165:[[1575],256],65166:[[1575],256],65167:[[1576],256],65168:[[1576],256],65169:[[1576],256],65170:[[1576],256],65171:[[1577],256],65172:[[1577],256],65173:[[1578],256],65174:[[1578],256],65175:[[1578],256],65176:[[1578],256],65177:[[1579],256],65178:[[1579],256],65179:[[1579],256],65180:[[1579],256],65181:[[1580],256],65182:[[1580],256],65183:[[1580],256],65184:[[1580],256],65185:[[1581],256],65186:[[1581],256],65187:[[1581],256],65188:[[1581],256],65189:[[1582],256],65190:[[1582],256],65191:[[1582],256],65192:[[1582],256],65193:[[1583],256],65194:[[1583],256],65195:[[1584],256],65196:[[1584],256],65197:[[1585],256],65198:[[1585],256],65199:[[1586],256],65200:[[1586],256],65201:[[1587],256],65202:[[1587],256],65203:[[1587],256],65204:[[1587],256],65205:[[1588],256],65206:[[1588],256],65207:[[1588],256],65208:[[1588],256],65209:[[1589],256],65210:[[1589],256],65211:[[1589],256],65212:[[1589],256],65213:[[1590],256],65214:[[1590],256],65215:[[1590],256],65216:[[1590],256],65217:[[1591],256],65218:[[1591],256],65219:[[1591],256],65220:[[1591],256],65221:[[1592],256],65222:[[1592],256],65223:[[1592],256],65224:[[1592],256],65225:[[1593],256],65226:[[1593],256],65227:[[1593],256],65228:[[1593],256],65229:[[1594],256],65230:[[1594],256],65231:[[1594],256],65232:[[1594],256],65233:[[1601],256],65234:[[1601],256],65235:[[1601],256],65236:[[1601],256],65237:[[1602],256],65238:[[1602],256],65239:[[1602],256],65240:[[1602],256],65241:[[1603],256],65242:[[1603],256],65243:[[1603],256],65244:[[1603],256],65245:[[1604],256],65246:[[1604],256],65247:[[1604],256],65248:[[1604],256],65249:[[1605],256],65250:[[1605],256],65251:[[1605],256],65252:[[1605],256],65253:[[1606],256],65254:[[1606],256],65255:[[1606],256],65256:[[1606],256],65257:[[1607],256],65258:[[1607],256],65259:[[1607],256],65260:[[1607],256],65261:[[1608],256],65262:[[1608],256],65263:[[1609],256],65264:[[1609],256],65265:[[1610],256],65266:[[1610],256],65267:[[1610],256],65268:[[1610],256],65269:[[1604,1570],256],65270:[[1604,1570],256],65271:[[1604,1571],256],65272:[[1604,1571],256],65273:[[1604,1573],256],65274:[[1604,1573],256],65275:[[1604,1575],256],65276:[[1604,1575],256]},
+65280:{65281:[[33],256],65282:[[34],256],65283:[[35],256],65284:[[36],256],65285:[[37],256],65286:[[38],256],65287:[[39],256],65288:[[40],256],65289:[[41],256],65290:[[42],256],65291:[[43],256],65292:[[44],256],65293:[[45],256],65294:[[46],256],65295:[[47],256],65296:[[48],256],65297:[[49],256],65298:[[50],256],65299:[[51],256],65300:[[52],256],65301:[[53],256],65302:[[54],256],65303:[[55],256],65304:[[56],256],65305:[[57],256],65306:[[58],256],65307:[[59],256],65308:[[60],256],65309:[[61],256],65310:[[62],256],65311:[[63],256],65312:[[64],256],65313:[[65],256],65314:[[66],256],65315:[[67],256],65316:[[68],256],65317:[[69],256],65318:[[70],256],65319:[[71],256],65320:[[72],256],65321:[[73],256],65322:[[74],256],65323:[[75],256],65324:[[76],256],65325:[[77],256],65326:[[78],256],65327:[[79],256],65328:[[80],256],65329:[[81],256],65330:[[82],256],65331:[[83],256],65332:[[84],256],65333:[[85],256],65334:[[86],256],65335:[[87],256],65336:[[88],256],65337:[[89],256],65338:[[90],256],65339:[[91],256],65340:[[92],256],65341:[[93],256],65342:[[94],256],65343:[[95],256],65344:[[96],256],65345:[[97],256],65346:[[98],256],65347:[[99],256],65348:[[100],256],65349:[[101],256],65350:[[102],256],65351:[[103],256],65352:[[104],256],65353:[[105],256],65354:[[106],256],65355:[[107],256],65356:[[108],256],65357:[[109],256],65358:[[110],256],65359:[[111],256],65360:[[112],256],65361:[[113],256],65362:[[114],256],65363:[[115],256],65364:[[116],256],65365:[[117],256],65366:[[118],256],65367:[[119],256],65368:[[120],256],65369:[[121],256],65370:[[122],256],65371:[[123],256],65372:[[124],256],65373:[[125],256],65374:[[126],256],65375:[[10629],256],65376:[[10630],256],65377:[[12290],256],65378:[[12300],256],65379:[[12301],256],65380:[[12289],256],65381:[[12539],256],65382:[[12530],256],65383:[[12449],256],65384:[[12451],256],65385:[[12453],256],65386:[[12455],256],65387:[[12457],256],65388:[[12515],256],65389:[[12517],256],65390:[[12519],256],65391:[[12483],256],65392:[[12540],256],65393:[[12450],256],65394:[[12452],256],65395:[[12454],256],65396:[[12456],256],65397:[[12458],256],65398:[[12459],256],65399:[[12461],256],65400:[[12463],256],65401:[[12465],256],65402:[[12467],256],65403:[[12469],256],65404:[[12471],256],65405:[[12473],256],65406:[[12475],256],65407:[[12477],256],65408:[[12479],256],65409:[[12481],256],65410:[[12484],256],65411:[[12486],256],65412:[[12488],256],65413:[[12490],256],65414:[[12491],256],65415:[[12492],256],65416:[[12493],256],65417:[[12494],256],65418:[[12495],256],65419:[[12498],256],65420:[[12501],256],65421:[[12504],256],65422:[[12507],256],65423:[[12510],256],65424:[[12511],256],65425:[[12512],256],65426:[[12513],256],65427:[[12514],256],65428:[[12516],256],65429:[[12518],256],65430:[[12520],256],65431:[[12521],256],65432:[[12522],256],65433:[[12523],256],65434:[[12524],256],65435:[[12525],256],65436:[[12527],256],65437:[[12531],256],65438:[[12441],256],65439:[[12442],256],65440:[[12644],256],65441:[[12593],256],65442:[[12594],256],65443:[[12595],256],65444:[[12596],256],65445:[[12597],256],65446:[[12598],256],65447:[[12599],256],65448:[[12600],256],65449:[[12601],256],65450:[[12602],256],65451:[[12603],256],65452:[[12604],256],65453:[[12605],256],65454:[[12606],256],65455:[[12607],256],65456:[[12608],256],65457:[[12609],256],65458:[[12610],256],65459:[[12611],256],65460:[[12612],256],65461:[[12613],256],65462:[[12614],256],65463:[[12615],256],65464:[[12616],256],65465:[[12617],256],65466:[[12618],256],65467:[[12619],256],65468:[[12620],256],65469:[[12621],256],65470:[[12622],256],65474:[[12623],256],65475:[[12624],256],65476:[[12625],256],65477:[[12626],256],65478:[[12627],256],65479:[[12628],256],65482:[[12629],256],65483:[[12630],256],65484:[[12631],256],65485:[[12632],256],65486:[[12633],256],65487:[[12634],256],65490:[[12635],256],65491:[[12636],256],65492:[[12637],256],65493:[[12638],256],65494:[[12639],256],65495:[[12640],256],65498:[[12641],256],65499:[[12642],256],65500:[[12643],256],65504:[[162],256],65505:[[163],256],65506:[[172],256],65507:[[175],256],65508:[[166],256],65509:[[165],256],65510:[[8361],256],65512:[[9474],256],65513:[[8592],256],65514:[[8593],256],65515:[[8594],256],65516:[[8595],256],65517:[[9632],256],65518:[[9675],256]}
+
+};
+
+   /***** Module to export */
+   var unorm = {
+      nfc: nfc,
+      nfd: nfd,
+      nfkc: nfkc,
+      nfkd: nfkd
+   };
+
+   /*globals module:true,define:true*/
+
+   // CommonJS
+   if (typeof module === "object") {
+      module.exports = unorm;
+
+   // AMD
+   } else if (typeof define === "function" && define.amd) {
+      define("unorm", function () {
+         return unorm;
+      });
+
+   // Global
+   } else {
+      root.unorm = unorm;
+   }
+
+   /***** Export as shim for String::normalize method *****/
+   /*
+      http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts#november_8_2013_draft_rev_21
+
+      21.1.3.12 String.prototype.normalize(form="NFC")
+      When the normalize method is called with one argument form, the following steps are taken:
+
+      1. Let O be CheckObjectCoercible(this value).
+      2. Let S be ToString(O).
+      3. ReturnIfAbrupt(S).
+      4. If form is not provided or undefined let form be "NFC".
+      5. Let f be ToString(form).
+      6. ReturnIfAbrupt(f).
+      7. If f is not one of "NFC", "NFD", "NFKC", or "NFKD", then throw a RangeError Exception.
+      8. Let ns be the String value is the result of normalizing S into the normalization form named by f as specified in Unicode Standard Annex #15, UnicodeNormalizatoin Forms.
+      9. Return ns.
+
+      The length property of the normalize method is 0.
+
+      *NOTE* The normalize function is intentionally generic; it does not require that its this value be a String object. Therefore it can be transferred to other kinds of objects for use as a method.
+   */
+    unorm.shimApplied = false;
+
+   if (!String.prototype.normalize) {
+      String.prototype.normalize = function(form) {
+         var str = "" + this;
+         form =  form === undefined ? "NFC" : form;
+
+         if (form === "NFC") {
+            return unorm.nfc(str);
+         } else if (form === "NFD") {
+            return unorm.nfd(str);
+         } else if (form === "NFKC") {
+            return unorm.nfkc(str);
+         } else if (form === "NFKD") {
+            return unorm.nfkd(str);
+         } else {
+            throw new RangeError("Invalid normalization form: " + form);
+         }
+      };
+
+      unorm.shimApplied = true;
+   }
+}(this));
+
+},{}],416:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -56669,7 +71139,7 @@ Url.prototype.parseHost = function() {
   if (host) this.hostname = host;
 };
 
-},{"./util":295,"punycode":160,"querystring":163}],295:[function(require,module,exports){
+},{"./util":417,"punycode":260,"querystring":263}],417:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -56687,7 +71157,7 @@ module.exports = {
   }
 };
 
-},{}],296:[function(require,module,exports){
+},{}],418:[function(require,module,exports){
 (function (global){
 
 /**
@@ -56758,16 +71228,16 @@ function config (name) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],297:[function(require,module,exports){
-arguments[4][65][0].apply(exports,arguments)
-},{"dup":65}],298:[function(require,module,exports){
+},{}],419:[function(require,module,exports){
+arguments[4][153][0].apply(exports,arguments)
+},{"dup":153}],420:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],299:[function(require,module,exports){
+},{}],421:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -57357,7 +71827,7 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":298,"_process":159,"inherits":297}],300:[function(require,module,exports){
+},{"./support/isBuffer":420,"_process":259,"inherits":419}],422:[function(require,module,exports){
 var parse = require('spdx-expression-parse');
 var correct = require('spdx-correct');
 
@@ -57443,7 +71913,7 @@ module.exports = function(argument) {
   }
 };
 
-},{"spdx-correct":195,"spdx-expression-parse":196}],301:[function(require,module,exports){
+},{"spdx-correct":301,"spdx-expression-parse":302}],423:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2016 Titus Wormer
@@ -57568,7 +72038,7 @@ function indices(value) {
   return result;
 }
 
-},{}],302:[function(require,module,exports){
+},{}],424:[function(require,module,exports){
 /**
  * @author Titus Wormer
  * @copyright 2015 Titus Wormer
@@ -58198,7 +72668,7 @@ proto.namespace = namespace;
 
 module.exports = VFile;
 
-},{}],303:[function(require,module,exports){
+},{}],425:[function(require,module,exports){
 var Vue // late bind
 var map = Object.create(null)
 var shimmed = false
@@ -58499,7 +72969,7 @@ function format (id) {
   return match ? match[0] : id
 }
 
-},{}],304:[function(require,module,exports){
+},{}],426:[function(require,module,exports){
 (function (process){
 /*!
  * Vue.js v1.0.28
@@ -68740,7 +83210,7 @@ setTimeout(function () {
 
 module.exports = Vue;
 }).call(this,require('_process'))
-},{"_process":159}],305:[function(require,module,exports){
+},{"_process":259}],427:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 exports.insert = function (css) {
@@ -68760,7 +83230,7 @@ exports.insert = function (css) {
   return elem
 }
 
-},{}],306:[function(require,module,exports){
+},{}],428:[function(require,module,exports){
 // Returns a wrapper function that returns a wrapped callback
 // The wrapper function should do some stuff, and return a
 // presumably different callback function.
@@ -68795,7 +83265,7 @@ function wrappy (fn, cb) {
   }
 }
 
-},{}],307:[function(require,module,exports){
+},{}],429:[function(require,module,exports){
 /*!
  * write <https://github.com/jonschlinkert/write>
  *
@@ -68890,7 +83360,7 @@ module.exports.stream = function writeFileStream(dest) {
   return fs.createWriteStream(dest);
 };
 
-},{"fs":15,"mkdirp":123,"path":144}],308:[function(require,module,exports){
+},{"fs":19,"mkdirp":217,"path":244}],430:[function(require,module,exports){
 module.exports = extend
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;
