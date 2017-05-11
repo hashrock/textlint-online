@@ -55,7 +55,7 @@
   textlint.setupRules({
     "no-todo": require("textlint-rule-no-todo"),
     "max-ten": require( "textlint-rule-max-ten"),
-//    "spellcheck-tech-word":require("textlint-rule-spellcheck-tech-word"),
+    "spellcheck-tech-word":require("textlint-rule-spellcheck-tech-word"),
     "no-mix-dearu-desumasu":require("textlint-rule-no-mix-dearu-desumasu"),
   });
 
