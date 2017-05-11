@@ -68,8 +68,9 @@
     },
     methods: {
       lint: function(){
-        var result = textlint.lintMarkdown(this.input);
-        this.outputs = result.messages;
+        textlint.lintMarkdown(this.input).then((result)=>{
+          this.outputs = result.messages;
+        })
       }
     },
     ready: function(){
